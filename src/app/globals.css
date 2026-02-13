@@ -1,26 +1,126 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #2b4bee;
+  --color-primary-dark: #1a38d0;
+  --color-accent-blue: #E0F2FE;
+  --color-text-dark: #0F172A;
+  --color-text-light: #64748B;
+  --color-surface: #ffffff;
+  --color-surface-alt: #F8FAFC;
+
+  --font-display: var(--font-playfair-display);
+  --font-sans: var(--font-manrope);
+
+  --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
+  --shadow-glow: 0 0 20px rgba(43, 75, 238, 0.15);
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground: #0F172A;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+/* Custom Utility Classes */
+
+.gradient-bg {
+  background: radial-gradient(circle at 50% 0%, #EFF6FF 0%, #ffffff 70%);
+}
+
+.mesh-gradient {
+  background-color: #ffffff;
+  background-image:
+    radial-gradient(at 0% 0%, hsla(216, 98%, 95%, 1) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(217, 94%, 94%, 1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(220, 96%, 96%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(218, 90%, 97%, 1) 0px, transparent 50%);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+.dropdown-group:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu {
+  transition: all 0.2s ease-in-out;
+}
+
+.hero-text-gradient {
+  background: linear-gradient(135deg, #0F172A 0%, #334155 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #2b4bee;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.btn-pill {
+  transition: all 0.2s ease;
+}
+
+.btn-pill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(43, 75, 238, 0.15);
+}
+
+/* Stitch Hero Design Styles */
+.glass-nav {
+  backdrop-filter: blur(12px);
+  background: rgba(10, 12, 22, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at 50% 50%, rgba(43, 75, 238, 0.12) 0%, rgba(10, 12, 22, 0) 70%);
+}
+
+.ai-pulse {
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+}
+
+.dashboard-container {
+  perspective: 2000px;
+}
+
+.dashboard-tilt {
+  transform: rotateX(2deg);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #4f46e5, #9333ea, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
