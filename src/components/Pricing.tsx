@@ -1,12 +1,29 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Pricing() {
+    const [isAnnual, setIsAnnual] = useState(false);
+
     return (
         <section className="py-24 bg-slate-50/50" id="pricing">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-medium mb-8 text-slate-900">Scale with your AI needs</h2>
-                    <div className="inline-flex items-center p-1 bg-white rounded-xl border border-slate-200 shadow-sm">
-                        <button className="px-6 py-2 rounded-lg bg-slate-900 text-white text-sm font-bold shadow-md transition-all">Monthly</button>
-                        <button className="px-6 py-2 rounded-lg text-sm font-bold text-slate-500 hover:text-slate-900 transition-colors">Yearly <span className="text-green-600 text-xs ml-1">-17%</span></button>
+
+                    {/* Monthly / Annual Toggle */}
+                    <div className="inline-flex items-center gap-4">
+                        <span className={`text-sm font-semibold transition-colors ${!isAnnual ? "text-slate-900" : "text-slate-400"}`}>Monthly</span>
+                        <button
+                            onClick={() => setIsAnnual(!isAnnual)}
+                            className={`relative w-14 h-8 rounded-full transition-colors duration-300 ${isAnnual ? "bg-primary" : "bg-slate-300"}`}
+                            aria-label="Toggle annual pricing"
+                        >
+                            <span
+                                className={`absolute top-1 left-1 w-6 h-6 bg-white rounded-full shadow-md transition-transform duration-300 ${isAnnual ? "translate-x-6" : "translate-x-0"}`}
+                            />
+                        </button>
+                        <span className={`text-sm font-semibold transition-colors ${isAnnual ? "text-slate-900" : "text-slate-400"}`}>Annual</span>
                     </div>
                 </div>
 
@@ -17,18 +34,28 @@ export default function Pricing() {
                             <h3 className="text-xl font-bold text-slate-900">Free</h3>
                             <p className="text-xs text-slate-500 mt-1 h-10">For quick brainstorming sessions.</p>
                             <div className="mt-4 mb-2">
-                                <span className="text-4xl font-bold text-slate-900">$0</span>
-                                <span className="text-sm text-slate-500">/mo</span>
+                                <span className="text-4xl font-bold text-slate-900">Free</span>
                             </div>
+                            <div className="h-8" />
                         </div>
                         <button className="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-900 rounded-lg font-bold text-sm transition-colors mb-6">Start with Free</button>
                         <ul className="text-[13px] space-y-3 flex-1 text-slate-600">
-                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access to open source & Basic models</span></li>
-                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>3 Image Generations / month</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>No agent mode</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access to Basic models</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>1 AI identity (coming soon)</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>3 Image Generations requests per month</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>6 Hour Session length</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>20K Daily Token Usage Limit</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>600K Free Monthly Tokens</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Up to 1 File per Session/Activity</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>5 MB Max File Upload</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>10 Max Saved Activities</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>10 Max Saved Sessions</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Up to 5 Users per session</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Up to 1 Concurrent Session</span></li>
-                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Upload from Drive & Dropbox</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Upload Websites</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Upload files from local device, Google Drive, Dropbox</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Limited chat and file Context</span></li>
                         </ul>
                     </div>
 
@@ -39,22 +66,45 @@ export default function Pricing() {
                         </div>
                         <div className="mb-6 mt-4">
                             <h3 className="text-xl font-bold text-slate-900">Pro</h3>
-                            <p className="text-xs text-slate-500 mt-1 h-10">For professionals ready to increase productivity.</p>
+                            <p className="text-xs text-slate-500 mt-1 h-10">For Professionals & Educators ready to increase productivity</p>
                             <div className="mt-4 mb-1">
-                                <span className="text-4xl font-bold text-slate-900">$25</span>
-                                <span className="text-sm text-slate-500">/mo</span>
+                                <span className="text-4xl font-bold text-slate-900">${isAnnual ? "25" : "30"}</span>
+                                <span className="text-sm text-slate-500">/month</span>
                             </div>
-                            <div className="text-[10px] font-bold text-green-600">Save 17% billed annually</div>
-                            <div className="text-[10px] text-slate-400">Billed $300 yearly</div>
+                            <div className="h-8">
+                                {isAnnual && (
+                                    <>
+                                        <div className="text-[10px] text-slate-500">Charged $300 Annually</div>
+                                        <div className="text-[10px] font-bold text-green-600">17% savings</div>
+                                    </>
+                                )}
+                            </div>
                         </div>
                         <button className="w-full py-2.5 bg-primary hover:bg-blue-600 text-white rounded-lg font-bold text-sm transition-colors mb-6 shadow-lg shadow-primary/25">Start with Pro</button>
                         <ul className="text-[13px] space-y-3 flex-1 text-slate-600">
-                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>50 Agent calls / month</span></li>
-                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access to Advanced models</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>50 agent calls/month</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access To Advanced models</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access to reasoning</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Session canvas</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>10 AI Identities (coming soon)</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>50 Image Generation requests per month</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>5 AI Podcasts per month</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>7 day Session Length</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access to Polls in Sessions</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Unlimited Daily Tokens</span></li>
-                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>5 AI Podcasts / month</span></li>
-                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>100 MB File Uploads</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>3M Free Monthly Tokens</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Up to 10 Files per Session/Activity</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>100 MB Max File Upload</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>100 MB Audio File Upload</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>25 MB Video File Upload [Beta]</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>10 MB Image File Upload</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>500 Max Saved Activities</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>100 Max Saved Sessions</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Up to 25 Users per session</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Up to 10 Concurrent Sessions</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Upload Websites</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Upload files from local device, Google Drive, Dropbox</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>50x chat and file Context than Free</span></li>
                         </ul>
                     </div>
 
@@ -62,22 +112,28 @@ export default function Pricing() {
                     <div className="p-6 rounded-3xl bg-white border border-slate-200 flex flex-col shadow-sm hover:border-slate-300 transition-colors">
                         <div className="mb-6">
                             <h3 className="text-xl font-bold text-slate-900">Ultra</h3>
-                            <p className="text-xs text-slate-500 mt-1 h-10">For power users who need raw performance.</p>
+                            <p className="text-xs text-slate-500 mt-1 h-10">For power users without a team structure</p>
                             <div className="mt-4 mb-1">
-                                <span className="text-4xl font-bold text-slate-900">$250</span>
-                                <span className="text-sm text-slate-500">/mo</span>
+                                <span className="text-4xl font-bold text-slate-900">${isAnnual ? "250" : "300"}</span>
+                                <span className="text-sm text-slate-500">/month</span>
                             </div>
-                            <div className="text-[10px] font-bold text-green-600">Save 17% billed annually</div>
-                            <div className="text-[10px] text-slate-400">Billed $3000 yearly</div>
+                            <div className="h-8">
+                                {isAnnual && (
+                                    <>
+                                        <div className="text-[10px] text-slate-500">Charged $3000 Annually</div>
+                                        <div className="text-[10px] font-bold text-green-600">17% savings</div>
+                                    </>
+                                )}
+                            </div>
                         </div>
                         <button className="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-900 rounded-lg font-bold text-sm transition-colors mb-6">Start with Ultra</button>
                         <ul className="text-[13px] space-y-3 flex-1 text-slate-600">
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Unlimited Agent calls</span></li>
-                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access to all models (incl. Beta)</span></li>
-                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>10 Million Free Monthly Tokens</span></li>
-                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>First day access to new features</span></li>
-                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Maximum model accuracy</span></li>
-                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Priority processing</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access To all models</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access to all features</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>10M Free Monthly Tokens</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>First day Access to new models and features</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Improved Model Accuracy and Performance</span></li>
                         </ul>
                     </div>
 
@@ -85,23 +141,48 @@ export default function Pricing() {
                     <div className="p-6 rounded-3xl bg-white border border-slate-200 flex flex-col shadow-sm hover:border-slate-300 transition-colors">
                         <div className="mb-6">
                             <h3 className="text-xl font-bold text-slate-900">Business</h3>
-                            <p className="text-xs text-slate-500 mt-1 h-10">For teams ready to scale AI collaboration.</p>
+                            <p className="text-xs text-slate-500 mt-1 h-10">For Teams & Departments ready to scale AI collaboration</p>
                             <div className="mt-4 mb-1">
-                                <span className="text-4xl font-bold text-slate-900">$50</span>
-                                <span className="text-sm text-slate-500">/user/mo</span>
+                                <span className="text-4xl font-bold text-slate-900">${isAnnual ? "50" : "70"}</span>
+                                <span className="text-sm text-slate-500">/user/month</span>
                             </div>
-                            <div className="text-[10px] font-bold text-slate-900">5 seats minimum</div>
-                            <div className="text-[10px] font-bold text-green-600">Save 29% billed annually</div>
-                            <div className="text-[10px] text-slate-400">Billed $3000 yearly</div>
+                            <div className="h-8">
+                                {isAnnual && (
+                                    <>
+                                        <div className="text-[10px] text-slate-500">Charged $600 Annually</div>
+                                        <div className="text-[10px] font-bold text-green-600">29% savings</div>
+                                    </>
+                                )}
+                            </div>
                         </div>
                         <button className="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-900 rounded-lg font-bold text-sm transition-colors mb-6">Contact Us</button>
                         <ul className="text-[13px] space-y-3 flex-1 text-slate-600">
-                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>250 Agent calls / month</span></li>
-                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access to Flagship models</span></li>
-                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>10M Free Monthly Tokens</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>250 agent calls/month</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access To Flagship models</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Early Access to new models and features</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Session canvas</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Unlimited AI Identities (coming soon)</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>100 Image Generation requests per month</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>20 AI Podcasts per month</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Unlimited Session Length</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access to Polls in Sessions</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access to Group Management (coming soon)</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Unlimited Daily Tokens</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>10M Free Monthly Tokens</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Up to 20 Files per Session/Activity</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>1 GB Max File Upload</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>1 GB Audio File Upload</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>100 MB Video File Upload [Beta]</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>15 MB Image File Upload</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>1000 Max Saved Activities</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>1000 Max Saved Sessions</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Up to 100 Users per session</span></li>
-                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>24/7 Priority Support</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Up to 50 Concurrent Sessions</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Upload Websites</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Upload files from local device, Google Drive, Dropbox</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>24/7 Support</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>10x chat and file Context than Pro</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Video and Audio Context</span></li>
                         </ul>
                     </div>
 
@@ -109,18 +190,23 @@ export default function Pricing() {
                     <div className="p-6 rounded-3xl bg-white border border-slate-200 flex flex-col shadow-sm hover:border-slate-300 transition-colors">
                         <div className="mb-6">
                             <h3 className="text-xl font-bold text-slate-900">Enterprise</h3>
-                            <p className="text-xs text-slate-500 mt-1 h-10">For institutions requiring security & scale.</p>
+                            <p className="text-xs text-slate-500 mt-1 h-10">For Institutions & Companies ready to lead with enterprise-grade AI solutions</p>
                             <div className="mt-4 mb-2">
                                 <span className="text-4xl font-bold text-slate-900">Custom</span>
                             </div>
+                            <div className="h-8" />
                         </div>
                         <button className="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-900 rounded-lg font-bold text-sm transition-colors mb-6">Contact Us</button>
                         <ul className="text-[13px] space-y-3 flex-1 text-slate-600">
-                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Dedicated Infrastructure</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Unlimited Agent calls</span></li>
-                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Organizational wide context</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access To all models</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access to all features</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>First day Access to new models and features</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Improved Model Accuracy and Performance</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Organizational wide context for Models</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Enterprise Grade Security</span></li>
-                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Dedicated Support Personnel</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Dedicated Support Personal</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Increased Usages</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Volume Discounts</span></li>
                         </ul>
                     </div>
