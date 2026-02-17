@@ -15,11 +15,11 @@ export default function Navbar() {
               className="object-contain"
             />
           </div>
-          <span className="font-display font-bold text-2xl tracking-tight text-slate-900">
+          <span className="font-display font-bold text-2xl tracking-tight text-slate-900 dark:text-white">
             Thytus
           </span>
         </Link>
-        <div className="hidden lg:flex items-center gap-8 text-[15px] font-medium text-slate-600">
+        <div className="hidden lg:flex items-center gap-8 text-[15px] font-medium text-slate-600 dark:text-slate-300">
           <Link
             href="/product"
             className="nav-link hover:text-primary transition-colors"
@@ -45,21 +45,21 @@ export default function Navbar() {
                 expand_more
               </span>
             </button>
-            <div className="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full w-56 bg-white border border-slate-100 rounded-2xl shadow-xl shadow-slate-200/50 opacity-0 invisible translate-y-2 p-2 z-50">
+            <div className="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full w-56 bg-white dark:bg-dark-card border border-sky-100 dark:border-dark-border rounded-2xl shadow-xl shadow-sky-200/30 dark:shadow-black/40 opacity-0 invisible translate-y-2 p-2 z-50">
               <a
-                className="block px-4 py-2.5 hover:bg-slate-50 rounded-lg text-slate-600 hover:text-primary transition-colors text-sm"
+                className="block px-4 py-2.5 hover:bg-sky-50 dark:hover:bg-dark-elevated rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
                 href="#"
               >
                 Documentation
               </a>
               <a
-                className="block px-4 py-2.5 hover:bg-slate-50 rounded-lg text-slate-600 hover:text-primary transition-colors text-sm"
+                className="block px-4 py-2.5 hover:bg-sky-50 dark:hover:bg-dark-elevated rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
                 href="#"
               >
                 Blog
               </a>
               <a
-                className="block px-4 py-2.5 hover:bg-slate-50 rounded-lg text-slate-600 hover:text-primary transition-colors text-sm"
+                className="block px-4 py-2.5 hover:bg-sky-50 dark:hover:bg-dark-elevated rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
                 href="#"
               >
                 Community
@@ -70,13 +70,13 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <Link
             href="/login"
-            className="hidden sm:block text-[15px] font-semibold text-slate-600 hover:text-primary transition-colors px-4"
+            className="hidden sm:block text-[15px] font-semibold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors px-4"
           >
             Log in
           </Link>
           <Link
             href="/signup"
-            className="btn-pill bg-slate-900 hover:bg-primary text-white px-5 py-2.5 rounded-full text-[14px] font-bold transition-all shadow-md shadow-slate-900/10 flex items-center gap-2"
+            className="btn-pill bg-primary hover:bg-sky-600 text-white px-5 py-2.5 rounded-full text-[14px] font-bold transition-all shadow-md shadow-sky-500/20 dark:shadow-sky-500/30 flex items-center gap-2"
           >
             Get Started
             <span className="material-symbols-outlined text-[18px]">

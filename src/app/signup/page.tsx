@@ -5,11 +5,11 @@ import Image from "next/image";
 
 export default function SignUp() {
   return (
-    <div className="min-h-screen bg-[#0a0c16] flex flex-col justify-center items-center p-6 relative overflow-hidden">
+    <div className="min-h-screen bg-sky-950 flex flex-col justify-center items-center p-6 relative overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-purple-900/20 via-[#0a0c16] to-[#0a0c16] pointer-events-none"></div>
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-sky-800/30 via-sky-950 to-sky-950 pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sky-400/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="w-full max-w-md relative z-10">
         <div className="text-center mb-8">
@@ -17,16 +17,13 @@ export default function SignUp() {
             <div className="flex items-center gap-3 justify-center">
               <div className="relative w-10 h-10 flex items-center justify-center">
                 <Image
-                  src="/logo.png"
+                  src="/Thytus_Logo.png"
                   alt="Thytus Logo"
-                  width={40}
-                  height={40}
-                  className="object-contain"
+                  width={1000}
+                  height={1000}
+                  className="w-auto h-12 object-contain"
                 />
               </div>
-              <span className="font-display font-bold text-3xl tracking-tight text-white">
-                Thytus
-              </span>
             </div>
           </Link>
           <h2 className="text-2xl font-bold text-white mb-2">
@@ -50,7 +47,7 @@ export default function SignUp() {
                 <input
                   type="text"
                   id="firstName"
-                  className="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+                  className="w-full bg-sky-900/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-400/50 focus:border-sky-400 transition-all"
                   placeholder="Jane"
                 />
               </div>
@@ -64,7 +61,7 @@ export default function SignUp() {
                 <input
                   type="text"
                   id="lastName"
-                  className="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+                  className="w-full bg-sky-900/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-400/50 focus:border-sky-400 transition-all"
                   placeholder="Doe"
                 />
               </div>
@@ -80,7 +77,7 @@ export default function SignUp() {
               <input
                 type="email"
                 id="email"
-                className="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+                className="w-full bg-sky-900/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-400/50 focus:border-sky-400 transition-all"
                 placeholder="name@company.com"
               />
             </div>
@@ -95,7 +92,7 @@ export default function SignUp() {
               <input
                 type="password"
                 id="password"
-                className="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+                className="w-full bg-sky-900/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-400/50 focus:border-sky-400 transition-all"
                 placeholder="Create a password"
               />
               <p className="text-xs text-slate-500 mt-2">

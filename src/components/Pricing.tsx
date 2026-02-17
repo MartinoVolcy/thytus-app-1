@@ -1,45 +1,46 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Pricing() {
     const [isAnnual, setIsAnnual] = useState(false);
 
     return (
-        <section className="py-24 bg-slate-50/50" id="pricing">
+        <section className="py-24 bg-sky-50/60 dark:bg-dark-base" id="pricing">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-medium mb-8 text-slate-900">Scale with your AI needs</h2>
+                    <h2 className="text-4xl md:text-5xl font-black mb-8 text-slate-900 dark:text-white tracking-tight">Scale with your <span className="text-gradient-blue">AI needs</span></h2>
 
                     {/* Monthly / Annual Toggle */}
                     <div className="inline-flex items-center gap-4">
-                        <span className={`text-sm font-semibold transition-colors ${!isAnnual ? "text-slate-900" : "text-slate-400"}`}>Monthly</span>
+                        <span className={`text-sm font-semibold transition-colors ${!isAnnual ? "text-slate-900 dark:text-white" : "text-slate-400"}`}>Monthly</span>
                         <button
                             onClick={() => setIsAnnual(!isAnnual)}
-                            className={`relative w-14 h-8 rounded-full transition-colors duration-300 ${isAnnual ? "bg-primary" : "bg-slate-300"}`}
+                            className={`relative w-14 h-8 rounded-full transition-colors duration-300 ${isAnnual ? "bg-primary" : "bg-sky-300"}`}
                             aria-label="Toggle annual pricing"
                         >
                             <span
                                 className={`absolute top-1 left-1 w-6 h-6 bg-white rounded-full shadow-md transition-transform duration-300 ${isAnnual ? "translate-x-6" : "translate-x-0"}`}
                             />
                         </button>
-                        <span className={`text-sm font-semibold transition-colors ${isAnnual ? "text-slate-900" : "text-slate-400"}`}>Annual</span>
+                        <span className={`text-sm font-semibold transition-colors ${isAnnual ? "text-slate-900 dark:text-white" : "text-slate-400"}`}>Annual</span>
                     </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                     {/* Free */}
-                    <div className="p-6 rounded-3xl bg-white border border-slate-200 flex flex-col shadow-sm hover:border-slate-300 transition-colors">
+                    <div className="p-6 rounded-3xl bg-white dark:bg-dark-card border border-sky-200 dark:border-dark-border flex flex-col shadow-sm hover:border-sky-300 dark:hover:border-sky-700/50 transition-colors dark-glow">
                         <div className="mb-6">
-                            <h3 className="text-xl font-bold text-slate-900">Free</h3>
-                            <p className="text-xs text-slate-500 mt-1 h-10">For quick brainstorming sessions.</p>
+                            <h3 className="text-xl font-bold text-slate-900 dark:text-white">Free</h3>
+                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 h-10">For quick brainstorming sessions.</p>
                             <div className="mt-4 mb-2">
-                                <span className="text-4xl font-bold text-slate-900">Free</span>
+                                <span className="text-4xl font-bold text-slate-900 dark:text-white">Free</span>
                             </div>
                             <div className="h-8" />
                         </div>
-                        <button className="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-900 rounded-lg font-bold text-sm transition-colors mb-6">Start with Free</button>
-                        <ul className="text-[13px] space-y-3 flex-1 text-slate-600">
+                        <Link href="signup" className="w-full py-2.5 bg-sky-100 dark:bg-dark-elevated hover:bg-sky-200 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-lg font-bold text-sm transition-colors mb-6 block text-center">Start with Free</Link>
+                        <ul className="text-[13px] space-y-3 flex-1 text-slate-600 dark:text-slate-400">
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>No agent mode</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access to Basic models</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>1 AI identity (coming soon)</span></li>
@@ -60,16 +61,16 @@ export default function Pricing() {
                     </div>
 
                     {/* Pro */}
-                    <div className="p-6 rounded-3xl bg-white border-2 border-primary relative flex flex-col shadow-xl shadow-blue-900/5 transform md:-translate-y-4 z-10">
-                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide whitespace-nowrap border-[3px] border-slate-50 shadow-sm text-center">
+                    <div className="p-6 rounded-3xl bg-white dark:bg-dark-card border-2 border-primary relative flex flex-col shadow-xl shadow-sky-300/20 dark:shadow-primary/20 transform md:-translate-y-4 z-10">
+                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide whitespace-nowrap border-[3px] border-sky-50 dark:border-dark-base shadow-sm text-center">
                             MOST<br />POPULAR
                         </div>
                         <div className="mb-6 mt-4">
-                            <h3 className="text-xl font-bold text-slate-900">Pro</h3>
-                            <p className="text-xs text-slate-500 mt-1 h-10">For Professionals & Educators ready to increase productivity</p>
+                            <h3 className="text-xl font-bold text-slate-900 dark:text-white">Pro</h3>
+                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 h-10">For Professionals & Educators ready to increase productivity</p>
                             <div className="mt-4 mb-1">
-                                <span className="text-4xl font-bold text-slate-900">${isAnnual ? "25" : "30"}</span>
-                                <span className="text-sm text-slate-500">/month</span>
+                                <span className="text-4xl font-bold text-slate-900 dark:text-white">${isAnnual ? "25" : "30"}</span>
+                                <span className="text-sm text-slate-500 dark:text-slate-400">/month</span>
                             </div>
                             <div className="h-8">
                                 {isAnnual && (
@@ -80,8 +81,8 @@ export default function Pricing() {
                                 )}
                             </div>
                         </div>
-                        <button className="w-full py-2.5 bg-primary hover:bg-blue-600 text-white rounded-lg font-bold text-sm transition-colors mb-6 shadow-lg shadow-primary/25">Start with Pro</button>
-                        <ul className="text-[13px] space-y-3 flex-1 text-slate-600">
+                        <Link href="signup" className="w-full py-2.5 bg-primary hover:bg-blue-600 text-white rounded-lg font-bold text-sm transition-colors mb-6 shadow-lg shadow-primary/25 dark:shadow-primary/40 block text-center">Start with Pro</Link>
+                        <ul className="text-[13px] space-y-3 flex-1 text-slate-600 dark:text-slate-400">
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>50 agent calls/month</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access To Advanced models</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access to reasoning</span></li>
@@ -109,13 +110,13 @@ export default function Pricing() {
                     </div>
 
                     {/* Ultra */}
-                    <div className="p-6 rounded-3xl bg-white border border-slate-200 flex flex-col shadow-sm hover:border-slate-300 transition-colors">
+                    <div className="p-6 rounded-3xl bg-white dark:bg-dark-card border border-sky-200 dark:border-dark-border flex flex-col shadow-sm hover:border-sky-300 dark:hover:border-sky-700/50 transition-colors dark-glow">
                         <div className="mb-6">
-                            <h3 className="text-xl font-bold text-slate-900">Ultra</h3>
-                            <p className="text-xs text-slate-500 mt-1 h-10">For power users without a team structure</p>
+                            <h3 className="text-xl font-bold text-slate-900 dark:text-white">Ultra</h3>
+                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 h-10">For power users without a team structure</p>
                             <div className="mt-4 mb-1">
-                                <span className="text-4xl font-bold text-slate-900">${isAnnual ? "250" : "300"}</span>
-                                <span className="text-sm text-slate-500">/month</span>
+                                <span className="text-4xl font-bold text-slate-900 dark:text-white">${isAnnual ? "250" : "300"}</span>
+                                <span className="text-sm text-slate-500 dark:text-slate-400">/month</span>
                             </div>
                             <div className="h-8">
                                 {isAnnual && (
@@ -126,8 +127,8 @@ export default function Pricing() {
                                 )}
                             </div>
                         </div>
-                        <button className="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-900 rounded-lg font-bold text-sm transition-colors mb-6">Start with Ultra</button>
-                        <ul className="text-[13px] space-y-3 flex-1 text-slate-600">
+                        <Link href="signup" className="w-full py-2.5 bg-sky-100 dark:bg-dark-elevated hover:bg-sky-200 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-lg font-bold text-sm transition-colors mb-6 block text-center">Start with Ultra</Link>
+                        <ul className="text-[13px] space-y-3 flex-1 text-slate-600 dark:text-slate-400">
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Unlimited Agent calls</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access To all models</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access to all features</span></li>
@@ -138,13 +139,13 @@ export default function Pricing() {
                     </div>
 
                     {/* Business */}
-                    <div className="p-6 rounded-3xl bg-white border border-slate-200 flex flex-col shadow-sm hover:border-slate-300 transition-colors">
+                    <div className="p-6 rounded-3xl bg-white dark:bg-dark-card border border-sky-200 dark:border-dark-border flex flex-col shadow-sm hover:border-sky-300 dark:hover:border-sky-700/50 transition-colors dark-glow">
                         <div className="mb-6">
-                            <h3 className="text-xl font-bold text-slate-900">Business</h3>
-                            <p className="text-xs text-slate-500 mt-1 h-10">For Teams & Departments ready to scale AI collaboration</p>
+                            <h3 className="text-xl font-bold text-slate-900 dark:text-white">Business</h3>
+                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 h-10">For Teams & Departments ready to scale AI collaboration</p>
                             <div className="mt-4 mb-1">
-                                <span className="text-4xl font-bold text-slate-900">${isAnnual ? "50" : "70"}</span>
-                                <span className="text-sm text-slate-500">/user/month</span>
+                                <span className="text-4xl font-bold text-slate-900 dark:text-white">${isAnnual ? "50" : "70"}</span>
+                                <span className="text-sm text-slate-500 dark:text-slate-400">/user/month</span>
                             </div>
                             <div className="h-8">
                                 {isAnnual && (
@@ -155,8 +156,8 @@ export default function Pricing() {
                                 )}
                             </div>
                         </div>
-                        <button className="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-900 rounded-lg font-bold text-sm transition-colors mb-6">Contact Us</button>
-                        <ul className="text-[13px] space-y-3 flex-1 text-slate-600">
+                        <Link href="https://showcase.thytus.com/v1/help" className="w-full py-2.5 bg-sky-100 dark:bg-dark-elevated hover:bg-sky-200 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-lg font-bold text-sm transition-colors mb-6 block text-center">Contact Us</Link>
+                        <ul className="text-[13px] space-y-3 flex-1 text-slate-600 dark:text-slate-400">
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>250 agent calls/month</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access To Flagship models</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Early Access to new models and features</span></li>
@@ -187,17 +188,17 @@ export default function Pricing() {
                     </div>
 
                     {/* Enterprise */}
-                    <div className="p-6 rounded-3xl bg-white border border-slate-200 flex flex-col shadow-sm hover:border-slate-300 transition-colors">
+                    <div className="p-6 rounded-3xl bg-white dark:bg-dark-card border border-sky-200 dark:border-dark-border flex flex-col shadow-sm hover:border-sky-300 dark:hover:border-sky-700/50 transition-colors dark-glow">
                         <div className="mb-6">
-                            <h3 className="text-xl font-bold text-slate-900">Enterprise</h3>
-                            <p className="text-xs text-slate-500 mt-1 h-10">For Institutions & Companies ready to lead with enterprise-grade AI solutions</p>
+                            <h3 className="text-xl font-bold text-slate-900 dark:text-white">Enterprise</h3>
+                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 h-10">For Institutions & Companies ready to lead with enterprise-grade AI solutions</p>
                             <div className="mt-4 mb-2">
-                                <span className="text-4xl font-bold text-slate-900">Custom</span>
+                                <span className="text-4xl font-bold text-slate-900 dark:text-white">Custom</span>
                             </div>
                             <div className="h-8" />
                         </div>
-                        <button className="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-900 rounded-lg font-bold text-sm transition-colors mb-6">Contact Us</button>
-                        <ul className="text-[13px] space-y-3 flex-1 text-slate-600">
+                        <Link href="https://showcase.thytus.com/v1/help" className="w-full py-2.5 bg-sky-100 dark:bg-dark-elevated hover:bg-sky-200 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-lg font-bold text-sm transition-colors mb-6 block text-center hover:scale-105">Contact Us</Link>
+                        <ul className="text-[13px] space-y-3 flex-1 text-slate-600 dark:text-slate-400">
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Unlimited Agent calls</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access To all models</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access to all features</span></li>

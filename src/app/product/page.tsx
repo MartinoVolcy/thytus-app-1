@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function ProductPage() {
   return (
-    <div className="bg-white text-text-dark antialiased selection:bg-primary/20 pt-20">
+    <div className="bg-sky-50 dark:bg-dark-base text-text-dark dark:text-slate-200 antialiased selection:bg-primary/20 pt-20">
       <Navbar />
       <Showcase />
       <CTA />

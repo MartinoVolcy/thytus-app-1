@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function PricingPage() {
   return (
-    <div className="bg-slate-50 text-text-dark antialiased selection:bg-primary/20 pt-20">
+    <div className="bg-sky-50 dark:bg-dark-base text-text-dark dark:text-slate-200 antialiased selection:bg-primary/20 pt-20">
       <Navbar />
       <Pricing />
       <CTA />

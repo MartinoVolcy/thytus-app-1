@@ -67,19 +67,19 @@ const Hero = () => {
   const iconOpacity = isExpanded ? 1 : 0;
 
   return (
-    <div className="bg-white text-slate-900 font-display selection:bg-primary/20 overflow-x-hidden">
+    <div className="bg-sky-50 dark:bg-dark-base text-slate-900 dark:text-slate-100 font-display selection:bg-primary/20 overflow-x-hidden">
       <main className="relative pt-32 pb-16 overflow-hidden">
         {/* Subtle background */}
         <div className="absolute inset-0 hero-gradient pointer-events-none"></div>
-        <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-primary/[0.04] rounded-full blur-[100px]"></div>
-        <div className="absolute top-1/3 -right-32 w-[500px] h-[500px] bg-blue-400/[0.04] rounded-full blur-[100px]"></div>
+        <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-sky-200/30 dark:bg-sky-500/[0.06] rounded-full blur-[100px]"></div>
+        <div className="absolute top-1/3 -right-32 w-[500px] h-[500px] bg-sky-300/20 dark:bg-primary/[0.05] rounded-full blur-[100px]"></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           {/* Hero split layout */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
             {/* Left: Copy */}
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 dark:bg-primary/15 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest mb-8">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -89,28 +89,26 @@ const Hero = () => {
                 </span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight mb-8">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight mb-8 text-slate-900 dark:text-white">
                 Where Human Ingenuity Meets{" "}
                 <span className="text-gradient">Autonomous Precision</span>
               </h1>
 
-              <p className="text-lg text-slate-500 max-w-lg mb-10 leading-relaxed font-medium">
-                The first collaborative workspace where AI agents and teams work
-                side-by-side in real-time. Boost your output by 10x with
-                autonomous workflows.
+              <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-lg mb-10 leading-relaxed">
+                The first workspace where <span className="font-bold text-slate-700 dark:text-slate-200">AI agents collaborate with your team</span> in real-time. Boost your output by <span className="font-bold text-primary">10x</span> with autonomous workflows.
               </p>
 
               <div className="flex flex-col sm:flex-row items-start gap-4 mb-12">
                 <Link
                   href="/signup"
-                  className="px-8 py-3.5 bg-primary hover:bg-primary-dark text-white rounded-full font-bold text-[15px] transition-all shadow-lg shadow-primary/25 flex items-center gap-2"
+                  className="px-8 py-3.5 bg-primary hover:bg-primary-dark text-white rounded-full font-bold text-[15px] transition-all shadow-lg shadow-primary/25 dark:shadow-primary/40 flex items-center gap-2"
                 >
                   Get Started for Free
                   <span className="material-symbols-outlined text-lg">
                     arrow_forward
                   </span>
                 </Link>
-                <button className="px-8 py-3.5 bg-white border border-slate-200 hover:border-primary hover:text-primary text-slate-700 rounded-full font-bold text-[15px] transition-all shadow-sm flex items-center gap-3">
+                <button className="px-8 py-3.5 bg-white dark:bg-dark-card border border-sky-200 dark:border-dark-border hover:border-primary hover:text-primary text-slate-700 dark:text-slate-300 rounded-full font-bold text-[15px] transition-all shadow-sm flex items-center gap-3">
                   <span className="material-symbols-outlined text-primary">
                     play_circle
                   </span>
@@ -128,13 +126,13 @@ const Hero = () => {
               >
                 {/* Orbit ring traces */}
                 <div
-                  className="absolute rounded-full border border-slate-200/60 transition-all duration-700 ease-out"
+                  className="absolute rounded-full border border-sky-200/60 dark:border-sky-400/15 transition-all duration-700 ease-out"
                   style={{
                     inset: isExpanded ? "60px" : "calc(50% - 64px)",
                   }}
                 ></div>
                 <div
-                  className="absolute rounded-full border border-slate-100/40 transition-all duration-700 ease-out"
+                  className="absolute rounded-full border border-sky-100/40 dark:border-sky-400/10 transition-all duration-700 ease-out"
                   style={{
                     inset: isExpanded ? "0px" : "calc(50% - 64px)",
                   }}
@@ -142,7 +140,7 @@ const Hero = () => {
 
                 {/* Center logo */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-                  <div className="w-28 h-28 md:w-32 md:h-32 rounded-full bg-primary flex items-center justify-center shadow-xl shadow-primary/30 transition-shadow duration-500">
+                  <div className="w-28 h-28 md:w-32 md:h-32 rounded-full bg-primary flex items-center justify-center shadow-xl shadow-primary/30 dark:shadow-primary/50 transition-shadow duration-500">
                     <div className="text-center">
                       <Image
                         src="/Thytus_Logo.png"
@@ -184,7 +182,7 @@ const Hero = () => {
                         }}
                       >
                         <div
-                          className="w-12 h-12 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-slate-200/50 flex items-center justify-center"
+                          className="w-12 h-12 rounded-2xl bg-white dark:bg-dark-card border border-sky-200 dark:border-dark-border shadow-lg shadow-sky-200/40 dark:shadow-sky-500/10 flex items-center justify-center"
                           style={{
                             animation: isExpanded
                               ? "counter-orbit 30s linear infinite"
@@ -229,7 +227,7 @@ const Hero = () => {
                         }}
                       >
                         <div
-                          className="w-12 h-12 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-slate-200/50 flex items-center justify-center"
+                          className="w-12 h-12 rounded-2xl bg-white dark:bg-dark-card border border-sky-200 dark:border-dark-border shadow-lg shadow-sky-200/40 dark:shadow-sky-500/10 flex items-center justify-center"
                           style={{
                             animation: isExpanded
                               ? "counter-orbit 40s linear infinite reverse"
@@ -271,16 +269,16 @@ const Hero = () => {
                     pointerEvents: "none",
                   }}
                 >
-                  <div className="bg-white rounded-xl px-4 py-2.5 shadow-lg border border-slate-100 min-w-[220px]">
+                  <div className="bg-white dark:bg-dark-card rounded-xl px-4 py-2.5 shadow-lg dark:shadow-black/40 border border-sky-100 dark:border-dark-border min-w-[220px]">
                     <div className="flex items-center gap-3">
                       <span className="material-symbols-outlined text-primary text-lg shrink-0">
                         {orbitTools[featuredIndex].icon}
                       </span>
                       <div className="text-left">
-                        <div className="text-xs font-bold text-slate-900">
+                        <div className="text-xs font-bold text-slate-900 dark:text-white">
                           {orbitTools[featuredIndex].label}
                         </div>
-                        <div className="text-[10px] text-slate-500 leading-snug">
+                        <div className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug">
                           {orbitTools[featuredIndex].desc}
                         </div>
                       </div>
@@ -296,7 +294,7 @@ const Hero = () => {
             <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em] mb-8">
               TRUSTED BY TEAMS AT
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 hover:opacity-80 transition-all duration-500">
+            <div className="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 hover:opacity-80 transition-all duration-500 dark:invert">
               <Image src="/ru-logo.png" alt="Rutgers" width={1000} height={1000} className="w-auto h-12 object-contain" />
               <Image src="/chase.webp" alt="Chase" width={1000} height={1000} className="w-auto h-12 object-contain" />
               <Image src="/mu-logo.png" alt="Maryland University" width={1000} height={1000} className="w-auto h-12 object-contain" />
@@ -310,7 +308,7 @@ const Hero = () => {
       </main>
 
       {/* Features strip */}
-      <section className="bg-slate-50 py-24 border-t border-slate-100">
+      <section className="bg-sky-100/50 dark:bg-dark-surface py-24 border-t border-sky-100 dark:border-dark-border">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-16">
             <div className="group">
@@ -319,38 +317,38 @@ const Hero = () => {
                   sync_alt
                 </span>
               </div>
-              <h3 className="text-xl font-bold mb-5 tracking-tight text-slate-900">
+              <h3 className="text-xl font-extrabold mb-4 tracking-tight text-slate-900 dark:text-white">
                 Autonomous Sync
               </h3>
-              <p className="text-slate-500 leading-relaxed font-medium">
+              <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
                 Agents automatically update your project state based on
                 real-time conversations and code changes.
               </p>
             </div>
             <div className="group">
-              <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center mb-8 border border-purple-100 group-hover:bg-purple-600 transition-all duration-300">
-                <span className="material-symbols-outlined text-xl text-purple-600 group-hover:text-white transition-colors">
+              <div className="w-10 h-10 bg-purple-100 dark:bg-purple-500/15 rounded-xl flex items-center justify-center mb-8 border border-purple-100 dark:border-purple-500/20 group-hover:bg-purple-600 transition-all duration-300">
+                <span className="material-symbols-outlined text-xl text-purple-600 dark:text-purple-400 group-hover:text-white transition-colors">
                   psychology
                 </span>
               </div>
-              <h3 className="text-xl font-bold mb-5 tracking-tight text-slate-900">
+              <h3 className="text-xl font-extrabold mb-4 tracking-tight text-slate-900 dark:text-white">
                 Contextual Intelligence
               </h3>
-              <p className="text-slate-500 leading-relaxed font-medium">
+              <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
                 Your agents learn from your team&apos;s past decisions, ensuring
                 every output aligns with your unique style.
               </p>
             </div>
             <div className="group">
-              <div className="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center mb-8 border border-emerald-100 group-hover:bg-emerald-600 transition-all duration-300">
-                <span className="material-symbols-outlined text-xl text-emerald-600 group-hover:text-white transition-colors">
+              <div className="w-10 h-10 bg-emerald-100 dark:bg-emerald-500/15 rounded-xl flex items-center justify-center mb-8 border border-emerald-100 dark:border-emerald-500/20 group-hover:bg-emerald-600 transition-all duration-300">
+                <span className="material-symbols-outlined text-xl text-emerald-600 dark:text-emerald-400 group-hover:text-white transition-colors">
                   security
                 </span>
               </div>
-              <h3 className="text-xl font-bold mb-5 tracking-tight text-slate-900">
+              <h3 className="text-xl font-extrabold mb-4 tracking-tight text-slate-900 dark:text-white">
                 Enterprise Privacy
               </h3>
-              <p className="text-slate-500 leading-relaxed font-medium">
+              <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
                 Military-grade encryption and SOC2 compliance. Your proprietary
                 data never leaves your workspace.
               </p>

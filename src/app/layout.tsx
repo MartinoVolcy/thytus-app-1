@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import ThemeDetector from "@/components/ThemeDetector";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -25,8 +26,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.classList.add('dark')}})();`,
+          }}
+        />
         <link
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
@@ -37,6 +43,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${manrope.variable} ${playfair.variable} antialiased`}>
+        <ThemeDetector />
         {children}
       </body>
     </html>

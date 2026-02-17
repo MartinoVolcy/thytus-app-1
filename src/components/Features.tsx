@@ -77,34 +77,34 @@ export default function Features() {
 
   return (
     <>
-      <section className="py-24 bg-white" id="capabilities">
+      <section className="py-24 bg-sky-50 dark:bg-dark-base" id="capabilities">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-20 md:text-center max-w-3xl mx-auto">
-            <span className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-2 block">
+            <span className="text-sm font-extrabold text-primary uppercase tracking-widest mb-3 block">
               Capabilities
             </span>
-            <h2 className="text-4xl md:text-5xl font-medium text-slate-900 mb-6 font-display">
-              Everything you need to build complex outputs.
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
+              Everything you need to build <span className="text-gradient">complex outputs.</span>
             </h2>
-            <p className="text-lg text-slate-500 leading-relaxed">
-              Thytus isn't just a chatbot. It's a full-stack workspace equipped
-              with the tools AI needs to do real work. From reading entire
+            <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
+              Thytus isn&apos;t just a chatbot. It&apos;s a <span className="font-bold text-slate-700 dark:text-slate-200">full-stack workspace</span> equipped
+              with the tools AI needs to do real work — from reading entire
               knowledge bases to generating visual reports.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
             {/* Feature 1: Grounded Knowledge */}
-            <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all duration-300 group">
-              <div className="w-12 h-12 rounded-xl bg-blue-100/50 text-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-sky-100 dark:border-dark-border hover:shadow-xl hover:shadow-sky-200/30 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
+              <div className="w-12 h-12 rounded-xl bg-sky-100/60 dark:bg-sky-500/15 text-sky-600 dark:text-sky-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-2xl">
                   database
                 </span>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">
+              <h3 className="text-xl font-extrabold mb-3 text-slate-900 dark:text-white">
                 Grounded Knowledge
               </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                 Upload once, use everywhere. Your files persist across sessions
                 without re-uploading. Support for PDFs, Docs, Spreadsheets,
                 Images, Videos, Audio, Websites, and Code.
@@ -112,16 +112,16 @@ export default function Features() {
             </div>
 
             {/* Feature 2: Visual Intelligence */}
-            <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all duration-300 group">
-              <div className="w-12 h-12 rounded-xl bg-purple-100/50 text-purple-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-sky-100 dark:border-dark-border hover:shadow-xl hover:shadow-sky-200/30 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
+              <div className="w-12 h-12 rounded-xl bg-purple-100/50 dark:bg-purple-500/15 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-2xl">
                   visibility
                 </span>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">
+              <h3 className="text-xl font-extrabold mb-3 text-slate-900 dark:text-white">
                 Visual Intelligence
               </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                 Thytus provides the vision layer. Even if a model (like Llama or
                 GPT-5) doesn't natively support video input, our workspace
                 enables them to "watch" and analyze your video files instantly.
@@ -129,14 +129,14 @@ export default function Features() {
             </div>
 
             {/* Feature 3: No Delay */}
-            <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all duration-300 group">
-              <div className="w-12 h-12 rounded-xl bg-green-100/50 text-green-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-sky-100 dark:border-dark-border hover:shadow-xl hover:shadow-sky-200/30 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
+              <div className="w-12 h-12 rounded-xl bg-green-100/50 dark:bg-green-500/15 text-green-600 dark:text-green-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-2xl">bolt</span>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">
+              <h3 className="text-xl font-extrabold mb-3 text-slate-900 dark:text-white">
                 No Delay
               </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                 Everything is real-time. Whether you, a teammate, or an AI agent
                 sends a message or edits a document, everyone sees it
                 immediately. Zero lag, zero refreshing. Just seamless
@@ -145,16 +145,16 @@ export default function Features() {
             </div>
 
             {/* Feature 4: Media Generation */}
-            <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all duration-300 group">
-              <div className="w-12 h-12 rounded-xl bg-orange-100/50 text-orange-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-sky-100 dark:border-dark-border hover:shadow-xl hover:shadow-sky-200/30 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
+              <div className="w-12 h-12 rounded-xl bg-orange-100/50 dark:bg-orange-500/15 text-orange-600 dark:text-orange-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-2xl">
                   image
                 </span>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">
+              <h3 className="text-xl font-extrabold mb-3 text-slate-900 dark:text-white">
                 Media Generation
               </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                 Generate visuals using models like Nano Banana Pro and Wan 2.5.
                 Have agents automatically create images, videos, and even full
                 podcasts and audio clips.
@@ -162,14 +162,14 @@ export default function Features() {
             </div>
 
             {/* Feature 5: Model Agnostic */}
-            <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all duration-300 group">
-              <div className="w-12 h-12 rounded-xl bg-pink-100/50 text-pink-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-sky-100 dark:border-dark-border hover:shadow-xl hover:shadow-sky-200/30 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
+              <div className="w-12 h-12 rounded-xl bg-pink-100/50 dark:bg-pink-500/15 text-pink-600 dark:text-pink-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-2xl">hub</span>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">
+              <h3 className="text-xl font-extrabold mb-3 text-slate-900 dark:text-white">
                 Model Agnostic
               </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                 Enjoy unlimited messages and use powerful Open Source models or
                 tap into the bleeding edge. Supported premium models include o1
                 Pro, Claude Opus 4.5, GPT 5.2 Pro, and Perplexity Sonar Pro.
@@ -177,19 +177,111 @@ export default function Features() {
             </div>
 
             {/* Feature 6: Deep Research */}
-            <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all duration-300 group">
-              <div className="w-12 h-12 rounded-xl bg-cyan-100/50 text-cyan-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-sky-100 dark:border-dark-border hover:shadow-xl hover:shadow-sky-200/30 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
+              <div className="w-12 h-12 rounded-xl bg-cyan-100/50 dark:bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-2xl">
                   science
                 </span>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">
+              <h3 className="text-xl font-extrabold mb-3 text-slate-900 dark:text-white">
                 Deep Research
               </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                 Thytus agents have instant access to millions of academic papers
                 and can scour the entire internet to find exactly what you need.
               </p>
+            </div>
+          </div>
+
+          {/* Agent Collaboration Section */}
+          <div className="mb-24 rounded-3xl bg-gradient-to-br from-sky-100/60 via-sky-50/40 to-white dark:from-dark-card dark:via-dark-surface dark:to-dark-base border border-sky-200/60 dark:border-dark-border p-10 md:p-14 relative overflow-hidden">
+            <div className="absolute -top-20 -right-20 w-72 h-72 bg-sky-200/30 dark:bg-sky-500/[0.06] rounded-full blur-[80px] pointer-events-none"></div>
+            <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-sky-300/20 dark:bg-primary/[0.05] rounded-full blur-[80px] pointer-events-none"></div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+              <div>
+                <span className="text-sm font-extrabold text-primary uppercase tracking-widest mb-3 block">
+                  Multi-Agent Collaboration
+                </span>
+                <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
+                  Your agents don&apos;t just work. <span className="text-gradient-purple">They work together.</span>
+                </h2>
+                <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed mb-8">
+                  In Thytus, AI agents aren&apos;t isolated. They <span className="font-bold text-slate-700 dark:text-slate-200">share context, exchange findings, and build on each other&apos;s work</span> within the same session. A research agent can hand off its discoveries to a writing agent, while an analyst cross-checks the data — all autonomously, all in real time.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                      <span className="material-symbols-outlined text-primary text-lg">forum</span>
+                    </div>
+                    <div>
+                      <div className="font-extrabold text-sm text-slate-900 dark:text-white">Cross-Agent Communication</div>
+                      <div className="text-sm text-slate-500 dark:text-slate-400">Agents talk to each other within your session, sharing insights and coordinating tasks without any manual handoffs.</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-purple-100 dark:bg-purple-500/15 flex items-center justify-center shrink-0 mt-0.5">
+                      <span className="material-symbols-outlined text-purple-600 dark:text-purple-400 text-lg">diversity_3</span>
+                    </div>
+                    <div>
+                      <div className="font-extrabold text-sm text-slate-900 dark:text-white">Collective Intelligence</div>
+                      <div className="text-sm text-slate-500 dark:text-slate-400">Multiple agents means multiple perspectives. They debate, verify, and refine each other&apos;s outputs for dramatically more accurate results.</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-500/15 flex items-center justify-center shrink-0 mt-0.5">
+                      <span className="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-lg">account_tree</span>
+                    </div>
+                    <div>
+                      <div className="font-extrabold text-sm text-slate-900 dark:text-white">Parallel Task Execution</div>
+                      <div className="text-sm text-slate-500 dark:text-slate-400">Split complex projects across agents that work simultaneously — research, draft, review, and publish all happening at once.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Visual */}
+              <div className="relative flex items-center justify-center">
+                <div className="relative w-80 h-80">
+                  {/* Connection lines */}
+                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 320 320">
+                    <line x1="160" y1="60" x2="60" y2="220" stroke="#0EA5E9" strokeWidth="1.5" strokeDasharray="6,6" opacity="0.3" />
+                    <line x1="160" y1="60" x2="260" y2="220" stroke="#0EA5E9" strokeWidth="1.5" strokeDasharray="6,6" opacity="0.3" />
+                    <line x1="60" y1="220" x2="260" y2="220" stroke="#0EA5E9" strokeWidth="1.5" strokeDasharray="6,6" opacity="0.3" />
+                  </svg>
+
+                  {/* Agent 1 */}
+                    <div className="absolute top-4 left-1/2 -translate-x-1/2 animate-float">
+                    <div className="w-20 h-20 rounded-2xl bg-white dark:bg-dark-card border-2 border-sky-200 dark:border-sky-500/30 shadow-xl shadow-sky-200/20 dark:shadow-sky-500/10 flex flex-col items-center justify-center">
+                      <span className="material-symbols-outlined text-primary text-2xl">smart_toy</span>
+                      <span className="text-[9px] font-bold text-slate-500 dark:text-slate-400 mt-1">Researcher</span>
+                    </div>
+                  </div>
+
+                  {/* Agent 2 */}
+                  <div className="absolute bottom-8 left-2 animate-float" style={{ animationDelay: "1.3s" }}>
+                    <div className="w-20 h-20 rounded-2xl bg-white dark:bg-dark-card border-2 border-purple-200 dark:border-purple-500/30 shadow-xl shadow-purple-500/10 flex flex-col items-center justify-center">
+                      <span className="material-symbols-outlined text-purple-600 dark:text-purple-400 text-2xl">edit_note</span>
+                      <span className="text-[9px] font-bold text-slate-500 dark:text-slate-400 mt-1">Writer</span>
+                    </div>
+                  </div>
+
+                  {/* Agent 3 */}
+                  <div className="absolute bottom-8 right-2 animate-float" style={{ animationDelay: "2.6s" }}>
+                    <div className="w-20 h-20 rounded-2xl bg-white dark:bg-dark-card border-2 border-emerald-200 dark:border-emerald-500/30 shadow-xl shadow-emerald-500/10 flex flex-col items-center justify-center">
+                      <span className="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-2xl">analytics</span>
+                      <span className="text-[9px] font-bold text-slate-500 dark:text-slate-400 mt-1">Analyst</span>
+                    </div>
+                  </div>
+
+                  {/* Center sync indicator */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+                      <span className="material-symbols-outlined text-primary text-xl animate-spin" style={{ animationDuration: "8s" }}>sync</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -199,11 +291,11 @@ export default function Features() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
               <div>
-                <span className="text-sm font-bold text-primary mb-2 block uppercase tracking-widest">
+                <span className="text-sm font-extrabold text-primary mb-3 block uppercase tracking-widest">
                   Model Agnostic Intelligence
                 </span>
-                <h2 className="text-3xl md:text-5xl font-medium text-white mb-6 font-display">
-                  Make any model your agent.
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tight">
+                  Make any model <span className="text-gradient">your agent.</span>
                 </h2>
                 <p className="text-slate-400 text-lg leading-relaxed mb-8">
                   Why limit yourself to one provider? Thytus gives you instant

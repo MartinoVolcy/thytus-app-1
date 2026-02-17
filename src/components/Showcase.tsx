@@ -2,26 +2,25 @@ import Image from "next/image";
 
 export default function Showcase() {
   return (
-    <section className="py-24 relative bg-slate-50" id="showcase">
+    <section className="py-24 relative bg-sky-50/50 dark:bg-dark-base" id="showcase">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-medium text-slate-900 mb-6 tracking-tight">
-            Multiple agents. One workspace.
+          <h2 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
+            Multiple agents. <span className="text-gradient-blue">One workspace.</span>
           </h2>
-          <p className="text-slate-500 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            The collaborative workspace where teams and AI agents work side by
-            side. Deploy multiple autonomous agents on tasks simultaneously,
-            while your team edits, reviews, and creates all in real time.
+          <p className="text-slate-500 dark:text-slate-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+            The collaborative workspace where teams and AI agents work <span className="font-bold text-slate-700 dark:text-slate-200">side by side</span>. Deploy multiple autonomous agents on tasks simultaneously,
+            while your team edits, reviews, and creates — all in <span className="font-bold text-primary">real time</span>.
           </p>
         </div>
-        <div className="relative rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-2xl shadow-slate-200/40 mx-auto max-w-6xl ring-1 ring-slate-900/5">
-          <div className="h-11 border-b border-slate-100 bg-slate-50 flex items-center px-4 justify-between">
+        <div className="relative rounded-2xl border border-sky-200 dark:border-dark-border bg-white dark:bg-dark-card overflow-hidden shadow-2xl shadow-sky-200/30 dark:shadow-black/50 mx-auto max-w-6xl ring-1 ring-sky-900/5 dark:ring-sky-400/5">
+          <div className="h-11 border-b border-sky-100 dark:border-dark-border bg-sky-50 dark:bg-dark-surface flex items-center px-4 justify-between">
             <div className="flex gap-1.5">
-              <div className="w-3 h-3 rounded-full bg-slate-200 border border-slate-300"></div>
-              <div className="w-3 h-3 rounded-full bg-slate-200 border border-slate-300"></div>
-              <div className="w-3 h-3 rounded-full bg-slate-200 border border-slate-300"></div>
+              <div className="w-3 h-3 rounded-full bg-sky-200 dark:bg-red-400/80 border border-sky-300 dark:border-red-500/50"></div>
+              <div className="w-3 h-3 rounded-full bg-sky-200 dark:bg-yellow-400/80 border border-sky-300 dark:border-yellow-500/50"></div>
+              <div className="w-3 h-3 rounded-full bg-sky-200 dark:bg-green-400/80 border border-sky-300 dark:border-green-500/50"></div>
             </div>
-            <div className="bg-white border border-slate-200 rounded px-3 py-1 text-[11px] text-slate-400 font-medium shadow-sm flex items-center gap-1.5 min-w-[200px] justify-center">
+            <div className="bg-white dark:bg-dark-elevated border border-sky-200 dark:border-dark-border rounded px-3 py-1 text-[11px] text-slate-400 font-medium shadow-sm flex items-center gap-1.5 min-w-[200px] justify-center">
               <span className="material-symbols-outlined text-[12px]">
                 lock
               </span>
@@ -29,7 +28,7 @@ export default function Showcase() {
             </div>
             <div className="w-10"></div>
           </div>
-          <div className="relative overflow-hidden group border-t border-slate-100">
+          <div className="relative overflow-hidden group border-t border-sky-100 dark:border-dark-border">
             <Image
               src="/Thytus-Visual-Demo.webp"
               alt="Thytus product demo"

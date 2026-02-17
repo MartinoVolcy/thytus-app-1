@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="py-16 bg-white border-t border-slate-100">
+    <footer className="py-16 bg-sky-50 dark:bg-dark-base border-t border-sky-100 dark:border-dark-border">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-10">
           <Link href="/" className="flex items-center gap-3">
@@ -16,11 +16,11 @@ export default function Footer() {
                 className="object-contain"
               />
             </div>
-            <span className="font-bold text-xl text-slate-900 font-display">
+            <span className="font-bold text-xl text-slate-900 dark:text-white font-display">
               Thytus
             </span>
           </Link>
-          <div className="flex flex-wrap justify-center gap-8 text-sm font-semibold text-slate-500">
+          <div className="flex flex-wrap justify-center gap-8 text-sm font-semibold text-slate-500 dark:text-slate-400">
             <a className="hover:text-primary transition-colors" href="#">
               Twitter
             </a>
@@ -34,7 +34,7 @@ export default function Footer() {
               Privacy
             </a>
           </div>
-          <div className="text-sm text-slate-400 font-medium">
+          <div className="text-sm text-slate-400 dark:text-slate-500 font-medium">
             © 2026 Thytus. All rights reserved.
           </div>
         </div>
