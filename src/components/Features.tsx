@@ -37,9 +37,9 @@ const workspaceTools = [
     subtitle: "File Management",
     color: "bg-sky-100/60 dark:bg-sky-500/15 text-sky-600 dark:text-sky-400",
     content: [
-      { heading: "Upload Files", text: "Click to upload or drag & drop files directly into the window." },
-      { heading: "Share with Session", text: "All uploaded files are instantly available to everyone in the session." },
-      { heading: "Knowledge Base Sync", text: "Files are automatically saved to your Knowledge Base for future reference." },
+      { heading: "Drag & Drop Uploads", text: "Click to browse or drag files directly into the window. Supports PDFs, documents, spreadsheets, images, video, audio, and code files." },
+      { heading: "Instant Session Sharing", text: "Every file you upload is immediately visible to all participants and AI agents in the session \u2014 no separate sharing step required." },
+      { heading: "Persistent Knowledge Base", text: "Uploaded files are automatically saved to your Knowledge Base, so you can reference them across future sessions without re-uploading." },
     ],
   },
   {
@@ -48,7 +48,9 @@ const workspaceTools = [
     subtitle: "Collaborative Writing",
     color: "bg-purple-100/50 dark:bg-purple-500/15 text-purple-600 dark:text-purple-400",
     content: [
-      { heading: "Use Case", text: "Perfect for drafting documents, taking meeting notes, creating reports, and collaborative writing with your team and AI assistance." },
+      { heading: "Real-Time Co-Authoring", text: "Write alongside teammates and AI agents simultaneously. Every edit appears instantly \u2014 no version conflicts, no waiting." },
+      { heading: "AI-Assisted Drafting", text: "Let agents draft, expand, summarize, or rewrite sections on demand while you focus on the bigger picture." },
+      { heading: "Rich Formatting", text: "Full support for headings, lists, tables, and embedded media so your documents are presentation-ready without leaving the workspace." },
     ],
   },
   {
@@ -57,7 +59,9 @@ const workspaceTools = [
     subtitle: "Data & Analysis",
     color: "bg-green-100/50 dark:bg-green-500/15 text-green-600 dark:text-green-400",
     content: [
-      { heading: "Use Case", text: "Ideal for data analysis, project tracking, budgeting, and any work that requires organizing information in rows and columns." },
+      { heading: "Live Data Editing", text: "Create and manipulate spreadsheets directly in the session. Organize data, apply formulas, and sort columns in real time." },
+      { heading: "AI-Powered Analysis", text: "Ask an agent to analyze trends, generate pivot summaries, or clean messy datasets \u2014 results appear right in the sheet." },
+      { heading: "Import & Export", text: "Bring in existing CSV or Excel files and export finished spreadsheets to share with stakeholders outside the workspace." },
     ],
   },
   {
@@ -66,7 +70,9 @@ const workspaceTools = [
     subtitle: "Presentations",
     color: "bg-orange-100/50 dark:bg-orange-500/15 text-orange-600 dark:text-orange-400",
     content: [
-      { heading: "Use Case", text: "Perfect for creating and editing PowerPoint slides, creating presentations, and collaborating with your team on slide decks." },
+      { heading: "Slide Creation & Editing", text: "Build polished slide decks directly in the workspace. Add text, images, charts, and layouts without switching to another app." },
+      { heading: "AI-Generated Decks", text: "Give an agent a topic or outline and it will generate a full presentation draft \u2014 complete with structure, talking points, and visuals." },
+      { heading: "Team Collaboration", text: "Multiple people can review, comment on, and refine slides at the same time, keeping everyone aligned before the final presentation." },
     ],
   },
   {
@@ -75,7 +81,9 @@ const workspaceTools = [
     subtitle: "Development Tools",
     color: "bg-cyan-100/50 dark:bg-cyan-500/15 text-cyan-600 dark:text-cyan-400",
     content: [
-      { heading: "Use Case", text: "Great for code reviews, pair programming, debugging sessions, and getting AI assistance with coding tasks." },
+      { heading: "Syntax-Highlighted Editing", text: "Write and edit code with full syntax highlighting, auto-indentation, and language detection for dozens of programming languages." },
+      { heading: "AI Pair Programming", text: "Get real-time suggestions, have agents write boilerplate, debug errors, or refactor functions \u2014 all within the same session." },
+      { heading: "Inline Code Review", text: "Share code with teammates and agents for instant feedback. Review diffs, suggest changes, and iterate without leaving the workspace." },
     ],
   },
   {
@@ -84,10 +92,9 @@ const workspaceTools = [
     subtitle: "Guide Your AI Assistant",
     color: "bg-pink-100/50 dark:bg-pink-500/15 text-pink-600 dark:text-pink-400",
     content: [
-      { heading: "Why It Matters", text: "Sometimes an agent may drift from the original task or miss important details as the conversation grows. Context Tracking gives you the tools to steer it back on course and keep things running smoothly." },
-      { heading: "Re-focus the Agent", text: "If the agent loses sight of the goal, open Context Tracking to review the full conversation history. From there you can send a correction or reminder to bring it back to the original task." },
-      { heading: "Send Updates", text: "Need to change direction or add new requirements mid-task? Send an update directly through Context Tracking to give the agent fresh instructions without starting a new conversation." },
-      { heading: "Pro Tip", text: "Think of Context Tracking as a direct line to the agent\u2019s memory. Use it whenever the agent\u2019s responses feel off-topic, or when your priorities shift and the agent needs to know about it right away." },
+      { heading: "Re-Focus the Agent", text: "When an agent drifts off-task, open Context Tracking to review the full conversation and send a correction that steers it back to the original goal." },
+      { heading: "Mid-Task Updates", text: "Requirements changed? Send fresh instructions directly through Context Tracking so the agent adjusts course without starting over." },
+      { heading: "Conversation Memory", text: "Think of it as a direct line to the agent\u2019s memory. Use it whenever responses feel off-topic or your priorities shift and the agent needs to know immediately." },
     ],
   },
 ];
