@@ -30,7 +30,7 @@
 }
 
 :root {
-  --background: #F0F9FF;
+  --background: #FFFFFF;
   --foreground: #0C1929;
 }
 
@@ -48,22 +48,22 @@ body {
 /* Custom Utility Classes */
 
 .gradient-bg {
-  background: radial-gradient(circle at 50% 0%, #E0F2FE 0%, #F0F9FF 70%);
+  background: radial-gradient(circle at 50% 0%, #F0F9FF 0%, #FFFFFF 70%);
 }
 
 .mesh-gradient {
-  background-color: #F0F9FF;
+  background-color: #FFFFFF;
   background-image:
-    radial-gradient(at 0% 0%, hsla(199, 89%, 92%, 1) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, hsla(199, 95%, 90%, 1) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, hsla(199, 92%, 93%, 1) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, hsla(199, 88%, 95%, 1) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(224, 242, 254, 0.4) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(186, 230, 253, 0.3) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(224, 242, 254, 0.2) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(186, 230, 253, 0.2) 0px, transparent 50%);
 }
 
 .glass-nav {
   backdrop-filter: blur(16px);
-  background: rgba(240, 249, 255, 0.88);
-  border-bottom: 1px solid rgba(186, 230, 253, 0.5);
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.6);
 }
 
 .dropdown-group:hover .dropdown-menu {

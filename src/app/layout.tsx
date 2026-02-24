@@ -18,6 +18,9 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Thytus Showcase | Collaborative AI Workspace",
   description: "Collaborative AI Workspace",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({

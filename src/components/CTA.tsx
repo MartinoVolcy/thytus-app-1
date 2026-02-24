@@ -17,14 +17,9 @@ export default function CTA() {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
           <Link
-            href="/signup"
+            href="https://showcase.thytus.com/v1/auth/signin"
             className="w-full sm:w-auto px-8 py-4 bg-white text-slate-900 rounded-full font-bold text-md hover:scale-105 transition-transform shadow-2xl hover:bg-blue-50"
-          >
-            Get Started for Free
-          </Link>
-          <button className="w-full sm:w-auto px-8 py-4 bg-white/10 border border-white/20 text-white rounded-full font-bold text-md hover:bg-white/20 transition-colors backdrop-blur-sm">
-            Book a Demo
-          </button>
+            > Get Started for Free </Link>
         </div>
       </div>
       <div className="absolute -bottom-48 -left-24 w-[600px] h-[600px] bg-blue-600/30 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>

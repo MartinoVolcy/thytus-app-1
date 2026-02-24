@@ -892,7 +892,7 @@ export default function ModelsModal({ isOpen, onClose }: ModelsModalProps) {
     >
       <div className="bg-white dark:bg-dark-card rounded-2xl shadow-2xl dark:shadow-black/50 w-full max-w-3xl relative animate-in fade-in slide-in-from-bottom-4 duration-300 dark:border dark:border-dark-border">
         {/* Header */}
-        <div className="sticky top-0 bg-white dark:bg-dark-card rounded-t-2xl z-10 border-b border-sky-100 dark:border-dark-border">
+        <div className="sticky top-0 bg-white dark:bg-dark-card rounded-t-2xl z-10 border-b border-gray-100 dark:border-dark-border">
           <div className="flex items-center justify-between p-6 pb-4">
             <div>
               <h2 className="text-xl font-bold text-slate-900 dark:text-white">
@@ -904,7 +904,7 @@ export default function ModelsModal({ isOpen, onClose }: ModelsModalProps) {
             </div>
             <button
               onClick={onClose}
-              className="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-sky-50 dark:hover:bg-dark-elevated transition-colors text-slate-400 hover:text-slate-600 dark:hover:text-slate-300"
+              className="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-gray-50 dark:hover:bg-dark-elevated transition-colors text-slate-400 hover:text-slate-600 dark:hover:text-slate-300"
             >
               <span className="material-symbols-outlined text-xl">close</span>
             </button>
@@ -919,7 +919,7 @@ export default function ModelsModal({ isOpen, onClose }: ModelsModalProps) {
                 placeholder="Search models by name, provider, or use case..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-sky-200 dark:border-dark-border bg-sky-50/50 dark:bg-dark-elevated text-sm text-slate-900 dark:text-slate-200 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 dark:border-dark-border bg-gray-50/50 dark:bg-dark-elevated text-sm text-slate-900 dark:text-slate-200 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
               />
             </div>
             <p className="text-xs text-slate-400 mt-2 text-center">
@@ -948,11 +948,11 @@ export default function ModelsModal({ isOpen, onClose }: ModelsModalProps) {
               return (
                 <div
                   key={provider.name}
-                  className="rounded-xl border border-sky-100 dark:border-dark-border overflow-hidden transition-all"
+                  className="rounded-xl border border-gray-100 dark:border-dark-border overflow-hidden transition-all"
                 >
                   <button
                     onClick={() => toggleProvider(provider.name)}
-                    className="w-full flex items-center gap-4 p-4 hover:bg-sky-50/50 dark:hover:bg-dark-elevated transition-colors text-left"
+                    className="w-full flex items-center gap-4 p-4 hover:bg-gray-50/50 dark:hover:bg-dark-elevated transition-colors text-left"
                   >
                     <div
                       className={`w-10 h-10 rounded-xl ${provider.bgColor} flex items-center justify-center text-lg font-bold ${provider.iconColor} shrink-0`}
@@ -981,11 +981,11 @@ export default function ModelsModal({ isOpen, onClose }: ModelsModalProps) {
                   </button>
 
                   {open && (
-                    <div className="border-t border-sky-100 dark:border-dark-border bg-sky-50/30 dark:bg-dark-base/50 px-4 pb-4 pt-3 space-y-3">
+                    <div className="border-t border-gray-100 dark:border-dark-border bg-gray-50/30 dark:bg-dark-base/50 px-4 pb-4 pt-3 space-y-3">
                       {provider.models.map((model) => (
                         <div
                           key={model.name}
-                          className="bg-white dark:bg-dark-card rounded-xl p-4 border border-sky-100 dark:border-dark-border hover:border-sky-200 dark:hover:border-sky-700/40 hover:shadow-sm transition-all"
+                          className="bg-white dark:bg-dark-card rounded-xl p-4 border border-gray-100 dark:border-dark-border hover:border-gray-200 dark:hover:border-sky-700/40 hover:shadow-sm transition-all"
                         >
                           <div className="flex items-start justify-between gap-3 mb-2">
                             <h4 className="font-bold text-sm text-slate-900 dark:text-white">

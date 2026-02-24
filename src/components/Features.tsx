@@ -77,7 +77,7 @@ export default function Features() {
 
   return (
     <>
-      <section className="py-24 bg-sky-50 dark:bg-dark-base" id="capabilities">
+      <section className="py-24 bg-white dark:bg-dark-base" id="capabilities">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-20 md:text-center max-w-3xl mx-auto">
             <span className="text-sm font-extrabold text-primary uppercase tracking-widest mb-3 block">
@@ -95,7 +95,7 @@ export default function Features() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
             {/* Feature 1: Grounded Knowledge */}
-            <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-sky-100 dark:border-dark-border hover:shadow-xl hover:shadow-sky-200/30 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
+            <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border hover:shadow-xl hover:shadow-gray-200/40 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
               <div className="w-12 h-12 rounded-xl bg-sky-100/60 dark:bg-sky-500/15 text-sky-600 dark:text-sky-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-2xl">
                   database
@@ -112,7 +112,7 @@ export default function Features() {
             </div>
 
             {/* Feature 2: Visual Intelligence */}
-            <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-sky-100 dark:border-dark-border hover:shadow-xl hover:shadow-sky-200/30 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
+            <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border hover:shadow-xl hover:shadow-gray-200/40 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
               <div className="w-12 h-12 rounded-xl bg-purple-100/50 dark:bg-purple-500/15 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-2xl">
                   visibility
@@ -129,7 +129,7 @@ export default function Features() {
             </div>
 
             {/* Feature 3: No Delay */}
-            <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-sky-100 dark:border-dark-border hover:shadow-xl hover:shadow-sky-200/30 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
+            <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border hover:shadow-xl hover:shadow-gray-200/40 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
               <div className="w-12 h-12 rounded-xl bg-green-100/50 dark:bg-green-500/15 text-green-600 dark:text-green-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-2xl">bolt</span>
               </div>
@@ -145,7 +145,7 @@ export default function Features() {
             </div>
 
             {/* Feature 4: Media Generation */}
-            <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-sky-100 dark:border-dark-border hover:shadow-xl hover:shadow-sky-200/30 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
+            <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border hover:shadow-xl hover:shadow-gray-200/40 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
               <div className="w-12 h-12 rounded-xl bg-orange-100/50 dark:bg-orange-500/15 text-orange-600 dark:text-orange-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-2xl">
                   image
@@ -162,7 +162,7 @@ export default function Features() {
             </div>
 
             {/* Feature 5: Model Agnostic */}
-            <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-sky-100 dark:border-dark-border hover:shadow-xl hover:shadow-sky-200/30 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
+            <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border hover:shadow-xl hover:shadow-gray-200/40 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
               <div className="w-12 h-12 rounded-xl bg-pink-100/50 dark:bg-pink-500/15 text-pink-600 dark:text-pink-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-2xl">hub</span>
               </div>
@@ -177,7 +177,7 @@ export default function Features() {
             </div>
 
             {/* Feature 6: Deep Research */}
-            <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-sky-100 dark:border-dark-border hover:shadow-xl hover:shadow-sky-200/30 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
+            <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border hover:shadow-xl hover:shadow-gray-200/40 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
               <div className="w-12 h-12 rounded-xl bg-cyan-100/50 dark:bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-2xl">
                   science
@@ -194,9 +194,9 @@ export default function Features() {
           </div>
 
           {/* Agent Collaboration Section */}
-          <div className="mb-24 rounded-3xl bg-gradient-to-br from-sky-100/60 via-sky-50/40 to-white dark:from-dark-card dark:via-dark-surface dark:to-dark-base border border-sky-200/60 dark:border-dark-border p-10 md:p-14 relative overflow-hidden">
-            <div className="absolute -top-20 -right-20 w-72 h-72 bg-sky-200/30 dark:bg-sky-500/[0.06] rounded-full blur-[80px] pointer-events-none"></div>
-            <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-sky-300/20 dark:bg-primary/[0.05] rounded-full blur-[80px] pointer-events-none"></div>
+          <div className="mb-24 rounded-3xl bg-gradient-to-br from-gray-50 via-white to-white dark:from-dark-card dark:via-dark-surface dark:to-dark-base border border-gray-200/60 dark:border-dark-border p-10 md:p-14 relative overflow-hidden">
+            <div className="absolute -top-20 -right-20 w-72 h-72 bg-primary/[0.06] dark:bg-sky-500/[0.06] rounded-full blur-[80px] pointer-events-none"></div>
+            <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-purple-200/20 dark:bg-primary/[0.05] rounded-full blur-[80px] pointer-events-none"></div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
               <div>

@@ -28,7 +28,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-sky-100/40 dark:bg-dark-surface" id="testimonials">
+    <section className="py-24 bg-gray-50/50 dark:bg-dark-surface" id="testimonials">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16 text-center max-w-3xl mx-auto">
           <span className="text-sm font-bold text-primary mb-2 block uppercase tracking-widest">
@@ -47,7 +47,7 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-dark-card p-8 rounded-3xl border border-sky-100 dark:border-dark-border shadow-sm hover:shadow-md dark:hover:shadow-sky-500/5 transition-shadow dark-glow"
+              className="bg-white dark:bg-dark-card p-8 rounded-3xl border border-gray-100 dark:border-dark-border shadow-sm hover:shadow-md dark:hover:shadow-sky-500/5 transition-shadow dark-glow"
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">

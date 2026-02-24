@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="bg-sky-50 dark:bg-dark-base text-text-dark dark:text-slate-200 antialiased transition-colors duration-300 selection:bg-primary/20">
+    <div className="bg-white dark:bg-[#060B16] text-text-dark dark:text-slate-200 antialiased transition-colors duration-300 selection:bg-primary/20">
       <Navbar />
       <Hero />
       <Showcase />

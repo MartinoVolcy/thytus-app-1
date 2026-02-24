@@ -100,7 +100,7 @@ const Hero = () => {
 
               <div className="flex flex-col sm:flex-row items-start gap-4 mb-12">
                 <Link
-                  href="/signup"
+                  href="https://showcase.thytus.com/v1/auth/signin"
                   className="px-8 py-3.5 bg-primary hover:bg-primary-dark text-white rounded-full font-bold text-[15px] transition-all shadow-lg shadow-primary/25 dark:shadow-primary/40 flex items-center gap-2"
                 >
                   Get Started for Free
@@ -307,8 +307,11 @@ const Hero = () => {
         </div>
       </main>
 
+      {/* Fade from hero color to white */}
+      <div className="h-32 bg-gradient-to-b from-sky-50 to-white dark:from-dark-base dark:to-dark-base"></div>
+
       {/* Features strip */}
-      <section className="bg-sky-100/50 dark:bg-dark-surface py-24 border-t border-sky-100 dark:border-dark-border">
+      <section className="bg-white dark:bg-dark-base py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-16">
             <div className="group">

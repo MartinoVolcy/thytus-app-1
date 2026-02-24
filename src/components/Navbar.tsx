@@ -45,21 +45,21 @@ export default function Navbar() {
                 expand_more
               </span>
             </button>
-            <div className="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full w-56 bg-white dark:bg-dark-card border border-sky-100 dark:border-dark-border rounded-2xl shadow-xl shadow-sky-200/30 dark:shadow-black/40 opacity-0 invisible translate-y-2 p-2 z-50">
+            <div className="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full w-56 bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border rounded-2xl shadow-xl shadow-gray-200/30 dark:shadow-black/40 opacity-0 invisible translate-y-2 p-2 z-50">
               <a
-                className="block px-4 py-2.5 hover:bg-sky-50 dark:hover:bg-dark-elevated rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
+                className="block px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
                 href="#"
               >
                 Documentation
               </a>
               <a
-                className="block px-4 py-2.5 hover:bg-sky-50 dark:hover:bg-dark-elevated rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
+                className="block px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
                 href="#"
               >
                 Blog
               </a>
               <a
-                className="block px-4 py-2.5 hover:bg-sky-50 dark:hover:bg-dark-elevated rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
+                className="block px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
                 href="#"
               >
                 Community
@@ -69,13 +69,7 @@ export default function Navbar() {
         </div>
         <div className="flex items-center gap-4">
           <Link
-            href="/login"
-            className="hidden sm:block text-[15px] font-semibold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors px-4"
-          >
-            Log in
-          </Link>
-          <Link
-            href="/signup"
+            href="https://showcase.thytus.com/v1/auth/signin"
             className="btn-pill bg-primary hover:bg-sky-600 text-white px-5 py-2.5 rounded-full text-[14px] font-bold transition-all shadow-md shadow-sky-500/20 dark:shadow-sky-500/30 flex items-center gap-2"
           >
             Get Started

@@ -7,7 +7,7 @@ export default function Pricing() {
     const [isAnnual, setIsAnnual] = useState(false);
 
     return (
-        <section className="py-24 bg-sky-50/60 dark:bg-dark-base" id="pricing">
+        <section className="py-24 bg-white dark:bg-dark-base" id="pricing">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-black mb-8 text-slate-900 dark:text-white tracking-tight">Scale with your <span className="text-gradient-blue">AI needs</span></h2>
@@ -17,7 +17,7 @@ export default function Pricing() {
                         <span className={`text-sm font-semibold transition-colors ${!isAnnual ? "text-slate-900 dark:text-white" : "text-slate-400"}`}>Monthly</span>
                         <button
                             onClick={() => setIsAnnual(!isAnnual)}
-                            className={`relative w-14 h-8 rounded-full transition-colors duration-300 ${isAnnual ? "bg-primary" : "bg-sky-300"}`}
+                            className={`relative w-14 h-8 rounded-full transition-colors duration-300 ${isAnnual ? "bg-primary" : "bg-gray-300"}`}
                             aria-label="Toggle annual pricing"
                         >
                             <span
@@ -30,7 +30,7 @@ export default function Pricing() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                     {/* Free */}
-                    <div className="p-6 rounded-3xl bg-white dark:bg-dark-card border border-sky-200 dark:border-dark-border flex flex-col shadow-sm hover:border-sky-300 dark:hover:border-sky-700/50 transition-colors dark-glow">
+                    <div className="p-6 rounded-3xl bg-white dark:bg-dark-card border border-gray-200 dark:border-dark-border flex flex-col shadow-sm hover:border-gray-300 dark:hover:border-sky-700/50 transition-colors dark-glow">
                         <div className="mb-6">
                             <h3 className="text-xl font-bold text-slate-900 dark:text-white">Free</h3>
                             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 h-10">For quick brainstorming sessions.</p>
@@ -39,7 +39,7 @@ export default function Pricing() {
                             </div>
                             <div className="h-8" />
                         </div>
-                        <Link href="signup" className="w-full py-2.5 bg-sky-100 dark:bg-dark-elevated hover:bg-sky-200 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-lg font-bold text-sm transition-colors mb-6 block text-center">Start with Free</Link>
+                        <Link href="https://showcase.thytus.com/v1/auth/signin" className="w-full py-2.5 bg-gray-100 dark:bg-dark-elevated hover:bg-gray-200 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-lg font-bold text-sm transition-colors mb-6 block text-center">Start with Free</Link>
                         <ul className="text-[13px] space-y-3 flex-1 text-slate-600 dark:text-slate-400">
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>No agent mode</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access to Basic models</span></li>
@@ -61,8 +61,8 @@ export default function Pricing() {
                     </div>
 
                     {/* Pro */}
-                    <div className="p-6 rounded-3xl bg-white dark:bg-dark-card border-2 border-primary relative flex flex-col shadow-xl shadow-sky-300/20 dark:shadow-primary/20 transform md:-translate-y-4 z-10">
-                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide whitespace-nowrap border-[3px] border-sky-50 dark:border-dark-base shadow-sm text-center">
+                    <div className="p-6 rounded-3xl bg-white dark:bg-dark-card border-2 border-primary relative flex flex-col shadow-xl shadow-primary/15 dark:shadow-primary/20 transform md:-translate-y-4 z-10">
+                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide whitespace-nowrap border-[3px] border-white dark:border-dark-base shadow-sm text-center">
                             MOST<br />POPULAR
                         </div>
                         <div className="mb-6 mt-4">
@@ -81,7 +81,7 @@ export default function Pricing() {
                                 )}
                             </div>
                         </div>
-                        <Link href="signup" className="w-full py-2.5 bg-primary hover:bg-blue-600 text-white rounded-lg font-bold text-sm transition-colors mb-6 shadow-lg shadow-primary/25 dark:shadow-primary/40 block text-center">Start with Pro</Link>
+                        <Link href="https://showcase.thytus.com/v1/auth/signin" className="w-full py-2.5 bg-primary hover:bg-blue-600 text-white rounded-lg font-bold text-sm transition-colors mb-6 shadow-lg shadow-primary/25 dark:shadow-primary/40 block text-center">Start with Pro</Link>
                         <ul className="text-[13px] space-y-3 flex-1 text-slate-600 dark:text-slate-400">
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>50 agent calls/month</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access To Advanced models</span></li>
@@ -110,7 +110,7 @@ export default function Pricing() {
                     </div>
 
                     {/* Ultra */}
-                    <div className="p-6 rounded-3xl bg-white dark:bg-dark-card border border-sky-200 dark:border-dark-border flex flex-col shadow-sm hover:border-sky-300 dark:hover:border-sky-700/50 transition-colors dark-glow">
+                    <div className="p-6 rounded-3xl bg-white dark:bg-dark-card border border-gray-200 dark:border-dark-border flex flex-col shadow-sm hover:border-gray-300 dark:hover:border-sky-700/50 transition-colors dark-glow">
                         <div className="mb-6">
                             <h3 className="text-xl font-bold text-slate-900 dark:text-white">Ultra</h3>
                             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 h-10">For power users without a team structure</p>
@@ -127,7 +127,7 @@ export default function Pricing() {
                                 )}
                             </div>
                         </div>
-                        <Link href="signup" className="w-full py-2.5 bg-sky-100 dark:bg-dark-elevated hover:bg-sky-200 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-lg font-bold text-sm transition-colors mb-6 block text-center">Start with Ultra</Link>
+                        <Link href="https://showcase.thytus.com/v1/auth/signin" className="w-full py-2.5 bg-gray-100 dark:bg-dark-elevated hover:bg-gray-200 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-lg font-bold text-sm transition-colors mb-6 block text-center">Start with Ultra</Link>
                         <ul className="text-[13px] space-y-3 flex-1 text-slate-600 dark:text-slate-400">
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Unlimited Agent calls</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access To all models</span></li>
@@ -139,7 +139,7 @@ export default function Pricing() {
                     </div>
 
                     {/* Business */}
-                    <div className="p-6 rounded-3xl bg-white dark:bg-dark-card border border-sky-200 dark:border-dark-border flex flex-col shadow-sm hover:border-sky-300 dark:hover:border-sky-700/50 transition-colors dark-glow">
+                    <div className="p-6 rounded-3xl bg-white dark:bg-dark-card border border-gray-200 dark:border-dark-border flex flex-col shadow-sm hover:border-gray-300 dark:hover:border-sky-700/50 transition-colors dark-glow">
                         <div className="mb-6">
                             <h3 className="text-xl font-bold text-slate-900 dark:text-white">Business</h3>
                             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 h-10">For Teams & Departments ready to scale AI collaboration</p>
@@ -156,7 +156,7 @@ export default function Pricing() {
                                 )}
                             </div>
                         </div>
-                        <Link href="https://showcase.thytus.com/v1/help" className="w-full py-2.5 bg-sky-100 dark:bg-dark-elevated hover:bg-sky-200 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-lg font-bold text-sm transition-colors mb-6 block text-center">Contact Us</Link>
+                        <Link href="https://showcase.thytus.com/v1/help" className="w-full py-2.5 bg-gray-100 dark:bg-dark-elevated hover:bg-gray-200 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-lg font-bold text-sm transition-colors mb-6 block text-center">Contact Us</Link>
                         <ul className="text-[13px] space-y-3 flex-1 text-slate-600 dark:text-slate-400">
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>250 agent calls/month</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-primary shrink-0">check</span> <span>Access To Flagship models</span></li>
@@ -188,7 +188,7 @@ export default function Pricing() {
                     </div>
 
                     {/* Enterprise */}
-                    <div className="p-6 rounded-3xl bg-white dark:bg-dark-card border border-sky-200 dark:border-dark-border flex flex-col shadow-sm hover:border-sky-300 dark:hover:border-sky-700/50 transition-colors dark-glow">
+                    <div className="p-6 rounded-3xl bg-white dark:bg-dark-card border border-gray-200 dark:border-dark-border flex flex-col shadow-sm hover:border-gray-300 dark:hover:border-sky-700/50 transition-colors dark-glow">
                         <div className="mb-6">
                             <h3 className="text-xl font-bold text-slate-900 dark:text-white">Enterprise</h3>
                             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 h-10">For Institutions & Companies ready to lead with enterprise-grade AI solutions</p>
