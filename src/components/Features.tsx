@@ -287,7 +287,6 @@ export default function Features() {
 
           {/* Model Carousel Section */}
           <div className="bg-slate-900 rounded-3xl p-10 md:p-14 overflow-hidden relative">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl -translate-y-1/3 translate-x-1/3"></div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
               <div>
@@ -372,8 +371,8 @@ export default function Features() {
                 </div>
 
                 {/* Fade edges */}
-                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent pointer-events-none z-30"></div>
-                <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-slate-900 via-slate-900/80 to-transparent pointer-events-none z-30"></div>
+                <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-900 to-transparent pointer-events-none z-30"></div>
+                <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-slate-900 to-transparent pointer-events-none z-30"></div>
               </div>
             </div>
           </div>

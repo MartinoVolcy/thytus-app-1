@@ -21,10 +21,10 @@ export default function Footer() {
             </span>
           </Link>
           <div className="flex flex-wrap justify-center gap-8 text-sm font-semibold text-slate-500 dark:text-slate-400">
-            <a className="hover:text-primary transition-colors" href="#">
+            <Link href="https://x.com/showcase__ai?s=11">
               Twitter
-            </a>
-            <Link href="https://www.linkedin.com/company/thytus/" className="w-full py-2.5 bg-gray-100 dark:bg-dark-elevated hover:bg-gray-200 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-lg font-bold text-sm transition-colors mb-6 block text-center">
+              </Link>
+            <Link href="https://www.linkedin.com/company/thytus/">
               LinkedIn
             </Link>
           </div>

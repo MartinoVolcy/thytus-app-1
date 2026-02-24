@@ -20,6 +20,7 @@ const Hero = () => {
   const [activeAgents, setActiveAgents] = useState("10,000");
   const [isExpanded, setIsExpanded] = useState(false);
   const [featuredIndex, setFeaturedIndex] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [labelVisible, setLabelVisible] = useState(false);
   const cycleRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -39,7 +40,7 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
-    if (isExpanded) {
+    if (isExpanded && hoveredIndex === null) {
       setFeaturedIndex(pickRandom(featuredIndex));
       setLabelVisible(true);
 
@@ -50,16 +51,22 @@ const Hero = () => {
           setLabelVisible(true);
         }, 300);
       }, 3000);
-    } else {
+    } else if (!isExpanded) {
       setLabelVisible(false);
+      setHoveredIndex(null);
       if (cycleRef.current) clearInterval(cycleRef.current);
+    } else if (hoveredIndex !== null) {
+      if (cycleRef.current) clearInterval(cycleRef.current);
+      setLabelVisible(true);
     }
 
     return () => {
       if (cycleRef.current) clearInterval(cycleRef.current);
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isExpanded, pickRandom]);
+  }, [isExpanded, hoveredIndex, pickRandom]);
+
+  const displayIndex = hoveredIndex ?? featuredIndex;
 
   const innerRadius = isExpanded ? 130 : 0;
   const outerRadius = isExpanded ? 200 : 0;
@@ -158,7 +165,7 @@ const Hero = () => {
 
                 {/* Inner orbit */}
                 <div
-                  className="absolute inset-0"
+                  className="absolute inset-0 pointer-events-none"
                   style={{
                     animation: isExpanded
                       ? "orbit 30s linear infinite"
@@ -167,43 +174,48 @@ const Hero = () => {
                 >
                   {orbitTools
                     .filter((t) => t.ring === "inner")
-                    .map((tool) => (
-                      <div
-                        key={tool.icon}
-                        className="absolute"
-                        style={{
-                          top: "50%",
-                          left: "50%",
-                          marginTop: "-24px",
-                          marginLeft: "-24px",
-                          transform: `rotate(${tool.angle}deg) translateX(${innerRadius}px) rotate(-${tool.angle}deg)`,
-                          transition:
-                            "transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)",
-                        }}
-                      >
+                    .map((tool) => {
+                      const idx = orbitTools.indexOf(tool);
+                      return (
                         <div
-                          className="w-12 h-12 rounded-2xl bg-white dark:bg-dark-card border border-sky-200 dark:border-dark-border shadow-lg shadow-sky-200/40 dark:shadow-sky-500/10 flex items-center justify-center"
+                          key={tool.icon}
+                          className="absolute"
                           style={{
-                            animation: isExpanded
-                              ? "counter-orbit 30s linear infinite"
-                              : "none",
-                            transform: `scale(${iconScale})`,
-                            opacity: iconOpacity,
+                            top: "50%",
+                            left: "50%",
+                            marginTop: "-24px",
+                            marginLeft: "-24px",
+                            transform: `rotate(${tool.angle}deg) translateX(${innerRadius}px) rotate(-${tool.angle}deg)`,
                             transition:
-                              "transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease",
+                              "transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)",
                           }}
                         >
-                          <span className="material-symbols-outlined text-primary text-xl">
-                            {tool.icon}
-                          </span>
+                          <div
+                            className={`w-12 h-12 rounded-2xl bg-white dark:bg-dark-card border shadow-lg flex items-center justify-center transition-all duration-300 pointer-events-auto ${hoveredIndex === idx ? "border-primary shadow-primary/30 scale-110" : "border-sky-200 dark:border-dark-border shadow-sky-200/40 dark:shadow-sky-500/10"}`}
+                            style={{
+                              animation: isExpanded
+                                ? "counter-orbit 30s linear infinite"
+                                : "none",
+                              transform: `scale(${iconScale})`,
+                              opacity: iconOpacity,
+                              transition:
+                                "transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease",
+                            }}
+                            onMouseEnter={() => setHoveredIndex(idx)}
+                            onMouseLeave={() => setHoveredIndex(null)}
+                          >
+                            <span className="material-symbols-outlined text-primary text-xl">
+                              {tool.icon}
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                 </div>
 
                 {/* Outer orbit */}
                 <div
-                  className="absolute inset-0"
+                  className="absolute inset-0 pointer-events-none"
                   style={{
                     animation: isExpanded
                       ? "orbit 40s linear infinite reverse"
@@ -212,38 +224,43 @@ const Hero = () => {
                 >
                   {orbitTools
                     .filter((t) => t.ring === "outer")
-                    .map((tool) => (
-                      <div
-                        key={tool.icon}
-                        className="absolute"
-                        style={{
-                          top: "50%",
-                          left: "50%",
-                          marginTop: "-24px",
-                          marginLeft: "-24px",
-                          transform: `rotate(${tool.angle}deg) translateX(${outerRadius}px) rotate(-${tool.angle}deg)`,
-                          transition:
-                            "transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1)",
-                        }}
-                      >
+                    .map((tool) => {
+                      const idx = orbitTools.indexOf(tool);
+                      return (
                         <div
-                          className="w-12 h-12 rounded-2xl bg-white dark:bg-dark-card border border-sky-200 dark:border-dark-border shadow-lg shadow-sky-200/40 dark:shadow-sky-500/10 flex items-center justify-center"
+                          key={tool.icon}
+                          className="absolute"
                           style={{
-                            animation: isExpanded
-                              ? "counter-orbit 40s linear infinite reverse"
-                              : "none",
-                            transform: `scale(${iconScale})`,
-                            opacity: iconOpacity,
+                            top: "50%",
+                            left: "50%",
+                            marginTop: "-24px",
+                            marginLeft: "-24px",
+                            transform: `rotate(${tool.angle}deg) translateX(${outerRadius}px) rotate(-${tool.angle}deg)`,
                             transition:
-                              "transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease",
+                              "transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1)",
                           }}
                         >
-                          <span className="material-symbols-outlined text-primary text-xl">
-                            {tool.icon}
-                          </span>
+                          <div
+                            className={`w-12 h-12 rounded-2xl bg-white dark:bg-dark-card border shadow-lg flex items-center justify-center transition-all duration-300 pointer-events-auto ${hoveredIndex === idx ? "border-primary shadow-primary/30 scale-110" : "border-sky-200 dark:border-dark-border shadow-sky-200/40 dark:shadow-sky-500/10"}`}
+                            style={{
+                              animation: isExpanded
+                                ? "counter-orbit 40s linear infinite reverse"
+                                : "none",
+                              transform: `scale(${iconScale})`,
+                              opacity: iconOpacity,
+                              transition:
+                                "transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease",
+                            }}
+                            onMouseEnter={() => setHoveredIndex(idx)}
+                            onMouseLeave={() => setHoveredIndex(null)}
+                          >
+                            <span className="material-symbols-outlined text-primary text-xl">
+                              {tool.icon}
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                 </div>
 
                 {/* Hover hint */}
@@ -272,14 +289,14 @@ const Hero = () => {
                   <div className="bg-white dark:bg-dark-card rounded-xl px-4 py-2.5 shadow-lg dark:shadow-black/40 border border-sky-100 dark:border-dark-border min-w-[220px]">
                     <div className="flex items-center gap-3">
                       <span className="material-symbols-outlined text-primary text-lg shrink-0">
-                        {orbitTools[featuredIndex].icon}
+                        {orbitTools[displayIndex].icon}
                       </span>
                       <div className="text-left">
                         <div className="text-xs font-bold text-slate-900 dark:text-white">
-                          {orbitTools[featuredIndex].label}
+                          {orbitTools[displayIndex].label}
                         </div>
                         <div className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug">
-                          {orbitTools[featuredIndex].desc}
+                          {orbitTools[displayIndex].desc}
                         </div>
                       </div>
                     </div>
