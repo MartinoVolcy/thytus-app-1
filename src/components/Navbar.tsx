@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   return (
@@ -20,17 +21,18 @@ export default function Navbar() {
           </span>
         </Link>
         <div className="hidden lg:flex items-center gap-8 text-[15px] font-medium text-slate-600 dark:text-slate-300">
-          <Link
-            href="/product"
-            className="nav-link hover:text-primary transition-colors"
-          >
-            Product
-          </Link>
+          
           <Link
             href="/features"
             className="nav-link hover:text-primary transition-colors"
           >
             Features
+          </Link>
+          <Link
+            href="/solutions"
+            className="nav-link hover:text-primary transition-colors"
+          >
+            Solutions
           </Link>
           <Link
             href="/pricing"
@@ -46,28 +48,23 @@ export default function Navbar() {
               </span>
             </button>
             <div className="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full w-56 bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border rounded-2xl shadow-xl shadow-gray-200/30 dark:shadow-black/40 opacity-0 invisible translate-y-2 p-2 z-50">
-              <a
+              <Link
+                href="https://showcase.thytus.com/v1/guides"
                 className="block px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
-                href="#"
-              >
+                >
                 Documentation
-              </a>
+              </Link>
               <a
                 className="block px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
                 href="#"
               >
                 Blog
               </a>
-              <a
-                className="block px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
-                href="#"
-              >
-                Community
-              </a>
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
           <Link
             href="https://showcase.thytus.com/v1/auth/signin"
             className="btn-pill bg-primary hover:bg-sky-600 text-white px-5 py-2.5 rounded-full text-[14px] font-bold transition-all shadow-md shadow-sky-500/20 dark:shadow-sky-500/30 flex items-center gap-2"

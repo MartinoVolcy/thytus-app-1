@@ -24,7 +24,7 @@ export default function Showcase() {
               <span className="material-symbols-outlined text-[12px]">
                 lock
               </span>
-              app.Showcase.com/workspace
+              showcase.thytus.com
             </div>
             <div className="w-10"></div>
           </div>

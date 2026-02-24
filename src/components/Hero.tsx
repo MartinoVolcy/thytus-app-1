@@ -115,12 +115,6 @@ const Hero = () => {
                     arrow_forward
                   </span>
                 </Link>
-                <button className="px-8 py-3.5 bg-white dark:bg-dark-card border border-sky-200 dark:border-dark-border hover:border-primary hover:text-primary text-slate-700 dark:text-slate-300 rounded-full font-bold text-[15px] transition-all shadow-sm flex items-center gap-3">
-                  <span className="material-symbols-outlined text-primary">
-                    play_circle
-                  </span>
-                  Watch Demo
-                </button>
               </div>
             </div>
 
@@ -157,7 +151,7 @@ const Hero = () => {
                         className="mx-auto mb-1 brightness-0 invert"
                       />
                       <span className="text-white text-[10px] font-bold uppercase tracking-widest">
-                        Thytus AI
+                        Thytus
                       </span>
                     </div>
                   </div>
@@ -312,9 +306,9 @@ const Hero = () => {
               TRUSTED BY TEAMS AT
             </p>
             <div className="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 hover:opacity-80 transition-all duration-500 dark:invert">
-              <Image src="/ru-logo.png" alt="Rutgers" width={1000} height={1000} className="w-auto h-12 object-contain" />
-              <Image src="/chase.webp" alt="Chase" width={1000} height={1000} className="w-auto h-12 object-contain" />
-              <Image src="/mu-logo.png" alt="Maryland University" width={1000} height={1000} className="w-auto h-12 object-contain" />
+              <Image src="/ru-logo.png" alt="Rutgers" width={1000} height={1000} className="w-auto h-16 object-contain" />
+              <Image src="/chase.webp" alt="Chase" width={1000} height={1000} className="w-auto h-16 object-contain" />
+              <Image src="/mu-logo.png" alt="Maryland University" width={1000} height={1000} className="w-auto h-16 object-contain" />
               <Image src="/rider.png" alt="Rider" width={1000} height={1000} className="w-auto h-12 object-contain" />
               <Image src="/arcadia.jpg" alt="Arcadia" width={1000} height={1000} className="w-auto h-12 object-contain" />
               <Image src="/miami.png" alt="Miami U" width={1000} height={1000} className="w-auto h-12 object-contain" />
@@ -369,7 +363,7 @@ const Hero = () => {
                 Enterprise Privacy
               </h3>
               <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
-                Military-grade encryption and SOC2 compliance. Your proprietary
+                Enterprise-grade encryption and SOC2 compliance. Your proprietary
                 data never leaves your workspace.
               </p>
             </div>

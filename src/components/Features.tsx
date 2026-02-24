@@ -30,6 +30,68 @@ const models = [
   { name: "Command R+", provider: "Cohere", color: "bg-red-100 text-red-700" },
 ];
 
+const workspaceTools = [
+  {
+    icon: "folder_open",
+    title: "File Window",
+    subtitle: "File Management",
+    color: "bg-sky-100/60 dark:bg-sky-500/15 text-sky-600 dark:text-sky-400",
+    content: [
+      { heading: "Upload Files", text: "Click to upload or drag & drop files directly into the window." },
+      { heading: "Share with Session", text: "All uploaded files are instantly available to everyone in the session." },
+      { heading: "Knowledge Base Sync", text: "Files are automatically saved to your Knowledge Base for future reference." },
+    ],
+  },
+  {
+    icon: "edit_document",
+    title: "Text Editor",
+    subtitle: "Collaborative Writing",
+    color: "bg-purple-100/50 dark:bg-purple-500/15 text-purple-600 dark:text-purple-400",
+    content: [
+      { heading: "Use Case", text: "Perfect for drafting documents, taking meeting notes, creating reports, and collaborative writing with your team and AI assistance." },
+    ],
+  },
+  {
+    icon: "table_chart",
+    title: "Spreadsheets",
+    subtitle: "Data & Analysis",
+    color: "bg-green-100/50 dark:bg-green-500/15 text-green-600 dark:text-green-400",
+    content: [
+      { heading: "Use Case", text: "Ideal for data analysis, project tracking, budgeting, and any work that requires organizing information in rows and columns." },
+    ],
+  },
+  {
+    icon: "slideshow",
+    title: "Slides",
+    subtitle: "Presentations",
+    color: "bg-orange-100/50 dark:bg-orange-500/15 text-orange-600 dark:text-orange-400",
+    content: [
+      { heading: "Use Case", text: "Perfect for creating and editing PowerPoint slides, creating presentations, and collaborating with your team on slide decks." },
+    ],
+  },
+  {
+    icon: "code",
+    title: "Code Editor",
+    subtitle: "Development Tools",
+    color: "bg-cyan-100/50 dark:bg-cyan-500/15 text-cyan-600 dark:text-cyan-400",
+    content: [
+      { heading: "Use Case", text: "Great for code reviews, pair programming, debugging sessions, and getting AI assistance with coding tasks." },
+    ],
+  },
+  {
+    icon: "psychology",
+    title: "Context Tracking",
+    subtitle: "Guide Your AI Assistant",
+    color: "bg-pink-100/50 dark:bg-pink-500/15 text-pink-600 dark:text-pink-400",
+    content: [
+      { heading: "Why It Matters", text: "Sometimes an agent may drift from the original task or miss important details as the conversation grows. Context Tracking gives you the tools to steer it back on course and keep things running smoothly." },
+      { heading: "Re-focus the Agent", text: "If the agent loses sight of the goal, open Context Tracking to review the full conversation history. From there you can send a correction or reminder to bring it back to the original task." },
+      { heading: "Send Updates", text: "Need to change direction or add new requirements mid-task? Send an update directly through Context Tracking to give the agent fresh instructions without starting a new conversation." },
+      { heading: "Pro Tip", text: "Think of Context Tracking as a direct line to the agent\u2019s memory. Use it whenever the agent\u2019s responses feel off-topic, or when your priorities shift and the agent needs to know about it right away." },
+    ],
+  },
+];
+
 const VISIBLE_SLOTS = 7;
 const CENTER_SLOT = Math.floor(VISIBLE_SLOTS / 2);
 const ITEM_HEIGHT = 75;
@@ -38,6 +100,7 @@ const SCROLL_SPEED = 0.5;
 export default function Features() {
   const [offset, setOffset] = useState(0);
   const [modelsOpen, setModelsOpen] = useState(false);
+  const [openTool, setOpenTool] = useState<number | null>(null);
   const pausedRef = useRef(false);
 
   useEffect(() => {
@@ -282,6 +345,86 @@ export default function Features() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Workspace Tools Section */}
+          <div className="mb-24">
+            <div className="md:text-center max-w-3xl mx-auto mb-12">
+              <span className="text-sm font-extrabold text-primary uppercase tracking-widest mb-3 block">
+                Workspace Tools
+              </span>
+              <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
+                What's inside <span className="text-gradient-blue">your workspace?</span>
+              </h2>
+              <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
+                From file management to live code editing, every tool your team needs is built right into the session.
+              </p>
+            </div>
+
+            <div className="space-y-3 max-w-4xl mx-auto">
+              {workspaceTools.map((tool, i) => {
+                const isOpen = openTool === i;
+                return (
+                  <div
+                    key={tool.title}
+                    className={`rounded-2xl border bg-white dark:bg-dark-card dark-glow transition-[border-color,box-shadow] duration-200 ${
+                      isOpen
+                        ? "border-primary/30 shadow-lg shadow-primary/5 dark:shadow-primary/10"
+                        : "border-gray-100 dark:border-dark-border hover:border-gray-200 dark:hover:border-dark-border"
+                    }`}
+                  >
+                    <button
+                      onClick={() => setOpenTool(isOpen ? null : i)}
+                      className="w-full flex items-center gap-4 p-5 text-left cursor-pointer"
+                    >
+                      <div className={`w-10 h-10 rounded-xl ${tool.color} flex items-center justify-center shrink-0`}>
+                        <span className="material-symbols-outlined text-xl">
+                          {tool.icon}
+                        </span>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="font-extrabold text-slate-900 dark:text-white">
+                          {tool.title}
+                        </div>
+                        <div className="text-xs text-slate-500 dark:text-slate-400">
+                          {tool.subtitle}
+                        </div>
+                      </div>
+                      <span
+                        className={`material-symbols-outlined text-slate-400 dark:text-slate-500 transition-transform duration-200 ${
+                          isOpen ? "rotate-180" : ""
+                        }`}
+                      >
+                        expand_more
+                      </span>
+                    </button>
+
+                    <div
+                      className="grid transition-[grid-template-rows] duration-300 ease-out"
+                      style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
+                    >
+                      <div className="overflow-hidden">
+                        <div className="px-5 pb-5 pt-1 space-y-4">
+                          {tool.content.map((item) => (
+                            <div key={item.heading} className="flex items-start gap-3">
+                              <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2"></div>
+                              <div>
+                                <div className="text-sm font-bold text-slate-900 dark:text-white">
+                                  {item.heading}
+                                </div>
+                                <div className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                                  {item.text}
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
 

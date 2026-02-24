@@ -7,21 +7,18 @@ const testimonials = [
     quote:
       "Thytus has completely transformed how our team manages knowledge. The ability to upload any file type and have it instantly searchable is a game-changer.",
     author: "Sarah Jenkins",
-    role: "Product Manager, TechFlow",
     avatar: "S",
   },
   {
     quote:
       "The visual intelligence features are incredible. Being able to analyze video content as easily as text has saved us hours of manual review time.",
     author: "David Chen",
-    role: "Creative Director, Studio 8",
     avatar: "D",
   },
   {
     quote:
       "I love the model flexibility. switching between Claude and GPT-4 based on the task at hand gives us the best of both worlds.",
     author: "Emily Rodriguez",
-    role: "Lead Developer, Innovate Inc",
     avatar: "E",
   },
 ];
@@ -56,9 +53,6 @@ export default function Testimonials() {
                 <div>
                   <div className="font-bold text-slate-900 dark:text-white">
                     {testimonial.author}
-                  </div>
-                  <div className="text-sm text-slate-500 dark:text-slate-400">
-                    {testimonial.role}
                   </div>
                 </div>
               </div>
