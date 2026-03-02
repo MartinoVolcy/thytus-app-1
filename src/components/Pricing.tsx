@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 export default function Pricing() {
-    const [isAnnual, setIsAnnual] = useState(false);
+    const [isAnnual, setIsAnnual] = useState(true);
 
     return (
         <section className="py-24 bg-white dark:bg-dark-base" id="pricing">

@@ -326,7 +326,7 @@ const providers: Provider[] = [
     iconColor: "text-slate-800",
     bgColor: "bg-slate-100",
     description:
-      "Elon Musk's AI company building Grok — witty, real-time models with access to live information.",
+      "Elon Musk's AI company building Grok, featuring witty, real-time models with access to live information.",
     models: [
       {
         name: "Grok-2",

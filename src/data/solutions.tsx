@@ -87,7 +87,7 @@ export const solutions: Solution[] = [
       { title: "Blog & SEO Content", text: "Agents research keywords, outline articles, and draft SEO-optimized blog posts with proper formatting and internal links." },
       { title: "Social Media Calendar", text: "Generate a month of social content with captions, hashtags, and posting schedules tailored to each platform." },
       { title: "Email Sequences", text: "Build drip campaigns, welcome series, and promotional emails with personalized copy and A/B test variants." },
-      { title: "Performance Analysis", text: "Upload campaign data and agents generate reports with insights on what worked, what didn\u2019t, and what to try next." },
+      { title: "Performance Analysis", text: "Upload campaign data and agents generate reports with insights on what worked, what didn't work, and what to try next." },
     ],
   },
   {
@@ -97,16 +97,16 @@ export const solutions: Solution[] = [
     icon: "science",
     tagline: "Accelerate discovery with AI-powered research workflows",
     description:
-      "Thytus gives researchers and academics instant access to AI agents that review literature, analyze datasets, and help draft papers. Upload your papers, data files, and notes \u2014 then let agents find connections, summarize findings, and format citations while you focus on the science.",
+      "Thytus gives researchers and academics instant access to AI agents that have access to millions of academic papers. Upload your papers, data files, and notes then let agents find connections, summarize findings, and format citations while you focus on the science.",
     benefits: [
       { title: "Literature Review", text: "Agents search millions of academic papers, summarize key findings, and identify gaps in existing research relevant to your topic.", icon: "menu_book" },
       { title: "Data Analysis", text: "Upload datasets and let agents run statistical analyses, generate visualizations, and interpret results in plain language.", icon: "analytics" },
-      { title: "Paper Drafting", text: "From abstract to conclusion \u2014 agents help structure papers, suggest citations, and ensure consistency across sections.", icon: "edit_note" },
+      { title: "Paper Drafting", text: "From abstract to conclusion  agents help structure papers, suggest citations, and ensure consistency across sections.", icon: "edit_note" },
     ],
     features: [
       { title: "Citation Management", text: "Agents find, format, and organize citations in APA, MLA, Chicago, or any style your journal requires." },
       { title: "Grant Proposal Assistance", text: "Structure compelling grant applications with agents that understand funding requirements and research methodology." },
-      { title: "Peer Review Preparation", text: "Get AI feedback on your manuscript before submission \u2014 checking for logical gaps, unclear writing, and missing references." },
+      { title: "Peer Review Preparation", text: "Get AI feedback on your manuscript before submission  checking for logical gaps, unclear writing, and missing references." },
       { title: "Cross-Disciplinary Insights", text: "Agents connect findings across fields, surfacing relevant research you might not have found through traditional searches." },
     ],
   },
@@ -117,17 +117,17 @@ export const solutions: Solution[] = [
     icon: "trending_up",
     tagline: "Close faster with AI-generated proposals and insights",
     description:
-      "Sales cycles are won with speed and preparation. Thytus agents research prospects, generate personalized proposals, build comparison decks, and analyze deal data \u2014 so your reps spend more time selling and less time on busywork.",
+      "Sales cycles are won with speed and preparation. Thytus agents research prospects, generate personalized proposals, build comparison decks, and analyze deal data so your reps spend more time selling and less time on busywork.",
     benefits: [
       { title: "Proposal Automation", text: "Feed in prospect details and agents generate tailored proposals with pricing, case studies, and competitive differentiators.", icon: "request_quote" },
-      { title: "Prospect Research", text: "Agents compile company profiles, recent news, key contacts, and pain points before every call \u2014 automatically.", icon: "person_search" },
+      { title: "Prospect Research", text: "Agents compile company profiles, recent news, key contacts, and pain points before every call automatically.", icon: "person_search" },
       { title: "Pipeline Analytics", text: "Upload CRM exports and agents surface deal risks, forecast revenue, and recommend next actions for stalled opportunities.", icon: "monitoring" },
     ],
     features: [
       { title: "Competitive Battle Cards", text: "Agents create and maintain battle cards that compare your product against competitors with up-to-date pricing and features." },
-      { title: "Follow-Up Sequences", text: "Generate personalized follow-up emails based on meeting notes, objections raised, and prospect interests." },
-      { title: "Demo Preparation", text: "Agents build custom demo scripts and talking points tailored to each prospect\u2019s industry and use case." },
-      { title: "Win/Loss Analysis", text: "Upload deal outcomes and agents identify patterns \u2014 which messaging wins, where deals stall, and what competitors are saying." },
+      { title: "Follow-Up Sequences", text: "Generate personalized follow-up emails based on meeting notes, objections raised, and prospect'sinterests." },
+      { title: "Demo Preparation", text: "Agents build custom demo scripts and talking points tailored to each prospect industry and use case." },
+      { title: "Win/Loss Analysis", text: "Upload deal outcomes and agents identify patterns which messaging wins, where deals stall, and what competitors are saying." },
     ],
   },
   {

@@ -22,12 +22,37 @@ export default function Navbar() {
         </Link>
         <div className="hidden lg:flex items-center gap-8 text-[15px] font-medium text-slate-600 dark:text-slate-300">
           
-          <Link
-            href="/features"
-            className="nav-link hover:text-primary transition-colors"
-          >
-            Features
-          </Link>
+          <div className="relative dropdown-group py-4 group">
+            <button className="nav-link hover:text-primary transition-colors flex items-center gap-1">
+              Features{" "}
+              <span className="material-symbols-outlined text-sm opacity-50 transition-transform group-hover:rotate-180">
+                expand_more
+              </span>
+            </button>
+            <div className="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full w-[460px] bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border rounded-2xl shadow-xl shadow-gray-200/30 dark:shadow-black/40 opacity-0 invisible translate-y-2 p-4 z-50">
+              <div className="mb-2 px-2">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">Overview</span>
+              </div>
+              <div className="grid grid-cols-2 gap-1 mb-3">
+                <Link href="/features#capabilities" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Capabilities</Link>
+                <Link href="/features#context-tracking" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Context Tracking</Link>
+                <Link href="/features#agent-collaboration" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Agent Collaboration</Link>
+                <Link href="/features#model-agnostic" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Model Agnostic</Link>
+              </div>
+              <div className="border-t border-gray-100 dark:border-dark-border pt-3 mt-1">
+                <div className="mb-2 px-2">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">Workspace Tools</span>
+                </div>
+                <div className="grid grid-cols-2 gap-1">
+                  <Link href="/features/file-window" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">File Window</Link>
+                  <Link href="/features/text-editor" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Text Editor</Link>
+                  <Link href="/features/spreadsheets" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Spreadsheets</Link>
+                  <Link href="/features/slides" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Slides</Link>
+                  <Link href="/features/code-editor" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Code Editor</Link>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="relative dropdown-group py-4 group">
             <button className="nav-link hover:text-primary transition-colors flex items-center gap-1">
               Solutions{" "}
@@ -37,38 +62,14 @@ export default function Navbar() {
             </button>
             <div className="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full w-[420px] bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border rounded-2xl shadow-xl shadow-gray-200/30 dark:shadow-black/40 opacity-0 invisible translate-y-2 p-3 z-50">
               <div className="grid grid-cols-2 gap-1">
-                <Link href="/solutions/small-business" className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors">
-                  <span className="material-symbols-outlined text-lg text-primary">storefront</span>
-                  <span className="text-sm text-slate-700 dark:text-slate-300 font-medium">Small Business</span>
-                </Link>
-                <Link href="/solutions/legal" className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors">
-                  <span className="material-symbols-outlined text-lg text-primary">gavel</span>
-                  <span className="text-sm text-slate-700 dark:text-slate-300 font-medium">Legal</span>
-                </Link>
-                <Link href="/solutions/product-teams" className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors">
-                  <span className="material-symbols-outlined text-lg text-primary">inventory_2</span>
-                  <span className="text-sm text-slate-700 dark:text-slate-300 font-medium">Product</span>
-                </Link>
-                <Link href="/solutions/marketing" className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors">
-                  <span className="material-symbols-outlined text-lg text-primary">campaign</span>
-                  <span className="text-sm text-slate-700 dark:text-slate-300 font-medium">Marketing</span>
-                </Link>
-                <Link href="/solutions/research-academia" className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors">
-                  <span className="material-symbols-outlined text-lg text-primary">science</span>
-                  <span className="text-sm text-slate-700 dark:text-slate-300 font-medium">Research</span>
-                </Link>
-                <Link href="/solutions/sales" className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors">
-                  <span className="material-symbols-outlined text-lg text-primary">trending_up</span>
-                  <span className="text-sm text-slate-700 dark:text-slate-300 font-medium">Sales</span>
-                </Link>
-                <Link href="/solutions/education" className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors">
-                  <span className="material-symbols-outlined text-lg text-primary">school</span>
-                  <span className="text-sm text-slate-700 dark:text-slate-300 font-medium">Education</span>
-                </Link>
-                <Link href="/solutions/healthcare" className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors">
-                  <span className="material-symbols-outlined text-lg text-primary">local_hospital</span>
-                  <span className="text-sm text-slate-700 dark:text-slate-300 font-medium">Healthcare</span>
-                </Link>
+                <Link href="/solutions/small-business" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Small Business</Link>
+                <Link href="/solutions/legal" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Legal</Link>
+                <Link href="/solutions/product-teams" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Product</Link>
+                <Link href="/solutions/marketing" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Marketing</Link>
+                <Link href="/solutions/research-academia" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Research</Link>
+                <Link href="/solutions/sales" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Sales</Link>
+                <Link href="/solutions/education" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Education</Link>
+                <Link href="/solutions/healthcare" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Healthcare</Link>
               </div>
             </div>
           </div>

@@ -306,12 +306,12 @@ const Hero = () => {
               TRUSTED BY TEAMS AT
             </p>
             <div className="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 hover:opacity-80 transition-all duration-500 dark:invert">
-              <Image src="/ru-logo.png" alt="Rutgers" width={1000} height={1000} className="w-auto h-16 object-contain" />
-              <Image src="/chase.webp" alt="Chase" width={1000} height={1000} className="w-auto h-16 object-contain" />
-              <Image src="/mu-logo.png" alt="Maryland University" width={1000} height={1000} className="w-auto h-16 object-contain" />
-              <Image src="/rider.png" alt="Rider" width={1000} height={1000} className="w-auto h-12 object-contain" />
-              <Image src="/arcadia.jpg" alt="Arcadia" width={1000} height={1000} className="w-auto h-12 object-contain" />
-              <Image src="/miami.png" alt="Miami U" width={1000} height={1000} className="w-auto h-12 object-contain" />
+              <Image src="/ru-logo.png" alt="Rutgers" width={100} height={100} className="w-auto h-18 object-contain" />
+              <Image src="/chase.webp" alt="Chase" width={200} height={200} className="w-auto h-18 object-contain" />
+              <Image src="/mu-logo.png" alt="Maryland University" width={200} height={200} className="w-auto h-10 object-contain" />
+              <Image src="/rider.png" alt="Rider" width={100} height={100} className="w-auto h-10 object-contain" />
+              <Image src="/arcadia.jpg" alt="Arcadia" width={100} height={100} className="w-auto h-10 object-contain" />
+              <Image src="/miami.png" alt="Miami U" width={100} height={100} className="w-auto h-10 object-contain" />
               
             </div>
           </div>

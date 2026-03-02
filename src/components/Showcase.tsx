@@ -10,7 +10,7 @@ export default function Showcase() {
           </h2>
           <p className="text-slate-500 dark:text-slate-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             The collaborative workspace where teams and AI agents work <span className="font-bold text-slate-700 dark:text-slate-200">side by side</span>. Deploy multiple autonomous agents on tasks simultaneously,
-            while your team edits, reviews, and creates — all in <span className="font-bold text-primary">real time</span>.
+            while your team edits, reviews, and creates in <span className="font-bold text-primary">real time</span>.
           </p>
         </div>
           <div className="relative rounded-2xl border border-gray-200 dark:border-dark-border bg-white dark:bg-dark-card overflow-hidden shadow-2xl shadow-gray-200/40 dark:shadow-black/50 mx-auto max-w-6xl ring-1 ring-gray-900/5 dark:ring-sky-400/5">

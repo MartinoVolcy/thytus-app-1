@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import ModelsModal from "./ModelsModal";
 
 const models = [
@@ -30,73 +31,10 @@ const models = [
   { name: "Command R+", provider: "Cohere", color: "bg-red-100 text-red-700" },
 ];
 
-const workspaceTools = [
-  {
-    icon: "folder_open",
-    title: "File Window",
-    subtitle: "File Management",
-    color: "bg-sky-100/60 dark:bg-sky-500/15 text-sky-600 dark:text-sky-400",
-    content: [
-      { heading: "Drag & Drop Uploads", text: "Click to browse or drag files directly into the window. Supports PDFs, documents, spreadsheets, images, video, audio, and code files." },
-      { heading: "Instant Session Sharing", text: "Every file you upload is immediately visible to all participants and AI agents in the session \u2014 no separate sharing step required." },
-      { heading: "Persistent Knowledge Base", text: "Uploaded files are automatically saved to your Knowledge Base, so you can reference them across future sessions without re-uploading." },
-    ],
-  },
-  {
-    icon: "edit_document",
-    title: "Text Editor",
-    subtitle: "Collaborative Writing",
-    color: "bg-purple-100/50 dark:bg-purple-500/15 text-purple-600 dark:text-purple-400",
-    content: [
-      { heading: "Real-Time Co-Authoring", text: "Write alongside teammates and AI agents simultaneously. Every edit appears instantly \u2014 no version conflicts, no waiting." },
-      { heading: "AI-Assisted Drafting", text: "Let agents draft, expand, summarize, or rewrite sections on demand while you focus on the bigger picture." },
-      { heading: "Rich Formatting", text: "Full support for headings, lists, tables, and embedded media so your documents are presentation-ready without leaving the workspace." },
-    ],
-  },
-  {
-    icon: "table_chart",
-    title: "Spreadsheets",
-    subtitle: "Data & Analysis",
-    color: "bg-green-100/50 dark:bg-green-500/15 text-green-600 dark:text-green-400",
-    content: [
-      { heading: "Live Data Editing", text: "Create and manipulate spreadsheets directly in the session. Organize data, apply formulas, and sort columns in real time." },
-      { heading: "AI-Powered Analysis", text: "Ask an agent to analyze trends, generate pivot summaries, or clean messy datasets \u2014 results appear right in the sheet." },
-      { heading: "Import & Export", text: "Bring in existing CSV or Excel files and export finished spreadsheets to share with stakeholders outside the workspace." },
-    ],
-  },
-  {
-    icon: "slideshow",
-    title: "Slides",
-    subtitle: "Presentations",
-    color: "bg-orange-100/50 dark:bg-orange-500/15 text-orange-600 dark:text-orange-400",
-    content: [
-      { heading: "Slide Creation & Editing", text: "Build polished slide decks directly in the workspace. Add text, images, charts, and layouts without switching to another app." },
-      { heading: "AI-Generated Decks", text: "Give an agent a topic or outline and it will generate a full presentation draft \u2014 complete with structure, talking points, and visuals." },
-      { heading: "Team Collaboration", text: "Multiple people can review, comment on, and refine slides at the same time, keeping everyone aligned before the final presentation." },
-    ],
-  },
-  {
-    icon: "code",
-    title: "Code Editor",
-    subtitle: "Development Tools",
-    color: "bg-cyan-100/50 dark:bg-cyan-500/15 text-cyan-600 dark:text-cyan-400",
-    content: [
-      { heading: "Syntax-Highlighted Editing", text: "Write and edit code with full syntax highlighting, auto-indentation, and language detection for dozens of programming languages." },
-      { heading: "AI Pair Programming", text: "Get real-time suggestions, have agents write boilerplate, debug errors, or refactor functions \u2014 all within the same session." },
-      { heading: "Inline Code Review", text: "Share code with teammates and agents for instant feedback. Review diffs, suggest changes, and iterate without leaving the workspace." },
-    ],
-  },
-  {
-    icon: "psychology",
-    title: "Context Tracking",
-    subtitle: "Guide Your AI Assistant",
-    color: "bg-pink-100/50 dark:bg-pink-500/15 text-pink-600 dark:text-pink-400",
-    content: [
-      { heading: "Re-Focus the Agent", text: "When an agent drifts off-task, open Context Tracking to review the full conversation and send a correction that steers it back to the original goal." },
-      { heading: "Mid-Task Updates", text: "Requirements changed? Send fresh instructions directly through Context Tracking so the agent adjusts course without starting over." },
-      { heading: "Conversation Memory", text: "Think of it as a direct line to the agent\u2019s memory. Use it whenever responses feel off-topic or your priorities shift and the agent needs to know immediately." },
-    ],
-  },
+const contextTrackingPoints = [
+  { heading: "Re-Focus the Agent", text: "When an agent drifts off-task, open Context Tracking to review the full conversation and send a correction that steers it back to the original goal." },
+  { heading: "Mid-Task Updates", text: "Requirements changed? Send fresh instructions directly through Context Tracking so the agent adjusts course without starting over." },
+  { heading: "Conversation Memory", text: "Think of it as a direct line to the agent\u2019s memory. Use it whenever responses feel off-topic or your priorities shift and the agent needs to know immediately." },
 ];
 
 const VISIBLE_SLOTS = 7;
@@ -107,7 +45,6 @@ const SCROLL_SPEED = 0.5;
 export default function Features() {
   const [offset, setOffset] = useState(0);
   const [modelsOpen, setModelsOpen] = useState(false);
-  const [openTool, setOpenTool] = useState<number | null>(null);
   const pausedRef = useRef(false);
 
   useEffect(() => {
@@ -158,7 +95,7 @@ export default function Features() {
             </h2>
             <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
               Thytus isn&apos;t just a chatbot. It&apos;s a <span className="font-bold text-slate-700 dark:text-slate-200">full-stack workspace</span> equipped
-              with the tools AI needs to do real work — from reading entire
+              with the tools AI needs to do real work, from reading entire
               knowledge bases to generating visual reports.
             </p>
           </div>
@@ -193,8 +130,8 @@ export default function Features() {
               </h3>
               <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                 Thytus provides the vision layer. Even if a model (like Llama or
-                GPT-5) doesn't natively support video input, our workspace
-                enables them to "watch" and analyze your video files instantly.
+                GPT-5) doesn&apos;t natively support video input, our workspace
+                enables them to &ldquo;watch&rdquo; and analyze your video files instantly.
               </p>
             </div>
 
@@ -263,8 +200,53 @@ export default function Features() {
             </div>
           </div>
 
+          {/* Context Tracking Section */}
+          <div className="mb-24 rounded-3xl bg-gradient-to-br from-pink-50/60 via-white to-white dark:from-dark-card dark:via-dark-surface dark:to-dark-base border border-gray-200/60 dark:border-dark-border p-10 md:p-14 relative overflow-hidden" id="context-tracking">
+            <div className="absolute -top-20 -right-20 w-72 h-72 bg-pink-200/20 dark:bg-pink-500/[0.06] rounded-full blur-[80px] pointer-events-none"></div>
+            <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-purple-200/20 dark:bg-purple-500/[0.05] rounded-full blur-[80px] pointer-events-none"></div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+              <div>
+                <span className="text-sm font-extrabold text-pink-600 dark:text-pink-400 uppercase tracking-widest mb-3 block">
+                  Context Tracking
+                </span>
+                <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
+                  Keep your agents <span className="text-gradient-purple">on track.</span>
+                </h2>
+                <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed mb-8">
+                  Sometimes an agent may drift from the original task or miss important details as the conversation grows. Context Tracking gives you the tools to <span className="font-bold text-slate-700 dark:text-slate-200">steer it back on course</span> and keep things running smoothly.
+                </p>
+                <div className="space-y-4">
+                  {contextTrackingPoints.map((item) => (
+                    <div key={item.heading} className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-pink-100 dark:bg-pink-500/15 flex items-center justify-center shrink-0 mt-0.5">
+                        <span className="material-symbols-outlined text-pink-600 dark:text-pink-400 text-lg">psychology</span>
+                      </div>
+                      <div>
+                        <div className="font-extrabold text-sm text-slate-900 dark:text-white">{item.heading}</div>
+                        <div className="text-sm text-slate-500 dark:text-slate-400">{item.text}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="relative flex items-center justify-center">
+                <div className="rounded-2xl overflow-hidden border border-gray-100 dark:border-dark-border shadow-lg">
+                  <Image
+                    src="/context-tracking.png"
+                    alt="Context Tracking"
+                    width={600}
+                    height={400}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Agent Collaboration Section */}
-          <div className="mb-24 rounded-3xl bg-gradient-to-br from-gray-50 via-white to-white dark:from-dark-card dark:via-dark-surface dark:to-dark-base border border-gray-200/60 dark:border-dark-border p-10 md:p-14 relative overflow-hidden">
+          <div className="mb-24 rounded-3xl bg-gradient-to-br from-gray-50 via-white to-white dark:from-dark-card dark:via-dark-surface dark:to-dark-base border border-gray-200/60 dark:border-dark-border p-10 md:p-14 relative overflow-hidden" id="agent-collaboration">
             <div className="absolute -top-20 -right-20 w-72 h-72 bg-primary/[0.06] dark:bg-sky-500/[0.06] rounded-full blur-[80px] pointer-events-none"></div>
             <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-purple-200/20 dark:bg-primary/[0.05] rounded-full blur-[80px] pointer-events-none"></div>
 
@@ -277,7 +259,7 @@ export default function Features() {
                   Your agents don&apos;t just work. <span className="text-gradient-purple">They work together.</span>
                 </h2>
                 <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed mb-8">
-                  In Thytus, AI agents aren&apos;t isolated. They <span className="font-bold text-slate-700 dark:text-slate-200">share context, exchange findings, and build on each other&apos;s work</span> within the same session. A research agent can hand off its discoveries to a writing agent, while an analyst cross-checks the data — all autonomously, all in real time.
+                  In Thytus, AI agents aren&apos;t isolated. They <span className="font-bold text-slate-700 dark:text-slate-200">share context, exchange findings, and build on each other&apos;s work</span> within the same session. A research agent can hand off its discoveries to a writing agent, while an analyst cross-checks the data. All autonomously, all in real time.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
@@ -304,7 +286,7 @@ export default function Features() {
                     </div>
                     <div>
                       <div className="font-extrabold text-sm text-slate-900 dark:text-white">Parallel Task Execution</div>
-                      <div className="text-sm text-slate-500 dark:text-slate-400">Split complex projects across agents that work simultaneously — research, draft, review, and publish all happening at once.</div>
+                      <div className="text-sm text-slate-500 dark:text-slate-400">Split complex projects across agents that work simultaneously. Research, draft, review, and publish all happening at once.</div>
                     </div>
                   </div>
                 </div>
@@ -313,22 +295,19 @@ export default function Features() {
               {/* Visual */}
               <div className="relative flex items-center justify-center">
                 <div className="relative w-80 h-80">
-                  {/* Connection lines */}
                   <svg className="absolute inset-0 w-full h-full" viewBox="0 0 320 320">
                     <line x1="160" y1="60" x2="60" y2="220" stroke="#0EA5E9" strokeWidth="1.5" strokeDasharray="6,6" opacity="0.3" />
                     <line x1="160" y1="60" x2="260" y2="220" stroke="#0EA5E9" strokeWidth="1.5" strokeDasharray="6,6" opacity="0.3" />
                     <line x1="60" y1="220" x2="260" y2="220" stroke="#0EA5E9" strokeWidth="1.5" strokeDasharray="6,6" opacity="0.3" />
                   </svg>
 
-                  {/* Agent 1 */}
-                    <div className="absolute top-4 left-1/2 -translate-x-1/2 animate-float">
+                  <div className="absolute top-4 left-1/2 -translate-x-1/2 animate-float">
                     <div className="w-20 h-20 rounded-2xl bg-white dark:bg-dark-card border-2 border-sky-200 dark:border-sky-500/30 shadow-xl shadow-sky-200/20 dark:shadow-sky-500/10 flex flex-col items-center justify-center">
                       <span className="material-symbols-outlined text-primary text-2xl">smart_toy</span>
                       <span className="text-[9px] font-bold text-slate-500 dark:text-slate-400 mt-1">Researcher</span>
                     </div>
                   </div>
 
-                  {/* Agent 2 */}
                   <div className="absolute bottom-8 left-2 animate-float" style={{ animationDelay: "1.3s" }}>
                     <div className="w-20 h-20 rounded-2xl bg-white dark:bg-dark-card border-2 border-purple-200 dark:border-purple-500/30 shadow-xl shadow-purple-500/10 flex flex-col items-center justify-center">
                       <span className="material-symbols-outlined text-purple-600 dark:text-purple-400 text-2xl">edit_note</span>
@@ -336,7 +315,6 @@ export default function Features() {
                     </div>
                   </div>
 
-                  {/* Agent 3 */}
                   <div className="absolute bottom-8 right-2 animate-float" style={{ animationDelay: "2.6s" }}>
                     <div className="w-20 h-20 rounded-2xl bg-white dark:bg-dark-card border-2 border-emerald-200 dark:border-emerald-500/30 shadow-xl shadow-emerald-500/10 flex flex-col items-center justify-center">
                       <span className="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-2xl">analytics</span>
@@ -344,7 +322,6 @@ export default function Features() {
                     </div>
                   </div>
 
-                  {/* Center sync indicator */}
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
                       <span className="material-symbols-outlined text-primary text-xl animate-spin" style={{ animationDuration: "8s" }}>sync</span>
@@ -355,88 +332,8 @@ export default function Features() {
             </div>
           </div>
 
-          {/* Workspace Tools Section */}
-          <div className="mb-24">
-            <div className="md:text-center max-w-3xl mx-auto mb-12">
-              <span className="text-sm font-extrabold text-primary uppercase tracking-widest mb-3 block">
-                Workspace Tools
-              </span>
-              <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
-                What's inside <span className="text-gradient-blue">your workspace?</span>
-              </h2>
-              <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
-                From file management to live code editing, every tool your team needs is built right into the session.
-              </p>
-            </div>
-
-            <div className="space-y-3 max-w-4xl mx-auto">
-              {workspaceTools.map((tool, i) => {
-                const isOpen = openTool === i;
-                return (
-                  <div
-                    key={tool.title}
-                    className={`rounded-2xl border bg-white dark:bg-dark-card dark-glow transition-[border-color,box-shadow] duration-200 ${
-                      isOpen
-                        ? "border-primary/30 shadow-lg shadow-primary/5 dark:shadow-primary/10"
-                        : "border-gray-100 dark:border-dark-border hover:border-gray-200 dark:hover:border-dark-border"
-                    }`}
-                  >
-                    <button
-                      onClick={() => setOpenTool(isOpen ? null : i)}
-                      className="w-full flex items-center gap-4 p-5 text-left cursor-pointer"
-                    >
-                      <div className={`w-10 h-10 rounded-xl ${tool.color} flex items-center justify-center shrink-0`}>
-                        <span className="material-symbols-outlined text-xl">
-                          {tool.icon}
-                        </span>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="font-extrabold text-slate-900 dark:text-white">
-                          {tool.title}
-                        </div>
-                        <div className="text-xs text-slate-500 dark:text-slate-400">
-                          {tool.subtitle}
-                        </div>
-                      </div>
-                      <span
-                        className={`material-symbols-outlined text-slate-400 dark:text-slate-500 transition-transform duration-200 ${
-                          isOpen ? "rotate-180" : ""
-                        }`}
-                      >
-                        expand_more
-                      </span>
-                    </button>
-
-                    <div
-                      className="grid transition-[grid-template-rows] duration-300 ease-out"
-                      style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
-                    >
-                      <div className="overflow-hidden">
-                        <div className="px-5 pb-5 pt-1 space-y-4">
-                          {tool.content.map((item) => (
-                            <div key={item.heading} className="flex items-start gap-3">
-                              <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2"></div>
-                              <div>
-                                <div className="text-sm font-bold text-slate-900 dark:text-white">
-                                  {item.heading}
-                                </div>
-                                <div className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                                  {item.text}
-                                </div>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
           {/* Model Carousel Section */}
-          <div className="bg-slate-900 rounded-3xl p-10 md:p-14 overflow-hidden relative">
+          <div className="bg-slate-900 rounded-3xl p-10 md:p-14 overflow-hidden relative" id="model-agnostic">
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
               <div>
@@ -448,7 +345,7 @@ export default function Features() {
                 </h2>
                 <p className="text-slate-400 text-lg leading-relaxed mb-8">
                   Why limit yourself to one provider? Thytus gives you instant
-                  access to the world's most powerful AI models. Switch between
+                  access to the world&apos;s most powerful AI models. Switch between
                   them instantly or deploy them simultaneously in the same
                   workflow.
                 </p>
