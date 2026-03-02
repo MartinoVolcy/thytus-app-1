@@ -93,12 +93,12 @@ export default function Navbar() {
                 >
                 Documentation
               </Link>
-              <a
+              <Link
+                href="/blog"
                 className="block px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
-                href="#"
               >
                 Blog
-              </a>
+              </Link>
             </div>
           </div>
         </div>
