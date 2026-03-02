@@ -15,7 +15,7 @@ export default function BlogPage() {
 
       <section className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
             Blog
           </h1>
           <p className="text-xl text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
@@ -45,7 +45,7 @@ export default function BlogPage() {
                     ))}
                   </div>
 
-                  <h2 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-3 tracking-tight group-hover:text-primary transition-colors">
+                  <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight group-hover:text-primary transition-colors">
                     {post.title}
                   </h2>
 

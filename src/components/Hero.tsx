@@ -96,7 +96,7 @@ const Hero = () => {
                 </span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight mb-8 text-slate-900 dark:text-white">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-8 text-slate-900 dark:text-white">
                 Where Human Ingenuity Meets{" "}
                 <span className="text-gradient">Autonomous Precision</span>
               </h1>

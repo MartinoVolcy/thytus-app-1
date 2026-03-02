@@ -10,7 +10,7 @@ export default function Pricing() {
         <section className="py-24 bg-white dark:bg-dark-base" id="pricing">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-black mb-8 text-slate-900 dark:text-white tracking-tight">Scale with your <span className="text-gradient-blue">AI needs</span></h2>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-8 text-slate-900 dark:text-white tracking-tight">Scale with your <span className="text-gradient-blue">AI needs</span></h2>
 
                     {/* Monthly / Annual Toggle */}
                     <div className="inline-flex items-center gap-4">

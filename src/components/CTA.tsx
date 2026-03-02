@@ -4,7 +4,7 @@ export default function CTA() {
   return (
     <section className="py-24 relative bg-slate-900 overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-        <h2 className="text-4xl md:text-6xl font-black mb-6 text-white tracking-tight">
+        <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white tracking-tight">
           Give your team the ability to <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
             start succeeding with AI.

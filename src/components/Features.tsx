@@ -90,7 +90,7 @@ export default function Features() {
             <span className="text-sm font-extrabold text-primary uppercase tracking-widest mb-3 block">
               Capabilities
             </span>
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
               Everything you need to build <span className="text-gradient">complex outputs.</span>
             </h2>
             <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
@@ -210,7 +210,7 @@ export default function Features() {
                 <span className="text-sm font-extrabold text-pink-600 dark:text-pink-400 uppercase tracking-widest mb-3 block">
                   Context Tracking
                 </span>
-                <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
+                <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
                   Keep your agents <span className="text-gradient-purple">on track.</span>
                 </h2>
                 <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed mb-8">
@@ -255,7 +255,7 @@ export default function Features() {
                 <span className="text-sm font-extrabold text-primary uppercase tracking-widest mb-3 block">
                   Multi-Agent Collaboration
                 </span>
-                <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
+                <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
                   Your agents don&apos;t just work. <span className="text-gradient-purple">They work together.</span>
                 </h2>
                 <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed mb-8">
@@ -340,7 +340,7 @@ export default function Features() {
                 <span className="text-sm font-extrabold text-primary mb-3 block uppercase tracking-widest">
                   Model Agnostic Intelligence
                 </span>
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tight">
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
                   Make any model <span className="text-gradient">your agent.</span>
                 </h2>
                 <p className="text-slate-400 text-lg leading-relaxed mb-8">

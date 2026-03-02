@@ -23,7 +23,7 @@ function ContentRenderer({ block }: { block: ContentBlock }) {
   switch (block.type) {
     case "heading":
       return (
-        <h2 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white tracking-tight mt-12 mb-4">
+        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white tracking-tight mt-12 mb-4">
           {block.text}
         </h2>
       );
@@ -134,7 +134,7 @@ export default async function BlogPostPage({
             ))}
           </div>
 
-          <h1 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 tracking-tight leading-tight">
+          <h1 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight leading-tight">
             {post.title}
           </h1>
 
@@ -211,7 +211,7 @@ export default async function BlogPostPage({
         <div className="absolute -bottom-48 -left-24 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute -top-48 -right-24 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
             Ready to run your own experiment?
           </h2>
           <p className="text-lg text-slate-400 mb-10 leading-relaxed">

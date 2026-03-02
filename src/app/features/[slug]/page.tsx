@@ -41,7 +41,7 @@ export default async function WorkspaceToolPage({
               {tool.icon}
             </span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
             {tool.title}
           </h1>
           <p className="text-xl text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
@@ -72,7 +72,7 @@ export default async function WorkspaceToolPage({
       <section className="py-24 bg-gray-50/50 dark:bg-dark-surface">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
               Key Highlights
             </h2>
           </div>
@@ -103,7 +103,7 @@ export default async function WorkspaceToolPage({
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
               What you can do
             </h2>
           </div>
@@ -137,7 +137,7 @@ export default async function WorkspaceToolPage({
         <div className="absolute -bottom-48 -left-24 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute -top-48 -right-24 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
             Try the {tool.title} today
           </h2>
           <p className="text-lg text-slate-400 mb-10 leading-relaxed">

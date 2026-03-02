@@ -5,7 +5,7 @@ export default function Showcase() {
     <section className="py-24 relative bg-white dark:bg-dark-base" id="showcase">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
             Multiple agents. <span className="text-gradient-blue">One workspace.</span>
           </h2>
           <p className="text-slate-500 dark:text-slate-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
