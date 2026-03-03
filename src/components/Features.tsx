@@ -214,7 +214,8 @@ export default function Features() {
                   Keep your agents <span className="text-gradient-purple">on track.</span>
                 </h2>
                 <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed mb-8">
-                  Sometimes an agent may drift from the original task or miss important details as the conversation grows. Context Tracking gives you the tools to <span className="font-bold text-slate-700 dark:text-slate-200">steer it back on course</span> and keep things running smoothly.
+                  When project requirements change, instantly push updated context and instructions to your AI agents so they stay aligned with the latest goals.
+                   <span className="font-bold text-slate-700 dark:text-slate-200"> Context Tracking keeps execution accurate, adaptive, and fully in sync with your evolving workflow.</span>
                 </p>
                 <div className="space-y-4">
                   {contextTrackingPoints.map((item) => (

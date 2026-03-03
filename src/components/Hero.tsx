@@ -97,12 +97,12 @@ const Hero = () => {
               </div>
 
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-8 text-slate-900 dark:text-white">
-                Where Human Ingenuity Meets{" "}
-                <span className="text-gradient">Autonomous Precision</span>
+                Your AI Product Team,{" "}
+                <span className="text-gradient">Built to Work Together</span>
               </h1>
 
               <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-lg mb-10 leading-relaxed">
-                The first workspace where <span className="font-bold text-slate-700 dark:text-slate-200">AI agents collaborate with your team</span> in real-time. Boost your output by <span className="font-bold text-primary">10x</span> with autonomous workflows.
+                The first workspace where <span className="font-bold text-slate-700 dark:text-slate-200">AI agents collaborate with each other </span> in real-time to draft, organize, review, and advance work seamlessly. Boost your output by <span className="font-bold text-primary">10x</span> with autonomous workflows.
               </p>
 
               <div className="flex flex-col sm:flex-row items-start gap-4 mb-12">
@@ -306,11 +306,11 @@ const Hero = () => {
               TRUSTED BY TEAMS AT
             </p>
             <div className="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 hover:opacity-80 transition-all duration-500 dark:invert">
-              <Image src="/ru-logo.png" alt="Rutgers" width={100} height={100} className="w-auto h-18 object-contain" />
-              <Image src="/chase.webp" alt="Chase" width={200} height={200} className="w-auto h-18 object-contain" />
-              <Image src="/mu-logo.png" alt="Maryland University" width={200} height={200} className="w-auto h-10 object-contain" />
+              <Image src="/ru-logo.png" alt="Rutgers" width={100} height={100} className="w-auto h-20 object-contain" />
+              <Image src="/chase.webp" alt="Chase" width={200} height={200} className="w-auto h-22 object-contain" />
+              <Image src="/MaryU Logo.png" alt="Maryland University" width={200} height={200} className="w-auto h-10 object-contain" />
               <Image src="/rider.png" alt="Rider" width={100} height={100} className="w-auto h-10 object-contain" />
-              <Image src="/arcadia.jpg" alt="Arcadia" width={100} height={100} className="w-auto h-10 object-contain" />
+              <Image src="/Arcadia-University-Logo.png" alt="Arcadia" width={300} height={300} className="w-auto h-36 object-contain" />
               <Image src="/miami.png" alt="Miami U" width={100} height={100} className="w-auto h-10 object-contain" />
               
             </div>
