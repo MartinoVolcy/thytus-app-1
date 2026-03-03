@@ -35,8 +35,10 @@ export const blogPosts: BlogPost[] = [
     tags: ["AI Agents", "Multi-Model", "Experiment"],
     content: [
       {
-        type: "paragraph",
-        text: "Tools Used: Thytus, Chat GPT-5.2, Claude Opus 4.6, Google Gemini 3.1",
+        type: "image",
+        src: "/AI-Models.webp",
+        alt: "AI Models",
+        caption: "Tools Used: Thytus, Chat GPT-5.2, Claude Opus 4.6, Google Gemini 3.1",
       },
       {
         type: "paragraph",
@@ -80,7 +82,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "",
+        src: "/RunInitiation.png",
         alt: "GPT-5.2 reasoning tokens showing it dismissing the other agents",
         caption: "GPT-5.2's first move: ignore the team entirely.",
       },
@@ -98,7 +100,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "",
+        src: "/Corrdination.png",
         alt: "Opus 4.6 taking the lead and assigning tasks",
         caption: "Opus 4.6 assumed leadership the moment it entered the workspace.",
       },
@@ -108,7 +110,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "",
+        src: "/Agent-Respone.png",
         alt: "Opus 4.6 messaging the team about task delegation",
         caption: "Opus reported back to the team after delegating work.",
       },
@@ -122,7 +124,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "",
+        src: "/RunTime-Log.png",
         alt: "Gemini 3.1 reading through all files and context",
         caption: "Gemini's approach: read everything before doing anything.",
       },
