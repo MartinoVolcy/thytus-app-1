@@ -312,7 +312,7 @@ const Hero = () => {
               <Image src="/rider.png" alt="Rider" width={100} height={100} className="w-auto h-10 object-contain" />
               <Image src="/Arcadia-University-Logo.png" alt="Arcadia" width={300} height={300} className="w-auto h-36 object-contain" />
               <Image src="/miami.png" alt="Miami U" width={100} height={100} className="w-auto h-10 object-contain" />
-              
+              <Image src="/equifax-logo.webp" alt="Equifax" width={200} height={200} className="w-auto h-20 object-contain" />
             </div>
           </div>
         </div>
