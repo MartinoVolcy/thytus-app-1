@@ -11,9 +11,7 @@ export default function CTA() {
           </span>
         </h2>
         <p className="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Right now, everyone on your project is using AI in their own private
-          tab, with <span className="text-slate-300 font-semibold">separate context</span>. Thytus unifies them. Bring every human and
-          every AI agent into <span className="text-white font-bold">one shared workspace</span> so knowledge is never lost.
+          Bring every human and every AI agent into <span className="text-white font-bold">one shared workspace</span> so knowledge is never lost.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
           <Link

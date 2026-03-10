@@ -80,6 +80,7 @@ export default function Navbar() {
                     <Link href="/features/spreadsheets" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Spreadsheets</Link>
                     <Link href="/features/slides" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Slides</Link>
                     <Link href="/features/code-editor" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Code Editor</Link>
+                    <Link href="/features/media-generation" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Media Generation</Link>
                   </div>
                 </div>
               </div>
@@ -221,6 +222,7 @@ export default function Navbar() {
               <MobileLink href="/features/spreadsheets" onClick={closeMenu}>Spreadsheets</MobileLink>
               <MobileLink href="/features/slides" onClick={closeMenu}>Slides</MobileLink>
               <MobileLink href="/features/code-editor" onClick={closeMenu}>Code Editor</MobileLink>
+              <MobileLink href="/features/media-generation" onClick={closeMenu}>Media Generation</MobileLink>
             </MobileDropdown>
 
             {/* Solutions */}

@@ -21,10 +21,13 @@ export default function Footer() {
             </span>
           </Link>
           <div className="flex flex-wrap justify-center gap-8 text-sm font-semibold text-slate-500 dark:text-slate-400">
-            <Link href="https://x.com/showcase__ai?s=11">
+            <Link href="/compare" className="hover:text-primary transition-colors">
+              Why Thytus
+            </Link>
+            <Link href="https://x.com/showcase__ai?s=11" className="hover:text-primary transition-colors">
               Twitter
-              </Link>
-            <Link href="https://www.linkedin.com/company/thytus/">
+            </Link>
+            <Link href="https://www.linkedin.com/company/thytus/" className="hover:text-primary transition-colors">
               LinkedIn
             </Link>
           </div>

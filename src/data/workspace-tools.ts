@@ -117,4 +117,25 @@ export const workspaceTools: WorkspaceTool[] = [
       { title: "Collaborative Review", text: "Share code snippets with session participants for real-time feedback, comments, and suggested edits." },
     ],
   },
+  {
+    slug: "media-generation",
+    icon: "movie",
+    title: "Media Generation",
+    subtitle: "Podcasts, Images & Videos",
+    image: "/slides.png",
+    color: "bg-pink-100/50 dark:bg-pink-500/15 text-pink-600 dark:text-pink-400",
+    tagline: "Generate podcasts, images, and videos with AI, all from within your workspace.",
+    description: "Media Generation brings creative production into Thytus. Describe what you need and your AI agents will produce podcast episodes, images, and video content on demand. No external tools, no context switching. Your team can review, iterate, and publish everything from a single session.",
+    content: [
+      { heading: "AI Podcasts", text: "Generate full podcast episodes from a topic, outline, or conversation. Choose voices, set the tone, and produce audio your audience can listen to immediately." },
+      { heading: "Image Generation", text: "Create images from text prompts, from social media graphics to presentation visuals. Iterate on style, composition, and branding until it's exactly right." },
+      { heading: "Video Creation", text: "Produce short-form video content powered by AI. Great for social clips, product demos, and explainer videos without a production team." },
+    ],
+    features: [
+      { title: "Text-to-Podcast", text: "Turn any written content, topic, or brief into a multi-voice podcast episode ready for distribution." },
+      { title: "Prompt-to-Image", text: "Generate high-quality images from natural language descriptions. Fine-tune style, aspect ratio, and composition." },
+      { title: "AI Video Clips", text: "Create short-form videos from prompts or scripts, ideal for social media, marketing, and internal communications." },
+      { title: "Brand Consistency", text: "Set brand guidelines so every generated asset stays on-brand across colors, tone, and visual style." },
+    ],
+  },
 ];

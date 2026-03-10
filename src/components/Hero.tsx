@@ -97,12 +97,12 @@ const Hero = () => {
               </div>
 
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-8 text-slate-900 dark:text-white">
-                Your AI Product Team,{" "}
-                <span className="text-gradient">Built to Work Together</span>
+                Where Teams and AI{" "}
+                <span className="text-gradient">Build Together</span>
               </h1>
 
               <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-lg mb-10 leading-relaxed">
-                The first workspace where <span className="font-bold text-slate-700 dark:text-slate-200">AI agents collaborate with each other </span> in real-time to draft, organize, review, and advance work seamlessly. Boost your output by <span className="font-bold text-primary">10x</span> with autonomous workflows.
+                The first workspace where <span className="font-bold text-slate-700 dark:text-slate-200">Teams and AI agents collaborate with each other </span> in real-time to draft, organize, review, and advance work seamlessly. Boost your output by <span className="font-bold text-primary">10x</span> with autonomous workflows.
               </p>
 
               <div className="flex flex-col sm:flex-row items-start gap-4 mb-12">
@@ -307,11 +307,11 @@ const Hero = () => {
             </p>
             <div className="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 hover:opacity-80 transition-all duration-500 dark:invert">
               <Image src="/ru-logo.png" alt="Rutgers" width={100} height={100} className="w-auto h-20 object-contain" />
-              <Image src="/chase.webp" alt="Chase" width={200} height={200} className="w-auto h-22 object-contain" />
+              <Image src="/miami.png" alt="Miami U" width={100} height={100} className="w-auto h-10 object-contain" />              
               <Image src="/MaryU Logo.png" alt="Maryland University" width={200} height={200} className="w-auto h-10 object-contain" />
               <Image src="/rider.png" alt="Rider" width={100} height={100} className="w-auto h-10 object-contain" />
               <Image src="/Arcadia-University-Logo.png" alt="Arcadia" width={300} height={300} className="w-auto h-36 object-contain" />
-              <Image src="/miami.png" alt="Miami U" width={100} height={100} className="w-auto h-10 object-contain" />
+              <Image src="/chase.webp" alt="Chase" width={200} height={200} className="w-auto h-22 object-contain" />
               <Image src="/equifax-logo.webp" alt="Equifax" width={200} height={200} className="w-auto h-20 object-contain" />
             </div>
           </div>
@@ -321,55 +321,64 @@ const Hero = () => {
       {/* Fade from hero color to white */}
       <div className="h-32 bg-gradient-to-b from-sky-50 to-white dark:from-dark-base dark:to-dark-base"></div>
 
-      {/* Features strip */}
+      {/* The Problem */}
       <section className="bg-white dark:bg-dark-base py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-16">
-            <div className="group">
-              <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mb-8 border border-primary/10 group-hover:bg-primary transition-all duration-300">
-                <span className="material-symbols-outlined text-xl text-primary group-hover:text-white transition-colors">
-                  sync_alt
-                </span>
-              </div>
-              <h3 className="text-xl font-extrabold mb-4 tracking-tight text-slate-900 dark:text-white">
-                Autonomous Sync
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Issue statement */}
+            <div>
+              <h2 className="text-2xl md:text-2xl font-extrabold uppercase tracking-widest  text-slate-500 dark:text-slate-400 mb-4">
+                Right now everyone on your team is using separate AI in their own tab, with{" "}
+                <span className="text-red-500">separate context</span>
+              </h2>
+              <h3 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
+                Sound familiar?
               </h3>
-              <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
-                Agents automatically update your project state based on
-                real-time conversations and code changes.
-              </p>
             </div>
-            <div className="group">
-              <div className="w-10 h-10 bg-purple-100 dark:bg-purple-500/15 rounded-xl flex items-center justify-center mb-8 border border-purple-100 dark:border-purple-500/20 group-hover:bg-purple-600 transition-all duration-300">
-                <span className="material-symbols-outlined text-xl text-purple-600 dark:text-purple-400 group-hover:text-white transition-colors">
-                  psychology
+
+            {/* Right: Issues orbiting the central problem */}
+            <div className="relative flex items-center justify-center min-h-[420px]">
+              {/* Central card */}
+              <div className="relative z-10 flex flex-col items-center gap-3 px-8 py-10 rounded-3xl border-2 border-red-300 dark:border-red-500/30 bg-red-50 dark:bg-red-500/10 shadow-lg shadow-red-200/40 dark:shadow-red-500/10 max-w-[220px] text-center">
+                <span className="material-symbols-outlined text-4xl text-red-500 dark:text-red-400">
+                  group_off
+                </span>
+                <span className="text-base font-bold text-slate-900 dark:text-white leading-snug">
+                  No AI &amp; Team Coordination
                 </span>
               </div>
-              <h3 className="text-xl font-extrabold mb-4 tracking-tight text-slate-900 dark:text-white">
-                Contextual Intelligence
-              </h3>
-              <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
-                Your agents learn from your team&apos;s past decisions, ensuring
-                every output aligns with your unique style.
-              </p>
-            </div>
-            <div className="group">
-              <div className="w-10 h-10 bg-emerald-100 dark:bg-emerald-500/15 rounded-xl flex items-center justify-center mb-8 border border-emerald-100 dark:border-emerald-500/20 group-hover:bg-emerald-600 transition-all duration-300">
-                <span className="material-symbols-outlined text-xl text-emerald-600 dark:text-emerald-400 group-hover:text-white transition-colors">
-                  security
-                </span>
-              </div>
-              <h3 className="text-xl font-extrabold mb-4 tracking-tight text-slate-900 dark:text-white">
-                Enterprise Privacy
-              </h3>
-              <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
-                Enterprise-grade encryption and SOC2 compliance. Your proprietary
-                data never leaves your workspace.
-              </p>
+
+              {/* Floating issue cards */}
+              {[
+                { icon: "hourglass_top", text: "Slow progress", top: "0%", left: "5%", rotate: "-6deg", delay: "0s" },
+                { icon: "content_copy", text: "Duplicate AI work", top: "2%", left: "68%", rotate: "4deg", delay: "0.5s" },
+                { icon: "visibility_off", text: "Lost context", top: "42%", left: "0%", rotate: "-3deg", delay: "1s" },
+                { icon: "event_busy", text: "Missed deadlines", top: "44%", left: "74%", rotate: "5deg", delay: "1.5s" },
+                { icon: "sync_problem", text: "Incompatible outputs", top: "78%", left: "12%", rotate: "3deg", delay: "2s" },
+              ].map((item) => (
+                <div
+                  key={item.text}
+                  className="absolute flex flex-col items-center gap-2 p-4 rounded-2xl border border-red-100 dark:border-red-500/15 bg-white dark:bg-dark-card shadow-md shadow-red-100/30 dark:shadow-black/20 animate-float w-[140px] text-center"
+                  style={{
+                    top: item.top,
+                    left: item.left,
+                    rotate: item.rotate,
+                    animationDelay: item.delay,
+                  }}
+                >
+                  <span className="material-symbols-outlined text-xl text-red-500 dark:text-red-400">
+                    {item.icon}
+                  </span>
+                  <span className="text-xs font-semibold text-slate-700 dark:text-slate-300 leading-snug">
+                    {item.text}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
+
     </div>
   );
 };

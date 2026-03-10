@@ -217,12 +217,20 @@ export default async function BlogPostPage({
           <p className="text-lg text-slate-400 mb-10 leading-relaxed">
             Put multiple AI models to work in the same session and see what happens.
           </p>
-          <Link
-            href="https://showcase.thytus.com/v1/auth/signin"
-            className="inline-flex px-8 py-4 bg-white text-slate-900 rounded-full font-bold hover:scale-105 transition-transform shadow-2xl"
-          >
-            Get Started for Free
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="https://showcase.thytus.com/v1/auth/signin"
+              className="inline-flex px-8 py-4 bg-white text-slate-900 rounded-full font-bold hover:scale-105 transition-transform shadow-2xl"
+            >
+              Get Started for Free
+            </Link>
+            <Link
+              href="/compare"
+              className="inline-flex px-8 py-4 border border-white/20 text-white rounded-full font-bold hover:bg-white/10 transition-colors"
+            >
+              Why Thytus?
+            </Link>
+          </div>
         </div>
       </section>
 
