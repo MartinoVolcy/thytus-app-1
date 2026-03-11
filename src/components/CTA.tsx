@@ -17,7 +17,16 @@ export default function CTA() {
           <Link
             href="https://showcase.thytus.com/v1/auth/signin"
             className="w-full sm:w-auto px-8 py-4 bg-white text-slate-900 rounded-full font-bold text-md hover:scale-105 transition-transform shadow-2xl hover:bg-blue-50"
-            > Get Started for Free </Link>
+          >
+            Get Started for Free
+          </Link>
+        </div>
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-10 text-sm text-slate-500">
+          <Link href="/ai-collaboration-platform" className="hover:text-white transition-colors">AI Collaboration Platform</Link>
+          <Link href="/ai-tools-for-sales-teams" className="hover:text-white transition-colors">AI for Sales Teams</Link>
+          <Link href="/ai-tools-for-marketing-teams" className="hover:text-white transition-colors">AI for Marketing</Link>
+          <Link href="/ai-research-assistant" className="hover:text-white transition-colors">AI Research Assistant</Link>
+          <Link href="/ai-tools-for-small-business" className="hover:text-white transition-colors">AI for Small Business</Link>
         </div>
       </div>
       <div className="absolute -bottom-48 -left-24 w-[600px] h-[600px] bg-blue-600/30 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>

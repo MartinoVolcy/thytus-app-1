@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: "Why Thytus | Compare AI Workspaces",
   description:
     "See how Thytus compares to ChatGPT, Claude, Gemini, Juma, Manus, and more. The AI workspace built for your whole company.",
+  openGraph: {
+    title: "Why Thytus | Compare AI Workspaces",
+    description:
+      "See how Thytus compares to ChatGPT, Claude, Gemini, Juma, Manus, and more.",
+  },
 };
 
 const collabFeatures = [

@@ -15,6 +15,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${solution.title} | Thytus Solutions`,
     description: solution.tagline,
+    openGraph: {
+      title: `${solution.title} | Thytus Solutions`,
+      description: solution.tagline,
+    },
+    twitter: {
+      title: solution.title,
+      description: solution.tagline,
+    },
   };
 }
 

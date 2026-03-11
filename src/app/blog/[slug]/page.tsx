@@ -16,6 +16,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${post.title} | Thytus Blog`,
     description: post.subtitle,
+    openGraph: {
+      title: `${post.title} | Thytus Blog`,
+      description: post.subtitle,
+      type: "article",
+      publishedTime: post.date,
+      authors: [post.author.name],
+      tags: post.tags,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.subtitle,
+    },
   };
 }
 
@@ -230,6 +243,12 @@ export default async function BlogPostPage({
             >
               Why Thytus?
             </Link>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-10 text-sm text-slate-500">
+            <Link href="/ai-collaboration-platform" className="hover:text-white transition-colors">AI Collaboration Platform</Link>
+            <Link href="/ai-tools-for-sales-teams" className="hover:text-white transition-colors">AI for Sales Teams</Link>
+            <Link href="/ai-tools-for-marketing-teams" className="hover:text-white transition-colors">AI for Marketing</Link>
+            <Link href="/ai-research-assistant" className="hover:text-white transition-colors">AI Research Assistant</Link>
           </div>
         </div>
       </section>

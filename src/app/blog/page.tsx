@@ -3,9 +3,17 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { blogPosts } from "@/data/blog-posts";
 
-export const metadata = {
-  title: "Blog | Thytus",
-  description: "Stories, experiments, and insights from the Thytus community.",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "Stories, experiments, and insights on AI collaboration, multi-model agents, and team productivity from the Thytus community.",
+  openGraph: {
+    title: "Blog | Thytus",
+    description:
+      "Stories, experiments, and insights on AI collaboration and team productivity from the Thytus community.",
+  },
 };
 
 export default function BlogPage() {

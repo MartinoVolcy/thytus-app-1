@@ -20,6 +20,14 @@ export async function generateMetadata({
   return {
     title: `Thytus vs ${comp.name} | Compare AI Workspaces`,
     description: comp.tagline,
+    openGraph: {
+      title: `Thytus vs ${comp.name} | Compare AI Workspaces`,
+      description: comp.tagline,
+    },
+    twitter: {
+      title: `Thytus vs ${comp.name}`,
+      description: comp.tagline,
+    },
   };
 }
 

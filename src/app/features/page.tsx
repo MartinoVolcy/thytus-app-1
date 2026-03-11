@@ -3,9 +3,17 @@ import Features from "@/components/Features";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
-export const metadata = {
-  title: "Features | Thytus",
-  description: "Explore the core functionality of the Thytus platform.",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Features",
+  description:
+    "Explore Thytus capabilities: multi-model AI agents, context tracking, agent collaboration, docs, spreadsheets, slides, code editor, and media generation.",
+  openGraph: {
+    title: "Features | Thytus",
+    description:
+      "Explore Thytus capabilities: multi-model AI agents, context tracking, agent collaboration, and a full suite of workspace tools.",
+  },
 };
 
 export default function FeaturesPage() {

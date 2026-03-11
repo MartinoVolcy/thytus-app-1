@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Showcase from "@/components/Showcase";
@@ -6,6 +7,22 @@ import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "AI Collaboration Platform for Teams",
+  description:
+    "Thytus is a collaborative AI workspace where teams and AI agents work side by side. Deploy multiple models, collaborate in real time, and ship faster.",
+  openGraph: {
+    title: "AI Collaboration Platform for Teams | Thytus",
+    description:
+      "Thytus is a collaborative AI workspace where teams and AI agents work side by side. Deploy multiple models, collaborate in real time, and ship faster.",
+  },
+  twitter: {
+    title: "AI Collaboration Platform for Teams | Thytus",
+    description:
+      "Thytus is a collaborative AI workspace where teams and AI agents work side by side.",
+  },
+};
 
 export default function Home() {
   return (
