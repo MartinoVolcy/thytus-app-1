@@ -31,31 +31,30 @@ const collabFeatures = [
 
 export default function ComparePage() {
   return (
-    <div className="bg-white dark:bg-dark-base text-text-dark dark:text-slate-200 antialiased selection:bg-primary/20 pt-20">
+    <div className="bg-slate-50 dark:bg-dark-base text-slate-900 dark:text-slate-200 antialiased selection:bg-primary/20 transition-colors duration-300 pt-20">
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-24 pb-16 relative overflow-hidden">
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-primary/[0.04] rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <span className="text-sm font-extrabold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4 block">
-            Thytus vs Everyone Else
+      <section className="pt-24 pb-16 border-b border-slate-100 dark:border-dark-border">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <span className="text-xs md:text-sm font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-[0.25em] mb-3 block">
+            Compare
           </span>
-          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
-            How Are We <span className="text-gradient-blue pr-1 pb-1 inline-block">Different? </span>
+          <h1 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-5 tracking-tight">
+            How are we different?
           </h1>
-          <p className="text-xl text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
             See how Thytus stacks up against the tools your team already knows.
           </p>
         </div>
       </section>
 
       {/* Featured Thytus Card + Competitor Grid */}
-      <section className="pb-24">
+      <section className="py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-6">
           {/* Thytus featured card */}
-          <div className="mb-8 p-8 rounded-2xl border-2 border-primary/30 dark:border-primary/20 bg-gradient-to-br from-sky-50/80 via-white to-white dark:from-primary/[0.06] dark:via-dark-card dark:to-dark-card shadow-lg shadow-primary/5 dark:shadow-primary/10 flex flex-col md:flex-row items-center gap-8">
-            <div className="w-16 h-16 rounded-2xl bg-primary/10 dark:bg-primary/15 flex items-center justify-center shrink-0">
+          <div className="mb-10 p-8 rounded-2xl bg-white dark:bg-dark-card border border-slate-200/80 dark:border-dark-border shadow-sm flex flex-col md:flex-row items-center gap-8">
+            <div className="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-dark-elevated flex items-center justify-center shrink-0">
               <Image
                 src="/Thytus_Logo.png"
                 alt="Thytus"
@@ -69,14 +68,14 @@ export default function ComparePage() {
                 Thytus
               </h2>
               <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
-                <span className="font-bold text-slate-700 dark:text-slate-200">Thytus</span> is the collaborative AI workspace where your whole company works together. Teams and AI agents from any provider share one workspace to draft, research, create, and ship, with built-in docs, slides, spreadsheets, code editor, and media generation. It&apos;s AI that doesn&apos;t just chat, it does the work.
+                <span className="font-bold text-slate-700 dark:text-slate-200">Thytus</span> is the collaborative AI workspace where your whole company works together. Teams and AI agents from any provider share one workspace to draft, research, create, and ship, with built-in docs, slides, spreadsheets, code editor, and media generation.
               </p>
             </div>
             <Link
               href="https://showcase.thytus.com/v1/auth/signin"
-              className="shrink-0 px-6 py-3 bg-primary hover:bg-sky-600 text-white rounded-full font-bold text-sm transition-colors shadow-md shadow-sky-500/20"
+              className="shrink-0 px-6 py-3 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-full font-semibold text-sm hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors"
             >
-              Start for Free
+              Get Started
             </Link>
           </div>
 
@@ -85,10 +84,10 @@ export default function ComparePage() {
             {competitors.map((c) => (
               <div
                 key={c.slug}
-                className="p-6 rounded-2xl border border-gray-100 dark:border-dark-border bg-white dark:bg-dark-card dark-glow flex flex-col hover:border-gray-200 dark:hover:border-dark-border transition-colors"
+                className="p-6 rounded-2xl bg-white dark:bg-dark-card border border-slate-200/80 dark:border-dark-border flex flex-col hover:border-slate-300/80 dark:hover:border-slate-600 transition-colors"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-gray-100 dark:bg-dark-elevated flex items-center justify-center shrink-0 overflow-hidden">
+                  <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-dark-elevated flex items-center justify-center shrink-0 overflow-hidden">
                     <Image
                       src={c.logo}
                       alt={c.name}
@@ -106,7 +105,7 @@ export default function ComparePage() {
                 </p>
                 <Link
                   href={`/compare/${c.slug}`}
-                  className="text-sm font-semibold text-primary hover:underline inline-flex items-center gap-1"
+                  className="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1"
                 >
                   Compare {c.name.split(" /")[0]} to Thytus
                   <span className="material-symbols-outlined text-base">arrow_forward</span>
@@ -118,20 +117,20 @@ export default function ComparePage() {
       </section>
 
       {/* Why Customers Choose Thytus */}
-      <section className="py-24 bg-gray-50/50 dark:bg-dark-surface" id="why-thytus">
+      <section className="py-16 md:py-24 border-t border-slate-100 dark:border-dark-border bg-white dark:bg-dark-base/50" id="why-thytus">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-sm font-extrabold text-primary uppercase tracking-widest mb-3 block">
+          <div className="text-center mb-12">
+            <span className="text-xs md:text-sm font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-[0.25em] mb-3 block">
               The Thytus Advantage
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tight">
-              Why customers are choosing Thytus
+            <h2 className="text-2xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
+              Why customers choose Thytus
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="p-8 rounded-2xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border dark-glow text-center">
-              <div className="w-14 h-14 bg-emerald-100 dark:bg-emerald-500/15 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="material-symbols-outlined text-2xl text-emerald-600 dark:text-emerald-400">
+            <div className="p-8 rounded-2xl bg-white dark:bg-dark-card border border-slate-200/80 dark:border-dark-border text-center">
+              <div className="w-14 h-14 bg-slate-100 dark:bg-dark-elevated rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <span className="material-symbols-outlined text-2xl text-slate-500 dark:text-slate-400">
                   menu_book
                 </span>
               </div>
@@ -139,14 +138,12 @@ export default function ComparePage() {
                 Grounded Knowledge
               </h3>
               <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                AI responses are built on your team&apos;s actual files,
-                conversations, and context, not generic internet data. Every
-                answer is relevant to your work.
+                AI responses are built on your team&apos;s actual files, conversations, and context, not generic internet data. Every answer is relevant to your work.
               </p>
             </div>
-            <div className="p-8 rounded-2xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border dark-glow text-center">
-              <div className="w-14 h-14 bg-blue-100 dark:bg-blue-500/15 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="material-symbols-outlined text-2xl text-blue-600 dark:text-blue-400">
+            <div className="p-8 rounded-2xl bg-white dark:bg-dark-card border border-slate-200/80 dark:border-dark-border text-center">
+              <div className="w-14 h-14 bg-slate-100 dark:bg-dark-elevated rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <span className="material-symbols-outlined text-2xl text-slate-500 dark:text-slate-400">
                   swap_horiz
                 </span>
               </div>
@@ -154,14 +151,12 @@ export default function ComparePage() {
                 Model Agnostic
               </h3>
               <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                Use GPT, Claude, Gemini, Mistral, and dozens more. Pick the best
-                model for each task instead of being locked into a single
-                provider.
+                Use GPT, Claude, Gemini, Mistral, and dozens more. Pick the best model for each task instead of being locked into a single provider.
               </p>
             </div>
-            <div className="p-8 rounded-2xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border dark-glow text-center">
-              <div className="w-14 h-14 bg-violet-100 dark:bg-violet-500/15 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="material-symbols-outlined text-2xl text-violet-600 dark:text-violet-400">
+            <div className="p-8 rounded-2xl bg-white dark:bg-dark-card border border-slate-200/80 dark:border-dark-border text-center">
+              <div className="w-14 h-14 bg-slate-100 dark:bg-dark-elevated rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <span className="material-symbols-outlined text-2xl text-slate-500 dark:text-slate-400">
                   travel_explore
                 </span>
               </div>
@@ -169,9 +164,7 @@ export default function ComparePage() {
                 Deep Research
               </h3>
               <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                Agents go beyond surface-level answers. They run multi-step
-                research workflows, cross-reference sources, and deliver
-                thorough, reliable results.
+                Agents go beyond surface-level answers. They run multi-step research workflows, cross-reference sources, and deliver thorough, reliable results.
               </p>
             </div>
           </div>
@@ -179,40 +172,37 @@ export default function ComparePage() {
       </section>
 
       {/* Team Collaboration: Thytus vs Others */}
-      <section className="py-24">
+      <section className="py-16 md:py-24 border-t border-slate-100 dark:border-dark-border">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-sm font-extrabold text-primary uppercase tracking-widest mb-3 block">
+          <div className="text-center mb-12">
+            <span className="text-xs md:text-sm font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-[0.25em] mb-3 block">
               Collaboration
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tight">
-              Team collaboration with{" "}
-              <span className="text-gradient-blue">Thytus</span> vs. others
+            <h2 className="text-2xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
+              Team collaboration with Thytus vs. others
             </h2>
             <p className="text-slate-500 dark:text-slate-400 mt-4 max-w-xl mx-auto">
               Most AI tools are built for individuals. Thytus is built for teams.
             </p>
           </div>
-          <div className="rounded-2xl border border-gray-100 dark:border-dark-border overflow-hidden">
-            {/* Header */}
-            <div className="grid grid-cols-[1fr_100px_100px] bg-gray-50 dark:bg-dark-surface px-6 py-4 border-b border-gray-100 dark:border-dark-border">
+          <div className="rounded-2xl border border-slate-200/80 dark:border-dark-border overflow-hidden bg-white dark:bg-dark-card">
+            <div className="grid grid-cols-[1fr_100px_100px] bg-slate-50 dark:bg-dark-surface px-6 py-4 border-b border-slate-100 dark:border-dark-border">
               <span className="text-sm font-bold text-slate-700 dark:text-slate-300">
                 Feature
               </span>
-              <span className="text-sm font-bold text-primary text-center">
+              <span className="text-sm font-bold text-blue-600 dark:text-blue-400 text-center">
                 Thytus
               </span>
               <span className="text-sm font-bold text-slate-400 dark:text-slate-500 text-center">
                 Others
               </span>
             </div>
-            {/* Rows */}
             {collabFeatures.map((row, i) => (
               <div
                 key={row.feature}
                 className={`grid grid-cols-[1fr_100px_100px] px-6 py-4 ${
                   i < collabFeatures.length - 1
-                    ? "border-b border-gray-50 dark:border-dark-border"
+                    ? "border-b border-slate-100 dark:border-dark-border"
                     : ""
                 }`}
               >
@@ -236,22 +226,19 @@ export default function ComparePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-slate-900 relative overflow-hidden">
-        <div className="absolute -bottom-48 -left-24 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="absolute -top-48 -right-24 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+      <section className="py-20 md:py-24 border-t border-slate-100 dark:border-dark-border bg-white dark:bg-dark-base/50">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <h2 className="text-2xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">
             Ready to see the difference?
           </h2>
-          <p className="text-lg text-slate-400 mb-10 leading-relaxed">
-            Join the teams already using Thytus to bring their people and AI
-            agents together in one workspace.
+          <p className="text-base text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+            Join the teams already using Thytus to bring their people and AI agents together in one workspace.
           </p>
           <Link
             href="https://showcase.thytus.com/v1/auth/signin"
-            className="inline-flex px-8 py-4 bg-white text-slate-900 rounded-full font-bold hover:scale-105 transition-transform shadow-2xl"
+            className="inline-flex px-8 py-3.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-full font-semibold text-sm hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors shadow-lg"
           >
-            Try Thytus for Free
+            Get Started
           </Link>
         </div>
       </section>

@@ -3,7 +3,6 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import ThemeToggle from "./ThemeToggle";
 
 type Section = "features" | "solutions" | "resources" | null;
 
@@ -54,80 +53,92 @@ export default function Navbar() {
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-8 text-[15px] font-medium text-slate-600 dark:text-slate-300">
             <div className="relative dropdown-group py-4 group">
-              <button className="nav-link hover:text-primary transition-colors flex items-center gap-1">
+              <button className="nav-link hover:text-slate-900 dark:hover:text-white transition-colors flex items-center gap-1">
                 Features{" "}
                 <span className="material-symbols-outlined text-sm opacity-50 transition-transform group-hover:rotate-180">
                   expand_more
                 </span>
               </button>
-              <div className="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full w-[460px] bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border rounded-2xl shadow-xl shadow-gray-200/30 dark:shadow-black/40 opacity-0 invisible translate-y-2 p-4 z-50">
+              <div className="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full w-[460px] bg-white dark:bg-dark-card border border-slate-200/80 dark:border-dark-border rounded-2xl shadow-xl shadow-slate-200/30 dark:shadow-black/40 opacity-0 invisible translate-y-2 p-4 z-50">
                 <div className="mb-2 px-2">
                   <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">Overview</span>
                 </div>
                 <div className="grid grid-cols-2 gap-1 mb-3">
-                  <Link href="/features#capabilities" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Capabilities</Link>
-                  <Link href="/features#context-tracking" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Context Tracking</Link>
-                  <Link href="/features#agent-collaboration" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Agent Collaboration</Link>
-                  <Link href="/features#model-agnostic" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Model Agnostic</Link>
+                  <Link href="/features#capabilities" className="block px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Capabilities</Link>
+                  <Link href="/features#context-tracking" className="block px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Context Tracking</Link>
+                  <Link href="/features#agent-collaboration" className="block px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Agent Collaboration</Link>
+                  <Link href="/features#model-agnostic" className="block px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Model Agnostic</Link>
                 </div>
-                <div className="border-t border-gray-100 dark:border-dark-border pt-3 mt-1">
+                <div className="border-t border-slate-100 dark:border-dark-border pt-3 mt-1">
                   <div className="mb-2 px-2">
                     <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">Workspace Tools</span>
                   </div>
                   <div className="grid grid-cols-2 gap-1">
-                    <Link href="/features/file-window" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">File Window</Link>
-                    <Link href="/features/text-editor" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Text Editor</Link>
-                    <Link href="/features/spreadsheets" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Spreadsheets</Link>
-                    <Link href="/features/slides" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Slides</Link>
-                    <Link href="/features/code-editor" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Code Editor</Link>
-                    <Link href="/features/media-generation" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Media Generation</Link>
+                    <Link href="/features/file-window" className="block px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">File Window</Link>
+                    <Link href="/features/text-editor" className="block px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Text Editor</Link>
+                    <Link href="/features/spreadsheets" className="block px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Spreadsheets</Link>
+                    <Link href="/features/slides" className="block px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Slides</Link>
+                    <Link href="/features/code-editor" className="block px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Code Editor</Link>
+                    <Link href="/features/media-generation" className="block px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Media Generation</Link>
                   </div>
                 </div>
               </div>
             </div>
             <div className="relative dropdown-group py-4 group">
-              <button className="nav-link hover:text-primary transition-colors flex items-center gap-1">
+              <button className="nav-link hover:text-slate-900 dark:hover:text-white transition-colors flex items-center gap-1">
                 Solutions{" "}
                 <span className="material-symbols-outlined text-sm opacity-50 transition-transform group-hover:rotate-180">
                   expand_more
                 </span>
               </button>
-              <div className="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full w-[420px] bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border rounded-2xl shadow-xl shadow-gray-200/30 dark:shadow-black/40 opacity-0 invisible translate-y-2 p-3 z-50">
+              <div className="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full w-[420px] bg-white dark:bg-dark-card border border-slate-200/80 dark:border-dark-border rounded-2xl shadow-xl shadow-slate-200/30 dark:shadow-black/40 opacity-0 invisible translate-y-2 p-3 z-50">
                 <div className="grid grid-cols-2 gap-1">
-                  <Link href="/solutions/small-business" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Small Business</Link>
-                  <Link href="/solutions/legal" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Legal</Link>
-                  <Link href="/solutions/product-teams" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Product</Link>
-                  <Link href="/solutions/marketing" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Marketing</Link>
-                  <Link href="/solutions/research-academia" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Research</Link>
-                  <Link href="/solutions/sales" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Sales</Link>
-                  <Link href="/solutions/education" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Education</Link>
-                  <Link href="/solutions/healthcare" className="block px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Healthcare</Link>
+                  <Link href="/solutions/small-business" className="block px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Small Business</Link>
+                  <Link href="/solutions/legal" className="block px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Legal</Link>
+                  <Link href="/solutions/product-teams" className="block px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Product</Link>
+                  <Link href="/solutions/marketing" className="block px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Marketing</Link>
+                  <Link href="/solutions/research-academia" className="block px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Research</Link>
+                  <Link href="/solutions/sales" className="block px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Sales</Link>
+                  <Link href="/solutions/education" className="block px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Education</Link>
+                  <Link href="/solutions/healthcare" className="block px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Healthcare</Link>
                 </div>
               </div>
             </div>
             <Link
               href="/pricing"
-              className="nav-link hover:text-primary transition-colors"
+              className="nav-link hover:text-slate-900 dark:hover:text-white transition-colors"
             >
               Pricing
             </Link>
+            <Link
+              href="/enterprise"
+              className="nav-link hover:text-slate-900 dark:hover:text-white transition-colors"
+            >
+              Enterprise
+            </Link>
             <div className="relative dropdown-group py-4 group">
-              <button className="nav-link hover:text-primary transition-colors flex items-center gap-1">
+              <button className="nav-link hover:text-slate-900 dark:hover:text-white transition-colors flex items-center gap-1">
                 Resources{" "}
                 <span className="material-symbols-outlined text-sm opacity-50 transition-transform group-hover:rotate-180">
                   expand_more
                 </span>
               </button>
-              <div className="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full w-56 bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border rounded-2xl shadow-xl shadow-gray-200/30 dark:shadow-black/40 opacity-0 invisible translate-y-2 p-2 z-50">
+              <div className="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full w-56 bg-white dark:bg-dark-card border border-slate-200/80 dark:border-dark-border rounded-2xl shadow-xl shadow-slate-200/30 dark:shadow-black/40 opacity-0 invisible translate-y-2 p-2 z-50">
+                <Link
+                  href="/compare"
+                  className="block px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors text-sm"
+                >
+                  Why us
+                </Link>
                 <Link
                   href="https://showcase.thytus.com/v1/guides"
-                  className="block px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
+                  className="block px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors text-sm"
                 >
                   Documentation
                 </Link>
                 <Link
                   href="/blog"
-                  className="block px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-dark-elevated rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
+                  className="block px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors text-sm"
                 >
                   Blog
                 </Link>
@@ -135,12 +146,11 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Desktop CTA + Theme */}
+          {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3">
-            <ThemeToggle />
             <Link
-              href="https://showcase.thytus.com/v1/auth/signin"
-              className="btn-pill bg-primary hover:bg-sky-600 text-white px-5 py-2.5 rounded-full text-[14px] font-bold transition-all shadow-md shadow-sky-500/20 dark:shadow-sky-500/30 flex items-center gap-2"
+              href="https://showcase.thytus.com/v1/sessions"
+              className="btn-pill bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 px-5 py-2.5 rounded-full text-[14px] font-semibold transition-colors shadow-lg flex items-center gap-2"
             >
               Get Started
               <span className="material-symbols-outlined text-[18px]">
@@ -149,12 +159,11 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile: theme toggle + hamburger */}
+          {/* Mobile: hamburger */}
           <div className="flex lg:hidden items-center gap-3">
-            <ThemeToggle />
             <button
               onClick={() => setMenuOpen(true)}
-              className="w-10 h-10 flex items-center justify-center rounded-xl text-slate-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-dark-elevated transition-colors"
+              className="w-10 h-10 flex items-center justify-center rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-dark-elevated transition-colors"
               aria-label="Open menu"
             >
               <span className="material-symbols-outlined text-[26px]">menu</span>
@@ -170,7 +179,7 @@ export default function Navbar() {
         }`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 h-20 border-b border-gray-100 dark:border-dark-border">
+        <div className="flex items-center justify-between px-6 h-20 border-b border-slate-100 dark:border-dark-border">
           <Link href="/" onClick={closeMenu} className="flex items-center gap-3">
             <div className="relative w-9 h-9 flex items-center justify-center">
               <Image
@@ -187,7 +196,7 @@ export default function Navbar() {
           </Link>
           <button
             onClick={closeMenu}
-            className="w-10 h-10 flex items-center justify-center rounded-xl text-slate-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-dark-elevated transition-colors"
+            className="w-10 h-10 flex items-center justify-center rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-dark-elevated transition-colors"
             aria-label="Close menu"
           >
             <span className="material-symbols-outlined text-[26px]">close</span>
@@ -247,6 +256,7 @@ export default function Navbar() {
               isOpen={openSection === "resources"}
               onToggle={() => toggleSection("resources")}
             >
+              <MobileLink href="/compare" onClick={closeMenu}>Why us</MobileLink>
               <MobileLink href="https://showcase.thytus.com/v1/guides" onClick={closeMenu}>Documentation</MobileLink>
               <MobileLink href="/blog" onClick={closeMenu}>Blog</MobileLink>
             </MobileDropdown>
@@ -255,18 +265,25 @@ export default function Navbar() {
             <Link
               href="/pricing"
               onClick={closeMenu}
-              className="flex items-center justify-between py-4 border-b border-gray-100 dark:border-dark-border text-lg font-semibold text-slate-900 dark:text-white"
+              className="flex items-center justify-between py-4 border-b border-slate-100 dark:border-dark-border text-lg font-semibold text-slate-900 dark:text-white"
             >
               Pricing
+            </Link>
+            <Link
+              href="/enterprise"
+              onClick={closeMenu}
+              className="flex items-center justify-between py-4 border-b border-slate-100 dark:border-dark-border text-lg font-semibold text-slate-900 dark:text-white"
+            >
+              Enterprise
             </Link>
           </div>
 
           {/* Footer CTA */}
-          <div className="px-6 pb-8 pt-4 border-t border-gray-100 dark:border-dark-border mt-auto">
+          <div className="px-6 pb-8 pt-4 border-t border-slate-100 dark:border-dark-border mt-auto">
             <Link
-              href="https://showcase.thytus.com/v1/auth/signin"
+              href="https://showcase.thytus.com/v1/sessions"
               onClick={closeMenu}
-              className="block w-full text-center bg-primary hover:bg-sky-600 text-white py-3.5 rounded-full text-[15px] font-bold transition-colors shadow-md shadow-sky-500/20 dark:shadow-sky-500/30"
+              className="block w-full text-center bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 py-3.5 rounded-full text-[15px] font-semibold transition-colors shadow-lg"
             >
               Get Started
             </Link>
@@ -291,7 +308,7 @@ function MobileDropdown({
   children: React.ReactNode;
 }) {
   return (
-    <div className="border-b border-gray-100 dark:border-dark-border">
+    <div className="border-b border-slate-100 dark:border-dark-border">
       <button
         onClick={onToggle}
         className="flex items-center justify-between w-full py-4 text-lg font-semibold text-slate-900 dark:text-white"
@@ -330,7 +347,7 @@ function MobileLink({
     <Link
       href={href}
       onClick={onClick}
-      className="block py-2.5 text-[15px] text-slate-600 dark:text-slate-300 hover:text-primary transition-colors"
+      className="block py-2.5 text-[15px] text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
     >
       {children}
     </Link>

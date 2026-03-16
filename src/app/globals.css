@@ -232,6 +232,12 @@ html.theme-transition *::after {
   to   { transform: rotate(-360deg); }
 }
 
+/* Card orbits in a circle without spinning — single path, use animation-delay to stagger */
+@keyframes orbit-card {
+  from { transform: rotate(0deg) translateX(var(--orbit-r, 160px)) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(var(--orbit-r, 160px)) rotate(-360deg); }
+}
+
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
@@ -239,4 +245,14 @@ html.theme-transition *::after {
 
 .animate-float {
   animation: float 4s ease-in-out infinite;
+}
+
+/* Moving dashed border around flow grid */
+@keyframes flow-dash-offset {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -18;
+  }
 }

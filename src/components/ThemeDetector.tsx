@@ -19,14 +19,8 @@ function applyTheme(dark: boolean, animate = false) {
 }
 
 function resolveAndApply(animate = false) {
-  const stored = localStorage.getItem("theme");
-  if (stored === "dark") {
-    applyTheme(true, animate);
-  } else if (stored === "light") {
-    applyTheme(false, animate);
-  } else {
-    applyTheme(window.matchMedia("(prefers-color-scheme: dark)").matches, animate);
-  }
+  // Force light mode regardless of stored or system preference
+  applyTheme(false, animate);
 }
 
 export default function ThemeDetector() {
@@ -35,9 +29,8 @@ export default function ThemeDetector() {
 
     const mq = window.matchMedia("(prefers-color-scheme: dark)");
     const onSystemChange = () => {
-      if (!localStorage.getItem("theme")) {
-        applyTheme(mq.matches, true);
-      }
+      // Always switch back to light if system toggles to dark
+      applyTheme(false, true);
     };
     mq.addEventListener("change", onSystemChange);
 

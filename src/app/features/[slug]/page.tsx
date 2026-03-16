@@ -38,37 +38,36 @@ export default async function WorkspaceToolPage({
   if (!tool) notFound();
 
   return (
-    <div className="bg-white dark:bg-dark-base text-text-dark dark:text-slate-200 antialiased selection:bg-primary/20 pt-20">
+    <div className="bg-slate-50 dark:bg-dark-base text-slate-900 dark:text-slate-200 antialiased selection:bg-primary/20 transition-colors duration-300">
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-24 pb-16 relative overflow-hidden">
-        <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-primary/[0.04] rounded-full blur-[100px] pointer-events-none"></div>
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <div className={`w-16 h-16 rounded-2xl ${tool.color} flex items-center justify-center mx-auto mb-6`}>
-            <span className="material-symbols-outlined text-3xl">
+      <section className="pt-24 pb-16 border-b border-slate-100 dark:border-dark-border">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-dark-elevated flex items-center justify-center mx-auto mb-6">
+            <span className="material-symbols-outlined text-3xl text-slate-500 dark:text-slate-400">
               {tool.icon}
             </span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
+          <h1 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-5 tracking-tight">
             {tool.title}
           </h1>
-          <p className="text-xl text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
             {tool.tagline}
           </p>
         </div>
       </section>
 
-      {/* Description + Screenshot */}
-      <section className="pb-24">
+      {/* Overview + Screenshot */}
+      <section className="py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-6">
-          <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed text-center mb-12">
+          <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed text-center mb-12 max-w-2xl mx-auto">
             {tool.description}
           </p>
-          <div className="rounded-2xl overflow-hidden border border-gray-100 dark:border-dark-border shadow-lg">
+          <div className="rounded-2xl overflow-hidden border border-slate-200/80 dark:border-dark-border bg-white dark:bg-dark-card shadow-sm">
             <Image
               src={tool.image}
-              alt={`${tool.title} screenshot`}
+              alt={`${tool.title} in Thytus`}
               width={1200}
               height={700}
               className="w-full h-auto object-cover"
@@ -77,26 +76,27 @@ export default async function WorkspaceToolPage({
         </div>
       </section>
 
-      {/* Key Highlights */}
-      <section className="py-24 bg-gray-50/50 dark:bg-dark-surface">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
-              Key Highlights
-            </h2>
-          </div>
+      {/* Key capabilities */}
+      <section className="py-16 md:py-24 border-t border-slate-100 dark:border-dark-border bg-white dark:bg-dark-base/50">
+        <div className="max-w-6xl mx-auto px-6">
+          <span className="text-xs md:text-sm font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-[0.25em] mb-3 block text-center">
+            Capabilities
+          </span>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white tracking-tight text-center mb-12">
+            What this tool delivers
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {tool.content.map((item) => (
               <div
                 key={item.heading}
-                className="p-8 rounded-2xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border dark-glow"
+                className="p-6 md:p-8 rounded-2xl bg-white dark:bg-dark-card border border-slate-200/80 dark:border-dark-border"
               >
-                <div className={`w-12 h-12 rounded-xl ${tool.color} flex items-center justify-center mb-6`}>
-                  <span className="material-symbols-outlined text-2xl">
+                <div className="w-11 h-11 rounded-xl bg-slate-100 dark:bg-dark-elevated flex items-center justify-center mb-5">
+                  <span className="material-symbols-outlined text-xl text-slate-500 dark:text-slate-400">
                     {tool.icon}
                   </span>
                 </div>
-                <h3 className="text-lg font-extrabold text-slate-900 dark:text-white mb-3">
+                <h3 className="text-base font-extrabold text-slate-900 dark:text-white mb-2">
                   {item.heading}
                 </h3>
                 <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
@@ -108,27 +108,28 @@ export default async function WorkspaceToolPage({
         </div>
       </section>
 
-      {/* Features */}
-      <section className="py-24">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
-              What you can do
-            </h2>
-          </div>
-          <div className="space-y-6">
+      {/* Use cases */}
+      <section className="py-16 md:py-24 border-t border-slate-100 dark:border-dark-border">
+        <div className="max-w-3xl mx-auto px-6">
+          <span className="text-xs md:text-sm font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-[0.25em] mb-3 block text-center">
+            Use cases
+          </span>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white tracking-tight text-center mb-10">
+            What you can do
+          </h2>
+          <div className="space-y-4">
             {tool.features.map((feature, i) => (
               <div
                 key={feature.title}
-                className="flex items-start gap-5 p-6 rounded-2xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border dark-glow"
+                className="flex items-start gap-4 p-5 rounded-2xl bg-white dark:bg-dark-card border border-slate-200/80 dark:border-dark-border"
               >
-                <div className={`w-10 h-10 rounded-xl ${tool.color} flex items-center justify-center shrink-0 mt-0.5`}>
-                  <span className="font-extrabold text-sm">
+                <div className="w-9 h-9 rounded-lg bg-slate-100 dark:bg-dark-elevated flex items-center justify-center shrink-0">
+                  <span className="text-xs font-bold text-slate-500 dark:text-slate-400">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
                 <div>
-                  <h3 className="font-extrabold text-slate-900 dark:text-white mb-2">
+                  <h3 className="font-extrabold text-slate-900 dark:text-white mb-1">
                     {feature.title}
                   </h3>
                   <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
@@ -142,21 +143,19 @@ export default async function WorkspaceToolPage({
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-slate-900 relative overflow-hidden">
-        <div className="absolute -bottom-48 -left-24 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="absolute -top-48 -right-24 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-            Try the {tool.title} today
+      <section className="py-20 md:py-24 border-t border-slate-100 dark:border-dark-border bg-white dark:bg-dark-base/50">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <h2 className="text-2xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">
+            Use {tool.title} in your workspace
           </h2>
-          <p className="text-lg text-slate-400 mb-10 leading-relaxed">
-            Get started for free and experience {tool.title.toLowerCase()} powered by collaborative AI.
+          <p className="text-base text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+            Bring your team and AI agents into one place. No extra tools, no context switching.
           </p>
           <Link
-            href="https://showcase.thytus.com/v1/auth/signin"
-            className="inline-flex px-8 py-4 bg-white text-slate-900 rounded-full font-bold hover:scale-105 transition-transform shadow-2xl"
+            href="https://showcase.thytus.com/v1/sessions"
+            className="inline-flex px-8 py-3.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-full font-semibold text-sm hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors shadow-lg"
           >
-            Get Started for Free
+            Get Started
           </Link>
         </div>
       </section>
