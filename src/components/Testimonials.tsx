@@ -25,14 +25,14 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-gray-50/50 dark:bg-dark-surface" id="testimonials">
+    <section className="py-24 bg-slate-50 dark:bg-dark-base border-t border-slate-100/80 dark:border-dark-border" id="testimonials">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16 text-center max-w-3xl mx-auto">
-          <span className="text-sm font-bold text-primary mb-2 block uppercase tracking-widest">
+          <span className="text-xs md:text-sm font-extrabold text-blue-600 dark:text-blue-400 mb-3 block uppercase tracking-[0.25em]">
             Testimonials
           </span>
-          <h2 className="text-4xl md:text-5xl font-medium text-slate-900 dark:text-white mb-6 font-display">
-            Loved by teams everywhere.
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-5 tracking-tight">
+            Teams that already work with Thytus.
           </h2>
           <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
             See how forward-thinking companies are using Thytus to accelerate
@@ -44,19 +44,24 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-dark-card p-8 rounded-3xl border border-gray-100 dark:border-dark-border shadow-sm hover:shadow-md dark:hover:shadow-sky-500/5 transition-shadow dark-glow"
+              className="bg-white dark:bg-dark-card p-8 rounded-3xl border border-slate-200/80 dark:border-dark-border shadow-sm hover:shadow-md hover:border-slate-300 dark:hover:border-slate-600 transition-all dark-glow"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">
+                <div className="w-11 h-11 rounded-full bg-slate-900/5 dark:bg-slate-50/10 flex items-center justify-center text-slate-900 dark:text-slate-50 font-bold text-base border border-slate-200/70 dark:border-slate-600">
                   {testimonial.avatar}
                 </div>
                 <div>
                   <div className="font-bold text-slate-900 dark:text-white">
                     {testimonial.author}
                   </div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                    {index === 0 && "Director of Operations"}
+                    {index === 1 && "Head of Research"}
+                    {index === 2 && "Senior Product Manager"}
+                  </div>
                 </div>
               </div>
-              <p className="text-slate-600 dark:text-slate-300 italic leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm">
                 "{testimonial.quote}"
               </p>
             </div>

@@ -15,9 +15,9 @@ export const solutions: Solution[] = [
     title: "Small Business",
     navLabel: "Small Business",
     icon: "storefront",
-    tagline: "Turn AI agents into your most reliable team members",
+    tagline: "Scale output without scaling payroll. AI agents that research, draft, and create.",
     description:
-      "Running a small business means wearing every hat. Thytus gives you AI agents that handle research, draft emails, manage data, and create content \u2014 like hiring a team of specialists without the overhead. Assign tasks, get results, and scale your output without scaling your payroll.",
+      "Small teams need to cover many roles. Thytus gives you AI agents that handle research, drafting, data, and content in one workspace. Assign tasks in plain language and get results without hiring more people.",
     benefits: [
       { title: "Always-On Workforce", text: "Deploy agents that research competitors, draft proposals, and manage spreadsheets around the clock \u2014 no overtime pay required.", icon: "schedule" },
       { title: "Multi-Role Coverage", text: "One session can have a writing agent, a data analyst, and a researcher all working in parallel on different parts of the same project.", icon: "groups" },
@@ -35,9 +35,9 @@ export const solutions: Solution[] = [
     title: "Legal Teams",
     navLabel: "Legal",
     icon: "gavel",
-    tagline: "Extract, analyze, and organize legal documents in seconds",
+    tagline: "Extract and organize data from legal documents so your team can focus on strategy.",
     description:
-      "Legal work is buried in paperwork. Thytus agents read through EOBs, CMS-1500 forms, contracts, and case files to extract the exact data you need. Upload a stack of documents and let agents pull key fields, flag discrepancies, and compile summaries \u2014 so your team can focus on strategy, not data entry.",
+      "Thytus agents read EOBs, CMS-1500 forms, contracts, and case files to extract key fields, flag discrepancies, and compile summaries. Upload documents and get structured data so your team spends time on strategy instead of data entry.",
     benefits: [
       { title: "Form Data Extraction", text: "Agents parse structured forms like EOBs, CMS-1500s, HCFA forms, and insurance documents \u2014 pulling patient info, procedure codes, amounts, and dates automatically.", icon: "document_scanner" },
       { title: "Contract Review", text: "Upload contracts and let agents highlight key clauses, flag unusual terms, and generate plain-language summaries for faster review.", icon: "policy" },
@@ -55,9 +55,9 @@ export const solutions: Solution[] = [
     title: "Product Teams",
     navLabel: "Product",
     icon: "inventory_2",
-    tagline: "From roadmap to presentation in minutes, not days",
+    tagline: "Turn rough notes into PRDs and stakeholder decks without leaving the workspace.",
     description:
-      "Product teams move fast but documentation always lags behind. Thytus agents turn rough notes into polished PRDs, generate stakeholder-ready slide decks, and keep your roadmap documentation up to date \u2014 so your team ships features instead of formatting slides.",
+      "Product documentation often lags behind shipping. Thytus agents turn notes into PRDs, generate slide decks, and keep roadmap docs up to date so your team stays aligned and spends less time on formatting.",
     benefits: [
       { title: "Instant Slide Decks", text: "Describe your product update or quarterly review and agents generate a complete, structured presentation with talking points and visuals.", icon: "slideshow" },
       { title: "PRD Generation", text: "Turn a brief product idea into a full Product Requirements Document with user stories, acceptance criteria, and technical considerations.", icon: "description" },
@@ -75,9 +75,9 @@ export const solutions: Solution[] = [
     title: "Marketing Teams",
     navLabel: "Marketing",
     icon: "campaign",
-    tagline: "Create on-brand content at the speed of your ideas",
+    tagline: "Produce on-brand content at scale with agents that follow your guidelines.",
     description:
-      "Marketing teams need volume without sacrificing quality. Thytus agents generate blog posts, social campaigns, email sequences, and ad copy \u2014 all trained on your brand voice and guidelines. Collaborate with AI in real time to ideate, draft, and refine content that converts.",
+      "Thytus agents generate blog posts, social campaigns, emails, and ad copy aligned to your brand voice. Upload guidelines once; ideate, draft, and refine with AI in real time so volume and quality stay high.",
     benefits: [
       { title: "Brand-Aware Output", text: "Upload your brand guidelines once and every agent produces content that matches your tone, style, and messaging.", icon: "palette" },
       { title: "Campaign Generation", text: "Describe a campaign goal and agents generate the full asset suite \u2014 emails, social posts, landing page copy, and ad variants.", icon: "auto_awesome" },
@@ -95,13 +95,13 @@ export const solutions: Solution[] = [
     title: "Research & Academia",
     navLabel: "Research",
     icon: "science",
-    tagline: "Accelerate discovery with AI-powered research workflows",
+    tagline: "Literature review, data analysis, and citation support in one research workspace.",
     description:
-      "Thytus gives researchers and academics instant access to AI agents that have access to millions of academic papers. Upload your papers, data files, and notes then let agents find connections, summarize findings, and format citations while you focus on the science.",
+      "Thytus agents search academic literature, summarize findings, and format citations. Upload papers and data; agents find connections, run analyses, and help structure drafts so you can focus on the research.",
     benefits: [
       { title: "Literature Review", text: "Agents search millions of academic papers, summarize key findings, and identify gaps in existing research relevant to your topic.", icon: "menu_book" },
       { title: "Data Analysis", text: "Upload datasets and let agents run statistical analyses, generate visualizations, and interpret results in plain language.", icon: "analytics" },
-      { title: "Paper Drafting", text: "From abstract to conclusion  agents help structure papers, suggest citations, and ensure consistency across sections.", icon: "edit_note" },
+      { title: "Paper Drafting", text: "From abstract to conclusion, agents help structure papers, suggest citations, and ensure consistency across sections.", icon: "edit_note" },
     ],
     features: [
       { title: "Citation Management", text: "Agents find, format, and organize citations in APA, MLA, Chicago, or any style your journal requires." },
@@ -115,9 +115,9 @@ export const solutions: Solution[] = [
     title: "Sales Teams",
     navLabel: "Sales",
     icon: "trending_up",
-    tagline: "Close faster with AI-generated proposals and insights",
+    tagline: "Research prospects, generate proposals, and analyze pipeline data in one workspace.",
     description:
-      "Sales cycles are won with speed and preparation. Thytus agents research prospects, generate personalized proposals, build comparison decks, and analyze deal data so your reps spend more time selling and less time on busywork.",
+      "Thytus agents research prospects, draft tailored proposals, build battle cards, and surface deal insights from your data. Reps spend more time selling and less time on prep and admin.",
     benefits: [
       { title: "Proposal Automation", text: "Feed in prospect details and agents generate tailored proposals with pricing, case studies, and competitive differentiators.", icon: "request_quote" },
       { title: "Prospect Research", text: "Agents compile company profiles, recent news, key contacts, and pain points before every call automatically.", icon: "person_search" },
@@ -125,7 +125,7 @@ export const solutions: Solution[] = [
     ],
     features: [
       { title: "Competitive Battle Cards", text: "Agents create and maintain battle cards that compare your product against competitors with up-to-date pricing and features." },
-      { title: "Follow-Up Sequences", text: "Generate personalized follow-up emails based on meeting notes, objections raised, and prospect'sinterests." },
+      { title: "Follow-Up Sequences", text: "Generate personalized follow-up emails based on meeting notes, objections raised, and prospect's interests." },
       { title: "Demo Preparation", text: "Agents build custom demo scripts and talking points tailored to each prospect industry and use case." },
       { title: "Win/Loss Analysis", text: "Upload deal outcomes and agents identify patterns which messaging wins, where deals stall, and what competitors are saying." },
     ],
@@ -135,9 +135,9 @@ export const solutions: Solution[] = [
     title: "Education",
     navLabel: "Education",
     icon: "school",
-    tagline: "Empower educators and students with collaborative AI",
+    tagline: "Lesson plans, assessments, and feedback at scale in a shared, supervised workspace.",
     description:
-      "Thytus transforms how educators teach and students learn. Teachers can generate lesson plans, create assessments, and provide personalized feedback at scale. Students collaborate with AI agents that explain concepts, review work, and help them think critically \u2014 all within a shared, supervised workspace.",
+      "Educators use Thytus to generate lesson plans and assessments and to give feedback at scale. Students work with AI agents that explain concepts and review work, all inside a shared workspace that instructors can oversee.",
     benefits: [
       { title: "Lesson Plan Generation", text: "Describe your learning objectives and agents generate complete lesson plans with activities, assessments, and differentiation strategies.", icon: "auto_stories" },
       { title: "Personalized Feedback", text: "Agents review student submissions and provide detailed, constructive feedback \u2014 saving hours of grading time.", icon: "rate_review" },
@@ -155,9 +155,9 @@ export const solutions: Solution[] = [
     title: "Healthcare",
     navLabel: "Healthcare",
     icon: "local_hospital",
-    tagline: "Streamline clinical documentation and research",
+    tagline: "Process clinical notes, extract form data, and support research with compliance in mind.",
     description:
-      "Healthcare professionals spend too much time on documentation and not enough on patient care. Thytus agents help process clinical notes, summarize patient histories, extract data from medical forms, and support clinical research \u2014 all with enterprise-grade privacy and compliance.",
+      "Thytus agents help process clinical notes, summarize patient histories, and extract data from medical and insurance forms. Support research and documentation workflows with enterprise-grade controls and compliance.",
     benefits: [
       { title: "Clinical Note Processing", text: "Agents read discharge summaries, progress notes, and lab results to create structured patient summaries for handoffs and referrals.", icon: "clinical_notes" },
       { title: "Medical Form Extraction", text: "Upload insurance forms, prior authorizations, and intake documents \u2014 agents pull structured data and flag missing fields.", icon: "fact_check" },

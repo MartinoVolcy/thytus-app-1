@@ -1,40 +1,49 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
+import Link from "next/link";
 import ModelsModal from "./ModelsModal";
 
 const models = [
   { name: "GPT-4o", provider: "OpenAI", color: "bg-green-100 text-green-700" },
   {
-    name: "Claude 3.5 Sonnet",
+    name: "Claude 3.6 Sonnet",
     provider: "Anthropic",
     color: "bg-orange-100 text-orange-700",
   },
   {
-    name: "Gemini 1.5 Pro",
+    name: "Gemini 3.1 Pro",
     provider: "Google",
     color: "bg-blue-100 text-blue-700",
   },
-  { name: "Llama 3", provider: "Meta", color: "bg-blue-100 text-blue-600" },
+  { name: "Llama 4", provider: "Meta", color: "bg-blue-100 text-blue-600" },
   {
-    name: "Mistral Large",
-    provider: "Mistral AI",
+    name: "Claude Opus 4.6",
+    provider: "Anthropic",
     color: "bg-yellow-100 text-yellow-700",
   },
-  { name: "Grok-1.5", provider: "xAI", color: "bg-slate-100 text-slate-700" },
+  { name: "Grok 4", provider: "xAI", color: "bg-slate-100 text-slate-700" },
   {
-    name: "Perplexity Sonar",
+    name: "GPT 5.4",
     provider: "Perplexity",
     color: "bg-teal-100 text-teal-700",
   },
-  { name: "Command R+", provider: "Cohere", color: "bg-red-100 text-red-700" },
+  { name: "Deepseek R1", provider: "Deepseek", color: "bg-red-100 text-red-700" },
 ];
 
-const contextTrackingPoints = [
-  { heading: "Re-Focus the Agent", text: "When an agent drifts off-task, open Context Tracking to review the full conversation and send a correction that steers it back to the original goal." },
-  { heading: "Mid-Task Updates", text: "Requirements changed? Send fresh instructions directly through Context Tracking so the agent adjusts course without starting over." },
-  { heading: "Conversation Memory", text: "Think of it as a direct line to the agent\u2019s memory. Use it whenever responses feel off-topic or your priorities shift and the agent needs to know immediately." },
+const contextTrackingPoints: any[] = [
+  // {
+  //   heading: "Update one Agent & Team",
+  //   text: "When something changes, teammates and agents use Context Tracking to update each other on the new goal. Everyone sees the same correction so human and AI work stay aligned.",
+  // },
+  // {
+  //   heading: "Mid-Task Updates",
+  //   text: "Requirements changed? Send fresh instructions directly through Context Tracking so the agent adjusts course without starting over.",
+  // },
+  // {
+  //   heading: "Conversation Memory",
+  //   text: "Agents remember past conversations but only surface the messages that matter for the current task. Relevant history is recalled, noisy context is filtered out, reducing hallucinations.",
+  // },
 ];
 
 const VISIBLE_SLOTS = 7;
@@ -84,26 +93,25 @@ export default function Features() {
 
   return (
     <>
-      <section className="py-24 bg-white dark:bg-dark-base" id="capabilities">
+      <section className="py-24 bg-slate-50 dark:bg-dark-base/95 border-t border-slate-100 dark:border-dark-border" id="capabilities">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-20 md:text-center max-w-3xl mx-auto">
-            <span className="text-sm font-extrabold text-primary uppercase tracking-widest mb-3 block">
+          <div className="mb-16 md:mb-20 md:text-center max-w-3xl mx-auto">
+            <span className="text-xs md:text-sm font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-[0.25em] mb-4 block">
               Capabilities
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
-              Everything you need to build <span className="text-gradient">complex outputs.</span>
+              Everything your team needs to ship <span className="text-slate-800 dark:text-slate-100">real work.</span>
             </h2>
-            <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
-              Thytus isn&apos;t just a chatbot. It&apos;s a <span className="font-bold text-slate-700 dark:text-slate-200">full-stack workspace</span> equipped
-              with the tools AI needs to do real work, from reading entire
-              knowledge bases to generating visual reports.
+            <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+              Thytus is a <span className="font-bold text-slate-800 dark:text-slate-200">shared workspace for humans and AI</span>, not another chat box.
+              Upload knowledge once, plug in your preferred models, and let agents research, analyze, and produce assets your teams can actually use.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
             {/* Feature 1: Grounded Knowledge */}
             <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border hover:shadow-xl hover:shadow-gray-200/40 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
-              <div className="w-12 h-12 rounded-xl bg-sky-100/60 dark:bg-sky-500/15 text-sky-600 dark:text-sky-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-dark-elevated text-slate-500 dark:text-slate-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-2xl">
                   database
                 </span>
@@ -112,15 +120,14 @@ export default function Features() {
                 Grounded Knowledge
               </h3>
               <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                Upload once, use everywhere. Your files persist across sessions
-                without re-uploading. Support for PDFs, Docs, Spreadsheets,
-                Images, Videos, Audio, Websites, and Code.
+                Centralize your documents, recordings, and links in one place.
+                Agents reference the same trusted sources as your team—so answers stay consistent, auditable, and aligned with how your business actually works.
               </p>
             </div>
 
             {/* Feature 2: Visual Intelligence */}
             <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border hover:shadow-xl hover:shadow-gray-200/40 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
-              <div className="w-12 h-12 rounded-xl bg-purple-100/50 dark:bg-purple-500/15 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-dark-elevated text-slate-500 dark:text-slate-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-2xl">
                   visibility
                 </span>
@@ -129,31 +136,26 @@ export default function Features() {
                 Visual Intelligence
               </h3>
               <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                Thytus provides the vision layer. Even if a model (like Llama or
-                GPT-5) doesn&apos;t natively support video input, our workspace
-                enables them to &ldquo;watch&rdquo; and analyze your video files instantly.
+                Give any model a vision layer. Thytus lets agents interpret decks, screenshots, and long-form video so insights aren&apos;t trapped in files your tools can&apos;t read today.
               </p>
             </div>
 
             {/* Feature 3: No Delay */}
             <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border hover:shadow-xl hover:shadow-gray-200/40 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
-              <div className="w-12 h-12 rounded-xl bg-green-100/50 dark:bg-green-500/15 text-green-600 dark:text-green-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-dark-elevated text-slate-500 dark:text-slate-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-2xl">bolt</span>
               </div>
               <h3 className="text-xl font-extrabold mb-3 text-slate-900 dark:text-white">
                 No Delay
               </h3>
               <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                Everything is real-time. Whether you, a teammate, or an AI agent
-                sends a message or edits a document, everyone sees it
-                immediately. Zero lag, zero refreshing. Just seamless
-                synchronization.
+                Every change—human or AI—shows up in real time. See edits, comments, and agent updates as they happen so projects never stall waiting on the latest version.
               </p>
             </div>
 
             {/* Feature 4: Media Generation */}
             <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border hover:shadow-xl hover:shadow-gray-200/40 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
-              <div className="w-12 h-12 rounded-xl bg-orange-100/50 dark:bg-orange-500/15 text-orange-600 dark:text-orange-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-dark-elevated text-slate-500 dark:text-slate-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-2xl">
                   image
                 </span>
@@ -162,30 +164,28 @@ export default function Features() {
                 Media Generation
               </h3>
               <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                Generate visuals using models like Nano Banana Pro and Wan 2.5.
-                Have agents automatically create images, videos, and even full
-                podcasts and audio clips.
+                Let agents go from brief to output: decks, images, video clips, summaries, and more.
+                Keep everything in the same workspace where it was planned and reviewed.
               </p>
             </div>
 
             {/* Feature 5: Model Agnostic */}
             <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border hover:shadow-xl hover:shadow-gray-200/40 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
-              <div className="w-12 h-12 rounded-xl bg-pink-100/50 dark:bg-pink-500/15 text-pink-600 dark:text-pink-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-dark-elevated text-slate-500 dark:text-slate-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-2xl">hub</span>
               </div>
               <h3 className="text-xl font-extrabold mb-3 text-slate-900 dark:text-white">
                 Model Agnostic
               </h3>
               <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                Enjoy unlimited messages and use powerful Open Source models or
-                tap into the bleeding edge. Supported premium models include o1
-                Pro, Claude Opus 4.5, GPT 5.2 Pro, and Perplexity Sonar Pro.
+                Mix open-source and premium models in the same workspace.
+                Standardize workflows while still choosing the best model for each job, from fast drafting to high stakes analysis.
               </p>
             </div>
 
             {/* Feature 6: Deep Research */}
             <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border hover:shadow-xl hover:shadow-gray-200/40 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
-              <div className="w-12 h-12 rounded-xl bg-cyan-100/50 dark:bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-dark-elevated text-slate-500 dark:text-slate-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-2xl">
                   science
                 </span>
@@ -194,168 +194,233 @@ export default function Features() {
                 Deep Research
               </h3>
               <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                Thytus agents have instant access to millions of academic papers
-                and can scour the entire internet to find exactly what you need.
+                Spin up agents that read across sources, compare perspectives, and produce structured findings, not just long answers.
+                Perfect for market landscapes, technical evaluations, or board ready briefs.
+              </p>
+            </div>
+
+            {/* Feature 7: Email & Messaging */}
+            <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border hover:shadow-xl hover:shadow-gray-200/40 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
+              <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-dark-elevated text-slate-500 dark:text-slate-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <span className="material-symbols-outlined text-2xl">mail</span>
+              </div>
+              <h3 className="text-xl font-extrabold mb-3 text-slate-900 dark:text-white">
+                Email & Messaging
+              </h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                Agents send emails and message clients or other team members outside the workspace. Drafts, follow-ups, handoffs, and updates stay in context so you can track what was sent and where.
+              </p>
+            </div>
+
+            {/* Feature 8: Social media post */}
+            <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border hover:shadow-xl hover:shadow-gray-200/40 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
+              <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-dark-elevated text-slate-500 dark:text-slate-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <span className="material-symbols-outlined text-2xl">share</span>
+              </div>
+              <h3 className="text-xl font-extrabold mb-3 text-slate-900 dark:text-white">
+                Social media post
+              </h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                Agents create and publish social posts from the workspace. Draft copy, schedule, and maintain a consistent voice across channels without switching tools.
+              </p>
+            </div>
+
+            {/* Feature 9: Calling */}
+            <div className="p-8 rounded-3xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border hover:shadow-xl hover:shadow-gray-200/40 dark:hover:shadow-sky-500/5 transition-all duration-300 group dark-glow">
+              <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-dark-elevated text-slate-500 dark:text-slate-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <span className="material-symbols-outlined text-2xl">call</span>
+              </div>
+              <h3 className="text-xl font-extrabold mb-3 text-slate-900 dark:text-white">
+                Calling
+              </h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                AI can make calls to your team and other people from the workspace. Schedule check-ins, run standups, or reach out to clients—all with full context and a record of what was discussed.
               </p>
             </div>
           </div>
 
-          {/* Context Tracking Section */}
-          <div className="mb-24 rounded-3xl bg-gradient-to-br from-pink-50/60 via-white to-white dark:from-dark-card dark:via-dark-surface dark:to-dark-base border border-gray-200/60 dark:border-dark-border p-10 md:p-14 relative overflow-hidden" id="context-tracking">
-            <div className="absolute -top-20 -right-20 w-72 h-72 bg-pink-200/20 dark:bg-pink-500/[0.06] rounded-full blur-[80px] pointer-events-none"></div>
-            <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-purple-200/20 dark:bg-purple-500/[0.05] rounded-full blur-[80px] pointer-events-none"></div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+          {/* Multi-Agent Collaboration Section (moved above Context Tracking) */}
+          <div className="mb-24 rounded-3xl bg-white/80 dark:bg-dark-card/90 border border-gray-200/70 dark:border-dark-border p-10 md:p-14" id="agent-collaboration">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
               <div>
-                <span className="text-sm font-extrabold text-pink-600 dark:text-pink-400 uppercase tracking-widest mb-3 block">
-                  Context Tracking
-                </span>
-                <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
-                  Keep your agents <span className="text-gradient-purple">on track.</span>
-                </h2>
-                <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed mb-8">
-                  When project requirements change, instantly push updated context and instructions to your AI agents so they stay aligned with the latest goals.
-                   <span className="font-bold text-slate-700 dark:text-slate-200"> Context Tracking keeps execution accurate, adaptive, and fully in sync with your evolving workflow.</span>
-                </p>
-                <div className="space-y-4">
-                  {contextTrackingPoints.map((item) => (
-                    <div key={item.heading} className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-pink-100 dark:bg-pink-500/15 flex items-center justify-center shrink-0 mt-0.5">
-                        <span className="material-symbols-outlined text-pink-600 dark:text-pink-400 text-lg">psychology</span>
-                      </div>
-                      <div>
-                        <div className="font-extrabold text-sm text-slate-900 dark:text-white">{item.heading}</div>
-                        <div className="text-sm text-slate-500 dark:text-slate-400">{item.text}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="relative flex items-center justify-center">
-                <div className="rounded-2xl overflow-hidden border border-gray-100 dark:border-dark-border shadow-lg">
-                  <Image
-                    src="/context-tracking.png"
-                    alt="Context Tracking"
-                    width={600}
-                    height={400}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Agent Collaboration Section */}
-          <div className="mb-24 rounded-3xl bg-gradient-to-br from-gray-50 via-white to-white dark:from-dark-card dark:via-dark-surface dark:to-dark-base border border-gray-200/60 dark:border-dark-border p-10 md:p-14 relative overflow-hidden" id="agent-collaboration">
-            <div className="absolute -top-20 -right-20 w-72 h-72 bg-primary/[0.06] dark:bg-sky-500/[0.06] rounded-full blur-[80px] pointer-events-none"></div>
-            <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-purple-200/20 dark:bg-primary/[0.05] rounded-full blur-[80px] pointer-events-none"></div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-              <div>
-                <span className="text-sm font-extrabold text-primary uppercase tracking-widest mb-3 block">
+                <span className="text-xs md:text-sm font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-[0.25em] mb-3 block">
                   Multi-Agent Collaboration
                 </span>
-                <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
-                  Your agents don&apos;t just work. <span className="text-gradient-purple">They work together.</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-5 tracking-tight">
+                  Agents that coordinate like a real team.
                 </h2>
-                <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed mb-8">
-                  In Thytus, AI agents aren&apos;t isolated. They <span className="font-bold text-slate-700 dark:text-slate-200">share context, exchange findings, and build on each other&apos;s work</span> within the same session. A research agent can hand off its discoveries to a writing agent, while an analyst cross-checks the data. All autonomously, all in real time.
+                <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg leading-relaxed mb-6">
+                  Spin up multiple agents in a single workspace and let them share context, hand off work, and check each other&apos;s outputs while your team stays in control. Agents can talk to each other directly, discussing options, debating tradeoffs, and proposing next steps before your team decides what to ship.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                      <span className="material-symbols-outlined text-primary text-lg">forum</span>
+                    <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-dark-elevated flex items-center justify-center shrink-0 mt-0.5">
+                      <span className="material-symbols-outlined text-slate-500 dark:text-slate-400 text-lg">forum</span>
                     </div>
                     <div>
-                      <div className="font-extrabold text-sm text-slate-900 dark:text-white">Cross-Agent Communication</div>
-                      <div className="text-sm text-slate-500 dark:text-slate-400">Agents talk to each other within your session, sharing insights and coordinating tasks without any manual handoffs.</div>
+                      <div className="font-extrabold text-sm text-slate-900 dark:text-white">Shared context</div>
+                      <div className="text-sm text-slate-500 dark:text-slate-400">
+                        Agents pull from the same workspace history and knowledge, so each new task starts from what the others already know.
+                      </div>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-purple-100 dark:bg-purple-500/15 flex items-center justify-center shrink-0 mt-0.5">
-                      <span className="material-symbols-outlined text-purple-600 dark:text-purple-400 text-lg">diversity_3</span>
+                    <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-dark-elevated flex items-center justify-center shrink-0 mt-0.5">
+                      <span className="material-symbols-outlined text-slate-500 dark:text-slate-400 text-lg">diversity_3</span>
                     </div>
                     <div>
-                      <div className="font-extrabold text-sm text-slate-900 dark:text-white">Collective Intelligence</div>
-                      <div className="text-sm text-slate-500 dark:text-slate-400">Multiple agents means multiple perspectives. They debate, verify, and refine each other&apos;s outputs for dramatically more accurate results.</div>
+                      <div className="font-extrabold text-sm text-slate-900 dark:text-white">Specialized roles</div>
+                      <div className="text-sm text-slate-500 dark:text-slate-400">
+                        Assign agents to research, writing, analysis, or QA so complex projects move forward in parallel without losing quality.
+                      </div>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-500/15 flex items-center justify-center shrink-0 mt-0.5">
-                      <span className="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-lg">account_tree</span>
+                    <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-dark-elevated flex items-center justify-center shrink-0 mt-0.5">
+                      <span className="material-symbols-outlined text-slate-500 dark:text-slate-400 text-lg">account_tree</span>
                     </div>
                     <div>
-                      <div className="font-extrabold text-sm text-slate-900 dark:text-white">Parallel Task Execution</div>
-                      <div className="text-sm text-slate-500 dark:text-slate-400">Split complex projects across agents that work simultaneously. Research, draft, review, and publish all happening at once.</div>
+                      <div className="font-extrabold text-sm text-slate-900 dark:text-white">Parallel execution</div>
+                      <div className="text-sm text-slate-500 dark:text-slate-400">
+                        Let agents tackle different parts of a workflow at the same time while your team reviews and approves the final outputs.
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Visual */}
+              {/* Visual (spinning circle, light cards, transparent center) */}
               <div className="relative flex items-center justify-center">
                 <div className="relative w-80 h-80">
-                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 320 320">
-                    <line x1="160" y1="60" x2="60" y2="220" stroke="#0EA5E9" strokeWidth="1.5" strokeDasharray="6,6" opacity="0.3" />
-                    <line x1="160" y1="60" x2="260" y2="220" stroke="#0EA5E9" strokeWidth="1.5" strokeDasharray="6,6" opacity="0.3" />
-                    <line x1="60" y1="220" x2="260" y2="220" stroke="#0EA5E9" strokeWidth="1.5" strokeDasharray="6,6" opacity="0.3" />
+                  <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 320 320" fill="none">
+                    <line x1="160" y1="60" x2="60" y2="220" stroke="currentColor" strokeWidth="1.5" strokeDasharray="6,6" opacity="0.4" className="text-slate-300 dark:text-slate-600" />
+                    <line x1="160" y1="60" x2="260" y2="220" stroke="currentColor" strokeWidth="1.5" strokeDasharray="6,6" opacity="0.4" className="text-slate-300 dark:text-slate-600" />
+                    <line x1="60" y1="220" x2="260" y2="220" stroke="currentColor" strokeWidth="1.5" strokeDasharray="6,6" opacity="0.4" className="text-slate-300 dark:text-slate-600" />
                   </svg>
 
                   <div className="absolute top-4 left-1/2 -translate-x-1/2 animate-float">
-                    <div className="w-20 h-20 rounded-2xl bg-white dark:bg-dark-card border-2 border-sky-200 dark:border-sky-500/30 shadow-xl shadow-sky-200/20 dark:shadow-sky-500/10 flex flex-col items-center justify-center">
-                      <span className="material-symbols-outlined text-primary text-2xl">smart_toy</span>
+                    <div className="w-20 h-20 rounded-2xl bg-white dark:bg-dark-card border border-slate-200 dark:border-slate-600 shadow-lg shadow-slate-200/60 dark:shadow-black/40 flex flex-col items-center justify-center">
+                      <span className="material-symbols-outlined text-slate-600 dark:text-slate-400 text-2xl">smart_toy</span>
                       <span className="text-[9px] font-bold text-slate-500 dark:text-slate-400 mt-1">Researcher</span>
                     </div>
                   </div>
 
                   <div className="absolute bottom-8 left-2 animate-float" style={{ animationDelay: "1.3s" }}>
-                    <div className="w-20 h-20 rounded-2xl bg-white dark:bg-dark-card border-2 border-purple-200 dark:border-purple-500/30 shadow-xl shadow-purple-500/10 flex flex-col items-center justify-center">
-                      <span className="material-symbols-outlined text-purple-600 dark:text-purple-400 text-2xl">edit_note</span>
+                    <div className="w-20 h-20 rounded-2xl bg-white dark:bg-dark-card border border-slate-200 dark:border-slate-600 shadow-lg shadow-slate-200/60 dark:shadow-black/40 flex flex-col items-center justify-center">
+                      <span className="material-symbols-outlined text-slate-600 dark:text-slate-400 text-2xl">edit_note</span>
                       <span className="text-[9px] font-bold text-slate-500 dark:text-slate-400 mt-1">Writer</span>
                     </div>
                   </div>
 
                   <div className="absolute bottom-8 right-2 animate-float" style={{ animationDelay: "2.6s" }}>
-                    <div className="w-20 h-20 rounded-2xl bg-white dark:bg-dark-card border-2 border-emerald-200 dark:border-emerald-500/30 shadow-xl shadow-emerald-500/10 flex flex-col items-center justify-center">
-                      <span className="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-2xl">analytics</span>
+                    <div className="w-20 h-20 rounded-2xl bg-white dark:bg-dark-card border border-slate-200 dark:border-slate-600 shadow-lg shadow-slate-200/60 dark:shadow-black/40 flex flex-col items-center justify-center">
+                      <span className="material-symbols-outlined text-slate-600 dark:text-slate-400 text-2xl">analytics</span>
                       <span className="text-[9px] font-bold text-slate-500 dark:text-slate-400 mt-1">Analyst</span>
                     </div>
                   </div>
 
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
-                      <span className="material-symbols-outlined text-primary text-xl animate-spin" style={{ animationDuration: "8s" }}>sync</span>
+                    <div className="w-14 h-14 rounded-full bg-transparent flex items-center justify-center">
+                      <span className="material-symbols-outlined text-blue-600 dark:text-blue-400 text-xl animate-spin" style={{ animationDuration: "8s" }}>autorenew</span>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Context Tracking Section */}
+          <div className="mb-24 rounded-3xl bg-white/90 dark:bg-dark-card border border-gray-200/70 dark:border-dark-border p-10 md:p-14" id="context-tracking">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+              <div>
+                <span className="text-xs md:text-sm font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-[0.25em] mb-3 block">
+                  Context Updates
+                </span>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-5 tracking-tight">
+                  Keep agents aligned with what changed.
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg leading-relaxed mb-6">
+                  When priorities, scope, or requirements shift, simply update the agent(s) instead of starting a new thread so every agent and teammate sees the latest direction.
+                </p>
+                <div className="space-y-4">
+                  {contextTrackingPoints.map((item) => (
+                      <div key={item.heading} className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-dark-elevated flex items-center justify-center shrink-0 mt-0.5">
+                          <span className="material-symbols-outlined text-slate-500 dark:text-slate-400 text-lg">psychology</span>
+                        </div>
+                        <div>
+                          <div className="font-extrabold text-sm text-slate-900 dark:text-white">{item.heading}</div>
+                          <div className="text-sm text-slate-500 dark:text-slate-400">{item.text}</div>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+
+              <div className="relative flex items-center justify-center">
+                <div className="w-full max-w-md rounded-2xl bg-slate-50 dark:bg-dark-elevated border border-slate-100 dark:border-dark-border p-6 md:p-8">
+                  <div className="space-y-5">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-slate-200 dark:bg-dark-card flex items-center justify-center shrink-0">
+                        <span className="material-symbols-outlined text-slate-600 dark:text-slate-400 text-xl">chat</span>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">You</div>
+                        <div className="text-sm text-slate-700 dark:text-slate-200 mt-0.5">Update the scope: focus on EMEA only.</div>
+                      </div>
+                    </div>
+                    <div className="flex justify-center">
+                      <span className="material-symbols-outlined text-slate-400 dark:text-slate-500 text-2xl">arrow_downward</span>
+                    </div>
+                    <div className="rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/50 px-4 py-3 flex items-center gap-2">
+                      <span className="material-symbols-outlined text-blue-600 dark:text-blue-400 text-lg">track_changes</span>
+                      <span className="text-sm font-semibold text-blue-800 dark:text-blue-200">Context updated</span>
+                    </div>
+                    <div className="flex justify-center">
+                      <span className="material-symbols-outlined text-slate-400 dark:text-slate-500 text-2xl">arrow_downward</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-slate-200 dark:bg-dark-card flex items-center justify-center shrink-0">
+                        <span className="material-symbols-outlined text-slate-600 dark:text-slate-400 text-xl">smart_toy</span>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Agent</div>
+                        <div className="text-sm text-slate-700 dark:text-slate-200 mt-0.5">Sees latest direction and continues with EMEA focus.</div>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 text-center mt-5">
+                    Same thread, updated context — no new conversation needed.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Model Carousel Section */}
-          <div className="bg-slate-900 rounded-3xl p-10 md:p-14 overflow-hidden relative" id="model-agnostic">
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+          <div className="rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-dark-card p-10 md:p-14 overflow-hidden relative" id="model-agnostic">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
               <div>
-                <span className="text-sm font-extrabold text-primary mb-3 block uppercase tracking-widest">
+                <span className="text-xs md:text-sm font-extrabold text-blue-600 dark:text-blue-400 mb-3 block uppercase tracking-[0.25em]">
                   Model Agnostic Intelligence
                 </span>
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-                  Make any model <span className="text-gradient">your agent.</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-5 tracking-tight">
+                  One workspace, any model.
                 </h2>
-                <p className="text-slate-400 text-lg leading-relaxed mb-8">
-                  Why limit yourself to one provider? Thytus gives you instant
-                  access to the world&apos;s most powerful AI models. Switch between
-                  them instantly or deploy them simultaneously in the same
-                  workflow.
+                <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-5">
+                  Connect OpenAI, Anthropic, Google, open source, and more into a single environment.
+                  Swap models per task, keep outputs in one place, and standardize how AI work gets done.
                 </p>
-                <button
-                  onClick={() => setModelsOpen(true)}
-                  className="bg-white text-slate-900 px-6 py-3 rounded-xl font-bold text-sm hover:bg-slate-100 transition-colors"
+                <p className="text-sm md:text-base text-slate-500 dark:text-slate-400 leading-relaxed mb-8">
+                  Your team focuses on quality and governance, not which tab a particular model lives in.
+                </p>
+                <Link
+                  href="https://showcase.thytus.com/v1/sessions"
+                  className="inline-flex items-center gap-2 bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 px-6 py-3 rounded-xl font-semibold text-sm hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors"
                 >
-                  Explore All Models
-                </button>
+                  Explore supported models
+                  <span className="material-symbols-outlined text-base">arrow_outward</span>
+                </Link>
               </div>
 
               <div className="relative" style={{ height: ITEM_HEIGHT * 5 }}>
@@ -376,29 +441,31 @@ export default function Features() {
                         <div
                           className={`rounded-xl p-4 flex items-center justify-between backdrop-blur-sm transition-shadow duration-300 ${
                             isCenter
-                              ? "bg-white/[0.12] border border-white/20 shadow-[0_0_30px_rgba(99,102,241,0.35),0_8px_24px_rgba(0,0,0,0.4)]"
-                              : "bg-white/5 border border-white/10"
+                              ? "bg-white shadow-[0_0_30px_rgba(15,23,42,0.18)] border border-slate-200 dark:bg-slate-900 dark:border-sky-400/40"
+                              : "bg-slate-50 border border-slate-200 dark:bg-slate-900/60 dark:border-slate-700/60"
                           }`}
                         >
                           <div className="flex items-center gap-4">
                             <div
                               className={`w-10 h-10 rounded-lg flex items-center justify-center font-bold text-xs transition-transform duration-300 ${
-                                item.model.color
-                              } ${isCenter ? "scale-110" : ""}`}
+                                isCenter
+                                  ? "bg-slate-200 text-slate-700 dark:bg-slate-600 dark:text-slate-200"
+                                  : "bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300"
+                              }`}
                             >
                               {item.model.name.substring(0, 2)}
                             </div>
                             <div>
                               <div
-                                className={`font-bold transition-colors duration-300 ${
-                                  isCenter ? "text-white" : "text-white/70"
+                                className={`font-semibold transition-colors duration-300 ${
+                                  isCenter ? "text-slate-900 dark:text-white" : "text-slate-700 dark:text-slate-200/80"
                                 }`}
                               >
                                 {item.model.name}
                               </div>
                               <div
-                                className={`text-xs transition-colors duration-300 ${
-                                  isCenter ? "text-slate-300" : "text-slate-500"
+                                className={`text-[11px] transition-colors duration-300 ${
+                                  isCenter ? "text-slate-500 dark:text-slate-300" : "text-slate-500 dark:text-slate-500"
                                 }`}
                               >
                                 {item.model.provider}
@@ -408,8 +475,8 @@ export default function Features() {
                           <div
                             className={`w-2 h-2 rounded-full transition-all duration-300 ${
                               isCenter
-                                ? "bg-green-400 shadow-[0_0_10px_rgba(34,197,94,0.8)]"
-                                : "bg-green-500/50 shadow-none"
+                                ? "bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.75)]"
+                                : "bg-emerald-400/70 shadow-none"
                             }`}
                           ></div>
                         </div>
@@ -419,8 +486,8 @@ export default function Features() {
                 </div>
 
                 {/* Fade edges */}
-                <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-900 to-transparent pointer-events-none z-30"></div>
-                <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-slate-900 to-transparent pointer-events-none z-30"></div>
+                <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white via-white/40 to-transparent dark:from-slate-950 dark:via-slate-950/40 dark:to-transparent pointer-events-none z-30"></div>
+                <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white via-white/40 to-transparent dark:from-slate-950 dark:via-slate-950/40 dark:to-transparent pointer-events-none z-30"></div>
               </div>
             </div>
           </div>

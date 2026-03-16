@@ -3,9 +3,17 @@ import Showcase from "@/components/Showcase";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
-export const metadata = {
-  title: "Product | Thytus",
-  description: "See the Thytus product in action.",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Product",
+  description:
+    "See the Thytus collaborative AI workspace in action. Multiple agents, one workspace, real-time team collaboration.",
+  openGraph: {
+    title: "Product | Thytus",
+    description:
+      "See the Thytus collaborative AI workspace in action. Multiple agents, one workspace, real-time team collaboration.",
+  },
 };
 
 export default function ProductPage() {
