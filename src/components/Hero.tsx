@@ -34,7 +34,7 @@ const Hero = () => {
             {/* Left: Copy */}
             <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-6 text-slate-900 dark:text-white">
-                Your AI Employees,
+                Your AI Team,
                 <br />
                 <span className="text-slate-700 dark:text-slate-200">Built to Work Together</span>
               </h1>
