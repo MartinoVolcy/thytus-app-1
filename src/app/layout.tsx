@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import ThemeDetector from "@/components/ThemeDetector";
+import { Analytics } from "@vercel/analytics/next"
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -123,6 +124,7 @@ export default function RootLayout({
       <body className={`${manrope.variable} ${playfair.variable} antialiased`}>
         <ThemeDetector />
         {children}
+        <Analytics />
       </body>
     </html>
   );
