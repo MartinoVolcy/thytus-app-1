@@ -6,100 +6,104 @@ author:
   role: Writer
   linkedIn: https://www.linkedin.com/in/martinovolcy/
 date: Mar 18, 2026
-readTime: 6 min read
+readTime: 8 min read
 tags:
   - AI Agents
   - Legal
   - Experiment
 ---
 
-<Figure src="/Flag_Blog.webp" alt="AI agent teams from different countries competing in a legal work tournament" />
+<Figure src="/Flag_Blog.webp" alt="international" />
 
-American businesses have been outsourcing human employees for decades. It cuts costs, expands the talent pool, and lets companies tap into expertise they wouldn't otherwise have access to. Now AI agents are doing the same kind of work — so the obvious question becomes: does country of origin matter for AI agents too?
+As AI Agents continue to become employees rather than just special task automation tools, I wanted to see which agents from around the world law firms can really rely on.
 
-I ran a tournament to find out. I put together AI agent teams from the USA, France, China, Canada, South Korea, and Israel, and gave them all the same legal case to work through. Same documents, same deliverables, same time to complete. The goal wasn't just to see who finished first — it was to see who could actually function as a reliable legal employee.
+For this experiment, each team of Agent Employees will be given:
 
-## The Setup
+- An EOB Form
+- A CMS-1500 Form
+- OSHA Forms (301 + 300)
+- A HIPAA Release Form
 
-Each team consisted of four AI agents working together. I handed them a worker's compensation case involving workplace injuries and unsafe conditions. The documents were intentionally messy — an EOB form, a CMS-1500 form, OSHA forms, and a HIPAA release, all with real inconsistencies built in: a missing ICD-10 diagnosis code, reference number mismatches between forms, and absent workers' compensation records.
+However, just like real life cases, everything isn't always perfect. I've added several inconsistencies into these forms to throw the teams off. These include a missing ICD-10 diagnosis code, a reference number inconsistency between the HIPAA and OSHA forms, and no workers' compensation claim filing, decision, or payment record.
 
-If the agents weren't paying attention, they'd miss the errors entirely. If they were too cautious, they'd get stuck.
+The goal of each team is to fill out a spreadsheet with client information, create a slide deck about the unsafe working conditions, read all forms and provide an overview, and write a formal civil complaint. I won't be doing agent outbound messages like calling or emailing the client, potential witnesses, doctors, etc., since I want to keep this as concise as possible.
 
-**Each team had four deliverables:**
+Grading Rubric: Speed (1-5), Reliability (1-5), Accuracy (1-5), Collaboration (1-5), Price (1-5)
 
-- Populate a client intake spreadsheet
-- Provide a document overview flagging any inconsistencies
-- Draft a civil complaint against Denton Logistics Inc.
-- Create a five-slide presentation on workplace safety violations
+Prompt given to all teams:
 
-**Scoring was based on five dimensions:** Speed, Reliability, Accuracy, Collaboration, and Price.
+> "Complete the following tasks: populate a client intake spreadsheet, provide an overview of the documents, draft a civil complaint against Denton Logistics Inc., and create a 5-slide presentation on the unsafe working conditions."
 
-## The Results
+## USA A Team: 3 Minutes / 2,247,120 Tokens / ~$2.60
 
-### 🥇 USA A Team — The Winners
+<Figure src="/Agent_Pic1.jpg" alt="placeholder" />
 
-**3 minutes · ~$2.60 · 5/5 Speed & Accuracy**
+Agents from USA A Team split up the tasks and got to work. Agents 1 through 3 were able to complete their tasks, however Agent 4 would give up whenever it hit a fork in the road, even after 3 different attempts. Whenever the other agents hit a roadblock, they wouldn't hesitate to ask each other for help. Agent 4 did not share that same energy. Despite that, all information was correct and all inconsistencies were identified.
 
-USA A came in first place and it wasn't particularly close. They divided tasks cleanly, communicated effectively throughout the session, and delivered accurate work across all four deliverables. One agent had a moment of hesitation mid-run, but the team self-corrected without losing momentum.
+Reliability - 4 / Accuracy - 5 / Collaboration - 4 / Speed - 5 / Price - 3
 
-The accuracy was what stood out most. They caught the inconsistencies in the documents, flagged them correctly in the intake spreadsheet, and drafted a civil complaint that actually held together legally. At $2.60, the price-to-quality ratio was the best in the tournament.
+## USA B Team: 6 Minutes / 1,296,878 Tokens / ~$0.50
 
-<Figure src="/Agent_Pic1.jpg" alt="USA A Team results and output quality" caption="USA A Team completed all deliverables in 3 minutes with full accuracy." />
+<Figure src="/LLM_Blog.png" alt="placeholder" />
 
-### 🥈 France — Strong Outside Their Comfort Zone
+Agents 1 and 2 had a plan but didn't execute. Agent 2 did the research but never started implementing. Agents 3 and 4 executed perfectly. Agent 3 attempted to contact Agents 1 and 2 about the missing work but never received a response. The inconsistencies were identified.
 
-**8 minutes · ~$3.38**
+Reliability - 2 / Accuracy - 3 / Collaboration - 2 / Speed - 3 / Price - 5
 
-France was the surprise of the tournament. Legal work in American workers' compensation law is about as far outside their natural training domain as you can get, yet they delivered quality results that held up under scrutiny. Their collaboration was genuinely strong — agents checked in with each other, redistributed work when one fell behind, and maintained accuracy throughout.
+## China A Team: 7 Minutes / 3,428,230 Tokens / ~$1.21
 
-The slower time (8 minutes vs. USA A's 3) and higher price point ($3.38) kept them out of first, but the output quality was nearly identical. If cost weren't a factor, this would have been a much closer race.
+<Figure src="/KIMI_Blog.jpg" alt="placeholder" />
 
-<Figure src="/MINI_Blog.jpg" alt="France Team results showing strong collaboration" caption="France impressed with cross-domain accuracy and genuine teamwork." />
+The team found the inconsistencies, but they confused the date of the incident with Marco's birthday and referenced the New Jersey Juvenile Delinquency Act (N.J.S.A. 2A:4-1 et seq.), which had nothing to do with the case. The agents didn't seem confident in their answers. They were researching a lot online but didn't find anything relevant. The slides were too flashy, almost like they were trying to compensate for the lack of confidence with style. Agent 1 did attempt to communicate with the other agents but received no response.
 
-### USA B Team — Speed Without Substance
+Reliability - 3 / Accuracy - 2 / Collaboration - 2 / Speed - 3 / Price - 4
 
-**6 minutes · ~$0.50 · ~50% task completion**
+## China B Team: 14 Minutes / 6,233,536 Tokens / ~$0.45
 
-USA B finished faster than France at a fraction of the cost, which sounds like a win until you look at what they actually delivered. Communication between agents broke down early in the run. Two agents executed well; the other two effectively checked out. The result was a 50% completion rate — half the deliverables done properly, half either missing or incomplete.
+<Figure src="/QWEN_Blog.jpg" alt="placeholder" />
 
-The low price ($0.50) reflects how little work actually happened. Speed and cost don't mean much when the job isn't finished.
+These agents started working and about 5 minutes in, Agent 3 realized it was heading in the wrong direction, corrected itself, and let the other agents know. However, when the agents realized parts of their work were incorrect, instead of just fixing those parts, they scrapped everything and started from scratch, which significantly prolonged their time. The inconsistencies were found.
 
-### China A Team — Confident in the Wrong Direction
+Reliability - 4 / Accuracy - 3 / Collaboration - 3 / Speed - 1 / Price - 5
 
-**7 minutes · ~$1.21**
+## France: 8 Minutes / 12,828,872 Tokens / ~$3.38
 
-China A identified that something was wrong with the documents — they caught the inconsistencies — but then drew the wrong conclusions. Agents confused incident dates with personal identifying information and cited legal statutes that had nothing to do with the case. The civil complaint referenced irrelevant law, which in a real legal context would be worse than no complaint at all.
+<Figure src="/MINI_Blog.jpg" alt="placeholder" />
 
-This is a specific failure mode worth noting: confident wrongness. The agents didn't flag uncertainty or ask for clarification — they just moved forward with bad information and produced work that looked complete but wasn't.
+While this team took a little longer, the accuracy is undeniable. Most of the tasks were done within 5 minutes, but Agents 2 and 3 were both editing the text editor without communicating with each other first about how they would structure the work. Agent 2 ended up sending me the document overview and Agent 3 used the text editor for the civil complaint. Most of the information was correct but a few small details were missing. I think this is because they were trying to finish as fast as possible after their conversation ran a little long.
 
-<Figure src="/KIMI_Blog.jpg" alt="China A Team output showing incorrect statute references" caption="China A caught the errors but drew the wrong conclusions from them." />
+Reliability - 4 / Accuracy - 4 / Collaboration - 4 / Speed - 3 / Price - 3
 
-### China B Team — The Sunk Cost Problem
+## Canada: 5 Seconds / 138,067 Tokens / ~$0.05
 
-**14 minutes · ~$0.45**
+<Figure src="/CR_Blog.jpg" alt="placeholder" />
 
-China B took the longest of any team that actually produced output. When an error surfaced mid-run, instead of making targeted corrections, the agents scrapped everything and started over. That decision burned nearly 10 extra minutes and still produced a subpar result.
+Command R and R+ are some of the most underrated models when it comes to answering questions and understanding documents. However in agent mode, where they need to think and make quick decisions at the same time, they are not ideal. All agents were able to think about the problem, but even after 3 attempts, no agent took action. I think this is just a fluke because when I turned off agent mode and asked these models directly about the files, they gave me accurate information.
 
-This is a collaboration problem more than an accuracy problem. A well-coordinated team catches errors before they compound. China B's agents weren't communicating well enough to course-correct efficiently.
+Reliability - 1 / Accuracy - 1 / Collaboration - 1 / Speed - 2 / Price - 4
 
-### Canada, South Korea & Israel — Agent Mode Failures
+## South Korea: 64 Seconds / 756,441 Tokens / ~$0.07
 
-These three teams had models that perform well in single-agent scenarios. Put them in a multi-agent environment and they fell apart. When agents hit an obstacle — a missing piece of information, an ambiguous instruction — they stopped and waited instead of reaching out to the other agents for help or making a judgment call.
+<Figure src="/SOLAR_Blog.jpg" alt="placeholder" />
 
-Legal work doesn't pause for uncertainty. A team that freezes when things get complicated isn't a team you can rely on.
+While Solar Pro 3 is great for single agent workflows, it does not perform well in a team environment. Only Agent 2 was able to complete its task by putting the overview in the text editor, but some of the information was incorrect. It mentioned in the overview that information was missing from the files when it wasn't. The other agents completely gave up once they hit a roadblock and didn't rely on each other at all. Out of 3 attempts, this was the best one. The only positive is that the agents fail fast instead of hallucinating.
 
-## What This Actually Tells Us
+Reliability - 1 / Accuracy - 2 / Collaboration - 1 / Speed - 2 / Price - 4
 
-The gap between single-agent performance and multi-agent performance is real and significant. Several models in this tournament have strong reputations for individual tasks. In a collaborative environment with a time constraint and messy documents, most of them underperformed — not because of capability, but because of how they handle coordination.
+## Israel: 37 Seconds / 620,289 Tokens / ~$0.52
 
-The teams that succeeded shared three things: they divided tasks early, they checked in with each other during the run, and they pushed through complications instead of stopping. That's not a model capability issue — it's a collaboration design issue.
+<Figure src="/JAMBA_Blog.jpg" alt="placeholder" />
 
-For lawyers considering AI agents for document-heavy work, the takeaway is straightforward: test your agents in the exact environment they'll be working in. A model that performs well in isolation may behave completely differently as part of a team.
+After 3 attempts, no agents returned a response. Like Solar Pro 3, Jamba performs well in single agent workflows but struggles in a team of agent employees. In attempt 2, each agent created a decent plan but never ended up executing it.
 
-## What's Next
+Reliability - 1 / Accuracy - 1 / Collaboration - 1 / Speed - 3 / Price - 4
 
-Future tournaments will go further. I'm planning to add outbound communications — agents making client calls, interviewing doctors, contacting companies for records — to see how teams handle the full arc of case development, not just document review.
+## Results
 
-The question isn't just which AI can do legal work. It's which AI can do the messy, back-and-forth, people-involved version of legal work that actually shows up in practice.
+<Figure src="/Pedistol_Blog.png" alt="placeholder" />
 
-Stay tuned.
+USA A Team were the winners of this tournament. The accuracy and professionalism of these agents were impressive. Personally though, I loved France's team. They were doing a task with knowledge they weren't necessarily trained on, but they were still able to work together and get it done. Especially at their budget, they are a great value. A big surprise to me was how China A Team performed. Unlike France, they weren't able to dominate in a task outside of their comfort zone.
+
+In the next tournament, I'll add agent outbounds and have the agents call the clients, doctors, and companies to gather more information and strengthen the case.
+
+<Figure src="/Showcase_Canvas.png" alt="placeholder" caption="France Agents Slides" />
