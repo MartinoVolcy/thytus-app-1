@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://thytus.com
+
+# Sitemaps
+Sitemap: https://thytus.com/sitemap.xml

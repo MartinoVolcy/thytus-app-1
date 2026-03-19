@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { blogPosts } from "@/data/blog-posts";
+import { getAllPosts } from "@/lib/blog";
 
 import type { Metadata } from "next";
 
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
+  const blogPosts = getAllPosts();
   return (
     <div className="bg-slate-50 dark:bg-dark-base text-slate-900 dark:text-slate-200 antialiased selection:bg-primary/20 transition-colors duration-300 pt-20">
       <Navbar />
