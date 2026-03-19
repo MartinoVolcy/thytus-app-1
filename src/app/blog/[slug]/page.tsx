@@ -1,17 +1,19 @@
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { blogPosts, type ContentBlock } from "@/data/blog-posts";
+import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { mdxComponents } from "@/components/mdx";
 
 export function generateStaticParams() {
-  return blogPosts.map((p) => ({ slug: p.slug }));
+  return getAllPosts().map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = blogPosts.find((p) => p.slug === slug);
+  const post = getPostBySlug(slug);
   if (!post) return {};
   return {
     title: `${post.title} | Thytus Blog`,
@@ -32,93 +34,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-function ContentRenderer({ block }: { block: ContentBlock }) {
-  switch (block.type) {
-    case "heading":
-      return (
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white tracking-tight mt-12 mb-4">
-          {block.text}
-        </h2>
-      );
-    case "paragraph":
-      return (
-        <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed mb-6">
-          {block.text}
-        </p>
-      );
-    case "quote":
-      return (
-        <blockquote className="border-l-4 border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-dark-elevated rounded-r-xl px-6 py-5 my-8">
-          <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
-            {block.text}
-          </p>
-        </blockquote>
-      );
-    case "image":
-      if (!block.src) {
-        return (
-          <figure className="my-8">
-            <div className="w-full aspect-video rounded-xl bg-slate-100 dark:bg-dark-card border border-slate-200 dark:border-dark-border flex items-center justify-center">
-              <div className="text-center">
-                <span className="material-symbols-outlined text-4xl text-slate-300 dark:text-slate-600 mb-2 block">image</span>
-                <span className="text-sm text-slate-400 dark:text-slate-500">{block.alt}</span>
-              </div>
-            </div>
-            {block.caption && (
-              <figcaption className="text-center text-sm text-slate-400 dark:text-slate-500 mt-3">
-                {block.caption}
-              </figcaption>
-            )}
-          </figure>
-        );
-      }
-      return (
-        <figure className="my-8">
-          <div className="rounded-xl overflow-hidden border border-slate-200 dark:border-dark-border shadow-sm">
-            <Image
-              src={block.src}
-              alt={block.alt}
-              width={800}
-              height={450}
-              className="w-full h-auto object-cover"
-            />
-          </div>
-          {block.caption && (
-            <figcaption className="text-center text-sm text-slate-400 dark:text-slate-500 mt-3">
-              {block.caption}
-            </figcaption>
-          )}
-        </figure>
-      );
-    case "list":
-      if (block.ordered) {
-        return (
-          <ol className="list-decimal list-inside space-y-2 my-6 text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
-            {block.items.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ol>
-        );
-      }
-      return (
-        <ul className="list-disc list-inside space-y-2 my-6 text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
-          {block.items.map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
-        </ul>
-      );
-    default:
-      return null;
-  }
-}
-
 export default async function BlogPostPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = blogPosts.find((p) => p.slug === slug);
+  const post = getPostBySlug(slug);
   if (!post) notFound();
 
   return (
@@ -181,9 +103,11 @@ export default async function BlogPostPage({
       {/* Post Body */}
       <section className="pb-16">
         <div className="max-w-3xl mx-auto px-6">
-          {post.content.map((block, i) => (
-            <ContentRenderer key={i} block={block} />
-          ))}
+          <MDXRemote
+            source={post.content}
+            options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+            components={mdxComponents}
+          />
         </div>
       </section>
 
