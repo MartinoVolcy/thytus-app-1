@@ -4,11 +4,11 @@ import { useState } from "react";
 import Link from "next/link";
 
 const ZERO_DATA_RETENTION_TOOLTIP =
-    "No model providers keep your prompts or replies after processing them, and none use your content to train their models. This means your data is not stored or used beyond the immediate processing of your requests, ensuring maximum privacy and security for your interactions.";
+    "No model providers keep your prompts or replies after processing them, and none use your content to train their models. This means your data is not stored or used by AI beyond the immediate processing of your requests, ensuring maximum privacy and security for your interactions.";
 
 function ZeroDataRetentionLabel() {
     return (
-        <span className="inline-flex items-center gap-1 flex-wrap min-w-0">
+        <span className="inline-flex items-center gap-1 whitespace-nowrap">
             <span>Zero Data Retention</span>
             <span
                 tabIndex={0}
