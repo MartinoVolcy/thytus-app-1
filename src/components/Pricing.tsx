@@ -3,6 +3,32 @@
 import { useState } from "react";
 import Link from "next/link";
 
+const ZERO_DATA_RETENTION_TOOLTIP =
+    "No model providers keep your prompts or replies after processing them, and none use your content to train their models. This means your data is not stored or used beyond the immediate processing of your requests, ensuring maximum privacy and security for your interactions.";
+
+function ZeroDataRetentionLabel() {
+    return (
+        <span className="inline-flex items-center gap-1 flex-wrap min-w-0">
+            <span>Zero Data Retention</span>
+            <span
+                tabIndex={0}
+                aria-label={ZERO_DATA_RETENTION_TOOLTIP}
+                className="relative inline-flex shrink-0 rounded-full text-slate-400 dark:text-slate-500 outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500 dark:focus-visible:outline-blue-400 group/tooltip"
+            >
+                <span className="material-symbols-outlined text-[16px] cursor-help leading-none select-none" aria-hidden>
+                    help
+                </span>
+                <span
+                    role="tooltip"
+                    className="pointer-events-none invisible opacity-0 group-hover/tooltip:visible group-hover/tooltip:opacity-100 group-focus-visible/tooltip:visible group-focus-visible/tooltip:opacity-100 absolute left-1/2 -translate-x-1/2 bottom-[calc(100%+6px)] z-50 w-[min(18rem,calc(100vw-2rem))] px-2.5 py-2 rounded-lg text-[11px] leading-snug font-medium text-white bg-slate-900 dark:bg-slate-100 dark:text-slate-900 shadow-lg border border-slate-700/50 dark:border-slate-300 text-left whitespace-normal transition-opacity duration-150"
+                >
+                    {ZERO_DATA_RETENTION_TOOLTIP}
+                </span>
+            </span>
+        </span>
+    );
+}
+
 export default function Pricing() {
     const [isAnnual, setIsAnnual] = useState(true);
 
@@ -51,6 +77,9 @@ export default function Pricing() {
                         </div>
                         <Link href="https://showcase.thytus.com/v1/account" className="w-full py-2.5 bg-slate-900/5 dark:bg-dark-elevated hover:bg-slate-900/10 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-lg font-semibold text-sm transition-colors mb-6 block text-center">Start with Free</Link>
                         <ul className="text-[13px] space-y-3 flex-1 text-slate-600 dark:text-slate-400">
+                            
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <ZeroDataRetentionLabel /></li>
+                        
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>3 Agent Calls/Month</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Access to Basic & Open Source models</span></li>
                             {/* <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>1 AI identity (coming soon)</span></li>
@@ -67,6 +96,7 @@ export default function Pricing() {
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Email Support</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-red-600 dark:text-red-400 shrink-0">X</span> <span>Agent Outbound - (Calling, Messaging, Emailling, Social Media, Calendar)</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-red-600 dark:text-red-400 shrink-0">X</span> <span>Custom Agents</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-red-600 dark:text-red-400 shrink-0">X</span> <span>Agent Skills</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-red-600 dark:text-red-400 shrink-0">X</span> <span>Advance Analytics</span></li>
                             
                             {/* <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Upload Websites</span></li> */}
@@ -98,6 +128,7 @@ export default function Pricing() {
                         </div>
                         <Link href="https://showcase.thytus.com/v1/account" className="w-full py-2.5 bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-slate-200 text-white dark:text-slate-900 rounded-lg font-semibold text-sm transition-colors mb-6 shadow-lg shadow-slate-900/25 dark:shadow-slate-100/25 block text-center">Start with Pro</Link>
                         <ul className="text-[13px] space-y-3 flex-1 text-slate-600 dark:text-slate-400">
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <ZeroDataRetentionLabel /></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>50 agent calls/month</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Access To Advanced models</span></li>
                             {/* <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Access to reasoning</span></li>
@@ -121,6 +152,7 @@ export default function Pricing() {
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Email Support</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-red-600 dark:text-red-400 shrink-0">X</span> <span>Agent Outbound - (Calling, Messaging, Emailling, Social Media, Calendar)</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-red-600 dark:text-red-400 shrink-0">X</span> <span>Custom Agents</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-red-600 dark:text-red-400 shrink-0">X</span> <span>Agent Skills</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-red-600 dark:text-red-400 shrink-0">X</span> <span>Advance Analytics</span></li>
                             {/* <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Upload Websites</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Upload files from local device, Google Drive, Dropbox Upload files from local device, Google Drive, Dropbox, and the Internet</span></li> */}
@@ -148,8 +180,10 @@ export default function Pricing() {
                         </div>
                         <Link href="https://showcase.thytus.com/v1/account" className="w-full py-2.5 bg-slate-900/5 dark:bg-dark-elevated hover:bg-slate-900/10 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-lg font-semibold text-sm transition-colors mb-6 block text-center">Start with Ultra</Link>
                         <ul className="text-[13px] space-y-3 flex-1 text-slate-600 dark:text-slate-400">
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <ZeroDataRetentionLabel /></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Unlimited Agent calls</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Access To All models</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Improved Model Accuracy and Performance</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Unlimited Daily Tokens</span></li>
                             {/* <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Access to all features</span></li> */}
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>5M Free Monthly Tokens</span></li>
@@ -161,6 +195,7 @@ export default function Pricing() {
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Email Support</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Agent Outbound - (Calling, Messaging, Emailling, Social Media, Calendar)</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">Check</span> <span>Custom Agents</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">Check</span> <span>Agent Skills</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-red-600 dark:text-red-400 shrink-0">X</span> <span>Advance Analytics</span></li>
                             {/* <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>First day Access to new models and features</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Improved Model Accuracy and Performance</span></li> */}
@@ -187,8 +222,10 @@ export default function Pricing() {
                         </div>
                         <Link href="https://calendly.com/martino-volcy02/business-subscription" className="w-full py-2.5 bg-gray-100 dark:bg-dark-elevated hover:bg-gray-200 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-lg font-bold text-sm transition-colors mb-6 block text-center">Contact Us</Link>
                         <ul className="text-[13px] space-y-3 flex-1 text-slate-600 dark:text-slate-400">
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <ZeroDataRetentionLabel /></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Unlimited Agent calls</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Access To Flagship models</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Improved Model Accuracy and Performance</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Unlimited Daily Tokens</span></li>
                             {/* <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Access to all features</span></li> */}
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>20M Free Monthly Tokens per User</span></li>
@@ -200,6 +237,7 @@ export default function Pricing() {
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>24/7 Support</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Agent Outbound - (Calling, Messaging, Emailling, Social Media, Calendar)</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">Check</span> <span>Custom Agents</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">Check</span> <span>Agent Skills</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">Check</span> <span>Advance Analytics</span></li>
                         </ul>
                     </div>
@@ -216,7 +254,8 @@ export default function Pricing() {
                         </div>
                         <Link href="https://calendly.com/martino-volcy02/business-subscription" className="w-full py-2.5 bg-slate-900/5 dark:bg-dark-elevated hover:bg-slate-900/10 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-lg font-semibold text-sm transition-colors mb-6 block text-center">Contact Us</Link>
                         <ul className="text-[13px] space-y-3 flex-1 text-slate-600 dark:text-slate-400">
-                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>5-10x mor usage than Business</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <ZeroDataRetentionLabel /></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>5-10x more usage than Business</span></li>
                             {/* <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Access To all models</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Access to all features</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>First day Access to new models and features</span></li> */}
