@@ -18,113 +18,105 @@ const SCENARIOS = [
   {
     title: "Consulting",
     subtitle: "Client delivery & proposals",
-    youMessage:
-      "Client just changed scope. EMEA only, new timeline, same deadline. Rebuild the plan and realign the deck before the 3pm call.",
+    youMessage: "Client just changed scope to EMEA only. Same deadline. Rebuild the plan.",
     messages: [
-      "Pulling the intake notes now. I'll restructure milestones, owners, and risks around the EMEA scope.",
-      "Gemini, once your benchmark data is scoped to EMEA markets, I'll fold it into the exec summary and reshape the narrative.",
-      "On it, Claude. Filtering our three comparable engagements to EMEA and flagging where we outperformed the regional norm.",
-      "I'll scan this week's EMEA regulatory and macro headlines for anything the client might raise on the call.",
-      "I'll recheck timelines and budget assumptions against the new scope so nothing slips through.",
-      "I'll merge the updated sections into the partner-ready deck and email it to the team before the 3pm.",
+      "I'll restructure the milestones, owners, and risks around the new EMEA scope.",
+      "Gemini, send your benchmarks when ready — I'll wrap them into the exec summary.",
+      "On it. I'm filtering our past engagements to EMEA and flagging where we outperformed.",
+      "I'll pull this week's EMEA news so we're ready for anything on the call.",
+      "I'll recheck the timeline and budget against the new scope before we send anything.",
+      "I'll stitch everything into the final deck and email it to the team before 3pm.",
     ],
   },
   {
     title: "Legal",
     subtitle: "Contracts & compliance",
-    youMessage:
-      "Vendor pushed back on indemnification, IP ownership, and the auto-renewal clause. We have until 4pm to redline and send a counter.",
+    youMessage: "Vendor pushed back on indemnification and IP. We need a counter by 4pm.",
     messages: [
-      "Comparing all three disputed clauses against our standard playbook and flagging where we have room to move.",
-      "Gemini, if your liability analysis matches mine on the IP clause, I'll draft the redline language for both sections in one pass.",
-      "Checking now, Claude. I'm pulling how we handled IP ownership in our last four vendor agreements for comparison.",
-      "I'll flag any recent case law or regulatory changes that affect indemnification limits in this vendor category.",
-      "I'll extract the key dates, liability caps, and notice periods into a table so nothing gets missed in the counter.",
-      "I'll consolidate into a clean redlined MSA and a short memo the team can act on before the deadline.",
+      "I'll compare both clauses to our standard playbook and mark where we can move.",
+      "Gemini, share your IP analysis when ready — I'll draft the redline for both sections in one pass.",
+      "Pulling our last four vendor deals now to see how we handled this before.",
+      "I'll check for any recent case law that affects indemnification limits here.",
+      "I'll pull all the key dates, caps, and notice periods into a clean table.",
+      "I'll send a redlined MSA and a short action memo before the deadline.",
     ],
   },
   {
     title: "Marketing",
     subtitle: "Campaigns & launches",
-    youMessage:
-      "Client approved the brief this morning. Launch is Thursday. Build the full asset set and schedule everything now.",
+    youMessage: "Brief got approved. Launch is Thursday. Build everything and schedule it.",
     messages: [
-      "I'll tighten the hero copy, value props, and CTA for the landing page based on the approved brief.",
-      "Gemini, match your ad hooks to my landing page headline and I'll mirror that tone across the email sequence.",
-      "Copy that, Claude. Aligning hooks to last quarter's highest-converting creative and locking the visual direction.",
-      "I'll pull trending angles from this week that still fit the brand voice and won't feel stale by Thursday.",
-      "I'll map the send schedule to pipeline stage and build out the UTM tracking structure.",
-      "I'll merge everything into one launch checklist and post the first batch to Instagram and LinkedIn on schedule.",
+      "I'll write the landing page headline, value props, and CTA from the brief.",
+      "Gemini, lock your ad hooks to my headline and I'll match that tone in the emails.",
+      "Done. Aligning hooks to last quarter's top creative and locking the visual direction.",
+      "I'll find two or three trending angles this week that still fit the brand.",
+      "I'll map the send schedule and set up all the tracking links.",
+      "I'll post the first round to Instagram and LinkedIn right on schedule.",
     ],
   },
   {
     title: "Product teams",
     subtitle: "Shipping & roadmap",
-    youMessage:
-      "Onboarding drop-off hit 62% this week. Figure out what's actually blocking users and give me a prioritized fix list for Monday's ship review.",
+    youMessage: "Onboarding drop-off hit 62% this week. What's breaking and what do we fix first?",
     messages: [
-      "I'll categorize this week's support tickets and session recordings by the specific step where users quit.",
-      "Gemini, if your funnel data maps to the same drop-off points I'm seeing in the tickets, I'll lock the severity ranking.",
-      "Running it now, Claude. Tying funnel exits to the exact UI steps and cross-referencing with the most-quoted frustrations.",
-      "I'll check whether any competitor shipped a similar onboarding flow recently that we should benchmark against.",
-      "I'll estimate engineering effort for each fix so we can cut scope without breaking the demo path.",
-      "I'll output a prioritized backlog sheet with severity, effort, and owner columns ready for Monday's review.",
+      "I'll go through the support tickets and recordings to find exactly where users quit.",
+      "Gemini, if your funnel data points to the same spots, I'll lock in the priority order.",
+      "Running it now. I'm matching funnel exits to specific UI steps and user quotes.",
+      "I'll check if any competitor recently shipped a fix for the same drop-off.",
+      "I'll estimate effort for each fix so we can cut scope without killing the demo.",
+      "I'll have a prioritized sheet with severity, effort, and owner ready for Monday.",
     ],
   },
   {
     title: "Research",
     subtitle: "Market & strategy",
-    youMessage:
-      "Board packet is due Friday. Our three data sources disagree on TAM. Reconcile the numbers and build the narrative.",
+    youMessage: "Board deck is due Friday. Our three data sources disagree on TAM. Fix it.",
     messages: [
-      "I'll read all three sources and flag exactly where the methodology assumptions diverge.",
-      "Gemini, once you have the survey blends reconciled, I'll slot the final numbers into the slide citations.",
-      "On it, Claude. I'm weighting each source by sample size and recency and building a defensible composite figure.",
-      "I'll pull any macro signals the board might raise in Q&A that could challenge our TAM assumptions.",
-      "I'll sanity check the reconciled TAM against our own revenue model and margin data.",
-      "I'll package the final narrative and supporting data into a board-ready briefing doc with one clean TAM figure.",
+      "I'll read all three sources and find exactly where the numbers split.",
+      "Gemini, once you have the reconciled figure, I'll slot it into the slide citations.",
+      "On it. I'm weighting each source by sample size and recency to get one clean number.",
+      "I'll flag macro signals the board might bring up in Q&A.",
+      "I'll check the final TAM against our own revenue model to make sure it holds.",
+      "I'll wrap the whole thing into a board-ready doc with one defensible TAM.",
     ],
   },
   {
     title: "Sales",
     subtitle: "Pipeline & deals",
-    youMessage:
-      "Enterprise prospect asked for a tailored ROI model by EOD. Use the call notes. Make it specific to their numbers, not a template.",
+    youMessage: "Prospect wants a custom ROI model by EOD. Use the call notes. Make it theirs.",
     messages: [
-      "I'll extract their stated pain points, team size, and current tool spend directly from the call transcript.",
-      "Gemini, mirror their exact language from the call in your proof points and I'll match that phrasing on the one-pager.",
-      "Heard, Claude. Weaving their specific workflow bottlenecks into the value props so it reads like we were listening.",
-      "I'll pull fresh news from their company and industry to add a timely reference for the follow-up call.",
-      "I'll build the ROI model using the usage numbers and team headcount they mentioned, not our standard assumptions.",
-      "I'll drop the final story into the deck template and email it to the AE with a one-paragraph send-ready summary.",
+      "I'll pull their pain points, team size, and tool spend straight from the transcript.",
+      "Gemini, use their exact words from the call — I'll match that language on the one-pager.",
+      "Heard. I'm building the value props around their specific workflow, not a template.",
+      "I'll find a recent news hook we can reference on the next call.",
+      "I'll build the ROI model off the numbers they actually gave us.",
+      "I'll drop the final story into the deck and email the AE a send-ready summary.",
     ],
   },
   {
     title: "Education",
     subtitle: "Programs & learners",
-    youMessage:
-      "Students say the capstone rubric is unclear and TA feedback is inconsistent. Fix both and get something out before the weekend.",
+    youMessage: "Students say the rubric is confusing and TA feedback is all over the place. Fix both.",
     messages: [
-      "I'll rewrite each rubric criterion as a concrete checklist students can self-score before submitting.",
-      "Gemini, once your examples are confirmed, I'll align the TA feedback guide language to the same checklist structure.",
-      "On it, Claude. I'm pulling anonymized strong and weak samples from prior terms so each criterion has a concrete anchor.",
-      "I'll gather how peer programs handle similar capstone rubrics for any standards we should borrow.",
-      "I'll build a pacing calendar through finals that staggers the milestone load so students aren't blindsided.",
-      "I'll merge everything into one student-facing guide and one TA guide, both with the same voice and examples.",
+      "I'll rewrite each criterion as a simple checklist students can score themselves.",
+      "Gemini, once your examples are confirmed, I'll align the TA guide to the same language.",
+      "On it. I'm pulling strong and weak samples from prior terms to anchor each criterion.",
+      "I'll see how similar programs handle this and borrow what works.",
+      "I'll build a pacing calendar so students aren't blindsided by the milestone load.",
+      "I'll publish a student guide and a TA guide — same voice, same examples.",
     ],
   },
   {
     title: "Healthcare",
     subtitle: "Operations & planning",
-    youMessage:
-      "State wants a capacity plan next week. Three departments, each with different constraints. Model the scenarios and prep the leadership talking points.",
+    youMessage: "State wants a capacity plan next week. Three departments, all different. Model it.",
     messages: [
-      "I'll outline scheduling, triage flow, and staffing ratios for each department at current and projected visit volumes.",
-      "Gemini, fold your workflow notes into my staffing model so the capacity assumptions stay consistent across departments.",
-      "Working on it, Claude. I'm pulling regional benchmarks for triage and scheduling from comparable clinic expansions.",
-      "I'll summarize any regional health system news or state policy changes that could affect the expansion timeline.",
-      "I'll build a scenario spreadsheet modeling visit growth against room capacity and provider availability for each department.",
-      "I'll combine everything into a leadership briefing doc with three scenarios, a recommended path, and the talking points for the state meeting.",
+      "I'll map scheduling, triage flow, and staffing for each department at current load.",
+      "Gemini, fold your workflow notes into my staffing model so the numbers stay consistent.",
+      "Working on it. I'm pulling benchmarks from comparable clinic expansions nearby.",
+      "I'll flag any state policy changes that could affect the expansion timeline.",
+      "I'll build a scenario spreadsheet — low, mid, and high visit growth for each department.",
+      "I'll send a leadership briefing with three scenarios, a recommendation, and the talking points.",
     ],
   },
 ] as const;
@@ -145,13 +137,21 @@ const Hero = () => {
       setScenarioIndex((i) => (i + 1) % SCENARIOS.length);
     }, SCENARIO_ROTATE_MS);
     return () => window.clearInterval(id);
-  }, []);
+  }, [scenarioIndex]);
 
   const scenario = SCENARIOS[scenarioIndex];
   const agentCards = AGENT_MODELS.map((model, i) => ({
     ...model,
     text: scenario.messages[i] ?? "",
   }));
+
+  const goToPrevScenario = () => {
+    setScenarioIndex((i) => (i - 1 + SCENARIOS.length) % SCENARIOS.length);
+  };
+
+  const goToNextScenario = () => {
+    setScenarioIndex((i) => (i + 1) % SCENARIOS.length);
+  };
 
   return (
     <div className="bg-slate-50 dark:bg-dark-base text-slate-900 dark:text-slate-100 font-display selection:bg-primary/20 overflow-x-hidden">
@@ -198,20 +198,29 @@ const Hero = () => {
             {/* Right: AI messages — responsive: scale down on small screens */}
             <div className="relative flex flex-col items-center justify-center min-h-[260px] sm:min-h-[340px] md:min-h-[400px] lg:min-h-[420px] w-full overflow-visible lg:ml-14 xl:ml-24">
               <div
-                className="mb-2 sm:mb-3 text-center max-w-[280px] sm:max-w-sm px-1"
+                className="mb-2 sm:mb-3 flex items-center justify-center gap-1 sm:gap-2 w-full max-w-md px-1"
                 aria-live="polite"
                 aria-atomic="true"
               >
-                <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                  {scenario.title}
-                  <span className="font-normal text-slate-400 dark:text-slate-500 normal-case tracking-normal">
-                    {" "}
-                    · {scenario.subtitle}
-                  </span>
+                <button
+                  type="button"
+                  onClick={goToPrevScenario}
+                  aria-label="Previous scenario"
+                  className="shrink-0 inline-flex items-center justify-center size-8 rounded-full text-slate-600 dark:text-slate-300 hover:bg-slate-200/80 dark:hover:bg-dark-elevated border border-transparent hover:border-slate-200 dark:hover:border-dark-border transition-colors"
+                >
+                  <span className="material-symbols-outlined text-xl leading-none">chevron_left</span>
+                </button>
+                <p className="flex-1 min-w-0 text-center text-[10px] sm:text-xs font-medium text-slate-600 dark:text-slate-300 leading-snug px-1">
+                  {scenario.subtitle}
                 </p>
-                <p className="text-[9px] sm:text-[10px] text-slate-400 dark:text-slate-500 mt-0.5 tabular-nums">
-                  Rotates every {SCENARIO_ROTATE_MS / 1000}s · {scenarioIndex + 1} of {SCENARIOS.length}
-                </p>
+                <button
+                  type="button"
+                  onClick={goToNextScenario}
+                  aria-label="Next scenario"
+                  className="shrink-0 inline-flex items-center justify-center size-8 rounded-full text-slate-600 dark:text-slate-300 hover:bg-slate-200/80 dark:hover:bg-dark-elevated border border-transparent hover:border-slate-200 dark:hover:border-dark-border transition-colors"
+                >
+                  <span className="material-symbols-outlined text-xl leading-none">chevron_right</span>
+                </button>
               </div>
               <div
                 className="relative origin-center flex-shrink-0 scale-[0.55] sm:scale-[0.72] md:scale-90 lg:scale-100"
