@@ -53,7 +53,7 @@ export default function ThemeToggle() {
     <button
       onClick={cycle}
       title={title}
-      className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-dark-elevated transition-colors text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-white"
+      className="w-9 h-9 flex items-center justify-center rounded-none border border-transparent hover:border-slate-200 dark:hover:border-dark-border hover:bg-gray-100 dark:hover:bg-dark-elevated transition-colors text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-white"
     >
       <span className="material-symbols-outlined text-[20px]">{icon}</span>
     </button>

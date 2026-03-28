@@ -150,7 +150,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <Link
               href="https://showcase.thytus.com/v1/sessions"
-              className="btn-pill bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 px-5 py-2.5 rounded-full text-[14px] font-semibold transition-colors shadow-lg flex items-center gap-2"
+              className="btn-pill bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 px-5 py-2.5 rounded-none text-[14px] font-semibold transition-colors shadow-lg flex items-center gap-2"
             >
               Get Started
               <span className="material-symbols-outlined text-[18px]">
@@ -283,7 +283,7 @@ export default function Navbar() {
             <Link
               href="https://showcase.thytus.com/v1/sessions"
               onClick={closeMenu}
-              className="block w-full text-center bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 py-3.5 rounded-full text-[15px] font-semibold transition-colors shadow-lg"
+              className="block w-full text-center bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 py-3.5 rounded-none text-[15px] font-semibold transition-colors shadow-lg"
             >
               Get Started
             </Link>

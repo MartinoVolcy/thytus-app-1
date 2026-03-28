@@ -73,7 +73,7 @@ export default function ComparePage() {
             </div>
             <Link
               href="https://showcase.thytus.com/v1/auth/signin"
-              className="shrink-0 px-6 py-3 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-full font-semibold text-sm hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors"
+              className="shrink-0 px-6 py-3 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-none font-semibold text-sm hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors"
             >
               Get Started
             </Link>
@@ -236,7 +236,7 @@ export default function ComparePage() {
           </p>
           <Link
             href="https://showcase.thytus.com/v1/auth/signin"
-            className="inline-flex px-8 py-3.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-full font-semibold text-sm hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors shadow-lg"
+            className="inline-flex px-8 py-3.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-none font-semibold text-sm hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors shadow-lg"
           >
             Get Started
           </Link>

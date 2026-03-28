@@ -13,7 +13,7 @@ function ZeroDataRetentionLabel() {
             <span
                 tabIndex={0}
                 aria-label={ZERO_DATA_RETENTION_TOOLTIP}
-                className="relative inline-flex shrink-0 rounded-full text-slate-400 dark:text-slate-500 outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500 dark:focus-visible:outline-blue-400 group/tooltip"
+                className="relative inline-flex shrink-0 rounded-none text-slate-400 dark:text-slate-500 outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500 dark:focus-visible:outline-blue-400 group/tooltip"
             >
                 <span className="material-symbols-outlined text-[16px] cursor-help leading-none select-none" aria-hidden>
                     help
@@ -36,7 +36,7 @@ export default function Pricing() {
         <section className="py-24 bg-slate-50 dark:bg-dark-base border-t border-slate-100/80 dark:border-dark-border" id="pricing">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white tracking-tight">
+                    <h2 className="font-display text-4xl md:text-5xl font-semibold mb-4 text-slate-900 dark:text-white tracking-tight">
                         Scale with your AI needs
                     </h2>
                     <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg max-w-2xl mx-auto mb-8">
@@ -49,13 +49,13 @@ export default function Pricing() {
                         <span className={`text-sm font-semibold transition-colors ${!isAnnual ? "text-slate-900 dark:text-white" : "text-slate-500 dark:text-slate-500"}`}>Monthly</span>
                         <button
                             onClick={() => setIsAnnual(!isAnnual)}
-                            className={`relative w-14 h-8 rounded-full transition-colors duration-300 ${
+                            className={`relative w-14 h-8 rounded-none transition-colors duration-300 ${
                                 isAnnual ? "bg-slate-900 dark:bg-slate-100" : "bg-slate-300 dark:bg-slate-700"
                             }`}
                             aria-label="Toggle annual pricing"
                         >
                             <span
-                                className={`absolute top-1 left-1 w-6 h-6 bg-white dark:bg-slate-900 rounded-full shadow-md transition-transform duration-300 ${
+                                className={`absolute top-1 left-1 w-6 h-6 bg-white dark:bg-slate-900 rounded-none shadow-md transition-transform duration-300 ${
                                     isAnnual ? "translate-x-6" : "translate-x-0"
                                 }`}
                             />
@@ -75,7 +75,7 @@ export default function Pricing() {
                             </div>
                             <div className="h-8" />
                         </div>
-                        <Link href="https://showcase.thytus.com/v1/account" className="w-full py-2.5 bg-slate-900/5 dark:bg-dark-elevated hover:bg-slate-900/10 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-lg font-semibold text-sm transition-colors mb-6 block text-center">Start with Free</Link>
+                        <Link href="https://showcase.thytus.com/v1/account" className="w-full py-2.5 bg-slate-900/5 dark:bg-dark-elevated hover:bg-slate-900/10 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-none font-semibold text-sm transition-colors mb-6 block text-center">Start with Free</Link>
                         <ul className="text-[13px] space-y-3 flex-1 text-slate-600 dark:text-slate-400">
                             
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <ZeroDataRetentionLabel /></li>
@@ -107,7 +107,7 @@ export default function Pricing() {
 
                     {/* Pro */}
                     <div className="p-6 rounded-3xl bg-white dark:bg-dark-card border-2 border-slate-900 dark:border-slate-100 relative flex flex-col shadow-xl shadow-slate-900/15 dark:shadow-slate-200/15 transform md:-translate-y-4 z-10">
-                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide whitespace-nowrap border-[3px] border-white dark:border-dark-base shadow-sm text-center">
+                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-[10px] font-bold px-3 py-1 rounded-none uppercase tracking-wide whitespace-nowrap border-[3px] border-white dark:border-dark-base shadow-sm text-center">
                             MOST<br />POPULAR
                         </div>
                         <div className="mb-6 mt-4">
@@ -126,7 +126,7 @@ export default function Pricing() {
                                 )}
                             </div>
                         </div>
-                        <Link href="https://showcase.thytus.com/v1/account" className="w-full py-2.5 bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-slate-200 text-white dark:text-slate-900 rounded-lg font-semibold text-sm transition-colors mb-6 shadow-lg shadow-slate-900/25 dark:shadow-slate-100/25 block text-center">Start with Pro</Link>
+                        <Link href="https://showcase.thytus.com/v1/account" className="w-full py-2.5 bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-slate-200 text-white dark:text-slate-900 rounded-none font-semibold text-sm transition-colors mb-6 shadow-lg shadow-slate-900/25 dark:shadow-slate-100/25 block text-center">Start with Pro</Link>
                         <ul className="text-[13px] space-y-3 flex-1 text-slate-600 dark:text-slate-400">
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <ZeroDataRetentionLabel /></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>50 agent calls/month</span></li>
@@ -178,7 +178,7 @@ export default function Pricing() {
                                 )}
                             </div>
                         </div>
-                        <Link href="https://showcase.thytus.com/v1/account" className="w-full py-2.5 bg-slate-900/5 dark:bg-dark-elevated hover:bg-slate-900/10 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-lg font-semibold text-sm transition-colors mb-6 block text-center">Start with Ultra</Link>
+                        <Link href="https://showcase.thytus.com/v1/account" className="w-full py-2.5 bg-slate-900/5 dark:bg-dark-elevated hover:bg-slate-900/10 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-none font-semibold text-sm transition-colors mb-6 block text-center">Start with Ultra</Link>
                         <ul className="text-[13px] space-y-3 flex-1 text-slate-600 dark:text-slate-400">
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <ZeroDataRetentionLabel /></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Unlimited Agent calls</span></li>
@@ -211,7 +211,8 @@ export default function Pricing() {
                                 <span className="text-4xl font-bold text-slate-900 dark:text-white">${isAnnual ? "50" : "70"}</span>
                                 <span className="text-sm text-slate-500 dark:text-slate-400">/user/month</span>
                             </div>
-                            <div className="h-8">
+                            <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-1">5 users minimum</p>
+                            <div className="min-h-8 mt-1">
                                 {isAnnual && (
                                     <>
                                         <div className="text-[10px] text-slate-500">Charged $600 Annually per user</div>
@@ -220,7 +221,7 @@ export default function Pricing() {
                                 )}
                             </div>
                         </div>
-                        <Link href="https://calendly.com/martino-volcy02/business-subscription" className="w-full py-2.5 bg-gray-100 dark:bg-dark-elevated hover:bg-gray-200 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-lg font-bold text-sm transition-colors mb-6 block text-center">Contact Us</Link>
+                        <Link href="https://calendly.com/martino-volcy02/business-subscription" className="w-full py-2.5 bg-gray-100 dark:bg-dark-elevated hover:bg-gray-200 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-none font-bold text-sm transition-colors mb-6 block text-center">Contact Us</Link>
                         <ul className="text-[13px] space-y-3 flex-1 text-slate-600 dark:text-slate-400">
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <ZeroDataRetentionLabel /></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Unlimited Agent calls</span></li>
@@ -252,7 +253,7 @@ export default function Pricing() {
                             </div>
                             <div className="h-8" />
                         </div>
-                        <Link href="https://calendly.com/martino-volcy02/business-subscription" className="w-full py-2.5 bg-slate-900/5 dark:bg-dark-elevated hover:bg-slate-900/10 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-lg font-semibold text-sm transition-colors mb-6 block text-center">Contact Us</Link>
+                        <Link href="https://calendly.com/martino-volcy02/business-subscription" className="w-full py-2.5 bg-slate-900/5 dark:bg-dark-elevated hover:bg-slate-900/10 dark:hover:bg-dark-border text-slate-900 dark:text-slate-200 rounded-none font-semibold text-sm transition-colors mb-6 block text-center">Contact Us</Link>
                         <ul className="text-[13px] space-y-3 flex-1 text-slate-600 dark:text-slate-400">
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <ZeroDataRetentionLabel /></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>5-10x more usage than Business</span></li>
@@ -275,7 +276,7 @@ export default function Pricing() {
                     </p>
                     <Link
                         href="/enterprise"
-                        className="shrink-0 px-6 py-3 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-full font-semibold text-sm hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors"
+                        className="shrink-0 px-6 py-3 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-none font-semibold text-sm hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors"
                     >
                         Learn more
                     </Link>

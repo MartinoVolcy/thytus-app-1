@@ -146,13 +146,13 @@ export default function EnterprisePage() {
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               href="https://calendly.com/martino-volcy02/business-subscription"
-              className="inline-flex px-8 py-3.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-full font-semibold text-sm hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors shadow-lg"
+              className="inline-flex px-8 py-3.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-none font-semibold text-sm hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors shadow-lg"
             >
               Contact sales
             </Link>
             <Link
               href="/pricing"
-              className="inline-flex px-8 py-3.5 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 rounded-full font-semibold text-sm hover:bg-slate-100 dark:hover:bg-dark-elevated transition-colors"
+              className="inline-flex px-8 py-3.5 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 rounded-none font-semibold text-sm hover:bg-slate-100 dark:hover:bg-dark-elevated transition-colors"
             >
               View pricing
             </Link>

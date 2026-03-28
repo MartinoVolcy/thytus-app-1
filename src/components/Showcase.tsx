@@ -4,6 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
+const moreLinkClass =
+  "text-[10px] font-medium text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 uppercase tracking-wider transition-colors";
+
 const FLOW_GRID_ITEMS = [
   { icon: "call", src: null, title: "Calls" },
   { icon: "slideshow", src: null, title: "Slides" },
@@ -42,7 +45,7 @@ export default function Showcase() {
     <section className="min-h-screen py-16 md:py-24 relative bg-slate-50 dark:bg-dark-base border-t border-slate-100 dark:border-dark-border" id="showcase">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col justify-center min-h-screen">
         <div className="text-left mb-10 md:mb-14">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-4 md:mb-6 tracking-tight">
+          <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-medium text-slate-900 dark:text-white mb-4 md:mb-6 tracking-tight">
             Your Team. Your Agents. <span className="text-slate-700 dark:text-slate-200">One workspace.</span>
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-2xl leading-relaxed">
@@ -55,18 +58,18 @@ export default function Showcase() {
           {/* Central "One workspace" card with Team and Agents inside, working together */}
           <div className="rounded-2xl border-2 border-slate-200 dark:border-dark-border bg-white dark:bg-dark-card shadow-xl shadow-slate-200/30 dark:shadow-black/30 overflow-hidden">
             <div className="px-5 py-3 bg-slate-50 dark:bg-dark-elevated border-b border-slate-100 dark:border-dark-border">
-              <span className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">One workspace</span>
+              <span className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">One workspace</span>
             </div>
             <div className="p-6 md:p-8 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8">
               <div className="flex items-center gap-3 rounded-xl bg-slate-50 dark:bg-dark-elevated border border-slate-100 dark:border-dark-border px-5 py-3.5">
                 <div className="w-10 h-10 rounded-lg bg-white dark:bg-dark-card flex items-center justify-center overflow-hidden p-1">
                   <span className="material-symbols-outlined text-slate-600 dark:text-slate-300 text-2xl">group</span>
                 </div>
-                <span className="text-base md:text-lg font-bold text-slate-900 dark:text-white">Your team</span>
+                <span className="text-base md:text-lg font-medium text-slate-900 dark:text-white">Your team</span>
               </div>
               <div className="flex items-center gap-2 text-slate-400 dark:text-slate-500" aria-hidden="true">
                 <span className="material-symbols-outlined text-2xl">sync_alt</span>
-                <span className="text-xs font-semibold uppercase tracking-widest">working together</span>
+                <span className="text-xs font-medium uppercase tracking-widest">working together</span>
               </div>
               <div className="flex items-center gap-3 rounded-xl bg-slate-50 dark:bg-dark-elevated border border-slate-100 dark:border-dark-border px-5 py-3.5">
                 <div className="flex items-center gap-1">
@@ -80,7 +83,7 @@ export default function Showcase() {
                     <Image src="/logos/gemini-color.png" alt="" width={24} height={24} className="w-full h-full object-contain" />
                   </div>
                 </div>
-                <span className="text-base md:text-lg font-bold text-slate-900 dark:text-white">Your AI agents</span>
+                <span className="text-base md:text-lg font-medium text-slate-900 dark:text-white">Your AI agents</span>
               </div>
             </div>
           </div>
@@ -111,11 +114,16 @@ export default function Showcase() {
                     </span>
                   )}
                 </div>
-                <span className="text-[10px] md:text-xs font-semibold text-slate-700 dark:text-slate-200 text-center leading-tight">
+                <span className="text-[10px] md:text-xs font-medium text-slate-700 dark:text-slate-200 text-center leading-tight">
                   {item.title}
                 </span>
               </div>
             ))}
+            </div>
+            <div className="flex justify-center mt-6 md:mt-8">
+              <Link href="/features" className={moreLinkClass}>
+                + more
+              </Link>
             </div>
           </div>
         </div>
@@ -126,10 +134,10 @@ export default function Showcase() {
         <div className="rounded-3xl border border-slate-100 dark:border-dark-border bg-white/80 dark:bg-dark-card/80 backdrop-blur-sm px-8 sm:px-10 md:px-12 py-10 md:py-12">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] items-start">
             <div>
-              <span className="text-xs md:text-sm font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-[0.25em] mb-3 block">
+              <span className="text-xs md:text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-[0.25em] mb-3 block">
                 Built for Teams
               </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-5 md:mb-6 tracking-tight">
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-slate-900 dark:text-white mb-5 md:mb-6 tracking-tight">
                 Collaboration your whole company can trust.
               </h2>
               <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-6 md:mb-8 max-w-xl">
@@ -148,7 +156,7 @@ export default function Showcase() {
                     alternate_email
                   </span>
                 </div>
-                <h3 className="text-base md:text-lg font-extrabold text-slate-900 dark:text-white mb-2">
+                <h3 className="text-base md:text-lg font-semibold text-slate-900 dark:text-white mb-2">
                   Human first conversations
                 </h3>
                 <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
@@ -163,7 +171,7 @@ export default function Showcase() {
                     poll
                   </span>
                 </div>
-                <h3 className="text-base md:text-lg font-extrabold text-slate-900 dark:text-white mb-2">
+                <h3 className="text-base md:text-lg font-semibold text-slate-900 dark:text-white mb-2">
                   Decisions with a clear record
                 </h3>
                 <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
@@ -177,7 +185,7 @@ export default function Showcase() {
                     forum
                   </span>
                 </div>
-                <h3 className="text-base md:text-lg font-extrabold text-slate-900 dark:text-white mb-2">
+                <h3 className="text-base md:text-lg font-semibold text-slate-900 dark:text-white mb-2">
                   Threads that mirror how teams work
                 </h3>
                 <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">

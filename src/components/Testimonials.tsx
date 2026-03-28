@@ -31,7 +31,7 @@ export default function Testimonials() {
           <span className="text-xs md:text-sm font-extrabold text-blue-600 dark:text-blue-400 mb-3 block uppercase tracking-[0.25em]">
             Testimonials
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-5 tracking-tight">
+          <h2 className="font-display text-3xl md:text-4xl font-semibold text-slate-900 dark:text-white mb-5 tracking-tight">
             Teams that already work with Thytus.
           </h2>
           <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">

@@ -99,7 +99,7 @@ export default function Features() {
             <span className="text-xs md:text-sm font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-[0.25em] mb-4 block">
               Capabilities
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
+            <h2 className="font-display text-4xl md:text-5xl font-semibold text-slate-900 dark:text-white mb-6 tracking-tight">
               Everything your team needs to ship <span className="text-slate-800 dark:text-slate-100">real work.</span>
             </h2>
             <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">

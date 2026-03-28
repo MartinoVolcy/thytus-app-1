@@ -27,6 +27,14 @@ const SCENARIOS = [
       "I'll recheck the timeline and budget against the new scope before we send anything.",
       "I'll stitch everything into the final deck and email it to the team before 3pm.",
     ],
+    agentRoles: [
+      "Planning Agent",
+      "Coordinator Agent",
+      "Research Agent",
+      "Intel Agent",
+      "Validation Agent",
+      "Outbound Agent",
+    ],
   },
   {
     title: "Legal",
@@ -39,6 +47,14 @@ const SCENARIOS = [
       "I'll check for any recent case law that affects indemnification limits here.",
       "I'll pull all the key dates, caps, and notice periods into a clean table.",
       "I'll send a redlined MSA and a short action memo before the deadline.",
+    ],
+    agentRoles: [
+      "Contract Analysis Agent",
+      "Coordinator Agent",
+      "Research Agent",
+      "Legal Research Agent",
+      "Extraction Agent",
+      "Outbound Agent",
     ],
   },
   {
@@ -53,6 +69,14 @@ const SCENARIOS = [
       "I'll map the send schedule and set up all the tracking links.",
       "I'll post the first round to Instagram and LinkedIn right on schedule.",
     ],
+    agentRoles: [
+      "Creative Agent",
+      "Coordinator Agent",
+      "Creative Research Agent",
+      "Trend Research Agent",
+      "Campaign Ops Agent",
+      "Publishing Agent",
+    ],
   },
   {
     title: "Product teams",
@@ -65,6 +89,14 @@ const SCENARIOS = [
       "I'll check if any competitor recently shipped a fix for the same drop-off.",
       "I'll estimate effort for each fix so we can cut scope without killing the demo.",
       "I'll have a prioritized sheet with severity, effort, and owner ready for Monday.",
+    ],
+    agentRoles: [
+      "Support Analyst Agent",
+      "Coordinator Agent",
+      "Analytics Agent",
+      "Competitive Research Agent",
+      "Scoping Agent",
+      "Reporting Agent",
     ],
   },
   {
@@ -79,6 +111,14 @@ const SCENARIOS = [
       "I'll check the final TAM against our own revenue model to make sure it holds.",
       "I'll wrap the whole thing into a board-ready doc with one defensible TAM.",
     ],
+    agentRoles: [
+      "Research Agent",
+      "Coordinator Agent",
+      "Quant Research Agent",
+      "Macro Research Agent",
+      "Validation Agent",
+      "Reporting Agent",
+    ],
   },
   {
     title: "Sales",
@@ -91,6 +131,14 @@ const SCENARIOS = [
       "I'll find a recent news hook we can reference on the next call.",
       "I'll build the ROI model off the numbers they actually gave us.",
       "I'll drop the final story into the deck and email the AE a send-ready summary.",
+    ],
+    agentRoles: [
+      "Deal Intel Agent",
+      "Coordinator Agent",
+      "Personalization Agent",
+      "News Research Agent",
+      "Finance Agent",
+      "Outbound Agent",
     ],
   },
   {
@@ -105,6 +153,14 @@ const SCENARIOS = [
       "I'll build a pacing calendar so students aren't blindsided by the milestone load.",
       "I'll publish a student guide and a TA guide — same voice, same examples.",
     ],
+    agentRoles: [
+      "Instructional Agent",
+      "Coordinator Agent",
+      "Content Research Agent",
+      "Benchmark Agent",
+      "Scheduling Agent",
+      "Publishing Agent",
+    ],
   },
   {
     title: "Healthcare",
@@ -117,6 +173,14 @@ const SCENARIOS = [
       "I'll flag any state policy changes that could affect the expansion timeline.",
       "I'll build a scenario spreadsheet — low, mid, and high visit growth for each department.",
       "I'll send a leadership briefing with three scenarios, a recommendation, and the talking points.",
+    ],
+    agentRoles: [
+      "Operations Agent",
+      "Coordinator Agent",
+      "Benchmark Agent",
+      "Compliance Research Agent",
+      "Modeling Agent",
+      "Briefing Agent",
     ],
   },
 ] as const;
@@ -143,6 +207,7 @@ const Hero = () => {
   const agentCards = AGENT_MODELS.map((model, i) => ({
     ...model,
     text: scenario.messages[i] ?? "",
+    role: scenario.agentRoles[i] ?? "Agent",
   }));
 
   const goToPrevScenario = () => {
@@ -154,7 +219,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="bg-slate-50 dark:bg-dark-base text-slate-900 dark:text-slate-100 font-display selection:bg-primary/20 overflow-x-hidden">
+    <div className="bg-slate-50 dark:bg-dark-base text-slate-900 dark:text-slate-100 font-sans selection:bg-primary/20 overflow-x-hidden">
       <main className="relative min-h-screen flex flex-col overflow-hidden">
         {/* Subtle neutral background — enterprise / Harbor-like */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-50/80 to-white dark:from-dark-base dark:to-dark-base pointer-events-none" />
@@ -165,7 +230,7 @@ const Hero = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center flex-1 min-h-0">
             {/* Left: Copy */}
             <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-6 text-slate-900 dark:text-white">
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] tracking-tight mb-6 text-slate-900 dark:text-white">
                 Your AI Team,
                 <br />
                 <span className="text-slate-700 dark:text-slate-200">Built to Work Together</span>
@@ -179,7 +244,7 @@ const Hero = () => {
               <div className="flex flex-wrap items-center gap-3 mb-12">
                 <Link
                   href="https://showcase.thytus.com/v1/sessions"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg font-semibold text-sm transition-all hover:opacity-90"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-none font-semibold text-sm transition-all hover:opacity-90"
                 >
                   Get Started
                   <span className="material-symbols-outlined text-lg">arrow_forward</span>
@@ -188,7 +253,7 @@ const Hero = () => {
                   href="https://calendly.com/martino-volcy02/business-subscription"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border text-slate-800 dark:text-slate-200 rounded-lg font-semibold text-sm transition-all hover:border-slate-300 dark:hover:border-dark-border"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border text-slate-800 dark:text-slate-200 rounded-none font-semibold text-sm transition-all hover:border-slate-300 dark:hover:border-dark-border"
                 >
                   Book Demo
                 </Link>
@@ -206,7 +271,7 @@ const Hero = () => {
                   type="button"
                   onClick={goToPrevScenario}
                   aria-label="Previous scenario"
-                  className="shrink-0 inline-flex items-center justify-center size-8 rounded-full text-slate-600 dark:text-slate-300 hover:bg-slate-200/80 dark:hover:bg-dark-elevated border border-transparent hover:border-slate-200 dark:hover:border-dark-border transition-colors"
+                  className="shrink-0 inline-flex items-center justify-center size-8 rounded-none text-slate-600 dark:text-slate-300 hover:bg-slate-200/80 dark:hover:bg-dark-elevated border border-slate-200/80 dark:border-dark-border transition-colors"
                 >
                   <span className="material-symbols-outlined text-xl leading-none">chevron_left</span>
                 </button>
@@ -217,7 +282,7 @@ const Hero = () => {
                   type="button"
                   onClick={goToNextScenario}
                   aria-label="Next scenario"
-                  className="shrink-0 inline-flex items-center justify-center size-8 rounded-full text-slate-600 dark:text-slate-300 hover:bg-slate-200/80 dark:hover:bg-dark-elevated border border-transparent hover:border-slate-200 dark:hover:border-dark-border transition-colors"
+                  className="shrink-0 inline-flex items-center justify-center size-8 rounded-none text-slate-600 dark:text-slate-300 hover:bg-slate-200/80 dark:hover:bg-dark-elevated border border-slate-200/80 dark:border-dark-border transition-colors"
                 >
                   <span className="material-symbols-outlined text-xl leading-none">chevron_right</span>
                 </button>
@@ -267,10 +332,15 @@ const Hero = () => {
                               className="w-4 h-4 sm:w-[18px] sm:h-[18px] object-contain"
                             />
                           </div>
-                          <div className="rounded-xl rounded-bl-md bg-slate-100 dark:bg-slate-700/80 px-2.5 py-2 sm:px-3 sm:py-2 shadow-md shadow-slate-200/50 dark:shadow-black/20 flex-1 min-w-0">
-                            <p className="text-[9px] sm:text-[10px] text-slate-700 dark:text-slate-200 leading-tight whitespace-normal">
-                              {agent.text}
-                            </p>
+                          <div className="flex flex-col gap-0.5 flex-1 min-w-0 items-start">
+                            <span className="text-[7px] sm:text-[8px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide max-w-full truncate">
+                              {agent.role}
+                            </span>
+                            <div className="rounded-lg rounded-bl-sm bg-slate-100 dark:bg-slate-700/80 px-2.5 py-2 sm:px-3 sm:py-2 shadow-md shadow-slate-200/50 dark:shadow-black/20 w-full min-w-0">
+                              <p className="text-[9px] sm:text-[10px] text-slate-700 dark:text-slate-200 leading-tight whitespace-normal">
+                                {agent.text}
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -304,7 +374,7 @@ const Hero = () => {
       {/* The Problem */}
       <section className="bg-white dark:bg-dark-base min-h-screen flex flex-col justify-center py-16 md:py-24 border-t border-slate-100 dark:border-dark-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex-1 flex flex-col justify-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white tracking-tight mb-10 text-left">
+          <h2 className="font-display text-2xl md:text-3xl font-semibold text-slate-900 dark:text-white tracking-tight mb-10 text-left">
             AI is a hassle to use in your business
           </h2>
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -315,7 +385,7 @@ const Hero = () => {
               <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
                 One for Marketing, one for sales, one for demos, one for research, plus 100 more.
               </p>
-              <h3 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight mt-6">
+              <h3 className="font-display text-3xl md:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight mt-6">
                 Sound familiar?
               </h3>
             </div>
