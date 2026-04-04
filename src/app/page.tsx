@@ -30,9 +30,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Showcase />
-      <Features />
+      {/* <Features /> */}
       <Pricing />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <CTA />
       <Footer />
     </div>

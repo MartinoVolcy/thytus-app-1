@@ -4,6 +4,8 @@ import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+const CALENDLY_URL = "https://calendly.com/martino-volcy02/business-subscription";
+
 type Section = "features" | "solutions" | "resources" | null;
 
 export default function Navbar() {
@@ -52,7 +54,7 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-8 text-[15px] font-medium text-slate-600 dark:text-slate-300">
-            <div className="relative dropdown-group py-4 group">
+            {/* <div className="relative dropdown-group py-4 group">
               <button className="nav-link hover:text-slate-900 dark:hover:text-white transition-colors flex items-center gap-1">
                 Features{" "}
                 <span className="material-symbols-outlined text-sm opacity-50 transition-transform group-hover:rotate-180">
@@ -103,14 +105,14 @@ export default function Navbar() {
                   <Link href="/solutions/healthcare" className="block px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-dark-elevated rounded-lg transition-colors text-sm text-slate-700 dark:text-slate-300 font-medium">Healthcare</Link>
                 </div>
               </div>
-            </div>
-            <Link
+            </div> */}
+            {/* <Link
               href="/pricing"
               className="nav-link hover:text-slate-900 dark:hover:text-white transition-colors"
             >
               Pricing
-            </Link>
-            <Link
+            </Link> */}
+            {/* <Link
               href="/enterprise"
               className="nav-link hover:text-slate-900 dark:hover:text-white transition-colors"
             >
@@ -143,13 +145,15 @@ export default function Navbar() {
                   Blog
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <Link
-              href="https://showcase.thytus.com/v1/sessions"
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-pill bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 px-5 py-2.5 rounded-none text-[14px] font-semibold transition-colors shadow-lg flex items-center gap-2"
             >
               Get Started
@@ -207,7 +211,7 @@ export default function Navbar() {
         <div className="flex flex-col h-[calc(100%-5rem)] overflow-y-auto">
           <div className="flex-1 px-6 py-4">
             {/* Features */}
-            <MobileDropdown
+            {/* <MobileDropdown
               label="Features"
               isOpen={openSection === "features"}
               onToggle={() => toggleSection("features")}
@@ -232,10 +236,10 @@ export default function Navbar() {
               <MobileLink href="/features/slides" onClick={closeMenu}>Slides</MobileLink>
               <MobileLink href="/features/code-editor" onClick={closeMenu}>Code Editor</MobileLink>
               <MobileLink href="/features/media-generation" onClick={closeMenu}>Media Generation</MobileLink>
-            </MobileDropdown>
+            </MobileDropdown> */}
 
             {/* Solutions */}
-            <MobileDropdown
+            {/* <MobileDropdown
               label="Solutions"
               isOpen={openSection === "solutions"}
               onToggle={() => toggleSection("solutions")}
@@ -248,10 +252,10 @@ export default function Navbar() {
               <MobileLink href="/solutions/sales" onClick={closeMenu}>Sales</MobileLink>
               <MobileLink href="/solutions/education" onClick={closeMenu}>Education</MobileLink>
               <MobileLink href="/solutions/healthcare" onClick={closeMenu}>Healthcare</MobileLink>
-            </MobileDropdown>
+            </MobileDropdown> */}
 
             {/* Resources */}
-            <MobileDropdown
+            {/* <MobileDropdown
               label="Resources"
               isOpen={openSection === "resources"}
               onToggle={() => toggleSection("resources")}
@@ -259,33 +263,35 @@ export default function Navbar() {
               <MobileLink href="/compare" onClick={closeMenu}>Why us</MobileLink>
               <MobileLink href="https://showcase.thytus.com/v1/guides" onClick={closeMenu}>Documentation</MobileLink>
               <MobileLink href="/blog" onClick={closeMenu}>Blog</MobileLink>
-            </MobileDropdown>
+            </MobileDropdown> */}
 
             {/* Pricing (plain link) */}
-            <Link
+            {/* <Link
               href="/pricing"
               onClick={closeMenu}
               className="flex items-center justify-between py-4 border-b border-slate-100 dark:border-dark-border text-lg font-semibold text-slate-900 dark:text-white"
             >
               Pricing
-            </Link>
-            <Link
+            </Link> */}
+            {/* <Link
               href="/enterprise"
               onClick={closeMenu}
               className="flex items-center justify-between py-4 border-b border-slate-100 dark:border-dark-border text-lg font-semibold text-slate-900 dark:text-white"
             >
               Enterprise
-            </Link>
+            </Link> */}
           </div>
 
           {/* Footer CTA */}
           <div className="px-6 pb-8 pt-4 border-t border-slate-100 dark:border-dark-border mt-auto">
             <Link
-              href="https://showcase.thytus.com/v1/sessions"
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={closeMenu}
               className="block w-full text-center bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 py-3.5 rounded-none text-[15px] font-semibold transition-colors shadow-lg"
             >
-              Get Started
+              Get Started For Free
             </Link>
           </div>
         </div>

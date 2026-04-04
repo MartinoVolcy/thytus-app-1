@@ -1,431 +1,179 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const AGENT_MODELS = [
-  { name: "ChatGPT", logo: "/logos/openai.png" },
-  { name: "Claude", logo: "/logos/claude.png" },
-  { name: "Gemini", logo: "/logos/gemini-color.png" },
-  { name: "Grok", logo: "/logos/xai.png" },
-  { name: "Deepseek", logo: "/logos/deepseek.png" },
-  { name: "Kimi", logo: "/logos/moonshot.png" },
+const CALENDLY_URL = "https://calendly.com/martino-volcy02/business-subscription";
+
+/** Images in /public/services; label from filename (e.g. electrical.png → Electrical). */
+const SERVICE_IMAGES = [
+  "appliance.png",
+  "auto-detailing.png",
+  "carpentry.png",
+  "carpet-cleaning.png",
+  "concrete.png",
+  "custom-home-building.png",
+  "custom-remodeling.png",
+  "electrical.png",
+  "fireplace-and-chimney.png",
+  "flooring.png",
+  "garage-door.png",
+  "handyman.png",
+  "home-cleaning.png",
+  "HVAC.png",
+  "irrigation.png",
+  "janitorial.png",
+  "junk-removal.png",
+  "landscaping.png",
+  "lawncare.png",
+  "locksmith.png",
+  "mechanical.png",
+  "moving.png",
+  "painting.png",
+  "pest-control.png",
+  "plumbing.png",
+  "pool-and-spa.png",
+  "property-maintenance.png",
+  "restoration.png",
+  "roofing.png",
+  "septic.png",
+  "snow-removal.png",
+  "window-cleaning.png",
 ] as const;
 
-/** Rotating small-business scenarios; consulting first; copy updates every 20s. */
-const SCENARIOS = [
-  {
-    title: "Consulting",
-    subtitle: "Client delivery & proposals",
-    youMessage: "Client just changed scope to EMEA only. Same deadline. Rebuild the plan.",
-    messages: [
-      "I'll restructure the milestones, owners, and risks around the new EMEA scope.",
-      "Gemini, send your benchmarks when ready — I'll wrap them into the exec summary.",
-      "On it. I'm filtering our past engagements to EMEA and flagging where we outperformed.",
-      "I'll pull this week's EMEA news so we're ready for anything on the call.",
-      "I'll recheck the timeline and budget against the new scope before we send anything.",
-      "I'll stitch everything into the final deck and email it to the team before 3pm.",
-    ],
-    agentRoles: [
-      "Planning Agent",
-      "Coordinator Agent",
-      "Research Agent",
-      "Intel Agent",
-      "Validation Agent",
-      "Outbound Agent",
-    ],
-  },
-  {
-    title: "Legal",
-    subtitle: "Contracts & compliance",
-    youMessage: "Vendor pushed back on indemnification and IP. We need a counter by 4pm.",
-    messages: [
-      "I'll compare both clauses to our standard playbook and mark where we can move.",
-      "Gemini, share your IP analysis when ready — I'll draft the redline for both sections in one pass.",
-      "Pulling our last four vendor deals now to see how we handled this before.",
-      "I'll check for any recent case law that affects indemnification limits here.",
-      "I'll pull all the key dates, caps, and notice periods into a clean table.",
-      "I'll send a redlined MSA and a short action memo before the deadline.",
-    ],
-    agentRoles: [
-      "Contract Analysis Agent",
-      "Coordinator Agent",
-      "Research Agent",
-      "Legal Research Agent",
-      "Extraction Agent",
-      "Outbound Agent",
-    ],
-  },
-  {
-    title: "Marketing",
-    subtitle: "Campaigns & launches",
-    youMessage: "Brief got approved. Launch is Thursday. Build everything and schedule it.",
-    messages: [
-      "I'll write the landing page headline, value props, and CTA from the brief.",
-      "Gemini, lock your ad hooks to my headline and I'll match that tone in the emails.",
-      "Done. Aligning hooks to last quarter's top creative and locking the visual direction.",
-      "I'll find two or three trending angles this week that still fit the brand.",
-      "I'll map the send schedule and set up all the tracking links.",
-      "I'll post the first round to Instagram and LinkedIn right on schedule.",
-    ],
-    agentRoles: [
-      "Creative Agent",
-      "Coordinator Agent",
-      "Creative Research Agent",
-      "Trend Research Agent",
-      "Campaign Ops Agent",
-      "Publishing Agent",
-    ],
-  },
-  {
-    title: "Product teams",
-    subtitle: "Shipping & roadmap",
-    youMessage: "Onboarding drop-off hit 62% this week. What's breaking and what do we fix first?",
-    messages: [
-      "I'll go through the support tickets and recordings to find exactly where users quit.",
-      "Gemini, if your funnel data points to the same spots, I'll lock in the priority order.",
-      "Running it now. I'm matching funnel exits to specific UI steps and user quotes.",
-      "I'll check if any competitor recently shipped a fix for the same drop-off.",
-      "I'll estimate effort for each fix so we can cut scope without killing the demo.",
-      "I'll have a prioritized sheet with severity, effort, and owner ready for Monday.",
-    ],
-    agentRoles: [
-      "Support Analyst Agent",
-      "Coordinator Agent",
-      "Analytics Agent",
-      "Competitive Research Agent",
-      "Scoping Agent",
-      "Reporting Agent",
-    ],
-  },
-  {
-    title: "Research",
-    subtitle: "Market & strategy",
-    youMessage: "Board deck is due Friday. Our three data sources disagree on TAM. Fix it.",
-    messages: [
-      "I'll read all three sources and find exactly where the numbers split.",
-      "Gemini, once you have the reconciled figure, I'll slot it into the slide citations.",
-      "On it. I'm weighting each source by sample size and recency to get one clean number.",
-      "I'll flag macro signals the board might bring up in Q&A.",
-      "I'll check the final TAM against our own revenue model to make sure it holds.",
-      "I'll wrap the whole thing into a board-ready doc with one defensible TAM.",
-    ],
-    agentRoles: [
-      "Research Agent",
-      "Coordinator Agent",
-      "Quant Research Agent",
-      "Macro Research Agent",
-      "Validation Agent",
-      "Reporting Agent",
-    ],
-  },
-  {
-    title: "Sales",
-    subtitle: "Pipeline & deals",
-    youMessage: "Prospect wants a custom ROI model by EOD. Use the call notes. Make it theirs.",
-    messages: [
-      "I'll pull their pain points, team size, and tool spend straight from the transcript.",
-      "Gemini, use their exact words from the call — I'll match that language on the one-pager.",
-      "Heard. I'm building the value props around their specific workflow, not a template.",
-      "I'll find a recent news hook we can reference on the next call.",
-      "I'll build the ROI model off the numbers they actually gave us.",
-      "I'll drop the final story into the deck and email the AE a send-ready summary.",
-    ],
-    agentRoles: [
-      "Deal Intel Agent",
-      "Coordinator Agent",
-      "Personalization Agent",
-      "News Research Agent",
-      "Finance Agent",
-      "Outbound Agent",
-    ],
-  },
-  {
-    title: "Education",
-    subtitle: "Programs & learners",
-    youMessage: "Students say the rubric is confusing and TA feedback is all over the place. Fix both.",
-    messages: [
-      "I'll rewrite each criterion as a simple checklist students can score themselves.",
-      "Gemini, once your examples are confirmed, I'll align the TA guide to the same language.",
-      "On it. I'm pulling strong and weak samples from prior terms to anchor each criterion.",
-      "I'll see how similar programs handle this and borrow what works.",
-      "I'll build a pacing calendar so students aren't blindsided by the milestone load.",
-      "I'll publish a student guide and a TA guide — same voice, same examples.",
-    ],
-    agentRoles: [
-      "Instructional Agent",
-      "Coordinator Agent",
-      "Content Research Agent",
-      "Benchmark Agent",
-      "Scheduling Agent",
-      "Publishing Agent",
-    ],
-  },
-  {
-    title: "Healthcare",
-    subtitle: "Operations & planning",
-    youMessage: "State wants a capacity plan next week. Three departments, all different. Model it.",
-    messages: [
-      "I'll map scheduling, triage flow, and staffing for each department at current load.",
-      "Gemini, fold your workflow notes into my staffing model so the numbers stay consistent.",
-      "Working on it. I'm pulling benchmarks from comparable clinic expansions nearby.",
-      "I'll flag any state policy changes that could affect the expansion timeline.",
-      "I'll build a scenario spreadsheet — low, mid, and high visit growth for each department.",
-      "I'll send a leadership briefing with three scenarios, a recommendation, and the talking points.",
-    ],
-    agentRoles: [
-      "Operations Agent",
-      "Coordinator Agent",
-      "Benchmark Agent",
-      "Compliance Research Agent",
-      "Modeling Agent",
-      "Briefing Agent",
-    ],
-  },
-] as const;
+function filenameToLabel(filename: string): string {
+  const base = filename.replace(/\.[^.]+$/, "");
+  return base
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+    .join(" ");
+}
 
-const SCENARIO_ROTATE_MS = 20_000;
-
-const defaultRadius = 260;
-const innerRadius = 200; // Claude and Grok sit closer to the center
+const CARD_W = 300;
+const CARD_H = 188;
 
 const Hero = () => {
-  const [scenarioIndex, setScenarioIndex] = useState(0);
-  const cardWidth = 260;
-  // Per-card radius: Claude (index 1) and Grok (index 3) use innerRadius; others use defaultRadius
-  const radiusByIndex = [defaultRadius, innerRadius, defaultRadius, innerRadius, defaultRadius, defaultRadius];
-
-  useEffect(() => {
-    const id = window.setInterval(() => {
-      setScenarioIndex((i) => (i + 1) % SCENARIOS.length);
-    }, SCENARIO_ROTATE_MS);
-    return () => window.clearInterval(id);
-  }, [scenarioIndex]);
-
-  const scenario = SCENARIOS[scenarioIndex];
-  const agentCards = AGENT_MODELS.map((model, i) => ({
-    ...model,
-    text: scenario.messages[i] ?? "",
-    role: scenario.agentRoles[i] ?? "Agent",
+  const services = SERVICE_IMAGES.map((file) => ({
+    src: `/services/${file}`,
+    label: filenameToLabel(file),
   }));
-
-  const goToPrevScenario = () => {
-    setScenarioIndex((i) => (i - 1 + SCENARIOS.length) % SCENARIOS.length);
-  };
-
-  const goToNextScenario = () => {
-    setScenarioIndex((i) => (i + 1) % SCENARIOS.length);
-  };
 
   return (
     <div className="bg-slate-50 dark:bg-dark-base text-slate-900 dark:text-slate-100 font-sans selection:bg-primary/20 overflow-x-hidden">
       <main className="relative min-h-screen flex flex-col overflow-hidden">
-        {/* Subtle neutral background — enterprise / Harbor-like */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-50/80 to-white dark:from-dark-base dark:to-dark-base pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-slate-200/50 dark:bg-slate-700/30 pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 flex-1 flex flex-col pt-24 sm:pt-28 lg:pt-32 pb-6 sm:pb-8">
-          {/* Hero split layout — stacks on mobile, side-by-side on lg+ */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center flex-1 min-h-0">
-            {/* Left: Copy */}
-            <div>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] tracking-tight mb-6 text-slate-900 dark:text-white">
-                Your AI Team,
-                <br />
-                <span className="text-slate-700 dark:text-slate-200">Built to Work Together</span>
-              </h1>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 flex-1 flex flex-col justify-center w-full min-h-0 pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-10">
+          {/* Hero: centered copy */}
+          <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] tracking-tight mb-6 text-slate-900 dark:text-white">
+              Run your whole business by talking to it.
+            </h1>
 
-              <p className="text-lg text-slate-600 dark:text-slate-400 max-w-lg mb-10 leading-relaxed">
-                A workspace where AI agents work and collaborate with you and each other.{" "}
-                <span className="font-semibold text-slate-800 dark:text-slate-200">10x your AI Agent output.</span>
-              </p>
+            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mb-10 leading-relaxed">
+              Type what you need and get back to the work your customers pay you for. Thytus helps with customer follow-up,
+              posting online, quotes, and more, so you can focus on the job itself.
+            </p>
 
-              <div className="flex flex-wrap items-center gap-3 mb-12">
-                <Link
-                  href="https://showcase.thytus.com/v1/sessions"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-none font-semibold text-sm transition-all hover:opacity-90"
-                >
-                  Get Started
+            <div className="flex flex-wrap items-center justify-center mb-0">
+              <Link
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex flex-col items-center gap-1 px-8 py-3.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-none font-semibold text-sm transition-all hover:opacity-90"
+              >
+                <span className="inline-flex items-center gap-2">
+                  Get Started for Free
                   <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                </Link>
-                <Link
-                  href="https://calendly.com/martino-volcy02/business-subscription"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border text-slate-800 dark:text-slate-200 rounded-none font-semibold text-sm transition-all hover:border-slate-300 dark:hover:border-dark-border"
-                >
-                  Book Demo
-                </Link>
-              </div>
-            </div>
-
-            {/* Right: AI messages — responsive: scale down on small screens */}
-            <div className="relative flex flex-col items-center justify-center min-h-[260px] sm:min-h-[340px] md:min-h-[400px] lg:min-h-[420px] w-full overflow-visible lg:ml-14 xl:ml-24">
-              <div
-                className="mb-2 sm:mb-3 flex items-center justify-center gap-1 sm:gap-2 w-full max-w-md px-1"
-                aria-live="polite"
-                aria-atomic="true"
-              >
-                <button
-                  type="button"
-                  onClick={goToPrevScenario}
-                  aria-label="Previous scenario"
-                  className="shrink-0 inline-flex items-center justify-center size-8 rounded-none text-slate-600 dark:text-slate-300 hover:bg-slate-200/80 dark:hover:bg-dark-elevated border border-slate-200/80 dark:border-dark-border transition-colors"
-                >
-                  <span className="material-symbols-outlined text-xl leading-none">chevron_left</span>
-                </button>
-                <p className="flex-1 min-w-0 text-center text-[10px] sm:text-xs font-medium text-slate-600 dark:text-slate-300 leading-snug px-1">
-                  {scenario.subtitle}
-                </p>
-                <button
-                  type="button"
-                  onClick={goToNextScenario}
-                  aria-label="Next scenario"
-                  className="shrink-0 inline-flex items-center justify-center size-8 rounded-none text-slate-600 dark:text-slate-300 hover:bg-slate-200/80 dark:hover:bg-dark-elevated border border-slate-200/80 dark:border-dark-border transition-colors"
-                >
-                  <span className="material-symbols-outlined text-xl leading-none">chevron_right</span>
-                </button>
-              </div>
-              <div
-                className="relative origin-center flex-shrink-0 scale-[0.55] sm:scale-[0.72] md:scale-90 lg:scale-100"
-                style={{ width: 480, height: 480 }}
-              >
-                  {/* Center message — blue "You" text message (scaled down) */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-1 max-w-[200px] sm:max-w-[220px]">
-                    <span className="text-[8px] sm:text-[9px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">
-                      You
-                    </span>
-                    <div className="rounded-xl rounded-br-md bg-blue-500 dark:bg-blue-600 px-3 py-2 sm:px-3.5 sm:py-2 shadow-lg shadow-blue-500/25 dark:shadow-blue-900/30">
-                      <p className="text-[11px] sm:text-xs font-medium text-white leading-snug">
-                        {scenario.youMessage}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* AI agent messages — fixed around the center "You" message */}
-                  {[
-                    25, 85, 200, 287, 343, 155,
-                  ].map((angle, i) => {
-                    const agent = agentCards[i];
-                    const r = radiusByIndex[i];
-                    return (
-                      <div
-                        key={agent.name}
-                        className="absolute origin-center"
-                        style={{
-                          top: "50%",
-                          left: "50%",
-                          marginTop: "-28px",
-                          marginLeft: `-${cardWidth / 2}px`,
-                          width: `${cardWidth}px`,
-                          transform: `rotate(${angle}deg) translateX(${r}px) rotate(-${angle}deg)`,
-                        }}
-                      >
-                        <div className="flex items-end gap-1.5 pointer-events-auto w-full">
-                          <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-slate-200 dark:bg-dark-elevated flex items-center justify-center overflow-hidden p-0.5">
-                            <Image
-                              src={agent.logo}
-                              alt={agent.name}
-                              width={16}
-                              height={16}
-                              className="w-4 h-4 sm:w-[18px] sm:h-[18px] object-contain"
-                            />
-                          </div>
-                          <div className="flex flex-col gap-0.5 flex-1 min-w-0 items-start">
-                            <span className="text-[7px] sm:text-[8px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide max-w-full truncate">
-                              {agent.role}
-                            </span>
-                            <div className="rounded-lg rounded-bl-sm bg-slate-100 dark:bg-slate-700/80 px-2.5 py-2 sm:px-3 sm:py-2 shadow-md shadow-slate-200/50 dark:shadow-black/20 w-full min-w-0">
-                              <p className="text-[9px] sm:text-[10px] text-slate-700 dark:text-slate-200 leading-tight whitespace-normal">
-                                {agent.text}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-              </div>
+                </span>
+                <span className="text-[11px] font-medium text-white/80 dark:text-slate-600">
+                  No Credit Card Required
+                </span>
+              </Link>
             </div>
           </div>
 
-          {/* Trusted by — one line, JP Morgan & Equifax first */}
-          <div className="text-center pt-6 pb-4 flex-shrink-0">
-            <p className="text-[10px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4">
-              Trusted by teams at
+          {/* Trusted by: infinite horizontal marquee */}
+          <div className="text-center mt-14 md:mt-20 pt-2 pb-4 flex-shrink-0 w-full max-w-full">
+            <p className="text-[10px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-5">
+              Trusted by owners in
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-10 opacity-60 grayscale hover:grayscale-0 hover:opacity-80 transition-all duration-300 dark:invert">
-              <Image src="/chase.webp" alt="JPMorgan Chase" width={120} height={48} className="w-auto  object-contain" />
-              <Image src="/equifax-logo.webp" alt="Equifax" width={120} height={40} className="w-auto object-contain" />
-              <Image src="/ru-logo.png" alt="Rutgers" width={120} height={48} className="w-auto  object-contain" />
-              <Image src="/miami.png" alt="Miami University" width={120} height={40} className="w-auto  object-contain" />
-              <Image src="/MaryU Logo.png" alt="Maryland University" width={120} height={40} className="w-auto  object-contain" />
-              <Image src="/rider.png" alt="Rider" width={120} height={40} className="w-auto h-9 object-contain" />
-              <Image src="/Arcadia-University-Logo.png" alt="Arcadia" width={120} height={40} className="w-auto  object-contain" />
+            <div className="hero-marquee-hover relative w-full overflow-hidden">
+              <div className="hero-services-track flex w-max gap-5">
+                {[0, 1].map((dup) => (
+                  <div key={dup} className="flex gap-5 shrink-0">
+                    {services.map(({ src, label }) => (
+                      <div
+                        key={`${dup}-${src}`}
+                        className="relative shrink-0 overflow-hidden rounded-lg ring-1 ring-slate-200/60 dark:ring-dark-border"
+                        style={{ width: CARD_W, height: CARD_H }}
+                      >
+                        <Image
+                          src={src}
+                          alt={label}
+                          width={CARD_W}
+                          height={CARD_H}
+                          className="h-full w-full object-cover"
+                          sizes="(max-width: 768px) 85vw, 300px"
+                        />
+                        <div
+                          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"
+                          aria-hidden
+                        />
+                        <div className="absolute inset-x-0 bottom-0 flex items-center justify-center pb-3 px-2">
+                          <span className="text-base font-bold text-white tracking-tight drop-shadow-sm">{label}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </main>
 
-      {/* Fade from hero to next section */}
       <div className="h-24 bg-gradient-to-b from-slate-50 to-white dark:from-dark-base dark:to-dark-base" />
 
-      {/* The Problem */}
-      <section className="bg-white dark:bg-dark-base min-h-screen flex flex-col justify-center py-16 md:py-24 border-t border-slate-100 dark:border-dark-border">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex-1 flex flex-col justify-center">
-          <h2 className="font-display text-2xl md:text-3xl font-semibold text-slate-900 dark:text-white tracking-tight mb-10 text-left">
-            AI is a hassle to use in your business
-          </h2>
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      {/* The Problem: service owners and admin overload */}
+      <section className="bg-gradient-to-b from-slate-50/80 to-white dark:from-dark-base dark:to-dark-base py-16 md:py-24 lg:py-28 border-t border-slate-100 dark:border-dark-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-16 items-start lg:items-center">
             <div className="text-left">
-              <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
-                Right now your project is using separate agents in their own tab, with separate context.
+              <p className="text-sm font-semibold text-slate-600 dark:text-slate-300 mb-4 leading-snug max-w-md">
+                The hidden cost of running a business
               </p>
-              <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
-                One for Marketing, one for sales, one for demos, one for research, plus 100 more.
+              <h2 className="font-display text-3xl sm:text-4xl md:text-[2.75rem] font-semibold text-slate-900 dark:text-white tracking-tight leading-[1.12]">
+                You started this business to provide a service,
+                <span className="mt-2 block text-slate-600 dark:text-slate-300">
+                  Not to get stuck at a desk.
+                </span>
+              </h2>
+
+              <p className="mt-6 max-w-xl text-sm font-medium text-slate-700 dark:text-slate-200 sm:text-base leading-relaxed">
+                <span className="font-semibold text-red-600 dark:text-red-400">40%</span> of the week is spent on desk
+                work instead of actually providing a service.
               </p>
-              <h3 className="font-display text-3xl md:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight mt-6">
-                Sound familiar?
-              </h3>
+
+              <p className="mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl">
+                When the job is done, your day is not over yet. There are still quotes to write, customers to call back,
+                leads to follow up on, social media posts to make, and papers to sort through.
+              </p>
             </div>
 
-            <div className="relative flex items-center justify-center min-h-[380px] md:min-h-[420px]">
-              <div className="relative z-10 flex flex-col items-center gap-3 px-8 py-10 rounded-2xl border border-slate-200 dark:border-dark-border bg-slate-50 dark:bg-dark-card shadow-lg shadow-slate-200/30 dark:shadow-black/30 max-w-[220px] text-center">
-                <span className="material-symbols-outlined text-4xl text-slate-500 dark:text-slate-400">
-                  group_off
-                </span>
-                <span className="text-base font-bold text-slate-900 dark:text-white leading-snug">
-                  No AI Coordination
-                </span>
+            <div className="w-full lg:sticky lg:top-28">
+              <div className="relative w-full overflow-hidden rounded-2xl border border-slate-200/80 dark:border-dark-border bg-slate-100 dark:bg-dark-card shadow-xl shadow-slate-200/40 dark:shadow-black/50 aspect-[4/3] max-h-[380px] sm:max-h-[420px] lg:max-h-none">
+                <Image
+                  src="/fustrated-guy-at-work.png"
+                  alt="Tired business owner at a desk with paperwork and a laptop"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority={false}
+                />
               </div>
-
-              {[
-                { icon: "hourglass_top", text: "Slow progress", top: "0%", left: "5%", rotate: "-6deg", delay: "0s" },
-                { icon: "content_copy", text: "Duplicate work", top: "2%", left: "68%", rotate: "4deg", delay: "0.5s" },
-                { icon: "visibility_off", text: "Lost context", top: "38%", left: "0%", rotate: "-3deg", delay: "1s" },
-                { icon: "event_busy", text: "Missed deadlines", top: "40%", left: "74%", rotate: "5deg", delay: "1.5s" },
-                { icon: "sync_problem", text: "Incompatible outputs", top: "72%", left: "12%", rotate: "3deg", delay: "2s" },
-                { icon: "folder_off", text: "Scattered knowledge", top: "75%", left: "65%", rotate: "-4deg", delay: "2.5s" },
-              ].map((item) => (
-                <div
-                  key={item.text}
-                  className="absolute flex flex-col items-center gap-2 p-4 rounded-2xl border border-slate-200 dark:border-dark-border bg-white dark:bg-dark-card shadow-md shadow-slate-200/40 dark:shadow-black/20 animate-float w-[140px] text-center"
-                  style={{
-                    top: item.top,
-                    left: item.left,
-                    rotate: item.rotate,
-                    animationDelay: item.delay,
-                  }}
-                >
-                  <span className="material-symbols-outlined text-xl text-slate-500 dark:text-slate-400">
-                    {item.icon}
-                  </span>
-                  <span className="text-xs font-semibold text-slate-700 dark:text-slate-300 leading-snug">
-                    {item.text}
-                  </span>
-                </div>
-              ))}
             </div>
           </div>
         </div>
