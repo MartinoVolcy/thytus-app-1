@@ -31,7 +31,7 @@ export default function Home() {
       <Hero />
       <Showcase />
       {/* <Features /> */}
-      <Pricing />
+      {/* <Pricing /> */}
       {/* <Testimonials /> */}
       <CTA />
       <Footer />

@@ -116,7 +116,7 @@ const PROCESS_STEPS = [
   {
     title: "Before the job",
     chipClass: "inline-flex w-fit rounded-full border border-amber-200 bg-amber-100 px-4 py-1.5 text-sm font-semibold text-amber-950 dark:border-amber-400/40 dark:bg-amber-500/20 dark:text-amber-100",
-    body: "Thytus can run Google, Meta, and Reddit ads for you. It can research your market, send cold emails, and make cold calls",
+    body: "Thytus makes sure you never miss a call. When you receive a potential customer, Thytus, automatically adds them to your CRM and lets you know. Thytus can also run Google, Meta, and Reddit ads for you. It can research your market, send cold emails, and make cold calls",
     logos: [
       { src: "/logos/google-ads.png", alt: "Google Ads" },
       { src: "/logos/meta.png", alt: "Meta Ads (Facebook & Instagram)" },
