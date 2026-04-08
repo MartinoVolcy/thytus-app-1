@@ -145,7 +145,7 @@ export default function EnterprisePage() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
-              href="https://calendly.com/martino-volcy02/business-subscription"
+              href="https://cal.com/martino-volcy-phwgox/thytus-demo"
               className="inline-flex px-8 py-3.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-none font-semibold text-sm hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors shadow-lg"
             >
               Contact sales

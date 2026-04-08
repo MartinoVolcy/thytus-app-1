@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-const CALENDLY_URL = "https://calendly.com/martino-volcy02/business-subscription";
+const CALENDLY_URL = "https://cal.com/martino-volcy-phwgox/thytus-demo";
 
 const calendlyLinkProps = {
   target: "_blank" as const,

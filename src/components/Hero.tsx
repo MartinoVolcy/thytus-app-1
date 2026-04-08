@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const CALENDLY_URL = "https://calendly.com/martino-volcy02/business-subscription";
+const CALENDLY_URL = "https://cal.com/martino-volcy-phwgox/thytus-demo";
 
 /** Images in /public/services; label from filename (e.g. electrical.png → Electrical). */
 const SERVICE_IMAGES = [
