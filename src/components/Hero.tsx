@@ -69,7 +69,7 @@ const Hero = () => {
           {/* Hero: centered copy */}
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] tracking-tight mb-6 text-slate-900 dark:text-white">
-              Run your whole business by talking to it.
+              Run your service business by talking to it.
             </h1>
 
             <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mb-10 leading-relaxed">
@@ -138,46 +138,69 @@ const Hero = () => {
       <div className="h-24 bg-gradient-to-b from-slate-50 to-white dark:from-dark-base dark:to-dark-base" />
 
       {/* The Problem: service owners and admin overload */}
-      <section className="bg-gradient-to-b from-slate-50/80 to-white dark:from-dark-base dark:to-dark-base py-16 md:py-24 lg:py-28 border-t border-slate-100 dark:border-dark-border">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-16 items-start lg:items-center">
-            <div className="text-left">
-              <p className="text-sm font-semibold text-slate-600 dark:text-slate-300 mb-4 leading-snug max-w-md">
-                The hidden cost of running a business
-              </p>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-[2.75rem] font-semibold text-slate-900 dark:text-white tracking-tight leading-[1.12]">
-                You started this business to provide a service,
-                <span className="mt-2 block text-slate-600 dark:text-slate-300">
-                  Not to get stuck at a desk.
-                </span>
-              </h2>
+<section className="bg-gradient-to-b from-slate-50/80 to-white dark:from-dark-base dark:to-dark-base py-16 md:py-24 lg:py-28 border-t border-slate-100 dark:border-dark-border">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-16 items-start lg:items-center">
+      <div className="text-left">
+        <p className="text-sm font-semibold text-slate-600 dark:text-slate-300 mb-4 leading-snug max-w-md">
+          The hidden cost of running a business
+        </p>
+        <h2 className="font-display text-3xl sm:text-4xl md:text-[2.75rem] font-semibold text-slate-900 dark:text-white tracking-tight leading-[1.12]">
+          You started this business to provide a service,
+          <span className="mt-2 block text-slate-600 dark:text-slate-300">
+            Not to get stuck at a desk.
+          </span>
+        </h2>
 
-              <p className="mt-6 max-w-xl text-sm font-medium text-slate-700 dark:text-slate-200 sm:text-base leading-relaxed">
-                <span className="font-semibold text-red-600 dark:text-red-400">40%</span> of the week is spent on desk
-                work instead of actually providing a service.
-              </p>
+        {/* Cost callout */}
+        <div className="mt-7 inline-block">
+   <p className="text-xs font-semibold uppercase tracking-widest text-red-400 dark:text-red-500 mb-2">Each week ADMIN WORK TAKES</p>
+   <div className="inline-flex items-baseline gap-2 rounded-xl bg-red-50 dark:bg-red-950/40 border border-red-100 dark:border-red-900/50 px-4 py-3">
+     <span className="text-2xl font-bold text-red-600 dark:text-red-400">40%</span>
+     <span className="text-sm text-red-700 dark:text-red-300 font-medium">of your time</span>
+     <span className="text-slate-400 dark:text-slate-600 mx-1">·</span>
+     <span className="text-sm font-bold text-red-600 dark:text-red-400">~$3,000</span>
+     <span className="text-sm text-red-700 dark:text-red-300 font-medium">in potential revenue</span>
+   </div>
+ </div>
 
-              <p className="mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl">
-                When the job is done, your day is not over yet. There are still quotes to write, customers to call back,
-                leads to follow up on, social media posts to make, and papers to sort through.
-              </p>
-            </div>
+        {/* Pain point list */}
+        <ul className="mt-6 space-y-2.5 max-w-xl">
+          {[
+            "Writing quotes after a long day on the job",
+            "Chasing leads and following up with customers",
+            "Posting to social media just to stay visible",
+            "Sorting through paperwork and missed calls",
+          ].map((item) => (
+            <li key={item} className="flex items-start gap-3 text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-snug">
+              <span className="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full bg-red-100 dark:bg-red-900/50 flex items-center justify-center">
+                <span className="block w-1.5 h-1.5 rounded-full bg-red-500 dark:bg-red-400" />
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
 
-            <div className="w-full lg:sticky lg:top-28">
-              <div className="relative w-full overflow-hidden rounded-2xl border border-slate-200/80 dark:border-dark-border bg-slate-100 dark:bg-dark-card shadow-xl shadow-slate-200/40 dark:shadow-black/50 aspect-[4/3] max-h-[380px] sm:max-h-[420px] lg:max-h-none">
-                <Image
-                  src="/fustrated-guy-at-work.png"
-                  alt="Tired business owner at a desk with paperwork and a laptop"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority={false}
-                />
-              </div>
-            </div>
-          </div>
+        <p className="mt-6 text-sm sm:text-base text-slate-500 dark:text-slate-400 leading-relaxed max-w-xl">
+          That's time and money leaving your business every single week.
+        </p>
+      </div>
+
+      <div className="w-full lg:sticky lg:top-28">
+        <div className="relative w-full overflow-hidden rounded-2xl border border-slate-200/80 dark:border-dark-border bg-slate-100 dark:bg-dark-card shadow-xl shadow-slate-200/40 dark:shadow-black/50 aspect-[4/3] max-h-[380px] sm:max-h-[420px] lg:max-h-none">
+          <Image
+            src="/fustrated-guy-at-work.png"
+            alt="Tired business owner at a desk with paperwork and a laptop"
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            priority={false}
+          />
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
     </div>
   );
 };

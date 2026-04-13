@@ -22,7 +22,7 @@ export default function Showcase() {
               </p> */}
               <div className="relative mt-8 w-full overflow-hidden rounded-2xl border border-slate-200/80 dark:border-dark-border bg-slate-100 dark:bg-dark-card aspect-[4/3] max-h-[340px] sm:max-h-[380px]">
                 <Image
-                  src="/happy-guy-at-work.png"
+                  src="/happy-plumber.png"
                   alt="Business owner feeling on top of work at the desk"
                   fill
                   className="object-cover object-center"
