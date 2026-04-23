@@ -23,12 +23,12 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-slate-400 dark:text-slate-500 leading-relaxed">
-              The collaborative AI workspace for your whole company.
+              Dont let the desk work slow you down
             </p>
           </div>
 
           {/* Product */}
-          <div>
+          {/* <div>
             <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-4">Product</h4>
             <ul className="space-y-2.5 text-sm text-slate-500 dark:text-slate-400">
               <li><Link href="/features" className="hover:text-primary transition-colors">Features</Link></li>
@@ -36,10 +36,10 @@ export default function Footer() {
               <li><Link href="/compare" className="hover:text-primary transition-colors">Why Thytus</Link></li>
               <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Use Cases */}
-          <div>
+          {/* <div>
             <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-4">Use Cases</h4>
             <ul className="space-y-2.5 text-sm text-slate-500 dark:text-slate-400">
               <li><Link href="/ai-collaboration-platform" className="hover:text-primary transition-colors">AI Collaboration Platform</Link></li>
@@ -48,17 +48,17 @@ export default function Footer() {
               <li><Link href="/ai-research-assistant" className="hover:text-primary transition-colors">AI Research Assistant</Link></li>
               <li><Link href="/ai-tools-for-small-business" className="hover:text-primary transition-colors">AI for Small Business</Link></li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Resources */}
-          <div>
+          {/* <div>
             <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-4">Resources</h4>
             <ul className="space-y-2.5 text-sm text-slate-500 dark:text-slate-400">
               <li><Link href="https://showcase.thytus.com/v1/guides" className="hover:text-primary transition-colors">Documentation</Link></li>
               <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
               <li><Link href="https://showcase.thytus.com/v1/help" className="hover:text-primary transition-colors">Help Center</Link></li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Social */}
           <div>

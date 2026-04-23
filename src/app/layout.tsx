@@ -1,38 +1,42 @@
 import type { Metadata } from "next";
-import { Manrope, Playfair_Display } from "next/font/google";
+import { Inter, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import ThemeDetector from "@/components/ThemeDetector";
 import { Analytics } from "@vercel/analytics/next"
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair-display",
+const sourceSerif = Source_Serif_4({
+  variable: "--font-source-serif",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
+const SITE_DESCRIPTION =
+  "Thytus helps plumbers, electricians, HVAC pros, cleaners, and other service owners run ads, follow up with customers, post jobs online, and stay on top of paperwork—so you spend less time at the desk and more time on the tools.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://thytus.com"),
   title: {
-    default: "AI Collaboration Platform for Teams | Thytus",
+    default: "Thytus | Desk work automation for service businesses",
     template: "%s | Thytus",
   },
-  description:
-    "Thytus is a collaborative AI workspace that helps sales teams, marketing teams, researchers, and small businesses work with multiple AI models in one place.",
+  description: SITE_DESCRIPTION,
   keywords: [
-    "AI collaboration platform",
-    "AI tools for teams",
-    "AI tools for sales teams",
-    "AI tools for marketing teams",
-    "AI research assistant",
-    "AI tools for small businesses",
-    "collaborative AI workspace",
-    "multi AI model platform",
+    "service business software",
+    "trades business software",
+    "field service CRM",
+    "contractor admin automation",
+    "HVAC business software",
+    "plumbing business software",
+    "electrician business software",
+    "home services software",
+    "small service business tools",
+    "automate contractor paperwork",
   ],
   icons: {
     icon: "/Thytus_Logo.png",
@@ -42,17 +46,15 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Thytus",
     locale: "en_US",
-    title: "AI Collaboration Platform for Teams | Thytus",
-    description:
-      "Thytus is a collaborative AI workspace that helps sales teams, marketing teams, researchers, and small businesses work with multiple AI models in one place.",
+    title: "Thytus | Desk work automation for service businesses",
+    description: SITE_DESCRIPTION,
     images: [{ url: "/Thytus_Logo.png", width: 512, height: 512, alt: "Thytus" }],
   },
   twitter: {
     card: "summary_large_image",
     site: "@showcase__ai",
-    title: "AI Collaboration Platform for Teams | Thytus",
-    description:
-      "Thytus is a collaborative AI workspace that helps sales teams, marketing teams, researchers, and small businesses work with multiple AI models in one place.",
+    title: "Thytus | Desk work automation for service businesses",
+    description: SITE_DESCRIPTION,
     images: ["/Thytus_Logo.png"],
   },
 };
@@ -74,9 +76,14 @@ const jsonLd = [
     "@type": "SoftwareApplication",
     name: "Thytus",
     applicationCategory: "BusinessApplication",
+    applicationSubCategory: "FieldServiceManagementApplication",
     operatingSystem: "Web",
     description:
-      "Collaborative AI workspace where teams and AI agents work side by side with multiple models.",
+      "Software for service and trade businesses. Tell Thytus what you need—marketing, customer follow-up, scheduling help, and job updates—and spend less time on desk work.",
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "Small and midsize service businesses, contractors, and trades",
+    },
     offers: {
       "@type": "Offer",
       price: "0",
@@ -121,7 +128,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={`${manrope.variable} ${playfair.variable} antialiased`}>
+      <body className={`${inter.variable} ${sourceSerif.variable} antialiased`}>
         <ThemeDetector />
         {children}
         <Analytics />

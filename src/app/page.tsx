@@ -8,19 +8,19 @@ import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
+const HOME_DESCRIPTION =
+  "Run your whole service business by talking to it. Thytus handles customer follow-up, quotes, social posts, and the admin that pulls you off the job—built for owners in the trades.";
+
 export const metadata: Metadata = {
-  title: "AI Collaboration Platform for Teams",
-  description:
-    "Thytus is a collaborative AI workspace where teams and AI agents work side by side. Deploy multiple models, collaborate in real time, and ship faster.",
+  title: "Run your service business without drowning in desk work",
+  description: HOME_DESCRIPTION,
   openGraph: {
-    title: "AI Collaboration Platform for Teams | Thytus",
-    description:
-      "Thytus is a collaborative AI workspace where teams and AI agents work side by side. Deploy multiple models, collaborate in real time, and ship faster.",
+    title: "Run your service business without drowning in desk work | Thytus",
+    description: HOME_DESCRIPTION,
   },
   twitter: {
-    title: "AI Collaboration Platform for Teams | Thytus",
-    description:
-      "Thytus is a collaborative AI workspace where teams and AI agents work side by side.",
+    title: "Run your service business without drowning in desk work | Thytus",
+    description: HOME_DESCRIPTION,
   },
 };
 
@@ -30,9 +30,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Showcase />
-      <Features />
-      <Pricing />
-      <Testimonials />
+      {/* <Features /> */}
+      {/* <Pricing /> */}
+      {/* <Testimonials /> */}
       <CTA />
       <Footer />
     </div>

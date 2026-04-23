@@ -261,13 +261,13 @@ export default function AIToolsForSmallBusinessPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
             <Link
               href="https://showcase.thytus.com/v1/auth/signin"
-              className="inline-flex px-8 py-4 bg-white text-slate-900 rounded-full font-bold hover:scale-105 transition-transform shadow-2xl"
+              className="inline-flex px-8 py-4 bg-white text-slate-900 rounded-none font-bold hover:scale-105 transition-transform shadow-2xl"
             >
               Get Started for Free
             </Link>
             <Link
               href="/pricing"
-              className="inline-flex px-8 py-4 text-white border border-white/20 rounded-full font-bold hover:bg-white/10 transition-colors"
+              className="inline-flex px-8 py-4 text-white border border-white/20 rounded-none font-bold hover:bg-white/10 transition-colors"
             >
               View Pricing
             </Link>

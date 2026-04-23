@@ -21,8 +21,8 @@
   --color-dark-border-subtle: #152240;
   --color-dark-glow: rgba(56, 189, 248, 0.06);
 
-  --font-display: var(--font-playfair-display);
-  --font-sans: var(--font-manrope);
+  --font-display: var(--font-source-serif);
+  --font-sans: var(--font-inter);
 
   --shadow-soft: 0 10px 40px -10px rgba(14, 165, 233, 0.08);
   --shadow-glow: 0 0 20px rgba(14, 165, 233, 0.2);
@@ -42,7 +42,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-manrope), sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Custom Utility Classes */
@@ -255,4 +255,23 @@ html.theme-transition *::after {
   to {
     stroke-dashoffset: -18;
   }
+}
+
+/* Hero — service industry marquee (slow infinite scroll) */
+@keyframes hero-services-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.hero-services-track {
+  /* reverse = slow drift left-to-right across the viewport */
+  animation: hero-services-marquee 260s linear infinite reverse;
+}
+
+.hero-marquee-hover:hover .hero-services-track {
+  animation-play-state: paused;
 }
