@@ -156,7 +156,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="btn-pill bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 px-5 py-2.5 rounded-none text-[14px] font-semibold transition-colors shadow-lg flex items-center gap-2"
             >
-              Get Started
+              Book a Demo
               <span className="material-symbols-outlined text-[18px]">
                 arrow_forward
               </span>
@@ -291,7 +291,7 @@ export default function Navbar() {
               onClick={closeMenu}
               className="block w-full text-center bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 py-3.5 rounded-none text-[15px] font-semibold transition-colors shadow-lg"
             >
-              Get Started For Free
+              Book a Demo
             </Link>
           </div>
         </div>

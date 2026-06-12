@@ -321,7 +321,7 @@ export default function AIToolsForSalesTeamsPage() {
             href="https://showcase.thytus.com/v1/auth/signin"
             className="inline-flex px-8 py-4 bg-white text-slate-900 rounded-none font-bold hover:scale-105 transition-transform shadow-2xl"
           >
-            Get Started for Free
+            Book a Demo
           </Link>
         </div>
       </section>

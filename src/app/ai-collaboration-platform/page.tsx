@@ -293,13 +293,13 @@ export default function AICollaborationPlatformPage() {
         </div>
       </section>
 
-      {/* Get Started */}
+      {/* Book a Demo */}
       <section className="py-24 bg-slate-900 relative overflow-hidden">
         <div className="absolute -bottom-48 -left-24 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute -top-48 -right-24 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-            Get Started
+            Book a Demo
           </h2>
           <p className="text-lg text-slate-400 mb-4 leading-relaxed max-w-2xl mx-auto">
             Thytus is free to start and scales with your team. Create your
@@ -320,7 +320,7 @@ export default function AICollaborationPlatformPage() {
             href="https://showcase.thytus.com/v1/auth/signin"
             className="inline-flex px-8 py-4 bg-white text-slate-900 rounded-none font-bold hover:scale-105 transition-transform shadow-2xl"
           >
-            Get Started for Free
+            Book a Demo
           </Link>
         </div>
       </section>

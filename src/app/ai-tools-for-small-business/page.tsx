@@ -251,7 +251,7 @@ export default function AIToolsForSmallBusinessPage() {
         <div className="absolute -top-48 -right-24 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-            Get Started for Free
+            Book a Demo
           </h2>
           <p className="text-lg text-slate-400 mb-10 leading-relaxed">
             Thousands of small businesses already use Thytus to scale their
@@ -263,7 +263,7 @@ export default function AIToolsForSmallBusinessPage() {
               href="https://showcase.thytus.com/v1/auth/signin"
               className="inline-flex px-8 py-4 bg-white text-slate-900 rounded-none font-bold hover:scale-105 transition-transform shadow-2xl"
             >
-              Get Started for Free
+              Book a Demo
             </Link>
             <Link
               href="/pricing"

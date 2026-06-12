@@ -144,7 +144,7 @@ export default async function SolutionPage({
             href="https://showcase.thytus.com/v1/auth/signin"
             className="inline-flex px-8 py-3.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-none font-semibold text-sm hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors shadow-lg"
           >
-            Get Started
+            Book a Demo
           </Link>
         </div>
       </section>

@@ -20,7 +20,7 @@ export default function CTA() {
                 rel="noopener noreferrer"
                 className="w-full rounded-none bg-slate-900 px-8 py-3.5 text-sm font-semibold text-white shadow-lg transition-transform hover:scale-[1.02] hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 sm:w-auto md:text-[15px]"
               >
-                Get Started For Free
+                Book a Demo
               </Link>
             </div>
           </div>

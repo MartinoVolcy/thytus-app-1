@@ -1,10 +1,124 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 const CALENDLY_URL = "https://cal.com/martino-volcy-phwgox/thytus-demo";
+
+const HERO_PROMPTS = [
+  // Before the job — leads, ads, CRM, outreach
+  "Run a $20-a-day Google ad for drain cleaning in North Austin.",
+  "Find homeowners in Oak Hills who might need a fence quote this spring.",
+  "Post on Facebook and Instagram that we have HVAC openings next week.",
+  "Add this new lead to the CRM and let me know when they call back.",
+  "Send a cold email to property managers about our lawn packages.",
+  // During the job — CRM, history, notes, scheduling
+  "Pull up everything on the Charles job before I head over.",
+  "Add a note: Martinez wants the same stain as last time on the deck.",
+  "Move the Lopez job to next Wednesday and text her something came up.",
+  "What files and photos do we have for the Riverside kitchen remodel?",
+  "Reschedule today's 2 PM to Thursday and update the calendar.",
+  // After the job — invoices, social, follow-ups, marketing
+  "Job's done at Martinez. Send the invoice and post the before/after.",
+  "Make a 15-second reel from today's bathroom photos.",
+  "Half-page flyer for spring lawn packages for the hardware store.",
+  "Send a follow-up in three months and ask for a Google review.",
+  "How much did we bill last month, and who still owes us?",
+] as const;
+
+function useTypingAnimation(
+  sentences: readonly string[],
+  typingMs = 42,
+  deletingMs = 24,
+  pauseMs = 2200,
+) {
+  const [text, setText] = useState("");
+  const [index, setIndex] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    const current = sentences[index];
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (!deleting && text === current) {
+      timeout = setTimeout(() => setDeleting(true), pauseMs);
+    } else if (deleting && text === "") {
+      setDeleting(false);
+      setIndex((i) => (i + 1) % sentences.length);
+    } else {
+      timeout = setTimeout(
+        () => setText(deleting ? current.slice(0, text.length - 1) : current.slice(0, text.length + 1)),
+        deleting ? deletingMs : typingMs,
+      );
+    }
+
+    return () => clearTimeout(timeout);
+  }, [text, deleting, index, sentences, typingMs, deletingMs, pauseMs]);
+
+  return text;
+}
+
+function HeroChatInput() {
+  const typedText = useTypingAnimation(HERO_PROMPTS);
+
+  return (
+    <div
+      className="w-full max-w-2xl mx-auto mt-14 sm:mt-16 mb-8 sm:mb-10 text-left"
+      aria-label="Example messages you can send to Thytus"
+    >
+      <div className="rounded-[1.75rem] bg-white dark:bg-dark-card border border-slate-200/80 dark:border-dark-border shadow-[0_12px_48px_-12px_rgba(14,165,233,0.28)] dark:shadow-[0_12px_48px_-12px_rgba(14,165,233,0.15)] overflow-hidden">
+        <div className="min-h-[5.5rem] px-5 sm:px-6 pt-5 sm:pt-6 pb-3">
+          <p className="text-base sm:text-lg text-slate-900 dark:text-slate-100 leading-relaxed min-h-[1.75rem]">
+            {typedText}
+            <span
+              className="inline-block w-[2px] h-[1.1em] align-[-0.15em] ml-0.5 bg-slate-900 dark:bg-slate-100 animate-pulse"
+              aria-hidden
+            />
+          </p>
+        </div>
+
+        <div className="flex items-center justify-between px-4 sm:px-5 pb-4 pt-1">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <button
+              type="button"
+              aria-label="Add attachment"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 dark:border-dark-border text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-dark-elevated transition-colors"
+            >
+              <span className="material-symbols-outlined text-[20px]">add</span>
+            </button>
+            <button
+              type="button"
+              aria-label="Adjust settings"
+              className="flex h-9 w-9 items-center justify-center rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-dark-elevated transition-colors"
+            >
+              <span className="material-symbols-outlined text-[22px]">tune</span>
+            </button>
+          </div>
+
+          <div className="flex items-center gap-2 sm:gap-3">
+            <button
+              type="button"
+              aria-label="Voice input"
+              className="flex h-9 w-9 items-center justify-center rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-dark-elevated transition-colors"
+            >
+              <span className="material-symbols-outlined text-[22px]">mic</span>
+            </button>
+            <Link
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Book a demo"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-sky-100 dark:bg-sky-500/20 text-slate-700 dark:text-sky-200 hover:bg-sky-200 dark:hover:bg-sky-500/30 transition-colors"
+            >
+              <span className="material-symbols-outlined text-[20px] translate-x-px -translate-y-px">send</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 /** Images in /public/services; label from filename (e.g. electrical.png → Electrical). */
 const SERVICE_IMAGES = [
@@ -67,32 +181,15 @@ const Hero = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 flex-1 flex flex-col justify-center w-full min-h-0 pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-10">
           {/* Hero: centered copy */}
-          <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] tracking-tight mb-6 text-slate-900 dark:text-white">
-              Run your service business by talking to it.
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto w-full">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight text-slate-900 dark:text-white text-balance max-w-3xl">
+              Say what you need.
+              <span className="block mt-2 text-slate-600 dark:text-slate-300">
+                Get back on the job.
+              </span>
             </h1>
 
-            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mb-10 leading-relaxed">
-              Type what you need and get back to the work your customers pay you for. Thytus helps with customer follow-up,
-              posting online, quotes, and more, so you can focus on the job itself.
-            </p>
-
-            <div className="flex flex-wrap items-center justify-center mb-0">
-              <Link
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex flex-col items-center gap-1 px-8 py-3.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-none font-semibold text-sm transition-all hover:opacity-90"
-              >
-                <span className="inline-flex items-center gap-2">
-                  Get Started for Free
-                  <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                </span>
-                <span className="text-[11px] font-medium text-white/80 dark:text-slate-600">
-                  No Credit Card Required
-                </span>
-              </Link>
-            </div>
+            <HeroChatInput />
           </div>
 
           {/* Trusted by: infinite horizontal marquee */}
