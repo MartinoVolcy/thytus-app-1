@@ -116,7 +116,7 @@ const PROCESS_STEPS = [
   {
     title: "Before the job",
     chipClass: "inline-flex w-fit rounded-full border border-amber-200 bg-amber-100 px-4 py-1.5 text-sm font-semibold text-amber-950 dark:border-amber-400/40 dark:bg-amber-500/20 dark:text-amber-100",
-    body: "Thytus makes sure you never miss a call. When you receive a potential customer, Thytus automatically adds them to your CRM and lets you know. Thytus can also run Google, Meta, and Reddit ads for you. It can research your market, send cold emails, and make cold calls",
+    body: "Never miss a lead. New callers get added to your CRM and you get a heads up. Thytus can run Google, Meta, and Reddit ads, find prospects, send cold emails, and make cold calls.",
     logos: [
       { src: "/logos/google-ads.png", alt: "Google Ads" },
       { src: "/logos/meta.png", alt: "Meta Ads (Facebook & Instagram)" },
@@ -125,16 +125,16 @@ const PROCESS_STEPS = [
       { src: "/logos/phone-call.png", alt: "Phone calls" },
     ] satisfies LogoDef[],
     examples: [
-      { user: "Run a $20-a-day Google ad for drain cleaning in North Austin. Keep it simple.", thytus: "Draft is ready with body text, three headline options to test, and keywords. Want me to schedule it to go live Monday at 7 AM?" },
-      { user: "Find 20 homeowners in Oak Hills who might need a fence quote this spring.", thytus: "Pulled 18 strong leads with addresses and last remodel dates. I can send a short intro email or make a call. Which do you want first?" },
-      { user: "Post on Facebook and Instagram that we have openings next week for HVAC tune-ups.", thytus: "Posted to both with the same image and a booking line. I pinned your service area and added a link to request a slot." },
+      { user: "Run a $20-a-day Google ad for drain cleaning in North Austin. Keep it simple.", thytus: "Draft is ready with ad text, three headlines to test, and keywords. Want it to go live Monday at 7 AM?" },
+      { user: "Find 20 homeowners in Oak Hills who might need a fence quote this spring.", thytus: "Found 18 good leads with addresses and remodel dates. Should I send an intro email or call first?" },
+      { user: "Post on Facebook and Instagram that we have openings next week for HVAC tune-ups.", thytus: "Posted to both with the same image and a booking link. Your service area is set." },
     ] satisfies ChatExample[],
     z: 10,
   },
   {
     title: "During the job",
     chipClass: "inline-flex w-fit rounded-full border border-emerald-200 bg-emerald-100 px-4 py-1.5 text-sm font-semibold text-emerald-950 dark:border-emerald-400/40 dark:bg-emerald-500/20 dark:text-emerald-100",
-    body: "Use Thytus as your CRM: every customer, file, video, image, estimate, and service record in one place. Look up history before you walk in the door, and keep notes without digging through drawers.",
+    body: "Keep every customer, file, photo, estimate, and service record in one place. Pull up job history before you walk in. Add notes without digging through drawers.",
     logos: [
       { src: "/logos/folders.png", alt: "Files and folders" },
       { src: "/logos/google-drive.png", alt: "Google Drive" },
@@ -144,16 +144,16 @@ const PROCESS_STEPS = [
       // { src: "/logos/description.png", alt: "Documents" },
     ] satisfies LogoDef[],
     examples: [
-      { user: "Pull up everything on the Charles job before I head over.", thytus: "Last visit was March 4: replaced the pressure valve. They prefer text, not calls. Invoice #1042 is paid. No open complaints." },
-      { user: "Add a note: Martinez wants the same stain as last time on the deck.", thytus: "Saved under Martinez, deck refinish. I attached the photo from the last job for reference." },
-      { user: "Move the Lopez job to next Wednesday, and send her a text saying something came up last minute", thytus: "Done!" },
+      { user: "Pull up everything on the Charles job before I head over.", thytus: "Last visit was March 4: replaced the pressure valve. They prefer text, not calls. Invoice #1042 is paid. No open issues." },
+      { user: "Add a note: Martinez wants the same stain as last time on the deck.", thytus: "Saved under Martinez, deck refinish. I attached the photo from the last job." },
+      { user: "Move the Lopez job to next Wednesday and text her something came up.", thytus: "Done. Lopez is moved to next Wednesday and she got a text." },
     ] satisfies ChatExample[],
     z: 20,
   },
   {
     title: "After the job",
     chipClass: "inline-flex w-fit rounded-full border border-violet-200 bg-violet-100 px-4 py-1.5 text-sm font-semibold text-violet-950 dark:border-violet-400/40 dark:bg-violet-500/20 dark:text-violet-100",
-    body: "When the work is done, Thytus can post before-and-after photos, send follow ups, create flyers or email blasts so neighbors see your work without you staying up late.",
+    body: "When the job is done, Thytus can post before and after photos, send follow-ups, and make flyers so more people see your work. No late nights at the desk.",
     logos: [
       // { src: "/logos/phone-call.png", alt: "Phone calls" },
       // { src: "/logos/gmail.png", alt: "Gmail" },
@@ -166,9 +166,9 @@ const PROCESS_STEPS = [
       { src: "/logos/messenger.png", alt: "Messenger" },
     ] satisfies LogoDef[],
     examples: [
-      { user: "Job's done at the Martinez house. Send the invoice and post the before/after.", thytus: "Invoice sent with a payment link. Before/after is live on Instagram and Facebook with a caption. Want a follow-up in three months?" },
-      { user: "Make a 15-second reel from today's bathroom photos.", thytus: "Reel is rendered with music and your logo at the end. Ready to post or schedule?" },
-      { user: "Half-page flyer for spring lawn packages, something I can leave at the hardware store.", thytus: "PDF is in your files: pricing table, your phone number, and a QR code to book. Want a black-and-white version for cheap printing?" },
+      { user: "Job is done at the Martinez house. Send the invoice and post the before and after.", thytus: "Invoice sent with a payment link. Before and after is live on Instagram and Facebook. Want a follow-up in three months?" },
+      { user: "Make a 15-second reel from today's bathroom photos.", thytus: "Reel is ready with music and your logo at the end. Post now or schedule it?" },
+      { user: "Half-page flyer for spring lawn packages, something I can leave at the hardware store.", thytus: "PDF is in your files with pricing, your phone number, and a QR code to book. Want a black and white version for cheap printing?" },
     ] satisfies ChatExample[],
     z: 30,
   },
@@ -225,10 +225,10 @@ export function ProcessJourneySection() {
       {/* ── Section header — scrolls normally above the sticky zone ── */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 md:pt-28 pb-12 md:pb-16">
         <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-slate-900 dark:text-white tracking-tight text-center max-w-3xl mx-auto mb-4">
-          Thytus supports you throughout the whole process
+          Thytus helps at every step
         </h2>
         <p className="text-center text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
-          Say what you need in plain language. Thytus turns words into actions
+          Tell Thytus what you need. It gets it done.
         </p>
       </div>
 
@@ -305,19 +305,17 @@ export function AdviceSection() {
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-14 items-start">
           <div>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-slate-900 dark:text-white tracking-tight mb-5 md:mb-6">
-              Get business insights without digging through papers
+              See how your business is doing without digging through papers
             </h2>
             <p className="text-slate-600 dark:text-slate-400 text-lg md:text-xl leading-relaxed">
-              Ask for totals, trends, or who still owes you, without opening filing cabinets or scrolling through old
-              threads. Thytus ties your jobs, invoices, and notes together and answers in plain language, so you see how
-              you are doing and what to do next.
+              Ask for totals, trends, or who still owes you. No filing cabinets or old text threads. Thytus pulls your jobs, invoices, and notes together and answers in plain language.
             </p>
           </div>
           <div className="rounded-xl border border-slate-200/90 bg-white dark:border-dark-border dark:bg-dark-card p-5 sm:p-6 space-y-4">
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-1">You</p>
               <div className="rounded-2xl rounded-br-md bg-sky-100 px-4 py-3 text-sm text-slate-900 dark:bg-sky-100/95 dark:text-slate-900">
-                How much did we bill last month, and how much of that is still unpaid? Who is the oldest balance?
+                How much did we bill last month, and who still has not paid?
               </div>
             </div>
             <div>
@@ -334,8 +332,7 @@ export function AdviceSection() {
                   />
                 </div>
                 <div className="w-full rounded-2xl rounded-bl-md bg-slate-200 px-4 py-3 text-sm text-slate-900 dark:bg-slate-200 dark:text-slate-900">
-                  Last month you billed $42,800. About $9,200 is still open across six invoices. The oldest is Riverside
-                  Properties at 38 days ($2,400). Want me to draft a short payment reminder you can send as a text?
+                  Last month you billed $42,800. About $9,200 is still open on six invoices. The oldest is Riverside Properties at 38 days ($2,400). Want me to draft a payment reminder you can send as a text?
                 </div>
               </div>
             </div>

@@ -7,20 +7,20 @@ import Image from "next/image";
 const CALENDLY_URL = "https://cal.com/martino-volcy-phwgox/thytus-demo";
 
 const HERO_PROMPTS = [
-  // Before the job — leads, ads, CRM, outreach
+  // Before the job: leads, ads, CRM, outreach
   "Run a $20-a-day Google ad for drain cleaning in North Austin.",
   "Find homeowners in Oak Hills who might need a fence quote this spring.",
   "Post on Facebook and Instagram that we have HVAC openings next week.",
   "Add this new lead to the CRM and let me know when they call back.",
   "Send a cold email to property managers about our lawn packages.",
-  // During the job — CRM, history, notes, scheduling
+  // During the job: CRM, history, notes, scheduling
   "Pull up everything on the Charles job before I head over.",
   "Add a note: Martinez wants the same stain as last time on the deck.",
   "Move the Lopez job to next Wednesday and text her something came up.",
   "What files and photos do we have for the Riverside kitchen remodel?",
   "Reschedule today's 2 PM to Thursday and update the calendar.",
-  // After the job — invoices, social, follow-ups, marketing
-  "Job's done at Martinez. Send the invoice and post the before/after.",
+  // After the job: invoices, social, follow-ups, marketing
+  "Job is done at Martinez. Send the invoice and post the before and after.",
   "Make a 15-second reel from today's bathroom photos.",
   "Half-page flyer for spring lawn packages for the hardware store.",
   "Send a follow-up in three months and ask for a Google review.",
@@ -195,7 +195,7 @@ const Hero = () => {
           {/* Trusted by: infinite horizontal marquee */}
           <div className="text-center mt-14 md:mt-20 pt-2 pb-4 flex-shrink-0 w-full max-w-full">
             <p className="text-[10px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-5">
-              Trusted by owners in
+              Built for owners in
             </p>
             <div className="hero-marquee-hover relative w-full overflow-hidden">
               <div className="hero-services-track flex w-max gap-5">
@@ -240,18 +240,18 @@ const Hero = () => {
     <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-16 items-start lg:items-center">
       <div className="text-left">
         <p className="text-sm font-semibold text-slate-600 dark:text-slate-300 mb-4 leading-snug max-w-md">
-          The hidden cost of running a business
+          What desk work really costs
         </p>
         <h2 className="font-display text-3xl sm:text-4xl md:text-[2.75rem] font-semibold text-slate-900 dark:text-white tracking-tight leading-[1.12]">
-          You started this business to provide a service,
+          You started this business to do the work,
           <span className="mt-2 block text-slate-600 dark:text-slate-300">
-            Not to get stuck at a desk.
+            not to sit at a desk.
           </span>
         </h2>
 
         {/* Cost callout */}
         <div className="mt-7 inline-block">
-   <p className="text-xs font-semibold uppercase tracking-widest text-red-400 dark:text-red-500 mb-2">Each week ADMIN WORK TAKES</p>
+   <p className="text-xs font-semibold uppercase tracking-widest text-red-400 dark:text-red-500 mb-2">Each week, desk work takes</p>
    <div className="inline-flex items-baseline gap-2 rounded-xl bg-red-50 dark:bg-red-950/40 border border-red-100 dark:border-red-900/50 px-4 py-3">
      <span className="text-2xl font-bold text-red-600 dark:text-red-400">40%</span>
      <span className="text-sm text-red-700 dark:text-red-300 font-medium">of your time</span>
@@ -264,10 +264,10 @@ const Hero = () => {
         {/* Pain point list */}
         <ul className="mt-6 space-y-2.5 max-w-xl">
           {[
-            "Writing quotes after a long day on the job",
-            "Chasing leads and following up with customers",
-            "Posting to social media just to stay visible",
-            "Sorting through paperwork and missed calls",
+            "Writing quotes after a long day",
+            "Chasing leads and following up",
+            "Posting online just to get noticed",
+            "Digging through paperwork and missed calls",
           ].map((item) => (
             <li key={item} className="flex items-start gap-3 text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-snug">
               <span className="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full bg-red-100 dark:bg-red-900/50 flex items-center justify-center">
@@ -279,7 +279,7 @@ const Hero = () => {
         </ul>
 
         <p className="mt-6 text-sm sm:text-base text-slate-500 dark:text-slate-400 leading-relaxed max-w-xl">
-          That's time and money leaving your business every single week.
+          That is time and money you lose every week.
         </p>
       </div>
 

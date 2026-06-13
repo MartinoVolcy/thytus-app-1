@@ -14,7 +14,7 @@ export default function Showcase() {
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16 lg:items-start mb-10 md:mb-14">
             <div className="text-left">
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-slate-900 dark:text-white mb-4 md:mb-6 tracking-tight">
-                Automate the desk work, and continue providing exceptional service
+                Thytus handles the desk work. You handle the job.
               </h2>
               {/* <p className="text-slate-600 dark:text-slate-400 text-lg md:text-xl leading-relaxed">
                 Say what you need in plain language. Thytus can turn it into invoices, social posts, follow-ups, and
@@ -36,11 +36,11 @@ export default function Showcase() {
                 {[
                   {
                     role: "user" as const,
-                    text: "Job's done at the Martinez house. Send the invoice and post the before/after.",
+                    text: "Job is done at the Martinez house. Send the invoice and post the before and after.",
                   },
                   {
                     role: "assistant" as const,
-                    text: "Done. Invoice sent to Maria Martinez for $485, payment link included. Before/after posted to your Instagram and Facebook with a caption. Want me to follow up in three months?",
+                    text: "Done. Invoice sent to Maria Martinez for $485 with a payment link. Before and after photos posted to Instagram and Facebook. Want a follow-up in three months?",
                   },
                   {
                     role: "user" as const,
@@ -48,7 +48,7 @@ export default function Showcase() {
                   },
                   {
                     role: "assistant" as const,
-                    text: "Set. I sent her another text asking her to leave a review, and I'll call her on November 30 at 9 AM to see if she needs your services again. Anything else before your next job?",
+                    text: "Done. I sent a text asking for a Google review and set a follow-up call for November 30 at 9 AM. Anything else?",
                   },
                 ].map((msg, i) => (
                   <div

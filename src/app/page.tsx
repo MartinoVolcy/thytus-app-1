@@ -9,7 +9,7 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
 const HOME_DESCRIPTION =
-  "Run your whole service business by talking to it. Thytus handles customer follow-up, quotes, social posts, and the admin that pulls you off the job—built for owners in the trades.";
+  "Tell Thytus what you need. It handles follow-ups, quotes, social posts, and desk work so you can get back on the job. Built for service and trade business owners.";
 
 export const metadata: Metadata = {
   title: "Run your service business without drowning in desk work",
@@ -31,7 +31,7 @@ export default function Home() {
       <Hero />
       <Showcase />
       {/* <Features /> */}
-      {/* <Pricing /> */}
+      <Pricing />
       {/* <Testimonials /> */}
       <CTA />
       <Footer />

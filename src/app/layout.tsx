@@ -17,7 +17,7 @@ const sourceSerif = Source_Serif_4({
 });
 
 const SITE_DESCRIPTION =
-  "Thytus helps plumbers, electricians, HVAC pros, cleaners, and other service owners run ads, follow up with customers, post jobs online, and stay on top of paperwork—so you spend less time at the desk and more time on the tools.";
+  "Thytus helps plumbers, electricians, HVAC pros, cleaners, and other service owners run ads, follow up with customers, post online, and stay on top of paperwork. Spend less time at the desk and more time on the tools.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://thytus.com"),
@@ -79,7 +79,7 @@ const jsonLd = [
     applicationSubCategory: "FieldServiceManagementApplication",
     operatingSystem: "Web",
     description:
-      "Software for service and trade businesses. Tell Thytus what you need—marketing, customer follow-up, scheduling help, and job updates—and spend less time on desk work.",
+      "Software for service and trade businesses. Tell Thytus what you need. It handles marketing, follow-ups, scheduling, and job updates so you spend less time on desk work.",
     audience: {
       "@type": "BusinessAudience",
       audienceType: "Small and midsize service businesses, contractors, and trades",

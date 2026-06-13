@@ -10,8 +10,8 @@ export default function CTA() {
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div className="min-w-0 text-center lg:text-left lg:pr-4">
             <h2 className="font-display text-3xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-4xl lg:text-[2.5rem] xl:text-5xl">
-              <span className="block text-balance">Let your service drive success.</span>
-              <span className="mt-2 block text-balance text-slate-700 dark:text-slate-200">Not the desk work.</span>
+              <span className="block text-balance">Do the work you are good at.</span>
+              <span className="mt-2 block text-balance text-slate-700 dark:text-slate-200">Let Thytus handle the rest.</span>
             </h2>
             <div className="mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row lg:justify-start">
               <Link

@@ -23,7 +23,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-slate-400 dark:text-slate-500 leading-relaxed">
-              Dont let the desk work slow you down
+              Spend less time at the desk.
             </p>
           </div>
 
