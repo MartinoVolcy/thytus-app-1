@@ -61,13 +61,13 @@ export default function Footer() {
           </div> */}
 
           {/* Social */}
-          <div>
+          {/* <div>
             <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-4">Connect</h4>
             <ul className="space-y-2.5 text-sm text-slate-500 dark:text-slate-400">
               <li><Link href="https://x.com/showcase__ai" className="hover:text-primary transition-colors">Twitter</Link></li>
               <li><Link href="https://www.linkedin.com/company/thytus/" className="hover:text-primary transition-colors">LinkedIn</Link></li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         <div className="border-t border-gray-100 dark:border-dark-border pt-8 text-center text-sm text-slate-400 dark:text-slate-500 font-medium">

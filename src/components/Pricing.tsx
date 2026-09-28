@@ -105,6 +105,7 @@ export default function Pricing() {
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>10 Max Saved Sessions</span></li> */}
                             {/* <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Up to 5 Users per session</span></li> */}
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Email Support</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-red-600 dark:text-red-400 shrink-0">X</span> <span>Smart Routes</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-red-600 dark:text-red-400 shrink-0">X</span> <span>AI Receptionist</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-red-600 dark:text-red-400 shrink-0">X</span> <span>Outbound - (Ads, Calling, Messaging, Emailling, Social Media, Calendar)</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-red-600 dark:text-red-400 shrink-0">X</span> <span>Scheduled Task</span></li>
@@ -164,6 +165,7 @@ export default function Pricing() {
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Up to 10 Concurrent Sessions</span></li> */}
                             
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Email Support</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Smart Routes</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>AI Receptionist</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Outbound - (Ads, Calling, Messaging, Emailling, Social Media, Calendar)</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-red-600 dark:text-red-400 shrink-0">X</span> <span>Scheduled Task</span></li>
@@ -212,6 +214,7 @@ export default function Pricing() {
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Up to 100 Files per Customer</span></li>
                             {/* <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>500 MB Max File Upload</span></li> */}
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Email Support</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Smart Routes</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>AI Receptionist</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Agent Outbound - (Calling, Messaging, Emailling, Social Media, Calendar)</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Scheduled Task</span></li>
@@ -258,6 +261,7 @@ export default function Pricing() {
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Unlimited Files per Customer</span></li>
                             {/* <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>1 GB Max File Upload</span></li> */}
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Dedicated Support Personal</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Smart Routes</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>AI Receptionist</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Agent Outbound - (Calling, Messaging, Emailling, Social Media, Calendar)</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Scheduled Task</span></li>
@@ -301,6 +305,7 @@ export default function Pricing() {
                             {/* <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Company wide context for Models</span></li> */}
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Enterprise Grade Security</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Dedicated Support Personal</span></li>
+                            <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Smart Routes</span></li>
                             <li className="flex items-start gap-2"><span className="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0">check</span> <span>Volume Discounts</span></li>
                         </ul>
                     </div>

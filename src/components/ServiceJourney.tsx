@@ -116,7 +116,7 @@ const PROCESS_STEPS = [
   {
     title: "Before the job",
     chipClass: "inline-flex w-fit rounded-full border border-amber-200 bg-amber-100 px-4 py-1.5 text-sm font-semibold text-amber-950 dark:border-amber-400/40 dark:bg-amber-500/20 dark:text-amber-100",
-    body: "Never miss a lead. New callers get added to your CRM and you get a heads up. Thytus can run Google, Meta, and Reddit ads, find prospects, send cold emails, and make cold calls.",
+    body: "Never miss a lead. New callers get added to your CRM and you get a heads up. Thytus can run Google, Meta, and Reddit ads, find prospects, send cold emails, and make cold calls. Generate the most efficient route as possible.",
     logos: [
       { src: "/logos/google-ads.png", alt: "Google Ads" },
       { src: "/logos/meta.png", alt: "Meta Ads (Facebook & Instagram)" },
@@ -128,6 +128,7 @@ const PROCESS_STEPS = [
       { user: "Run a $20-a-day Google ad for drain cleaning in North Austin. Keep it simple.", thytus: "Draft is ready with ad text, three headlines to test, and keywords. Want it to go live Monday at 7 AM?" },
       { user: "Find 20 homeowners in Oak Hills who might need a fence quote this spring.", thytus: "Found 18 good leads with addresses and remodel dates. Should I send an intro email or call first?" },
       { user: "Post on Facebook and Instagram that we have openings next week for HVAC tune-ups.", thytus: "Posted to both with the same image and a booking link. Your service area is set." },
+      { user: "I have jobs tomorrow on Oak St, Maple Ave, and Riverside. Build me the best route.", thytus: "Done. Most efficient order: Oak St, then Maple Ave, then Riverside. About 38 minutes of drive time and 12 fewer miles than going in schedule order. Want me to send the route to your phone?" },
     ] satisfies ChatExample[],
     z: 10,
   },
@@ -298,6 +299,34 @@ export function ProcessJourneySection() {
   );
 }
 
+export function SmartRoutesSection() {
+  return (
+    <section className="relative bg-white dark:bg-dark-base py-20 md:py-28 border-t border-slate-100 dark:border-dark-border">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-14 items-center">
+          <div className="relative w-full overflow-hidden rounded-2xl border border-slate-200/80 dark:border-dark-border bg-slate-100 dark:bg-dark-card aspect-[4/3] max-h-[380px] sm:max-h-[420px] lg:max-h-none">
+            <Image
+              src="/driver.png"
+              alt="Service driver reviewing a smart route on a phone before heading out"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+          <div>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-slate-900 dark:text-white tracking-tight mb-5 md:mb-6">
+              Smart routes that save you time on the road
+            </h2>
+            <p className="text-slate-600 dark:text-slate-400 text-lg md:text-xl leading-relaxed">
+              Thytus automatically builds the most efficient route for your jobs. Less time driving. More time on work that pays.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function AdviceSection() {
   return (
     <section className="relative bg-slate-50 dark:bg-dark-base py-20 md:py-28 border-t border-slate-100 dark:border-dark-border">
@@ -312,14 +341,14 @@ export function AdviceSection() {
             </p>
           </div>
           <div className="rounded-xl border border-slate-200/90 bg-white dark:border-dark-border dark:bg-dark-card p-5 sm:p-6 space-y-4">
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-1">You</p>
-              <div className="rounded-2xl rounded-br-md bg-sky-100 px-4 py-3 text-sm text-slate-900 dark:bg-sky-100/95 dark:text-slate-900">
+            <div className="flex flex-col items-end gap-1">
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">You</p>
+              <div className="max-w-[min(100%,420px)] rounded-2xl rounded-br-md bg-sky-100 px-4 py-3 text-left text-sm text-slate-900 dark:bg-sky-100/95 dark:text-slate-900">
                 How much did we bill last month, and who still has not paid?
               </div>
             </div>
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-1">Thytus</p>
+            <div className="flex flex-col items-start gap-1">
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Thytus</p>
               <div className="flex max-w-[min(100%,420px)] flex-col items-start gap-2">
                 <div className="overflow-hidden rounded-xl border border-slate-300/90 bg-white shadow-sm dark:border-slate-600 dark:bg-slate-800/50">
                   <Image

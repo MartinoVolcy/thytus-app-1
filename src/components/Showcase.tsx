@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { AdviceSection, ProcessJourneySection } from "@/components/ServiceJourney";
+import { AdviceSection, ProcessJourneySection, SmartRoutesSection } from "@/components/ServiceJourney";
 
 export default function Showcase() {
   return (
@@ -76,6 +76,7 @@ export default function Showcase() {
       </section>
 
       <ProcessJourneySection />
+      <SmartRoutesSection />
       <AdviceSection />
     </>
   );
