@@ -1,25 +1,20 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
-
-const CALENDLY_URL = "https://cal.com/martino-volcy-phwgox/thytus-demo";
+import { StoreBadgeLinks } from "@/components/DownloadAppButton";
 
 const HERO_PROMPTS = [
-  // Before the job: leads, ads, CRM, outreach
   "Run a $20-a-day Google ad for drain cleaning in North Austin.",
   "Find homeowners in Oak Hills who might need a fence quote this spring.",
   "Post on Facebook and Instagram that we have HVAC openings next week.",
   "Add this new lead to the CRM and let me know when they call back.",
   "Send a cold email to property managers about our lawn packages.",
-  // During the job: CRM, history, notes, scheduling
   "Pull up everything on the Charles job before I head over.",
   "Add a note: Martinez wants the same stain as last time on the deck.",
   "Move the Lopez job to next Wednesday and text her something came up.",
   "What files and photos do we have for the Riverside kitchen remodel?",
   "Reschedule today's 2 PM to Thursday and update the calendar.",
-  // After the job: invoices, social, follow-ups, marketing
   "Job is done at Martinez. Send the invoice and post the before and after.",
   "Make a 15-second reel from today's bathroom photos.",
   "Half-page flyer for spring lawn packages for the hardware store.",
@@ -48,7 +43,10 @@ function useTypingAnimation(
       setIndex((i) => (i + 1) % sentences.length);
     } else {
       timeout = setTimeout(
-        () => setText(deleting ? current.slice(0, text.length - 1) : current.slice(0, text.length + 1)),
+        () =>
+          setText(
+            deleting ? current.slice(0, text.length - 1) : current.slice(0, text.length + 1),
+          ),
         deleting ? deletingMs : typingMs,
       );
     }
@@ -63,56 +61,45 @@ function HeroChatInput() {
   const typedText = useTypingAnimation(HERO_PROMPTS);
 
   return (
-    <div
-      className="w-full max-w-2xl mx-auto mt-14 sm:mt-16 mb-8 sm:mb-10 text-left"
-      aria-label="Example messages you can send to Thytus"
-    >
-      <div className="rounded-[1.75rem] bg-white dark:bg-dark-card border border-slate-200/80 dark:border-dark-border shadow-[0_12px_48px_-12px_rgba(14,165,233,0.28)] dark:shadow-[0_12px_48px_-12px_rgba(14,165,233,0.15)] overflow-hidden">
-        <div className="min-h-[5.5rem] px-5 sm:px-6 pt-5 sm:pt-6 pb-3">
-          <p className="text-base sm:text-lg text-slate-900 dark:text-slate-100 leading-relaxed min-h-[1.75rem]">
+    <div className="w-full text-left" aria-label="Example messages you can send to Thytus">
+      <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-[0_20px_50px_-24px_rgba(15,23,42,0.35)] dark:border-dark-border dark:bg-dark-card dark:shadow-[0_20px_50px_-24px_rgba(0,0,0,0.55)]">
+        <div className="flex items-center gap-2 border-b border-slate-100 px-4 py-2.5 dark:border-dark-border">
+          <span className="size-2 rounded-full bg-slate-300 dark:bg-slate-600" aria-hidden />
+          <span className="size-2 rounded-full bg-slate-300 dark:bg-slate-600" aria-hidden />
+          <span className="size-2 rounded-full bg-slate-300 dark:bg-slate-600" aria-hidden />
+          <span className="ml-2 text-[11px] font-medium uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            Thytus
+          </span>
+        </div>
+
+        <div className="min-h-[5.5rem] px-5 pt-4 pb-2 sm:min-h-[6.5rem] sm:px-6 sm:pt-5">
+          <p className="min-h-[1.75rem] text-[15px] leading-relaxed text-slate-900 dark:text-slate-100 sm:text-base">
             {typedText}
             <span
-              className="inline-block w-[2px] h-[1.1em] align-[-0.15em] ml-0.5 bg-slate-900 dark:bg-slate-100 animate-pulse"
+              className="ml-0.5 inline-block h-[1.05em] w-[2px] align-[-0.12em] bg-slate-900 animate-pulse dark:bg-slate-100"
               aria-hidden
             />
           </p>
         </div>
 
-        <div className="flex items-center justify-between px-4 sm:px-5 pb-4 pt-1">
-          <div className="flex items-center gap-2 sm:gap-3">
-            <button
-              type="button"
-              aria-label="Add attachment"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 dark:border-dark-border text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-dark-elevated transition-colors"
-            >
-              <span className="material-symbols-outlined text-[20px]">add</span>
-            </button>
-            <button
-              type="button"
-              aria-label="Adjust settings"
-              className="flex h-9 w-9 items-center justify-center rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-dark-elevated transition-colors"
-            >
-              <span className="material-symbols-outlined text-[22px]">tune</span>
-            </button>
+        <div className="flex items-center justify-between px-4 pb-3.5 pt-1 sm:px-5">
+          <div className="flex items-center gap-1.5">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 text-slate-400 dark:border-dark-border dark:text-slate-500">
+              <span className="material-symbols-outlined text-[18px]">add</span>
+            </span>
+            <span className="flex h-8 w-8 items-center justify-center rounded-full text-slate-400 dark:text-slate-500">
+              <span className="material-symbols-outlined text-[20px]">tune</span>
+            </span>
           </div>
-
-          <div className="flex items-center gap-2 sm:gap-3">
-            <button
-              type="button"
-              aria-label="Voice input"
-              className="flex h-9 w-9 items-center justify-center rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-dark-elevated transition-colors"
-            >
-              <span className="material-symbols-outlined text-[22px]">mic</span>
-            </button>
-            <Link
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Book a demo"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-sky-100 dark:bg-sky-500/20 text-slate-700 dark:text-sky-200 hover:bg-sky-200 dark:hover:bg-sky-500/30 transition-colors"
-            >
-              <span className="material-symbols-outlined text-[20px] translate-x-px -translate-y-px">send</span>
-            </Link>
+          <div className="flex items-center gap-1.5">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full text-slate-400 dark:text-slate-500">
+              <span className="material-symbols-outlined text-[20px]">mic</span>
+            </span>
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900">
+              <span className="material-symbols-outlined translate-x-px -translate-y-px text-[18px]">
+                send
+              </span>
+            </span>
           </div>
         </div>
       </div>
@@ -120,7 +107,6 @@ function HeroChatInput() {
   );
 }
 
-/** Images in /public/services; label from filename (e.g. electrical.png → Electrical). */
 const SERVICE_IMAGES = [
   "appliance.png",
   "auto-detailing.png",
@@ -164,8 +150,8 @@ function filenameToLabel(filename: string): string {
     .join(" ");
 }
 
-const CARD_W = 300;
-const CARD_H = 188;
+const CARD_W = 260;
+const CARD_H = 160;
 
 const Hero = () => {
   const services = SERVICE_IMAGES.map((file) => ({
@@ -174,37 +160,61 @@ const Hero = () => {
   }));
 
   return (
-    <div className="bg-slate-50 dark:bg-dark-base text-slate-900 dark:text-slate-100 font-sans selection:bg-primary/20 overflow-x-hidden">
-      <main className="relative min-h-screen flex flex-col overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-50/80 to-white dark:from-dark-base dark:to-dark-base pointer-events-none" />
-        <div className="absolute top-0 left-0 right-0 h-px bg-slate-200/50 dark:bg-slate-700/30 pointer-events-none" />
+    <div className="overflow-x-hidden bg-white font-sans text-slate-900 selection:bg-primary/20 dark:bg-dark-base dark:text-slate-100">
+      <main className="relative flex min-h-[100svh] flex-col overflow-hidden">
+        {/* Atmosphere: soft radial wash + faint grid, competitor-style depth without clutter */}
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(14,165,233,0.14),transparent_55%),linear-gradient(180deg,#f8fafc_0%,#ffffff_45%,#ffffff_100%)] dark:bg-[radial-gradient(ellipse_80%_55%_at_50%_-10%,rgba(14,165,233,0.12),transparent_55%),linear-gradient(180deg,#080F1E_0%,#080F1E_100%)]"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.35] dark:opacity-[0.12]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(15,23,42,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.04) 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
+            maskImage: "linear-gradient(180deg, black 0%, transparent 70%)",
+          }}
+          aria-hidden
+        />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 flex-1 flex flex-col justify-center w-full min-h-0 pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-10">
-          {/* Hero: centered copy */}
-          <div className="flex flex-col items-center text-center max-w-4xl mx-auto w-full">
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight text-slate-900 dark:text-white text-balance max-w-3xl">
-              Say what you need.
-              <span className="block mt-2 text-slate-600 dark:text-slate-300">
-                Get back on the job.
-              </span>
-            </h1>
+        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-4 pb-10 pt-28 sm:px-6 sm:pb-12 sm:pt-32 lg:pt-36">
+          <div className="grid w-full items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16">
+            <div className="text-center lg:text-left">
+              <h1 className="font-display text-[2.15rem] font-semibold leading-[1.08] tracking-tight text-balance text-slate-900 dark:text-white sm:text-5xl lg:text-[3.15rem]">
+                Everything to run your service business.
+                <span className="mt-2 block font-medium text-slate-500 dark:text-slate-400 sm:mt-3">
+                  Just by talking to it.
+                </span>
+              </h1>
 
-            <HeroChatInput />
+              <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-slate-600 dark:text-slate-400 sm:mt-6 sm:text-lg lg:mx-0">
+                Ads, follow-ups, schedules, invoices, and routes. Built for owners in the trades who
+                want less desk work and more time on the job.
+              </p>
+            </div>
+
+            <div className="w-full">
+              <HeroChatInput />
+              <div className="mt-6 flex justify-center sm:mt-7">
+                <StoreBadgeLinks />
+              </div>
+            </div>
           </div>
 
-          {/* Trusted by: infinite horizontal marquee */}
-          <div className="text-center mt-14 md:mt-20 pt-2 pb-4 flex-shrink-0 w-full max-w-full">
-            <p className="text-[10px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-5">
+          {/* Industry strip — Housecall / Jobber style proof of fit */}
+          <div className="mt-14 w-full max-w-full flex-shrink-0 pt-2 sm:mt-16 md:mt-20">
+            <p className="mb-5 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400 dark:text-slate-500">
               Built for owners in
             </p>
-            <div className="hero-marquee-hover relative w-full overflow-hidden">
-              <div className="hero-services-track flex w-max gap-5">
+            <div className="hero-marquee-hover relative w-full overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_6%,black_94%,transparent)]">
+              <div className="hero-services-track flex w-max gap-4">
                 {[0, 1].map((dup) => (
-                  <div key={dup} className="flex gap-5 shrink-0">
+                  <div key={dup} className="flex shrink-0 gap-4">
                     {services.map(({ src, label }) => (
                       <div
                         key={`${dup}-${src}`}
-                        className="relative shrink-0 overflow-hidden rounded-lg ring-1 ring-slate-200/60 dark:ring-dark-border"
+                        className="relative shrink-0 overflow-hidden rounded-xl ring-1 ring-slate-200/70 dark:ring-dark-border"
                         style={{ width: CARD_W, height: CARD_H }}
                       >
                         <Image
@@ -213,14 +223,16 @@ const Hero = () => {
                           width={CARD_W}
                           height={CARD_H}
                           className="h-full w-full object-cover"
-                          sizes="(max-width: 768px) 85vw, 300px"
+                          sizes="(max-width: 768px) 70vw, 260px"
                         />
                         <div
-                          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"
+                          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent"
                           aria-hidden
                         />
-                        <div className="absolute inset-x-0 bottom-0 flex items-center justify-center pb-3 px-2">
-                          <span className="text-base font-bold text-white tracking-tight drop-shadow-sm">{label}</span>
+                        <div className="absolute inset-x-0 bottom-0 flex items-center justify-center px-2 pb-3">
+                          <span className="text-sm font-semibold tracking-tight text-white drop-shadow-sm">
+                            {label}
+                          </span>
                         </div>
                       </div>
                     ))}
@@ -232,72 +244,75 @@ const Hero = () => {
         </div>
       </main>
 
-      <div className="h-24 bg-gradient-to-b from-slate-50 to-white dark:from-dark-base dark:to-dark-base" />
+      {/* Problem section */}
+      <section className="border-t border-slate-100 bg-gradient-to-b from-white to-slate-50/80 py-16 dark:border-dark-border dark:from-dark-base dark:to-dark-base md:py-24 lg:py-28">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="grid items-start gap-10 lg:grid-cols-2 lg:items-center lg:gap-14 xl:gap-16">
+            <div className="text-left">
+              <p className="mb-4 max-w-md text-sm font-semibold leading-snug text-slate-600 dark:text-slate-300">
+                What desk work really costs
+              </p>
+              <h2 className="font-display text-3xl font-semibold leading-[1.12] tracking-tight text-slate-900 dark:text-white sm:text-4xl md:text-[2.75rem]">
+                You started this business to do the work,
+                <span className="mt-2 block text-slate-600 dark:text-slate-300">
+                  not to sit at a desk.
+                </span>
+              </h2>
 
-      {/* The Problem: service owners and admin overload */}
-<section className="bg-gradient-to-b from-slate-50/80 to-white dark:from-dark-base dark:to-dark-base py-16 md:py-24 lg:py-28 border-t border-slate-100 dark:border-dark-border">
-  <div className="max-w-6xl mx-auto px-4 sm:px-6">
-    <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-16 items-start lg:items-center">
-      <div className="text-left">
-        <p className="text-sm font-semibold text-slate-600 dark:text-slate-300 mb-4 leading-snug max-w-md">
-          What desk work really costs
-        </p>
-        <h2 className="font-display text-3xl sm:text-4xl md:text-[2.75rem] font-semibold text-slate-900 dark:text-white tracking-tight leading-[1.12]">
-          You started this business to do the work,
-          <span className="mt-2 block text-slate-600 dark:text-slate-300">
-            not to sit at a desk.
-          </span>
-        </h2>
+              <div className="mt-7 inline-block">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-red-400 dark:text-red-500">
+                  Each week, desk work takes
+                </p>
+                <div className="inline-flex items-baseline gap-2 rounded-xl border border-red-100 bg-red-50 px-4 py-3 dark:border-red-900/50 dark:bg-red-950/40">
+                  <span className="text-2xl font-bold text-red-600 dark:text-red-400">40%</span>
+                  <span className="text-sm font-medium text-red-700 dark:text-red-300">of your time</span>
+                  <span className="mx-1 text-slate-400 dark:text-slate-600">·</span>
+                  <span className="text-sm font-bold text-red-600 dark:text-red-400">~$3,000</span>
+                  <span className="text-sm font-medium text-red-700 dark:text-red-300">
+                    in potential revenue
+                  </span>
+                </div>
+              </div>
 
-        {/* Cost callout */}
-        <div className="mt-7 inline-block">
-   <p className="text-xs font-semibold uppercase tracking-widest text-red-400 dark:text-red-500 mb-2">Each week, desk work takes</p>
-   <div className="inline-flex items-baseline gap-2 rounded-xl bg-red-50 dark:bg-red-950/40 border border-red-100 dark:border-red-900/50 px-4 py-3">
-     <span className="text-2xl font-bold text-red-600 dark:text-red-400">40%</span>
-     <span className="text-sm text-red-700 dark:text-red-300 font-medium">of your time</span>
-     <span className="text-slate-400 dark:text-slate-600 mx-1">·</span>
-     <span className="text-sm font-bold text-red-600 dark:text-red-400">~$3,000</span>
-     <span className="text-sm text-red-700 dark:text-red-300 font-medium">in potential revenue</span>
-   </div>
- </div>
+              <ul className="mt-6 max-w-xl space-y-2.5">
+                {[
+                  "Writing quotes after a long day",
+                  "Chasing leads and following up",
+                  "Posting online just to get noticed",
+                  "Digging through paperwork and missed calls",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 text-sm leading-snug text-slate-600 dark:text-slate-400 sm:text-base"
+                  >
+                    <span className="mt-0.5 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-red-100 dark:bg-red-900/50">
+                      <span className="block h-1.5 w-1.5 rounded-full bg-red-500 dark:bg-red-400" />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
 
-        {/* Pain point list */}
-        <ul className="mt-6 space-y-2.5 max-w-xl">
-          {[
-            "Writing quotes after a long day",
-            "Chasing leads and following up",
-            "Posting online just to get noticed",
-            "Digging through paperwork and missed calls",
-          ].map((item) => (
-            <li key={item} className="flex items-start gap-3 text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-snug">
-              <span className="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full bg-red-100 dark:bg-red-900/50 flex items-center justify-center">
-                <span className="block w-1.5 h-1.5 rounded-full bg-red-500 dark:bg-red-400" />
-              </span>
-              {item}
-            </li>
-          ))}
-        </ul>
+              <p className="mt-6 max-w-xl text-sm leading-relaxed text-slate-500 dark:text-slate-400 sm:text-base">
+                That is time and money you lose every week.
+              </p>
+            </div>
 
-        <p className="mt-6 text-sm sm:text-base text-slate-500 dark:text-slate-400 leading-relaxed max-w-xl">
-          That is time and money you lose every week.
-        </p>
-      </div>
-
-      <div className="w-full lg:sticky lg:top-28">
-        <div className="relative w-full overflow-hidden rounded-2xl border border-slate-200/80 dark:border-dark-border bg-slate-100 dark:bg-dark-card shadow-xl shadow-slate-200/40 dark:shadow-black/50 aspect-[4/3] max-h-[380px] sm:max-h-[420px] lg:max-h-none">
-          <Image
-            src="/fustrated-guy-at-work.png"
-            alt="Tired business owner at a desk with paperwork and a laptop"
-            fill
-            className="object-cover object-center"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            priority={false}
-          />
+            <div className="w-full lg:sticky lg:top-28">
+              <div className="relative aspect-[4/3] max-h-[380px] w-full overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-100 shadow-xl shadow-slate-200/40 dark:border-dark-border dark:bg-dark-card dark:shadow-black/50 sm:max-h-[420px] lg:max-h-none">
+                <Image
+                  src="/fustrated-guy-at-work.png"
+                  alt="Tired business owner at a desk with paperwork and a laptop"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority={false}
+                />
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
     </div>
   );
 };

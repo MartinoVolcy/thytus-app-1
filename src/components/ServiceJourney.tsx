@@ -116,7 +116,7 @@ const PROCESS_STEPS = [
   {
     title: "Before the job",
     chipClass: "inline-flex w-fit rounded-full border border-amber-200 bg-amber-100 px-4 py-1.5 text-sm font-semibold text-amber-950 dark:border-amber-400/40 dark:bg-amber-500/20 dark:text-amber-100",
-    body: "Never miss a lead. New callers get added to your CRM and you get a heads up. Thytus can run Google, Meta, and Reddit ads, find prospects, send cold emails, and make cold calls. Generate the most efficient route as possible.",
+    body: "Never miss a lead. New callers get added to your CRM and you get a heads up. Thytus can run Google, Meta, and Reddit ads, find prospects, send cold emails, and make cold calls.",
     logos: [
       { src: "/logos/google-ads.png", alt: "Google Ads" },
       { src: "/logos/meta.png", alt: "Meta Ads (Facebook & Instagram)" },
@@ -222,14 +222,16 @@ export function ProcessJourneySection() {
   }, []);
 
   return (
-    <section className="bg-white dark:bg-dark-base border-t border-slate-100 dark:border-dark-border">
-      {/* ── Section header — scrolls normally above the sticky zone ── */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 md:pt-28 pb-12 md:pb-16">
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-slate-900 dark:text-white tracking-tight text-center max-w-3xl mx-auto mb-4">
+    <section className="border-t border-slate-100 bg-white dark:border-dark-border dark:bg-dark-base">
+      <div className="mx-auto max-w-6xl px-4 pb-12 pt-20 sm:px-6 md:pb-16 md:pt-28">
+        <p className="mb-3 text-center text-sm font-semibold tracking-wide text-slate-500 dark:text-slate-400">
+          From first call to final payment
+        </p>
+        <h2 className="mx-auto mb-4 max-w-3xl text-center font-display text-3xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-4xl lg:text-5xl">
           Thytus helps at every step
         </h2>
-        <p className="text-center text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
-          Tell Thytus what you need. It gets it done.
+        <p className="mx-auto max-w-2xl text-center text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+          Tell Thytus what you need in plain language. It gets the work done before, during, and after the job.
         </p>
       </div>
 
@@ -274,7 +276,7 @@ export function ProcessJourneySection() {
                     willChange: idx > 0 ? "transform" : undefined,
                   }}
                 >
-                  <div className="rounded-2xl border border-slate-200/90 bg-white p-6 shadow-xl shadow-slate-200/40 dark:border-dark-border dark:bg-dark-card dark:shadow-black/40 sm:p-8 md:p-10">
+                  <div className="rounded-2xl border border-slate-200/90 bg-white p-6 shadow-[0_24px_60px_-28px_rgba(15,23,42,0.35)] dark:border-dark-border dark:bg-dark-card dark:shadow-[0_24px_60px_-28px_rgba(0,0,0,0.55)] sm:p-8 md:p-10">
                     <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
                       <div className="flex flex-col">
                         <span className={step.chipClass}>{step.title}</span>
@@ -283,7 +285,7 @@ export function ProcessJourneySection() {
                         </p>
                         <LogoStrip logos={[...step.logos]} />
                       </div>
-                      <div className="flex flex-col lg:border-l lg:border-slate-100 lg:pl-10 dark:lg:border-dark-border">
+                      <div className="flex flex-col rounded-xl bg-slate-50/80 p-4 dark:bg-dark-elevated/40 lg:border-l-0 lg:bg-transparent lg:p-0 lg:pl-10 dark:lg:bg-transparent lg:border-l lg:border-slate-100 dark:lg:border-dark-border">
                         <ExampleCarousel examples={[...step.examples]} />
                       </div>
                     </div>
@@ -301,10 +303,10 @@ export function ProcessJourneySection() {
 
 export function SmartRoutesSection() {
   return (
-    <section className="relative bg-white dark:bg-dark-base py-20 md:py-28 border-t border-slate-100 dark:border-dark-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-14 items-center">
-          <div className="relative w-full overflow-hidden rounded-2xl border border-slate-200/80 dark:border-dark-border bg-slate-100 dark:bg-dark-card aspect-[4/3] max-h-[380px] sm:max-h-[420px] lg:max-h-none">
+    <section className="relative border-t border-slate-100 bg-slate-50 py-20 dark:border-dark-border dark:bg-dark-base md:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+          <div className="relative aspect-[4/3] max-h-[380px] w-full overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-100 shadow-lg shadow-slate-200/30 dark:border-dark-border dark:bg-dark-card dark:shadow-black/40 sm:max-h-[420px] lg:max-h-none">
             <Image
               src="/driver.png"
               alt="Service driver reviewing a smart route on a phone before heading out"
@@ -314,12 +316,33 @@ export function SmartRoutesSection() {
             />
           </div>
           <div>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-slate-900 dark:text-white tracking-tight mb-5 md:mb-6">
-              Smart routes that save you time on the road
-            </h2>
-            <p className="text-slate-600 dark:text-slate-400 text-lg md:text-xl leading-relaxed">
-              Thytus automatically builds the most efficient route for your jobs. Less time driving. More time on work that pays.
+            <p className="mb-3 text-sm font-semibold tracking-wide text-slate-500 dark:text-slate-400">
+              Smart routes
             </p>
+            <h2 className="mb-5 font-display text-3xl font-semibold tracking-tight text-slate-900 dark:text-white md:mb-6 md:text-4xl lg:text-5xl">
+              Cut drive time. Keep the day on track.
+            </h2>
+            <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-400 md:text-xl">
+              Thytus automatically builds the most efficient route for your jobs. Less time in the truck.
+              More time on work that pays.
+            </p>
+            <ul className="mt-8 space-y-3">
+              {[
+                "Orders stops for the shortest path",
+                "Updates when jobs move or cancel",
+                "Sends the route to your phone",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-base text-slate-700 dark:text-slate-300"
+                >
+                  <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900">
+                    <span className="material-symbols-outlined text-[14px]">check</span>
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
@@ -329,26 +352,34 @@ export function SmartRoutesSection() {
 
 export function AdviceSection() {
   return (
-    <section className="relative bg-slate-50 dark:bg-dark-base py-20 md:py-28 border-t border-slate-100 dark:border-dark-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-14 items-start">
+    <section className="relative border-t border-slate-100 bg-white py-20 dark:border-dark-border dark:bg-dark-base md:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
           <div>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-slate-900 dark:text-white tracking-tight mb-5 md:mb-6">
-              See how your business is doing without digging through papers
+            <p className="mb-3 text-sm font-semibold tracking-wide text-slate-500 dark:text-slate-400">
+              Business insights
+            </p>
+            <h2 className="mb-5 font-display text-3xl font-semibold tracking-tight text-slate-900 dark:text-white md:mb-6 md:text-4xl lg:text-5xl">
+              See how the business is doing without digging through papers
             </h2>
-            <p className="text-slate-600 dark:text-slate-400 text-lg md:text-xl leading-relaxed">
-              Ask for totals, trends, or who still owes you. No filing cabinets or old text threads. Thytus pulls your jobs, invoices, and notes together and answers in plain language.
+            <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-400 md:text-xl">
+              Ask for totals, trends, or who still owes you. Thytus pulls jobs, invoices, and notes
+              together and answers in plain language.
             </p>
           </div>
-          <div className="rounded-xl border border-slate-200/90 bg-white dark:border-dark-border dark:bg-dark-card p-5 sm:p-6 space-y-4">
+          <div className="space-y-4 rounded-2xl border border-slate-200/90 bg-slate-50 p-5 shadow-sm dark:border-dark-border dark:bg-dark-card sm:p-6">
             <div className="flex flex-col items-end gap-1">
-              <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">You</p>
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                You
+              </p>
               <div className="max-w-[min(100%,420px)] rounded-2xl rounded-br-md bg-sky-100 px-4 py-3 text-left text-sm text-slate-900 dark:bg-sky-100/95 dark:text-slate-900">
                 How much did we bill last month, and who still has not paid?
               </div>
             </div>
             <div className="flex flex-col items-start gap-1">
-              <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Thytus</p>
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                Thytus
+              </p>
               <div className="flex max-w-[min(100%,420px)] flex-col items-start gap-2">
                 <div className="overflow-hidden rounded-xl border border-slate-300/90 bg-white shadow-sm dark:border-slate-600 dark:bg-slate-800/50">
                   <Image
@@ -360,11 +391,94 @@ export function AdviceSection() {
                     sizes="100px"
                   />
                 </div>
-                <div className="w-full rounded-2xl rounded-bl-md bg-slate-200 px-4 py-3 text-sm text-slate-900 dark:bg-slate-200 dark:text-slate-900">
-                  Last month you billed $42,800. About $9,200 is still open on six invoices. The oldest is Riverside Properties at 38 days ($2,400). Want me to draft a payment reminder you can send as a text?
+                <div className="w-full rounded-2xl rounded-bl-md bg-white px-4 py-3 text-sm text-slate-900 shadow-sm ring-1 ring-slate-200/80 dark:bg-slate-200 dark:text-slate-900 dark:ring-0">
+                  Last month you billed $42,800. About $9,200 is still open on six invoices. The
+                  oldest is Riverside Properties at 38 days ($2,400). Want me to draft a payment
+                  reminder you can send as a text?
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function MarketingSection() {
+  const messages = [
+    {
+      role: "user" as const,
+      text: "Post before and after photos from today's HVAC install on Facebook and Instagram.",
+    },
+    {
+      role: "assistant" as const,
+      text: "Posted to both with a short caption and your booking link. Want a $15-a-day Meta ad to push it to homeowners nearby?",
+    },
+    {
+      role: "user" as const,
+      text: "Yes. Run it in North Austin for drain cleaning too.",
+    },
+    {
+      role: "assistant" as const,
+      text: "Ad is ready: three headlines, body copy, and a $15 daily budget. Scheduled to go live tomorrow at 7 AM. I can also draft a Google ad if you want more calls.",
+    },
+  ];
+
+  return (
+    <section className="relative border-t border-slate-100 bg-slate-50 py-20 dark:border-dark-border dark:bg-dark-base md:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
+          <div>
+            <p className="mb-3 text-sm font-semibold tracking-wide text-slate-500 dark:text-slate-400">
+              Marketing
+            </p>
+            <h2 className="mb-5 font-display text-3xl font-semibold tracking-tight text-slate-900 dark:text-white md:mb-6 md:text-4xl lg:text-5xl">
+              Stay visible without spending nights on social and ads
+            </h2>
+            <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-400 md:text-xl">
+              Tell Thytus what to post or promote. It writes captions, publishes to your channels, and
+              can run Google and Meta ads so new customers find you.
+            </p>
+            <ul className="mt-8 space-y-3">
+              {[
+                "Social posts for Facebook, Instagram, and more",
+                "Google and Meta ads from a simple request",
+                "Before and after content that shows your work",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-base text-slate-700 dark:text-slate-300"
+                >
+                  <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900">
+                    <span className="material-symbols-outlined text-[14px]">check</span>
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="space-y-4 rounded-2xl border border-slate-200/90 bg-white p-5 shadow-sm dark:border-dark-border dark:bg-dark-card sm:p-6">
+            {messages.map((msg, i) => (
+              <div
+                key={i}
+                className={`flex flex-col gap-1 ${msg.role === "user" ? "items-end" : "items-start"}`}
+              >
+                <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                  {msg.role === "user" ? "You" : "Thytus"}
+                </p>
+                <div
+                  className={`max-w-[min(100%,420px)] rounded-2xl px-4 py-3 text-left text-sm leading-relaxed text-slate-900 sm:text-[15px] ${
+                    msg.role === "user"
+                      ? "rounded-br-md bg-sky-100 dark:bg-sky-100/95 dark:text-slate-900"
+                      : "rounded-bl-md bg-slate-100 shadow-sm ring-1 ring-slate-200/80 dark:bg-slate-200 dark:text-slate-900 dark:ring-0"
+                  }`}
+                >
+                  {msg.text}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
