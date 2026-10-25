@@ -42,6 +42,11 @@ export default function Footer() {
                     Pricing
                   </Link>
                 </li>
+                <li>
+                  <Link href="/support" className="transition-colors hover:text-slate-900 dark:hover:text-white">
+                    Support
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
@@ -52,6 +57,11 @@ export default function Footer() {
                 <li>
                   <Link href="/privacy" className="transition-colors hover:text-slate-900 dark:hover:text-white">
                     Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/terms" className="transition-colors hover:text-slate-900 dark:hover:text-white">
+                    Terms of Service
                   </Link>
                 </li>
               </ul>
