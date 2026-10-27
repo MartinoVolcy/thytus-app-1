@@ -80,14 +80,20 @@ export async function POST(request: Request) {
           phone_number: phone,
         },
         Platform: {
-          select: {
-            name: PLATFORM_LABELS[platform],
-          },
+          rich_text: [
+            {
+              type: "text",
+              text: { content: PLATFORM_LABELS[platform] },
+            },
+          ],
         },
         DateAndTime: {
-          date: {
-            start: now,
-          },
+          rich_text: [
+            {
+              type: "text",
+              text: { content: now },
+            },
+          ],
         },
       },
     });
