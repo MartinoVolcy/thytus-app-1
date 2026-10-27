@@ -102,16 +102,6 @@ export default function WaitlistForm() {
           You&apos;re on the list
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">{message}</p>
-        <button
-          type="button"
-          onClick={() => {
-            setStatus("idle");
-            setMessage("");
-          }}
-          className="mt-5 inline-flex items-center justify-center rounded-none border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 transition-colors hover:bg-slate-100 dark:border-slate-600 dark:bg-dark-elevated dark:text-slate-100 dark:hover:bg-dark-border"
-        >
-          Join with another email
-        </button>
       </div>
     );
   }
