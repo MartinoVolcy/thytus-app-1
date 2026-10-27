@@ -2,25 +2,23 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Showcase from "@/components/Showcase";
-import Features from "@/components/Features";
 import Pricing from "@/components/Pricing";
-import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
+const HOME_DESCRIPTION =
+  "Tell Thytus what you need. It handles follow-ups, quotes, social posts, and desk work so you can get back on the job. Built for service and trade business owners.";
+
 export const metadata: Metadata = {
-  title: "AI Collaboration Platform for Teams",
-  description:
-    "Thytus is a collaborative AI workspace where teams and AI agents work side by side. Deploy multiple models, collaborate in real time, and ship faster.",
+  title: "Run your service business without drowning in desk work",
+  description: HOME_DESCRIPTION,
   openGraph: {
-    title: "AI Collaboration Platform for Teams | Thytus",
-    description:
-      "Thytus is a collaborative AI workspace where teams and AI agents work side by side. Deploy multiple models, collaborate in real time, and ship faster.",
+    title: "Run your service business without drowning in desk work | Thytus",
+    description: HOME_DESCRIPTION,
   },
   twitter: {
-    title: "AI Collaboration Platform for Teams | Thytus",
-    description:
-      "Thytus is a collaborative AI workspace where teams and AI agents work side by side.",
+    title: "Run your service business without drowning in desk work | Thytus",
+    description: HOME_DESCRIPTION,
   },
 };
 
@@ -30,11 +28,12 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Showcase />
-      <Features />
       <Pricing />
-      <Testimonials />
       <CTA />
       <Footer />
     </div>
   );
 }
+
+
+
