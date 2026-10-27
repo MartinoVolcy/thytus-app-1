@@ -1,15 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useId, useState } from "react";
-import { createPortal } from "react-dom";
 import Image from "next/image";
-import {
-  APP_STORE_URL,
-  DEMO_URL,
-  PLAY_STORE_URL,
-  detectMobilePlatform,
-  storeUrlForPlatform,
-} from "@/lib/app-stores";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { DEMO_URL, detectMobilePlatform } from "@/lib/app-stores";
+import { waitlistPathForPlatform } from "@/lib/waitlist";
 
 type Variant = "nav" | "cta" | "sidebar" | "pricing-muted" | "pricing-primary";
 
@@ -58,34 +53,30 @@ export function BookDemoButton({
 export function StoreBadgeLinks({ className = "" }: { className?: string }) {
   return (
     <div className={`flex flex-wrap items-center justify-center gap-3 sm:gap-4 ${className}`.trim()}>
-      <a
-        href={APP_STORE_URL}
-        target="_blank"
-        rel="noopener noreferrer"
+      <Link
+        href={waitlistPathForPlatform("ios")}
         className="transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-400"
       >
         <Image
           src="/IOS.png"
-          alt="Download on the App Store"
+          alt="Join the iOS waitlist"
           width={180}
           height={54}
           className="h-11 w-auto object-contain sm:h-12"
         />
-      </a>
-      <a
-        href={PLAY_STORE_URL}
-        target="_blank"
-        rel="noopener noreferrer"
+      </Link>
+      <Link
+        href={waitlistPathForPlatform("android")}
         className="transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-400"
       >
         <Image
           src="/playStore.png"
-          alt="Get it on Google Play"
+          alt="Join the Android waitlist"
           width={180}
           height={54}
           className="h-11 w-auto object-contain sm:h-12"
         />
-      </a>
+      </Link>
     </div>
   );
 }
@@ -105,95 +96,26 @@ export default function DownloadAppButton({
   label = "Download App",
   onAfterClick,
 }: DownloadAppButtonProps) {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const titleId = useId();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const closeModal = useCallback(() => setModalOpen(false), []);
-
-  useEffect(() => {
-    if (!modalOpen) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") closeModal();
-    };
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", onKey);
-    return () => {
-      document.body.style.overflow = prevOverflow;
-      window.removeEventListener("keydown", onKey);
-    };
-  }, [modalOpen, closeModal]);
+  const router = useRouter();
 
   const handleClick = () => {
     const platform = detectMobilePlatform();
-    const url = storeUrlForPlatform(platform);
     onAfterClick?.();
-    if (url) {
-      window.open(url, "_blank", "noopener,noreferrer");
+    if (platform) {
+      router.push(waitlistPathForPlatform(platform));
       return;
     }
-    setModalOpen(true);
+    router.push("/waitlist");
   };
 
-  const modal =
-    mounted && modalOpen
-      ? createPortal(
-          <div
-            className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby={titleId}
-          >
-            <button
-              type="button"
-              className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"
-              aria-label="Close download options"
-              onClick={closeModal}
-            />
-            <div className="relative z-10 w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl dark:border-dark-border dark:bg-dark-card sm:p-8">
-              <div className="mb-6 flex items-start justify-between gap-4">
-                <div>
-                  <h2
-                    id={titleId}
-                    className="font-display text-xl font-semibold text-slate-900 dark:text-white sm:text-2xl"
-                  >
-                    Download Thytus
-                  </h2>
-                  <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Choose your app store</p>
-                </div>
-                <button
-                  type="button"
-                  onClick={closeModal}
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-dark-elevated"
-                  aria-label="Close"
-                >
-                  <span className="material-symbols-outlined text-[22px]">close</span>
-                </button>
-              </div>
-
-              <StoreBadgeLinks />
-            </div>
-          </div>,
-          document.body,
-        )
-      : null;
-
   return (
-    <>
-      <button type="button" onClick={handleClick} className={`${variantClass[variant]} ${className}`.trim()}>
-        {label}
-        {showArrow ? (
-          <span className="material-symbols-outlined text-[18px]" aria-hidden>
-            arrow_forward
-          </span>
-        ) : null}
-      </button>
-      {modal}
-    </>
+    <button type="button" onClick={handleClick} className={`${variantClass[variant]} ${className}`.trim()}>
+      {label}
+      {showArrow ? (
+        <span className="material-symbols-outlined text-[18px]" aria-hidden>
+          arrow_forward
+        </span>
+      ) : null}
+    </button>
   );
 }
