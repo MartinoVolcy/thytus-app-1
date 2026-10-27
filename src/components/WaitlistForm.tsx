@@ -25,7 +25,6 @@ export default function WaitlistForm() {
     () => parseWaitlistPlatform(searchParams.get("platform")),
     [searchParams],
   );
-  const showPlatformSelect = !platformFromUrl;
 
   const [form, setForm] = useState<FormState>({
     name: "",
@@ -46,14 +45,7 @@ export default function WaitlistForm() {
     event.preventDefault();
     setMessage("");
 
-    const payload = {
-      name: form.name,
-      email: form.email,
-      phone: form.phone,
-      platform: platformFromUrl ?? form.platform,
-    };
-
-    const parsed = waitlistSchema.safeParse(payload);
+    const parsed = waitlistSchema.safeParse(form);
     if (!parsed.success) {
       const nextErrors: FieldErrors = {};
       for (const issue of parsed.error.issues) {
@@ -130,15 +122,6 @@ export default function WaitlistForm() {
       className="rounded-2xl border border-slate-200 bg-slate-50 p-6 dark:border-dark-border dark:bg-dark-card sm:p-8"
       noValidate
     >
-      {platformFromUrl ? (
-        <p className="mb-5 text-sm text-slate-600 dark:text-slate-400">
-          Joining for{" "}
-          <span className="font-semibold text-slate-900 dark:text-white">
-            {PLATFORM_LABELS[platformFromUrl]}
-          </span>
-        </p>
-      ) : null}
-
       <div className="space-y-4">
         <div>
           <label htmlFor="waitlist-name" className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">
@@ -199,33 +182,31 @@ export default function WaitlistForm() {
           ) : null}
         </div>
 
-        {showPlatformSelect ? (
-          <div>
-            <label
-              htmlFor="waitlist-platform"
-              className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300"
-            >
-              Platform
-            </label>
-            <select
-              id="waitlist-platform"
-              name="platform"
-              value={form.platform}
-              onChange={(e) => updateField("platform", e.target.value)}
-              className="w-full rounded-none border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 outline-none transition-colors focus:border-slate-900 dark:border-slate-600 dark:bg-dark-elevated dark:text-white dark:focus:border-slate-300"
-            >
-              <option value="">Select iOS or Android</option>
-              {WAITLIST_PLATFORMS.map((platform) => (
-                <option key={platform} value={platform}>
-                  {PLATFORM_LABELS[platform]}
-                </option>
-              ))}
-            </select>
-            {fieldErrors.platform ? (
-              <p className="mt-1 text-xs text-red-600 dark:text-red-400">{fieldErrors.platform}</p>
-            ) : null}
-          </div>
-        ) : null}
+        <div>
+          <label
+            htmlFor="waitlist-platform"
+            className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300"
+          >
+            Platform
+          </label>
+          <select
+            id="waitlist-platform"
+            name="platform"
+            value={form.platform}
+            onChange={(e) => updateField("platform", e.target.value)}
+            className="w-full rounded-none border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 outline-none transition-colors focus:border-slate-900 dark:border-slate-600 dark:bg-dark-elevated dark:text-white dark:focus:border-slate-300"
+          >
+            <option value="">Select iOS or Android</option>
+            {WAITLIST_PLATFORMS.map((platform) => (
+              <option key={platform} value={platform}>
+                {PLATFORM_LABELS[platform]}
+              </option>
+            ))}
+          </select>
+          {fieldErrors.platform ? (
+            <p className="mt-1 text-xs text-red-600 dark:text-red-400">{fieldErrors.platform}</p>
+          ) : null}
+        </div>
       </div>
 
       {status === "error" && message ? (
